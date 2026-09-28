@@ -1,4 +1,4 @@
-"""標準・転位なし歯車の解析式による干渉検査。
+"""転位ON/OFFに対応する標準歯たけ歯車の解析式による干渉検査。
 
 KHK「内歯車の寸法計算」式4.4〜4.12。1=遊星、2=リング。
 トリミングは歯車ペアの半径方向組立を検査し、工具の歯切り可否は扱わない。
@@ -45,19 +45,28 @@ def interference_checks(spec):
         'θ<sub>1</sub> + inv α<sub>ap</sub> − inv α<br>≥ '
         '(<i>z</i><sub>r</sub>/<i>z</i><sub>p</sub>)(θ<sub>2</sub> + inv α<sub>ar</sub> − inv α)',
     )
+    if spec.shift_enabled:
+        # Replace only the reference working angle, never the tip angles αar/αap.
+        formulas = tuple(f.replace('/tan α', '/tan α<sub>w,pr</sub>')
+                         .replace('inv α −', 'inv α<sub>w,pr</sub> −')
+                         .replace('− inv α<br>', '− inv α<sub>w,pr</sub><br>')
+                         .replace('− inv α)', '− inv α<sub>w,pr</sub>)') for f in formulas)
     checks = []
     try:
         if not (isfinite(alpha) and 0 < alpha < pi/4 and z2 > z1 >= 6 and spec.module > 0):
             raise ValueError('リング歯数 > 遊星歯数、正のモジュール・有効な圧力角が必要')
         # Normalize radii by module. Results must be independent of scale.
-        ra1, ra2 = z1/2 + 1, z2/2 - 1
+        ra1, ra2 = z1/2 + 1 + spec.shift('planet'), z2/2 - 1 + spec.shift('ring')
         rb1, rb2 = z1/2 * cos(alpha), z2/2 * cos(alpha)
-        a = (z2-z1)/2
+        aw = spec.planet_ring_working_angle
+        a = spec.planet_ring_center_distance / spec.module
         if ra2 <= rb2:
             raise ValueError('リング歯先円が基礎円以下のため、この解析式は適用外')
         aa1, aa2 = acos(_unit(rb1/ra1)), acos(_unit(rb2/ra2))
         inv = lambda angle: tan(angle) - angle
-        margin = z1/z2 - 1 + tan(aa2)/tan(alpha)
+        if ra1 <= rb1:
+            raise ValueError('遊星歯先円が基礎円以下のため、この解析式は適用外')
+        margin = z1/z2 - 1 + tan(aa2)/tan(aw)
         checks.append(InterferenceCheck(keys[0], names[0], margin >= -1e-12,
             f'回避条件の余裕：{margin:.6f}（0以上）。リング歯先と遊星歯元を検査。', formulas[0]))
     except (ValueError, ZeroDivisionError) as exc:
@@ -65,9 +74,9 @@ def interference_checks(spec):
                 for key, name, formula in zip(keys, names, formulas)] + undercut_checks(spec)
 
     try:
-        theta1 = acos(_unit((ra2**2-ra1**2-a*a)/(2*a*ra1))) + inv(aa1)-inv(alpha)
+        theta1 = acos(_unit((ra2**2-ra1**2-a*a)/(2*a*ra1))) + inv(aa1)-inv(aw)
         theta2 = acos(_unit((a*a+ra2**2-ra1**2)/(2*a*ra2)))
-        margin = theta1*z1/z2 + inv(alpha)-inv(aa2)-theta2
+        margin = theta1*z1/z2 + inv(aw)-inv(aa2)-theta2
         checks.append(InterferenceCheck(keys[1], names[1], margin >= -1e-12,
             f'回避条件の角度余裕：{margin:.6f} rad（0以上）。θはKHK式4.9。', formulas[1]))
     except (ValueError, ZeroDivisionError) as exc:
@@ -76,7 +85,7 @@ def interference_checks(spec):
     try:
         theta1 = _asin_sqrt((1-(cos(aa1)/cos(aa2))**2)/(1-(z1/z2)**2))
         theta2 = _asin_sqrt(((cos(aa2)/cos(aa1))**2-1)/((z2/z1)**2-1))
-        margin = theta1+inv(aa1)-inv(alpha)-(z2/z1)*(theta2+inv(aa2)-inv(alpha))
+        margin = theta1+inv(aa1)-inv(aw)-(z2/z1)*(theta2+inv(aa2)-inv(aw))
         ok = margin >= -1e-12
         detail = f'角度余裕：{margin:.6f} rad。θはKHK式4.12。'
         detail += '半径方向の組立に干渉なし。' if ok else '半径方向の組立不可。軸方向から組み付ける必要があります。'
@@ -91,12 +100,14 @@ def undercut_checks(spec):
     if not 0 < alpha < pi/4:
         return [InterferenceCheck('undercut', '切下げ（標準ラック創成）', None,
                                  '圧力角が適用範囲外', '0 &lt; α &lt; 45°', False)]
-    limit = 2 / sin(alpha)**2
     checks = []
     for key, name, z in (('s', '太陽', spec.sun_teeth), ('p', '遊星', spec.planet_teeth)):
+        shift = spec.shift('sun' if key == 's' else 'planet')
+        limit = 2 * (1 - shift) / sin(alpha)**2
         checks.append(InterferenceCheck('undercut_' + key, f'切下げ（{name}・標準ラック創成）',
             z >= limit - 1e-12,
             f'理論限界 {limit:.3f} 歯、厳密に回避する整数歯数は {ceil(limit-1e-12)} 歯以上。'
             '切下げ量・工具先端丸み・強度は未評価。',
-            f'<i>z</i><sub>{key}</sub> ≥ 2 / sin² α', False))
+            (f'<i>z</i><sub>{key}</sub> ≥ 2(1 − <i>x</i><sub>{key}</sub>) / sin² α'
+             if spec.shift_enabled else f'<i>z</i><sub>{key}</sub> ≥ 2 / sin² α'), False))
     return checks

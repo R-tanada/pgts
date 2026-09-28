@@ -57,7 +57,7 @@ class GeometryTests(unittest.TestCase):
                 self.assertAlmostEqual(math.cos(ring_phase - planet_out), -1)
 
     def test_invalid_shape_rejected(self):
-        for s in (GearSpec(0, 20), GearSpec(2, 0), GearSpec(2, 20, 0), GearSpec(2, 20, 20, 1)):
+        for s in (GearSpec(0, 20), GearSpec(2, 0), GearSpec(2, 20, 0), GearSpec(2, 20, 20, float('nan'))):
             with self.assertRaises(ValueError):
                 gear_outline(s)
 

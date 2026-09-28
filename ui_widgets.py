@@ -7,6 +7,43 @@ from PySide6.QtGui import (QColor, QFont, QFontMetricsF, QIcon, QPainter,
 from PySide6.QtWidgets import QWidget
 
 
+def gear_icon(color):
+    pixmap = QPixmap(48, 48)
+    pixmap.setDevicePixelRatio(2)
+    pixmap.fill(Qt.transparent)
+    painter = QPainter(pixmap)
+    painter.setRenderHint(QPainter.Antialiasing)
+    path = QPainterPath()
+    for index in range(48):
+        angle = index * math.pi / 24
+        radius = 10 if index % 6 in (1, 2, 3, 4) else 8
+        point = QPointF(12 + radius * math.cos(angle), 12 + radius * math.sin(angle))
+        path.moveTo(point) if index == 0 else path.lineTo(point)
+    path.closeSubpath()
+    hole = QPainterPath()
+    hole.addEllipse(QPointF(12, 12), 3.5, 3.5)
+    painter.fillPath(path.subtracted(hole), QColor(color))
+    painter.end()
+    return QIcon(pixmap)
+
+
+def disclosure_icon(opened, color):
+    pixmap = QPixmap(32, 32)
+    pixmap.setDevicePixelRatio(2)
+    pixmap.fill(Qt.transparent)
+    painter = QPainter(pixmap)
+    painter.setRenderHint(QPainter.Antialiasing)
+    painter.setPen(QPen(QColor(color), 1.8, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin))
+    path = QPainterPath()
+    points = [(4, 6), (8, 10), (12, 6)] if opened else [(6, 4), (10, 8), (6, 12)]
+    path.moveTo(*points[0])
+    for point in points[1:]:
+        path.lineTo(*point)
+    painter.drawPath(path)
+    painter.end()
+    return QIcon(pixmap)
+
+
 def theme_icon(dark, color):
     # Vector painting avoids missing moon/sun glyphs and scales at high DPI.
     pixmap = QPixmap(48, 48)
