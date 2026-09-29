@@ -1,6 +1,7 @@
 """歯車対のシーン描画・回転・パン／ズーム・PNG／SVG出力。"""
 import numpy as np
-from PySide6.QtCore import QRectF, QSize, Qt, QTimer
+import xml.etree.ElementTree as ET
+from PySide6.QtCore import QRectF, Qt, QTimer, QSaveFile, QIODevice, QBuffer
 from PySide6.QtGui import QBrush, QColor, QImage, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import (
     QGraphicsEllipseItem, QGraphicsItem, QGraphicsPathItem,
@@ -281,8 +282,10 @@ class GearView(QGraphicsView):
         animation_angle=0.0,
         show_contact_point=False,
         render=True,
+        center_distance=None,
     ):
-        old_center = self.mapToScene(self.viewport().rect().center())
+        old_visible = self.visible_scene_rect()
+        old_scroll = self.horizontalScrollBar().value(), self.verticalScrollBar().value()
         had_view = self._view_initialized
         old_transform = self.transform() if had_view else None
 
@@ -318,8 +321,12 @@ class GearView(QGraphicsView):
 
         gear2_center = None
         if show_mating_gear and gear2 is not None:
-            center_distance = gear1.pitch_radius + gear2.pitch_radius
+            if center_distance is None:
+                center_distance = gear1.pitch_radius + gear2.pitch_radius
             gear2_center = (center_distance, 0.0)
+            working_pitch = center_distance * gear1.z / (gear1.z + gear2.z)
+            base_sum = gear1.base_radius + gear2.base_radius
+            working_alpha = np.arccos(base_sum / center_distance) if center_distance >= base_sum else None
             self._animation_gear2_center = gear2_center
             backlash_phase2 = gear2.backlash / gear2.pitch_radius
             contact_rotation2 = (
@@ -345,7 +352,7 @@ class GearView(QGraphicsView):
                 )
 
             if show_midline:
-                xp = gear1.pitch_radius
+                xp = working_pitch
                 span = max(gear1.addendum_radius, gear2.addendum_radius) + gear1.m
                 self._draw_aux_line(
                     [xp, xp], [-span, span],
@@ -364,16 +371,16 @@ class GearView(QGraphicsView):
 
             if show_pitch_point:
                 self._add_point(
-                    gear1.pitch_radius, 0.0, diameter=8.0,
+                    working_pitch, 0.0, diameter=8.0,
                     color=self._aux_color("ピッチ点", highlight_aux),
                 )
 
-            if show_action_line:
-                alpha = gear1.alpha
+            if show_action_line and working_alpha is not None:
+                alpha = working_alpha
                 line_angle = np.pi / 2 - alpha
                 dx = np.cos(line_angle)
                 dy = np.sin(line_angle)
-                x0 = gear1.pitch_radius
+                x0 = working_pitch
                 length = gear1.addendum_radius + gear2.addendum_radius
                 self._add_path(
                     [x0 - length * dx, x0 + length * dx],
@@ -429,20 +436,18 @@ class GearView(QGraphicsView):
         content_rect = self.scene.itemsBoundingRect().adjusted(-1.0, -1.0, 1.0, 1.0)
         if content_rect.isValid():
             margin = max(content_rect.width(), content_rect.height(), 100.0) * 10.0
-            self.scene.setSceneRect(
-                content_rect.adjusted(-margin, -margin, margin, margin)
-            )
+            scene_rect = content_rect.adjusted(-margin, -margin, margin, margin)
+            if had_view and not self._auto_fit:
+                scene_rect = scene_rect.united(old_visible.adjusted(-margin, -margin, margin, margin))
+            self.scene.setSceneRect(scene_rect)
 
         if not had_view or self._auto_fit:
-            self._fit_initial_view(gear1, gear2, show_mating_gear)
+            self._fit_initial_view(gear1, gear2, show_mating_gear, center_distance)
             self._view_initialized = True
         else:
             self.setTransform(old_transform)
-            new_center = self.mapFromScene(old_center)
-            viewport_center = self.viewport().rect().center()
-            delta = viewport_center - new_center
-            self.horizontalScrollBar().setValue(self.horizontalScrollBar().value() - delta.x())
-            self.verticalScrollBar().setValue(self.verticalScrollBar().value() - delta.y())
+            self.horizontalScrollBar().setValue(old_scroll[0])
+            self.verticalScrollBar().setValue(old_scroll[1])
 
         if render:
             self.viewport().update()
@@ -477,10 +482,11 @@ class GearView(QGraphicsView):
 
         self.viewport().update()
 
-    def _fit_initial_view(self, gear1, gear2, show_mating):
+    def _fit_initial_view(self, gear1, gear2, show_mating, center_distance=None):
         margin = gear1.m
         if show_mating and gear2 is not None:
-            center_distance = gear1.pitch_radius + gear2.pitch_radius
+            if center_distance is None:
+                center_distance = gear1.pitch_radius + gear2.pitch_radius
             left = -gear1.addendum_radius - margin
             right = center_distance + gear2.addendum_radius + margin
             height = max(gear1.addendum_radius, gear2.addendum_radius) + margin
@@ -514,36 +520,98 @@ class GearView(QGraphicsView):
     def visible_scene_rect(self):
         return self.mapToScene(self.viewport().rect()).boundingRect()
 
-    def render_to_image(self, rect=None, width=None, height=None):
-        if rect is None:
-            rect = self.visible_scene_rect()
-        if width is None or height is None:
-            size = self.viewport().size()
-            width = max(1, size.width())
-            height = max(1, size.height())
+    def _paint_export(self, painter):
+        """Flatten the current item transforms into viewport pixel coordinates.
 
-        image = QImage(width, height, QImage.Format_ARGB32)
+        PNG/SVG share this path. Cosmetic lines and fixed-size contact markers
+        become ordinary vector geometry, avoiding SVG viewer-dependent scaling.
+        The displayed scene is never recolored or rebuilt during export.
+        """
+        painter.setRenderHint(QPainter.Antialiasing, True)
+        painter.setClipRect(QRectF(self.viewport().rect()))
+        for item in self.scene.items(Qt.AscendingOrder):
+            if not item.isVisible() or isinstance(item, QGraphicsItemGroup):
+                continue
+            if isinstance(item, QGraphicsPathItem):
+                path = item.path()
+            elif isinstance(item, QGraphicsEllipseItem):
+                path = QPainterPath()
+                path.addEllipse(item.rect())
+            else:
+                continue
+            transform = item.deviceTransform(self.viewportTransform())
+            pen = QPen(item.pen())
+            if pen.style() != Qt.NoPen:
+                width = pen.widthF() or 1.
+                if not pen.isCosmetic():
+                    width *= np.hypot(transform.m11(), transform.m12())
+                pen.setWidthF(width)
+                pen.setCosmetic(False)
+                pen.setColor(Qt.black)
+            painter.setPen(pen)
+            painter.setBrush(Qt.NoBrush if item.brush().style() == Qt.NoBrush else QBrush(Qt.black))
+            painter.setOpacity(item.effectiveOpacity())
+            painter.drawPath(transform.map(path))
+
+    def render_to_image(self):
+        size = self.viewport().size()
+        image = QImage(size, QImage.Format_ARGB32)
         image.fill(Qt.transparent)
         painter = QPainter(image)
-        painter.setRenderHint(QPainter.Antialiasing, True)
-        self.scene.render(painter, QRectF(0, 0, width, height), rect)
-        painter.end()
+        try:
+            self._paint_export(painter)
+        finally:
+            painter.end()
         return image
 
-    def render_svg(self, filename, rect=None, width=1400, height=1400):
+    def render_svg(self, filename):
         from PySide6.QtSvg import QSvgGenerator
-
-        if rect is None:
-            rect = self.scene.itemsBoundingRect().adjusted(-1, -1, 1, 1)
+        buffer = QBuffer()
+        buffer.open(QIODevice.WriteOnly)
         generator = QSvgGenerator()
-        generator.setFileName(filename)
-        generator.setSize(QSize(width, height))
-        generator.setViewBox(QRectF(0, 0, width, height))
-        generator.setTitle("Involute Gear")
-
+        generator.setOutputDevice(buffer)
+        generator.setSize(self.viewport().size())
+        generator.setViewBox(QRectF(self.viewport().rect()))
+        generator.setTitle('歯車対プレビュー')
         painter = QPainter(generator)
-        painter.setRenderHint(QPainter.Antialiasing, True)
-        self.scene.render(painter, QRectF(0, 0, width, height), rect)
-        painter.end()
+        if not painter.isActive():
+            raise OSError('SVGの描画を開始できませんでした。')
+        try:
+            self._paint_export(painter)
+        finally:
+            painter.end()
+        # Qt emits physical mm dimensions using a device DPI. Use explicit
+        # pixel dimensions so importing applications agree with the viewBox.
+        # Qt's SVG paint engine also does not reliably serialize painter clips.
+        namespace = 'http://www.w3.org/2000/svg'
+        ET.register_namespace('', namespace)
+        tag = lambda name: '{' + namespace + '}' + name
+        root = ET.fromstring(bytes(buffer.data()))
+        size = self.viewport().size()
+        root.set('width', str(size.width()))
+        root.set('height', str(size.height()))
+        root.set('version', '1.1')
+        root.attrib.pop('baseProfile', None)
+        root.set('overflow', 'hidden')
+        defs = root.find(tag('defs'))
+        if defs is None:
+            defs = ET.SubElement(root, tag('defs'))
+        clip = ET.SubElement(defs, tag('clipPath'), {'id': 'viewport-clip', 'clipPathUnits': 'userSpaceOnUse'})
+        ET.SubElement(clip, tag('rect'), {'x': '0', 'y': '0', 'width': str(size.width()), 'height': str(size.height())})
+        clipped = ET.Element(tag('g'), {'clip-path': 'url(#viewport-clip)'})
+        for child in list(root):
+            if child.tag == tag('g'):
+                root.remove(child)
+                clipped.append(child)
+        root.append(clipped)
+        data = ET.tostring(root, encoding='utf-8', xml_declaration=True)
+        output = QSaveFile(filename)
+        if not output.open(QIODevice.WriteOnly):
+            raise OSError(output.errorString())
+        if output.write(data) != len(data):
+            output.cancelWriting()
+            raise OSError('SVGファイルを書き込めませんでした。')
+        if not output.commit():
+            raise OSError(output.errorString())
 
 

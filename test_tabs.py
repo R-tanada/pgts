@@ -92,7 +92,8 @@ class TabTests(unittest.TestCase):
                 if suffix == 'png':
                     self.assertFalse(QImage(filename).isNull())
                 else:
-                    self.assertIn('viewBox="0 0 1400 1400"', Path(filename).read_text())
+                    size = page.canvas.viewport().size()
+                    self.assertIn(f'viewBox="0 0 {size.width()} {size.height()}"', Path(filename).read_text())
 
 
 if __name__ == '__main__':
