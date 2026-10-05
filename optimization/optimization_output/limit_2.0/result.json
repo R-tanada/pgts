@@ -1,0 +1,4907 @@
+{
+  "status": "success",
+  "method": "SLSQP",
+  "gearbox": {
+    "zs": 12,
+    "zp1": 39,
+    "zr1": 90,
+    "zp2": 32,
+    "zr2": 81,
+    "module_a": 0.8,
+    "module_c": 0.8467,
+    "pressure_angle_deg": 20.0,
+    "planet_count": 3
+  },
+  "settings": {
+    "friction_coefficient": 0.1,
+    "shift_lower": -2.0,
+    "shift_upper": 2.0,
+    "contact_ratio_lower": 1.0,
+    "contact_ratio_upper": 2.0,
+    "planet_clearance_mm": 0.0,
+    "include_trimming_constraint": true,
+    "start_count": 12,
+    "random_seed": 42,
+    "max_iterations": 1000,
+    "ftol": 1e-11,
+    "feasibility_tolerance": 1e-07,
+    "output_directory": "optimization_output"
+  },
+  "library_versions": {
+    "scipy": "1.18.1",
+    "numpy": "2.5.3"
+  },
+  "speed_ratio_exact": "62/5967",
+  "reduction_abs": 96.24193548387096,
+  "fixed_assembly_checks": {
+    "first_layer_equal_spacing": true,
+    "compound_equal_spacing": true
+  },
+  "paper_shifts": {
+    "xs": 0.476,
+    "xp1": 0.762,
+    "xr1": 2.0,
+    "xp2": 0.536,
+    "xr2": 1.21
+  },
+  "paper_contact_ratios": {
+    "a": 1.232,
+    "b": 1.42,
+    "c": 1.565
+  },
+  "paper_measured_efficiencies": {
+    "forward": 0.89,
+    "backward": 0.853
+  },
+  "paper_efficiency_table": "Table IV (Table V is absent in the supplied PDF)",
+  "objective_equation": "64",
+  "reference_center_distances_mm": {
+    "a": 21.26791100127434,
+    "b": 21.26791100127434,
+    "c": 21.268662049205854
+  },
+  "reference_common_center_evaluation": {
+    "center_mm": 21.26791100127434,
+    "shifts": {
+      "xs": 0.4759999999999973,
+      "xp1": 0.7620000000000013,
+      "xr1": 2.0,
+      "xp2": 0.5370372835476067,
+      "xr2": 1.21
+    },
+    "meshes": [
+      {
+        "name": "a",
+        "z1": 12,
+        "z2": 39,
+        "sign": 1,
+        "module": 0.8,
+        "center": 21.26791100127434,
+        "working_angle": 0.4479308142680778,
+        "base_radius1": 4.510524579772361,
+        "base_radius2": 14.659204884260173,
+        "tip_radius1": 5.858311001274336,
+        "tip_radius2": 16.88711100127434,
+        "tip_angle1": 0.6920554647500216,
+        "tip_angle2": 0.5194937418667991,
+        "approach_ratio": 0.567225673457763,
+        "recess_ratio": 0.665188705578207,
+        "basic_efficiency": 0.9817934390957846
+      },
+      {
+        "name": "b",
+        "z1": 39,
+        "z2": 90,
+        "sign": -1,
+        "module": 0.8,
+        "center": 21.26791100127434,
+        "working_angle": 0.4479308142680778,
+        "base_radius1": 14.659204884260173,
+        "base_radius2": 33.828934348292705,
+        "tip_radius1": 16.88711100127434,
+        "tip_radius2": 36.8,
+        "tip_angle1": 0.5194937418667991,
+        "tip_angle2": 0.4045883418104952,
+        "approach_ratio": 0.7490463479167255,
+        "recess_ratio": 0.567225673457763,
+        "basic_efficiency": 0.9974138953367536
+      },
+      {
+        "name": "c",
+        "z1": 32,
+        "z2": 81,
+        "sign": -1,
+        "module": 0.8467,
+        "center": 21.26791100127434,
+        "working_angle": 0.4114272333219765,
+        "base_radius1": 12.73020387231086,
+        "base_radius2": 32.223328551786864,
+        "tip_radius1": 14.84860946797976,
+        "tip_radius2": 34.469157,
+        "tip_angle1": 0.5407301324365217,
+        "tip_angle2": 0.36297328993545264,
+        "approach_ratio": 0.7287322050956938,
+        "recess_ratio": 0.8357210054980386,
+        "basic_efficiency": 0.9960504261079796
+      }
+    ],
+    "forward_efficiency": 0.9197416164892867,
+    "backward_efficiency": 0.9320620079004608,
+    "backward_efficiency_force_balance": 0.9150923641871158
+  },
+  "reference_constraint_margins": {
+    "xs_lower": 2.4759999999999973,
+    "xs_upper": 1.5240000000000027,
+    "xp1_lower": 2.7620000000000013,
+    "xp1_upper": 1.2379999999999987,
+    "xr1_lower": 4.0,
+    "xr1_upper": 0.0,
+    "xp2_lower": 2.5370372835476065,
+    "xp2_upper": 1.4629627164523933,
+    "xr2_lower": 3.21,
+    "xr2_upper": 0.79,
+    "a_tip1_above_base": 1.6847330268774685,
+    "a_tip2_above_base": 2.78488264626771,
+    "a_approach_nonnegative": 0.567225673457763,
+    "a_recess_nonnegative": 0.665188705578207,
+    "a_contact_lower": 0.23241437903597006,
+    "a_contact_upper": 0.7675856209640299,
+    "a_basic_efficiency_lower": 0.9817934390957846,
+    "a_basic_efficiency_upper": 0.018206560904215352,
+    "b_tip1_above_base": 2.78488264626771,
+    "b_tip2_above_base": 3.713832064634115,
+    "b_approach_nonnegative": 0.7490463479167255,
+    "b_recess_nonnegative": 0.567225673457763,
+    "b_contact_lower": 0.3162720213744885,
+    "b_contact_upper": 0.6837279786255115,
+    "b_basic_efficiency_lower": 0.9974138953367536,
+    "b_basic_efficiency_upper": 0.0025861046632463802,
+    "b_trochoid": 0.013314184127228124,
+    "b_trimming": 0.02575370140953176,
+    "c_tip1_above_base": 2.501955350973072,
+    "c_tip2_above_base": 2.6524488581707084,
+    "c_approach_nonnegative": 0.7287322050956938,
+    "c_recess_nonnegative": 0.8357210054980386,
+    "c_contact_lower": 0.5644532105937325,
+    "c_contact_upper": 0.43554678940626745,
+    "c_basic_efficiency_lower": 0.9960504261079796,
+    "c_basic_efficiency_upper": 0.0039495738920204415,
+    "c_trochoid": 0.013655275896433283,
+    "c_trimming": 0.028116242148401083,
+    "b_planet_clearance": 3.8286005281394253,
+    "c_planet_clearance": 8.432601262667657,
+    "total_efficiency_lower": 0.9197416164892867,
+    "total_efficiency_upper": 0.08025838351071335
+  },
+  "trials": [
+    {
+      "start_index": 0,
+      "initial_variables": [
+        0.0,
+        0.0,
+        21.149596174022854
+      ],
+      "final_variables": [
+        1.9999999999999996,
+        1.178347996053891,
+        21.252288560795947
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 11,
+      "forward_efficiency": 0.9198586694571155,
+      "minimum_constraint_margin": 4.440892098500626e-16,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            0.0,
+            0.0,
+            21.149596174022854
+          ],
+          "shifts": {
+            "xs": 2.106018702642363,
+            "xp1": -1.0530093513211816,
+            "xr1": 0.0,
+            "xp2": -0.511996101212287,
+            "xr2": 0.0
+          },
+          "forward_efficiency": 0.6085004438050992,
+          "backward_efficiency_printed": 0.5244671002267258,
+          "backward_efficiency_force_balance": 0.46750497919252,
+          "minimum_constraint_margin": -0.8071122864887449,
+          "maximum_constraint_violation": 0.8071122864887449,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            0.5467524457110984,
+            0.4180519770008533,
+            21.018386909937508
+          ],
+          "shifts": {
+            "xs": 1.1599860944252265,
+            "xp1": -0.30661682435706406,
+            "xr1": 0.5467524457110984,
+            "xp2": 0.07869978400940536,
+            "xr2": 0.4180519770008533
+          },
+          "forward_efficiency": 0.8281162228512159,
+          "backward_efficiency_printed": 0.8363609544413214,
+          "backward_efficiency_force_balance": 0.8050306573912841,
+          "minimum_constraint_margin": 0.005457425185185882,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            0.7316097448416343,
+            0.9080905793806142,
+            20.781811627269484
+          ],
+          "shifts": {
+            "xs": 0.2863409696187478,
+            "xp1": 0.22263438761144327,
+            "xr1": 0.7316097448416343,
+            "xp2": 0.863307221331381,
+            "xr2": 0.9080905793806142
+          },
+          "forward_efficiency": 0.870616833895251,
+          "backward_efficiency_printed": 0.8730769615312761,
+          "backward_efficiency_force_balance": 0.8555774342208542,
+          "minimum_constraint_margin": 0.0038016842949296636,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            1.7855946314640123,
+            0.33242187753158126,
+            20.874915621571667
+          ],
+          "shifts": {
+            "xs": -0.5015228062486939,
+            "xp1": 1.1435587188563532,
+            "xr1": 1.7855946314640123,
+            "xp2": 0.17438439751571513,
+            "xr2": 0.33242187753158126
+          },
+          "forward_efficiency": 0.8756944806808664,
+          "backward_efficiency_printed": 0.897991049001879,
+          "backward_efficiency_force_balance": 0.8656496625246047,
+          "minimum_constraint_margin": 0.00482684849141346,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            1.1089252590995322,
+            0.1176727812590217,
+            21.171133735753596
+          ],
+          "shifts": {
+            "xs": 1.0637544008318405,
+            "xp1": 0.02258542913384587,
+            "xr1": 1.1089252590995322,
+            "xp2": -0.4232593698353121,
+            "xr2": 0.1176727812590217
+          },
+          "forward_efficiency": 0.8089004561767436,
+          "backward_efficiency_printed": 0.7982449465960347,
+          "backward_efficiency_force_balance": 0.7739863630316591,
+          "minimum_constraint_margin": 0.00656020459509743,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            1.2735841390344484,
+            0.5734704281828726,
+            20.94845777234588
+          ],
+          "shifts": {
+            "xs": 0.22527870893764534,
+            "xp1": 0.5241527150484016,
+            "xr1": 1.2735841390344484,
+            "xp2": 0.3234955021635097,
+            "xr2": 0.5734704281828726
+          },
+          "forward_efficiency": 0.9091901467071359,
+          "backward_efficiency_printed": 0.9209372212601882,
+          "backward_efficiency_force_balance": 0.9030071769149395,
+          "minimum_constraint_margin": 0.0029953217769279616,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            1.9596699588724187,
+            1.2003259009661615,
+            21.250323501481045
+          ],
+          "shifts": {
+            "xs": 0.4607521570736406,
+            "xp1": 0.749458900899389,
+            "xr1": 1.9596699588724187,
+            "xp2": 0.5515984220918255,
+            "xr2": 1.2003259009661615
+          },
+          "forward_efficiency": 0.9192542929305519,
+          "backward_efficiency_printed": 0.9315243558380888,
+          "backward_efficiency_force_balance": 0.9145355277715771,
+          "minimum_constraint_margin": 0.0026017731418754853,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            2.0,
+            1.1971546217360332,
+            21.255731907787215
+          ],
+          "shifts": {
+            "xs": 0.43749179982951514,
+            "xp1": 0.7812541000852424,
+            "xr1": 2.0,
+            "xp2": 0.5409857389602586,
+            "xr2": 1.1971546217360332
+          },
+          "forward_efficiency": 0.919842259233688,
+          "backward_efficiency_printed": 0.9321429358560968,
+          "backward_efficiency_force_balance": 0.9152010680567759,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            2.0,
+            1.178490239195047,
+            21.252416719580946
+          ],
+          "shifts": {
+            "xs": 0.4270263553222109,
+            "xp1": 0.7864868223388946,
+            "xr1": 2.0,
+            "xp2": 0.5268839005452033,
+            "xr2": 1.178490239195047
+          },
+          "forward_efficiency": 0.9198586608901174,
+          "backward_efficiency_printed": 0.9321630286588709,
+          "backward_efficiency_force_balance": 0.9152194459055544,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            2.0,
+            1.1783470040903836,
+            21.252276168202222
+          ],
+          "shifts": {
+            "xs": 0.42658281760562256,
+            "xp1": 0.7867085911971887,
+            "xr1": 2.0,
+            "xp2": 0.5269340166732644,
+            "xr2": 1.1783470040903836
+          },
+          "forward_efficiency": 0.9198586693473021,
+          "backward_efficiency_printed": 0.9321631768512564,
+          "backward_efficiency_force_balance": 0.9152194462677816,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            1.9999999999999996,
+            1.178347996053891,
+            21.252288560795947
+          ],
+          "shifts": {
+            "xs": 0.42662192437516566,
+            "xp1": 0.786689037812417,
+            "xr1": 1.9999999999999996,
+            "xp2": 0.5269179608852921,
+            "xr2": 1.178347996053891
+          },
+          "forward_efficiency": 0.9198586694571155,
+          "backward_efficiency_printed": 0.932163164451388,
+          "backward_efficiency_force_balance": 0.9152194471775417,
+          "minimum_constraint_margin": 4.440892098500626e-16,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            1.9999999999999996,
+            1.178347996053891,
+            21.252288560795947
+          ],
+          "shifts": {
+            "xs": 0.42662192437516566,
+            "xp1": 0.786689037812417,
+            "xr1": 1.9999999999999996,
+            "xp2": 0.5269179608852921,
+            "xr2": 1.178347996053891
+          },
+          "forward_efficiency": 0.9198586694571155,
+          "backward_efficiency_printed": 0.932163164451388,
+          "backward_efficiency_force_balance": 0.9152194471775417,
+          "minimum_constraint_margin": 4.440892098500626e-16,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 1,
+      "initial_variables": [
+        0.986241774801468,
+        -0.22003761689261192,
+        22.218809127681823
+      ],
+      "final_variables": [
+        2.0,
+        1.1783460892831545,
+        21.25228965491614
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 19,
+      "forward_efficiency": 0.9198586694553794,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            0.986241774801468,
+            -0.22003761689261192,
+            22.218809127681823
+          ],
+          "shifts": {
+            "xs": 4.763998659928267,
+            "xp1": -1.8888784425633993,
+            "xr1": 0.986241774801468,
+            "xp2": -2.344330562650735,
+            "xr2": -0.22003761689261192
+          },
+          "forward_efficiency": 0.1057549079384217,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.6374177894515647,
+          "maximum_constraint_violation": 3.6374177894515647,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            0.5134620730036081,
+            -0.5187884742647075,
+            21.728405998303025
+          ],
+          "shifts": {
+            "xs": 3.4853529492280853,
+            "xp1": -1.4859454381122386,
+            "xr1": 0.5134620730036081,
+            "xp2": -1.8618758847033126,
+            "xr2": -0.5187884742647075
+          },
+          "forward_efficiency": 0.2767299069503362,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -2.091317084446237,
+          "maximum_constraint_violation": 2.091317084446237,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            0.6276151749686334,
+            -0.9942086776714196,
+            21.428688696092177
+          ],
+          "shifts": {
+            "xs": 2.3655510663513106,
+            "xp1": -0.8689679456913386,
+            "xr1": 0.6276151749686334,
+            "xp2": -1.8935226405508718,
+            "xr2": -0.9942086776714196
+          },
+          "forward_efficiency": 0.37666812116175685,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -1.8283357816336034,
+          "maximum_constraint_violation": 1.8283357816336034,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            0.6681193235516667,
+            -0.9545119584850557,
+            21.441088020740438
+          ],
+          "shifts": {
+            "xs": 2.365597958957815,
+            "xp1": -0.8487393177030742,
+            "xr1": 0.6681193235516667,
+            "xp2": -1.8716334582588392,
+            "xr2": -0.9545119584850557
+          },
+          "forward_efficiency": 0.3852352661074259,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -1.764829185117303,
+          "maximum_constraint_violation": 1.764829185117303,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            0.9903485859209176,
+            -0.5870145307708174,
+            21.539502678940842
+          ],
+          "shifts": {
+            "xs": 2.3685131189543402,
+            "xp1": -0.6890822665167113,
+            "xr1": 0.9903485859209176,
+            "xp2": -1.6472013544620374,
+            "xr2": -0.5870145307708174
+          },
+          "forward_efficiency": 0.4544063313387033,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -1.3415916478330119,
+          "maximum_constraint_violation": 1.3415916478330119,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            1.7936964127992514,
+            0.4483510241653921,
+            21.741102849769085
+          ],
+          "shifts": {
+            "xs": 2.248856792831324,
+            "xp1": -0.22758019001603635,
+            "xr1": 1.7936964127992514,
+            "xp2": -0.9141290431685267,
+            "xr2": 0.4483510241653921
+          },
+          "forward_efficiency": 0.6317391920460619,
+          "backward_efficiency_printed": 0.535481974269988,
+          "backward_efficiency_force_balance": 0.48919926310915224,
+          "minimum_constraint_margin": -0.6680852561766183,
+          "maximum_constraint_violation": 0.6680852561766183,
+          "feasible": false
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            1.9999998864508828,
+            0.6472439109112926,
+            21.551155171869052
+          ],
+          "shifts": {
+            "xs": 1.3977410834720705,
+            "xp1": 0.30112940148940615,
+            "xr1": 1.9999998864508828,
+            "xp2": -0.43008209437040557,
+            "xr2": 0.6472439109112926
+          },
+          "forward_efficiency": 0.7988937512779787,
+          "backward_efficiency_printed": 0.7894431866407758,
+          "backward_efficiency_force_balance": 0.76099034549498,
+          "minimum_constraint_margin": -0.044103191759616286,
+          "maximum_constraint_violation": 0.044103191759616286,
+          "feasible": false
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            1.9229956854745827,
+            0.5819690665938224,
+            21.49856773671889
+          ],
+          "shifts": {
+            "xs": 1.2999204652670362,
+            "xp1": 0.31153761010377323,
+            "xr1": 1.9229956854745827,
+            "xp2": -0.4183415440722591,
+            "xr2": 0.5819690665938224
+          },
+          "forward_efficiency": 0.8072067230227502,
+          "backward_efficiency_printed": 0.7985308319672991,
+          "backward_efficiency_force_balance": 0.7721342713726518,
+          "minimum_constraint_margin": -0.000422261650895428,
+          "maximum_constraint_violation": 0.000422261650895428,
+          "feasible": false
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            1.9448237838368723,
+            0.6099411760673061,
+            21.503596746475473
+          ],
+          "shifts": {
+            "xs": 1.2947401294700502,
+            "xp1": 0.325041827183411,
+            "xr1": 1.9448237838368723,
+            "xp2": -0.3976973321327064,
+            "xr2": 0.6099411760673061
+          },
+          "forward_efficiency": 0.8109120892760506,
+          "backward_efficiency_printed": 0.8037924976742187,
+          "backward_efficiency_force_balance": 0.7774721599080036,
+          "minimum_constraint_margin": -1.2283067251539492e-05,
+          "maximum_constraint_violation": 1.2283067251539492e-05,
+          "feasible": false
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            1.9999999999966107,
+            0.6859277628977436,
+            21.513469277568408
+          ],
+          "shifts": {
+            "xs": 1.2722892415984437,
+            "xp1": 0.3638553791990835,
+            "xr1": 1.9999999999966107,
+            "xp2": -0.33611923880012573,
+            "xr2": 0.6859277628977436
+          },
+          "forward_efficiency": 0.8219946188209171,
+          "backward_efficiency_printed": 0.8190445765255336,
+          "backward_efficiency_force_balance": 0.7931058725644186,
+          "minimum_constraint_margin": 3.389288849575678e-12,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            1.9999999999998717,
+            0.6959621527008828,
+            21.40010983829528
+          ],
+          "shifts": {
+            "xs": 0.900059585768294,
+            "xp1": 0.5499702071157888,
+            "xr1": 1.9999999999998717,
+            "xp2": -0.16249609451440983,
+            "xr2": 0.6959621527008828
+          },
+          "forward_efficiency": 0.8676073362899427,
+          "backward_efficiency_printed": 0.8716226255352966,
+          "backward_efficiency_force_balance": 0.8521561128809202,
+          "minimum_constraint_margin": 1.283417816466681e-13,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            1.999999999999308,
+            0.7307779478917689,
+            21.099515807447464
+          ],
+          "shifts": {
+            "xs": -0.047775667513968334,
+            "xp1": 1.0238878337566382,
+            "xr1": 1.999999999999308,
+            "xp2": 0.28542192953318185,
+            "xr2": 0.7307779478917689
+          },
+          "forward_efficiency": 0.9068688848544456,
+          "backward_efficiency_printed": 0.9218322541515209,
+          "backward_efficiency_force_balance": 0.9007729876290654,
+          "minimum_constraint_margin": 6.918909889463976e-13,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "variables": [
+            2.0,
+            0.7297442159244989,
+            21.164876371291193
+          ],
+          "shifts": {
+            "xs": 0.15328048614709155,
+            "xp1": 0.9233597569264542,
+            "xr1": 2.0,
+            "xp2": 0.19723593797139638,
+            "xr2": 0.7297442159244989
+          },
+          "forward_efficiency": 0.9099540526956016,
+          "backward_efficiency_printed": 0.9221105377251206,
+          "backward_efficiency_force_balance": 0.9038992979017878,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "variables": [
+            1.9999999999995701,
+            0.7364794139778525,
+            21.166057526101376
+          ],
+          "shifts": {
+            "xs": 0.15694031760771443,
+            "xp1": 0.9215298411959278,
+            "xr1": 1.9999999999995701,
+            "xp2": 0.20238209002067342,
+            "xr2": 0.7364794139778525
+          },
+          "forward_efficiency": 0.9102566211426083,
+          "backward_efficiency_printed": 0.9224288719416508,
+          "backward_efficiency_force_balance": 0.9042490009612022,
+          "minimum_constraint_margin": 4.298783551348606e-13,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "variables": [
+            1.9999999999997082,
+            0.7696237311798604,
+            21.172853107389397
+          ],
+          "shifts": {
+            "xs": 0.17801465734642985,
+            "xp1": 0.9109926713266392,
+            "xr1": 1.9999999999997082,
+            "xp2": 0.2263744727713587,
+            "xr2": 0.7696237311798604
+          },
+          "forward_efficiency": 0.9116748384920479,
+          "backward_efficiency_printed": 0.9238813974115931,
+          "backward_efficiency_force_balance": 0.9058802792417768,
+          "minimum_constraint_margin": 2.9176661087149114e-13,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "variables": [
+            2.0,
+            0.9220864202049284,
+            21.20396358771855
+          ],
+          "shifts": {
+            "xs": 0.2748858316065581,
+            "xp1": 0.862557084196721,
+            "xr1": 2.0,
+            "xp2": 0.33673104866165027,
+            "xr2": 0.9220864202049284
+          },
+          "forward_efficiency": 0.9167002702670315,
+          "backward_efficiency_printed": 0.928983803486675,
+          "backward_efficiency_force_balance": 0.9116277078016896,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "variables": [
+            1.9999999999999813,
+            1.1612098907964534,
+            21.251135994011474
+          ],
+          "shifts": {
+            "xs": 0.42298524541138427,
+            "xp1": 0.7885073772942985,
+            "xr1": 1.9999999999999813,
+            "xp2": 0.5113651474546606,
+            "xr2": 1.1612098907964534
+          },
+          "forward_efficiency": 0.9198419861715775,
+          "backward_efficiency_printed": 0.9321450002165326,
+          "backward_efficiency_force_balance": 0.9152001585003265,
+          "minimum_constraint_margin": 1.865174681370263e-14,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "variables": [
+            1.9999999999999831,
+            1.1773669153126667,
+            21.252160382578545
+          ],
+          "shifts": {
+            "xs": 0.42621744275398354,
+            "xp1": 0.7868912786229998,
+            "xr1": 1.9999999999999831,
+            "xp2": 0.5261132047204446,
+            "xr2": 1.1773669153126667
+          },
+          "forward_efficiency": 0.919858622594151,
+          "backward_efficiency_printed": 0.9321632421257011,
+          "backward_efficiency_force_balance": 0.9152193854227315,
+          "minimum_constraint_margin": 1.687538997430238e-14,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "variables": [
+            2.0,
+            1.1783460892831545,
+            21.25228965491614
+          ],
+          "shifts": {
+            "xs": 0.42662537704751324,
+            "xp1": 0.7866873114762434,
+            "xr1": 2.0,
+            "xp2": 0.526914548996179,
+            "xr2": 1.1783460892831545
+          },
+          "forward_efficiency": 0.9198586694553794,
+          "backward_efficiency_printed": 0.9321631633463398,
+          "backward_efficiency_force_balance": 0.915219447245094,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "variables": [
+            2.0,
+            1.1783460892831545,
+            21.25228965491614
+          ],
+          "shifts": {
+            "xs": 0.42662537704751324,
+            "xp1": 0.7866873114762434,
+            "xr1": 2.0,
+            "xp2": 0.526914548996179,
+            "xr2": 1.1783460892831545
+          },
+          "forward_efficiency": 0.9198586694553794,
+          "backward_efficiency_printed": 0.9321631633463398,
+          "backward_efficiency_force_balance": 0.915219447245094,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 2,
+      "initial_variables": [
+        0.7105249046137101,
+        -1.4609615476044617,
+        22.56773485019095
+      ],
+      "final_variables": [
+        -1.5640181521606715,
+        -1.5640181521606715,
+        19.49322027596348
+      ],
+      "solver_success": false,
+      "solver_message": "Inequality constraints incompatible",
+      "iterations": 25,
+      "forward_efficiency": 0.7299314865571224,
+      "minimum_constraint_margin": -0.650366624321224,
+      "feasible": false,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            0.7105249046137101,
+            -1.4609615476044617,
+            22.56773485019095
+          ],
+          "shifts": {
+            "xs": 6.357834666461052,
+            "xp1": -2.823654880923671,
+            "xr1": 0.7105249046137101,
+            "xp2": -4.178174956132182,
+            "xr2": -1.4609615476044617
+          },
+          "forward_efficiency": 0.04443575320825521,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.357834666461052,
+          "maximum_constraint_violation": 4.357834666461052,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            0.3989698589943784,
+            -1.460961547601648,
+            22.27466095151865
+          ],
+          "shifts": {
+            "xs": 5.558431633157888,
+            "xp1": -2.579730887081755,
+            "xr1": 0.3989698589943784,
+            "xp2": -3.6781969592939605,
+            "xr2": -1.460961547601648
+          },
+          "forward_efficiency": 0.05926378249543985,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.673056794865798,
+          "maximum_constraint_violation": 3.673056794865798,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            -1.4291481454907053,
+            -1.460961547589736,
+            20.347348195064225
+          ],
+          "shifts": {
+            "xs": 1.2988127080260612,
+            "xp1": -1.3639804267583833,
+            "xr1": -1.4291481454907053,
+            "xp2": -1.02873484147287,
+            "xr2": -1.460961547589736
+          },
+          "forward_efficiency": 0.4192785169173896,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -2.1589328828837164,
+          "maximum_constraint_violation": 2.1589328828837164,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            -1.363809091900576,
+            -1.4598409582351648,
+            20.018836234104175
+          ],
+          "shifts": {
+            "xs": 0.48309626339594064,
+            "xp1": -0.9234526776482583,
+            "xr1": -1.363809091900576,
+            "xp2": -0.7343053087885777,
+            "xr2": -1.4598409582351648
+          },
+          "forward_efficiency": 0.5892300494499159,
+          "backward_efficiency_printed": 0.32941020090608153,
+          "backward_efficiency_force_balance": 0.32001163445695485,
+          "minimum_constraint_margin": -1.9256997631727613,
+          "maximum_constraint_violation": 1.9256997631727613,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            -1.1586686296496358,
+            -1.457844757227023,
+            19.808515625523743
+          ],
+          "shifts": {
+            "xs": -0.13794062180467503,
+            "xp1": -0.5103640039224804,
+            "xr1": -1.1586686296496358,
+            "xp2": -0.5842522393373929,
+            "xr2": -1.457844757227023
+          },
+          "forward_efficiency": 0.7184499512330345,
+          "backward_efficiency_printed": 0.6377911537061461,
+          "backward_efficiency_force_balance": 0.619518952709341,
+          "minimum_constraint_margin": -1.6406820173882126,
+          "maximum_constraint_violation": 1.6406820173882126,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            -1.1264678618743948,
+            -1.4574106107342804,
+            19.78160764367791
+          ],
+          "shifts": {
+            "xs": -0.21918642298339486,
+            "xp1": -0.4536407194455,
+            "xr1": -1.1264678618743948,
+            "xp2": -0.5676523891920638,
+            "xr2": -1.4574106107342804
+          },
+          "forward_efficiency": 0.7305288635125051,
+          "backward_efficiency_printed": 0.663885542061772,
+          "backward_efficiency_force_balance": 0.6434803642845625,
+          "minimum_constraint_margin": -1.5927675094833926,
+          "maximum_constraint_violation": 1.5927675094833926,
+          "feasible": false
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            -1.1255641622185075,
+            -1.4573999335370091,
+            19.781011766063664
+          ],
+          "shifts": {
+            "xs": -0.221164796273831,
+            "xp1": -0.45219968297233826,
+            "xr1": -1.1255641622185075,
+            "xp2": -0.5672917576111656,
+            "xr2": -1.4573999335370091
+          },
+          "forward_efficiency": 0.730783214935553,
+          "backward_efficiency_printed": 0.6644423386402301,
+          "backward_efficiency_force_balance": 0.6439825141569131,
+          "minimum_constraint_margin": -1.59166852007727,
+          "maximum_constraint_violation": 1.59166852007727,
+          "feasible": false
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            -1.0950202056506826,
+            -1.4569296308915143,
+            19.759927431657882
+          ],
+          "shifts": {
+            "xs": -0.28941103099660426,
+            "xp1": -0.40280458732703917,
+            "xr1": -1.0950202056506826,
+            "xp2": -0.5546696839092216,
+            "xr2": -1.4569296308915143
+          },
+          "forward_efficiency": 0.7389743415958775,
+          "backward_efficiency_printed": 0.6826287301129323,
+          "backward_efficiency_force_balance": 0.6601455323885506,
+          "minimum_constraint_margin": -1.5516964240644713,
+          "maximum_constraint_violation": 1.5516964240644713,
+          "feasible": false
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            2.0,
+            -1.3944846754578488,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": -0.3912229513845966,
+            "xr2": -1.3944846754578488
+          },
+          "forward_efficiency": 0.23528704456874525,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.131207026903079,
+          "maximum_constraint_violation": 4.131207026903079,
+          "feasible": false
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            2.0,
+            2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": 3.003261724073252,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.11624888531642005,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -5.6045092094457045,
+          "maximum_constraint_violation": 5.6045092094457045,
+          "feasible": false
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            -2.0,
+            -2.0,
+            22.8060675685697
+          ],
+          "shifts": {
+            "xs": 9.999999999999993,
+            "xp1": -5.9999999999999964,
+            "xr1": -2.0,
+            "xp2": -5.138230889485998,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.009125431387302744,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": -0.0,
+          "minimum_constraint_margin": -7.999999999999993,
+          "maximum_constraint_violation": 7.999999999999993,
+          "feasible": false
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            2.0,
+            2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": 3.003261724073252,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.11624888531642005,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -5.6045092094457045,
+          "maximum_constraint_violation": 5.6045092094457045,
+          "feasible": false
+        },
+        {
+          "iteration": 12,
+          "variables": [
+            2.0,
+            2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": 3.003261724073252,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.11624888531642005,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -5.6045092094457045,
+          "maximum_constraint_violation": 5.6045092094457045,
+          "feasible": false
+        },
+        {
+          "iteration": 13,
+          "variables": [
+            0.44466596360449584,
+            1.7175356969237328,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -2.245790075418717,
+            "xp1": 1.3452280195116064,
+            "xr1": 0.44466596360449584,
+            "xp2": 2.720797420996985,
+            "xr2": 1.7175356969237328
+          },
+          "forward_efficiency": 0.1752100917405158,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -5.360056465812165,
+          "maximum_constraint_violation": 5.360056465812165,
+          "feasible": false
+        },
+        {
+          "iteration": 14,
+          "variables": [
+            -0.7661737782995623,
+            0.8935004900817445,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -1.0349503335146588,
+            "xp1": 0.13438827760754823,
+            "xr1": -0.7661737782995623,
+            "xp2": 1.8967622141549967,
+            "xr2": 0.8935004900817445
+          },
+          "forward_efficiency": 0.264045880679004,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.584286142954189,
+          "maximum_constraint_violation": 4.584286142954189,
+          "feasible": false
+        },
+        {
+          "iteration": 15,
+          "variables": [
+            2.0,
+            2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": 3.003261724073252,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.11624888531642005,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -5.6045092094457045,
+          "maximum_constraint_violation": 5.6045092094457045,
+          "feasible": false
+        },
+        {
+          "iteration": 16,
+          "variables": [
+            -2.0,
+            -2.0,
+            22.8060675685697
+          ],
+          "shifts": {
+            "xs": 9.999999999999993,
+            "xp1": -5.9999999999999964,
+            "xr1": -2.0,
+            "xp2": -5.138230889485998,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.009125431387302744,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": -0.0,
+          "minimum_constraint_margin": -7.999999999999993,
+          "maximum_constraint_violation": 7.999999999999993,
+          "feasible": false
+        },
+        {
+          "iteration": 17,
+          "variables": [
+            -2.0,
+            -2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": 0.19887588818577884,
+            "xp1": -1.0994379440928894,
+            "xr1": -2.0,
+            "xp2": -0.9967382759267478,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.6825089785949776,
+          "backward_efficiency_printed": 0.5758480450650076,
+          "backward_efficiency_force_balance": 0.5590491751601934,
+          "minimum_constraint_margin": -1.4021614342036761,
+          "maximum_constraint_violation": 1.4021614342036761,
+          "feasible": false
+        },
+        {
+          "iteration": 18,
+          "variables": [
+            2.0,
+            2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": 3.003261724073252,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.11624888531642005,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -5.6045092094457045,
+          "maximum_constraint_violation": 5.6045092094457045,
+          "feasible": false
+        },
+        {
+          "iteration": 19,
+          "variables": [
+            -2.0,
+            -2.0,
+            22.8060675685697
+          ],
+          "shifts": {
+            "xs": 9.999999999999993,
+            "xp1": -5.9999999999999964,
+            "xr1": -2.0,
+            "xp2": -5.138230889485998,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.009125431387302744,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": -0.0,
+          "minimum_constraint_margin": -7.999999999999993,
+          "maximum_constraint_violation": 7.999999999999993,
+          "feasible": false
+        },
+        {
+          "iteration": 20,
+          "variables": [
+            2.0,
+            2.0,
+            22.8060675685697
+          ],
+          "shifts": {
+            "xs": 5.999999999999994,
+            "xp1": -1.999999999999997,
+            "xr1": 2.0,
+            "xp2": -1.1382308894859978,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.09343283429716878,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.000371815894821,
+          "maximum_constraint_violation": 4.000371815894821,
+          "feasible": false
+        },
+        {
+          "iteration": 21,
+          "variables": [
+            2.0,
+            2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": 3.003261724073252,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.11624888531642005,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -5.6045092094457045,
+          "maximum_constraint_violation": 5.6045092094457045,
+          "feasible": false
+        },
+        {
+          "iteration": 22,
+          "variables": [
+            -2.0,
+            -2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": 0.19887588818577884,
+            "xp1": -1.0994379440928894,
+            "xr1": -2.0,
+            "xp2": -0.9967382759267478,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.6825089785949776,
+          "backward_efficiency_printed": 0.5758480450650076,
+          "backward_efficiency_force_balance": 0.5590491751601934,
+          "minimum_constraint_margin": -1.4021614342036761,
+          "maximum_constraint_violation": 1.4021614342036761,
+          "feasible": false
+        },
+        {
+          "iteration": 23,
+          "variables": [
+            -2.0,
+            -2.0,
+            22.8060675685697
+          ],
+          "shifts": {
+            "xs": 9.999999999999993,
+            "xp1": -5.9999999999999964,
+            "xr1": -2.0,
+            "xp2": -5.138230889485998,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.009125431387302744,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": -0.0,
+          "minimum_constraint_margin": -7.999999999999993,
+          "maximum_constraint_violation": 7.999999999999993,
+          "feasible": false
+        },
+        {
+          "iteration": 24,
+          "variables": [
+            -2.0,
+            -2.0,
+            22.8060675685697
+          ],
+          "shifts": {
+            "xs": 9.999999999999993,
+            "xp1": -5.9999999999999964,
+            "xr1": -2.0,
+            "xp2": -5.138230889485998,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.009125431387302744,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": -0.0,
+          "minimum_constraint_margin": -7.999999999999993,
+          "maximum_constraint_violation": 7.999999999999993,
+          "feasible": false
+        },
+        {
+          "iteration": 25,
+          "variables": [
+            -1.5640181521606715,
+            -1.5640181521606715,
+            19.49322027596348
+          ],
+          "shifts": {
+            "xs": -0.23697932885661066,
+            "xp1": -0.6635194116520304,
+            "xr1": -1.5640181521606715,
+            "xp2": -0.5607571172933641,
+            "xr2": -1.5640181521606715
+          },
+          "forward_efficiency": 0.7299314865571224,
+          "backward_efficiency_printed": 0.6725727294572927,
+          "backward_efficiency_force_balance": 0.6477015344668289,
+          "minimum_constraint_margin": -0.650366624321224,
+          "maximum_constraint_violation": 0.650366624321224,
+          "feasible": false
+        }
+      ]
+    },
+    {
+      "start_index": 3,
+      "initial_variables": [
+        0.9401029271652708,
+        1.0298314989970336,
+        20.040761740932034
+      ],
+      "final_variables": [
+        2.0,
+        1.178350246287768,
+        21.252288444473717
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 27,
+      "forward_efficiency": 0.9198586694567247,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            0.9401029271652708,
+            1.0298314989970336,
+            20.040761740932034
+          ],
+          "shifts": {
+            "xs": -1.7743572442993174,
+            "xp1": 1.357230085732294,
+            "xr1": 0.9401029271652708,
+            "xp2": 1.7379585577009276,
+            "xr2": 1.0298314989970336
+          },
+          "forward_efficiency": 0.47698574845438296,
+          "backward_efficiency_printed": 0.1451947093018534,
+          "backward_efficiency_force_balance": 0.12377843450298749,
+          "minimum_constraint_margin": -1.644410357659647,
+          "maximum_constraint_violation": 1.644410357659647,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            -0.7151864718424328,
+            -1.0904112369261503,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -1.0859376399717884,
+            "xp1": 0.1853755840646778,
+            "xr1": -0.7151864718424328,
+            "xp2": -0.08714951285289807,
+            "xr2": -1.0904112369261503
+          },
+          "forward_efficiency": 0.506161512295675,
+          "backward_efficiency_printed": 0.16115800514529444,
+          "backward_efficiency_force_balance": 0.1449842892708793,
+          "minimum_constraint_margin": -1.7561979930857565,
+          "maximum_constraint_violation": 1.7561979930857565,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            -1.4912424979467604,
+            0.14622710425023921,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -0.3098816138674607,
+            "xp1": -0.5906804420396499,
+            "xr1": -1.4912424979467604,
+            "xp2": 1.1494888283234914,
+            "xr2": 0.14622710425023921
+          },
+          "forward_efficiency": 0.350343187904932,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.76229056411151,
+          "maximum_constraint_violation": 3.76229056411151,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            2.0,
+            -2.0,
+            22.8060675685697
+          ],
+          "shifts": {
+            "xs": 5.999999999999994,
+            "xp1": -1.999999999999997,
+            "xr1": 2.0,
+            "xp2": -5.138230889485998,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.04234834468460167,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.000371815894821,
+          "maximum_constraint_violation": 4.000371815894821,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            1.9999803620379097,
+            -1.9999855567971532,
+            22.806051564811227
+          ],
+          "shifts": {
+            "xs": 5.999956266877088,
+            "xp1": -1.999987952419589,
+            "xr1": 1.9999803620379097,
+            "xp2": -5.138187760749363,
+            "xr2": -1.9999855567971532
+          },
+          "forward_efficiency": 0.04234906012802511,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.000362250345558,
+          "maximum_constraint_violation": 4.000362250345558,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            1.9998432134545094,
+            -1.9998884879717334,
+            22.805936927193972
+          ],
+          "shifts": {
+            "xs": 5.999639480835976,
+            "xp1": -1.999898133690733,
+            "xr1": 1.9998432134545094,
+            "xp2": -5.1378852142100895,
+            "xr2": -1.9998884879717334
+          },
+          "forward_efficiency": 0.04235421268587771,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.000293730232685,
+          "maximum_constraint_violation": 4.000293730232685,
+          "feasible": false
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            1.9991277597980641,
+            -1.999384151730694,
+            22.80533736744627
+          ],
+          "shifts": {
+            "xs": 5.997980926073282,
+            "xp1": -1.999426583137609,
+            "xr1": 1.9991277597980641,
+            "xp2": -5.136306266177645,
+            "xr2": -1.999384151730694
+          },
+          "forward_efficiency": 0.04238117928632499,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.9999353535372673,
+          "maximum_constraint_violation": 3.9999353535372673,
+          "feasible": false
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            1.9954994451355779,
+            -1.9968290572570009,
+            22.802294850272762
+          ],
+          "shifts": {
+            "xs": 5.989564449004634,
+            "xp1": -1.997032501934528,
+            "xr1": 1.9954994451355779,
+            "xp2": -5.128299143552868,
+            "xr2": -1.9968290572570009
+          },
+          "forward_efficiency": 0.042518147824804925,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.998116390540805,
+          "maximum_constraint_violation": 3.998116390540805,
+          "feasible": false
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            1.9767012868793872,
+            -1.9836115067305826,
+            22.78651636048293
+          ],
+          "shifts": {
+            "xs": 5.9459605202770325,
+            "xp1": -1.9846296166988227,
+            "xr1": 1.9767012868793872,
+            "xp2": -5.08683908999541,
+            "xr2": -1.9836115067305826
+          },
+          "forward_efficiency": 0.04323146702948489,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.9886738483981756,
+          "maximum_constraint_violation": 3.9886738483981756,
+          "feasible": false
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            1.8569421058141091,
+            -1.8999828941471264,
+            22.68555864443828
+          ],
+          "shifts": {
+            "xs": 5.668935293457482,
+            "xp1": -1.9059965938216865,
+            "xr1": 1.8569421058141091,
+            "xp2": -4.8237736227230235,
+            "xr2": -1.8999828941471264
+          },
+          "forward_efficiency": 0.04791664887269924,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.9278763331683986,
+          "maximum_constraint_violation": 3.9278763331683986,
+          "feasible": false
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            -0.7481960742078533,
+            -0.3430377668681488,
+            20.46279813623799
+          ],
+          "shifts": {
+            "xs": 0.9069960940226425,
+            "xp1": -0.8275960841152479,
+            "xr1": -0.7481960742078533,
+            "xp2": -0.028640745776853438,
+            "xr2": -0.3430377668681488
+          },
+          "forward_efficiency": 0.7672102403842629,
+          "backward_efficiency_printed": 0.7448532471056301,
+          "backward_efficiency_force_balance": 0.7168918546172187,
+          "minimum_constraint_margin": -0.37637950818855037,
+          "maximum_constraint_violation": 0.37637950818855037,
+          "feasible": false
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            -0.1983107595516076,
+            -0.06963248144740275,
+            20.751157583971512
+          ],
+          "shifts": {
+            "xs": 1.1300998805044624,
+            "xp1": -0.664205320028035,
+            "xr1": -0.1983107595516076,
+            "xp2": -0.07791936944200636,
+            "xr2": -0.06963248144740275
+          },
+          "forward_efficiency": 0.7803744259816338,
+          "backward_efficiency_printed": 0.7713715615539514,
+          "backward_efficiency_force_balance": 0.7387158746885953,
+          "minimum_constraint_margin": -0.04408460940146863,
+          "maximum_constraint_violation": 0.04408460940146863,
+          "feasible": false
+        },
+        {
+          "iteration": 12,
+          "variables": [
+            -0.10743071478370303,
+            0.7121595286053628,
+            20.776854701248737
+          ],
+          "shifts": {
+            "xs": 1.1113990241151537,
+            "xp1": -0.6094148694494284,
+            "xr1": -0.10743071478370303,
+            "xp2": 0.6733048676394479,
+            "xr2": 0.7121595286053628
+          },
+          "forward_efficiency": 0.787974534177293,
+          "backward_efficiency_printed": 0.7811009765685781,
+          "backward_efficiency_force_balance": 0.7492958118527607,
+          "minimum_constraint_margin": -0.0009584841581262715,
+          "maximum_constraint_violation": 0.0009584841581262715,
+          "feasible": false
+        },
+        {
+          "iteration": 13,
+          "variables": [
+            -0.10497031941297608,
+            -0.14749034938421524,
+            20.776893554705932
+          ],
+          "shifts": {
+            "xs": 1.1090481517111008,
+            "xp1": -0.6070092355620385,
+            "xr1": -0.10497031941297608,
+            "xp2": -0.18639144040092584,
+            "xr2": -0.14749034938421524
+          },
+          "forward_efficiency": 0.7820113009885042,
+          "backward_efficiency_printed": 0.7713885506170503,
+          "backward_efficiency_force_balance": 0.7400729109018254,
+          "minimum_constraint_margin": -0.034451576713148135,
+          "maximum_constraint_violation": 0.034451576713148135,
+          "feasible": false
+        },
+        {
+          "iteration": 14,
+          "variables": [
+            1.0832014987992817,
+            0.901992887811514,
+            21.09404376066452
+          ],
+          "shifts": {
+            "xs": 0.8523219123641177,
+            "xp1": 0.11543979321758202,
+            "xr1": 1.0832014987992817,
+            "xp2": 0.46386318339014293,
+            "xr2": 0.901992887811514
+          },
+          "forward_efficiency": 0.8859894856332298,
+          "backward_efficiency_printed": 0.8988789598584677,
+          "backward_efficiency_force_balance": 0.8763668053484629,
+          "minimum_constraint_margin": 0.0042690702173089345,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "variables": [
+            1.9999999999997962,
+            1.2507629314294388,
+            21.33757156482353
+          ],
+          "shifts": {
+            "xs": 0.6980804490496744,
+            "xp1": 0.6509597754750609,
+            "xr1": 1.9999999999997962,
+            "xp2": 0.48077971781241036,
+            "xr2": 1.2507629314294388
+          },
+          "forward_efficiency": 0.9157982971127083,
+          "backward_efficiency_printed": 0.9288581137092023,
+          "backward_efficiency_force_balance": 0.910739645736789,
+          "minimum_constraint_margin": 2.0383694732117874e-13,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "variables": [
+            1.9999999999999982,
+            2.0,
+            21.337997057858175
+          ],
+          "shifts": {
+            "xs": 0.6994463977350751,
+            "xp1": 0.6502768011324616,
+            "xr1": 1.9999999999999982,
+            "xp2": 1.2294191809520032,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.8902587529752154,
+          "backward_efficiency_printed": 0.8976599571717564,
+          "backward_efficiency_force_balance": 0.8801375996193445,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "variables": [
+            1.9999999999999925,
+            1.339828188451881,
+            21.337036296349655
+          ],
+          "shifts": {
+            "xs": 0.696362253152131,
+            "xp1": 0.6518188734239307,
+            "xr1": 1.9999999999999925,
+            "xp2": 0.5705966745956629,
+            "xr2": 1.339828188451881
+          },
+          "forward_efficiency": 0.9164043194222445,
+          "backward_efficiency_printed": 0.9295561805399348,
+          "backward_efficiency_force_balance": 0.9114402135826742,
+          "minimum_constraint_margin": 7.549516567451064e-15,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "variables": [
+            2.0,
+            1.298588656289298,
+            21.33267679574934
+          ],
+          "shifts": {
+            "xs": 0.6823751070589483,
+            "xp1": 0.6588124464705258,
+            "xr1": 2.0,
+            "xp2": 0.535475824594036,
+            "xr2": 1.298588656289298
+          },
+          "forward_efficiency": 0.9166766594257859,
+          "backward_efficiency_printed": 0.9297260361733947,
+          "backward_efficiency_force_balance": 0.9117340706337138,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "variables": [
+            2.0,
+            1.247704340809932,
+            21.323080595589165
+          ],
+          "shifts": {
+            "xs": 0.6516286363215396,
+            "xp1": 0.6741856818392302,
+            "xr1": 2.0,
+            "xp2": 0.4980377535774857,
+            "xr2": 1.247704340809932
+          },
+          "forward_efficiency": 0.9171525753517705,
+          "backward_efficiency_printed": 0.9299831747660435,
+          "backward_efficiency_force_balance": 0.9122416107324421,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 20,
+          "variables": [
+            2.0,
+            1.173729963824992,
+            21.299994560504746
+          ],
+          "shifts": {
+            "xs": 0.5778994284299648,
+            "xp1": 0.7110502857850176,
+            "xr1": 2.0,
+            "xp2": 0.4562854575912608,
+            "xr2": 1.173729963824992
+          },
+          "forward_efficiency": 0.9181235983550696,
+          "backward_efficiency_printed": 0.9305610396393235,
+          "backward_efficiency_force_balance": 0.9132834384006199,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 21,
+          "variables": [
+            2.0,
+            1.1263903617416098,
+            21.269332456000335
+          ],
+          "shifts": {
+            "xs": 0.4805006350631027,
+            "xp1": 0.7597496824684487,
+            "xr1": 2.0,
+            "xp2": 0.4514642904127302,
+            "xr2": 1.1263903617416098
+          },
+          "forward_efficiency": 0.9192087944064826,
+          "backward_efficiency_printed": 0.9314437244508783,
+          "backward_efficiency_force_balance": 0.9144784182682892,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 22,
+          "variables": [
+            1.9999999999999911,
+            1.140022729389123,
+            21.250498222793954
+          ],
+          "shifts": {
+            "xs": 0.42097326438021776,
+            "xp1": 0.7895133678098867,
+            "xr1": 1.9999999999999911,
+            "xp2": 0.49105500908047395,
+            "xr2": 1.140022729389123
+          },
+          "forward_efficiency": 0.9197692420245993,
+          "backward_efficiency_printed": 0.9320605290451427,
+          "backward_efficiency_force_balance": 0.9151162115249272,
+          "minimum_constraint_margin": 8.881784197001252e-15,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 23,
+          "variables": [
+            2.0,
+            1.1681062121049246,
+            21.25002139897468
+          ],
+          "shifts": {
+            "xs": 0.41946919750753375,
+            "xp1": 0.7902654012462331,
+            "xr1": 2.0,
+            "xp2": 0.519794098801107,
+            "xr2": 1.1681062121049246
+          },
+          "forward_efficiency": 0.9198536798869896,
+          "backward_efficiency_printed": 0.9321606829753628,
+          "backward_efficiency_force_balance": 0.9152136923947559,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 24,
+          "variables": [
+            1.9999999999999964,
+            1.177508531720231,
+            21.25190430507797
+          ],
+          "shifts": {
+            "xs": 0.42540939161422164,
+            "xp1": 0.7872953041928874,
+            "xr1": 1.9999999999999964,
+            "xp2": 0.5266070696894042,
+            "xr2": 1.177508531720231
+          },
+          "forward_efficiency": 0.9198585980072457,
+          "backward_efficiency_printed": 0.932163499460207,
+          "backward_efficiency_force_balance": 0.9152193445424637,
+          "minimum_constraint_margin": 3.552713678800501e-15,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 25,
+          "variables": [
+            2.0,
+            1.178352016053445,
+            21.252270423836222
+          ],
+          "shifts": {
+            "xs": 0.42656469039320255,
+            "xp1": 0.7867176548033987,
+            "xr1": 2.0,
+            "xp2": 0.526946930799874,
+            "xr2": 1.178352016053445
+          },
+          "forward_efficiency": 0.9198586691942633,
+          "backward_efficiency_printed": 0.9321631825011882,
+          "backward_efficiency_force_balance": 0.9152194457311994,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 26,
+          "variables": [
+            2.0,
+            1.178350246287768,
+            21.252288444473717
+          ],
+          "shifts": {
+            "xs": 0.4266215573017016,
+            "xp1": 0.7866892213491492,
+            "xr1": 2.0,
+            "xp2": 0.5269203711369594,
+            "xr2": 1.178350246287768
+          },
+          "forward_efficiency": 0.9198586694567247,
+          "backward_efficiency_printed": 0.9321631645682259,
+          "backward_efficiency_force_balance": 0.9152194471696998,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 27,
+          "variables": [
+            2.0,
+            1.178350246287768,
+            21.252288444473717
+          ],
+          "shifts": {
+            "xs": 0.4266215573017016,
+            "xp1": 0.7866892213491492,
+            "xr1": 2.0,
+            "xp2": 0.5269203711369594,
+            "xr2": 1.178350246287768
+          },
+          "forward_efficiency": 0.9198586694567247,
+          "backward_efficiency_printed": 0.9321631645682259,
+          "backward_efficiency_force_balance": 0.9152194471696998,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 4,
+      "initial_variables": [
+        -0.17861062357595858,
+        -0.4651271127627077,
+        22.422059367222115
+      ],
+      "final_variables": [
+        2.0,
+        1.1783492179559891,
+        21.252289320825493
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 28,
+      "forward_efficiency": 0.9198586694568786,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            -0.17861062357595858,
+            -0.4651271127627077,
+            22.422059367222115
+          ],
+          "shifts": {
+            "xs": 6.689823035680011,
+            "xp1": -3.4342168296279842,
+            "xr1": -0.17861062357595858,
+            "xp2": -2.931291208249937,
+            "xr2": -0.4651271127627077
+          },
+          "forward_efficiency": 0.06031598000904276,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.689823035680011,
+          "maximum_constraint_violation": 4.689823035680011,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            -0.5924000110400769,
+            -0.3671823551931903,
+            21.998037475387672
+          ],
+          "shifts": {
+            "xs": 5.538784570520636,
+            "xp1": -3.0655922907803563,
+            "xr1": -0.5924000110400769,
+            "xp2": -2.131826389402677,
+            "xr2": -0.3671823551931903
+          },
+          "forward_efficiency": 0.09149631848811872,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5387845705206358,
+          "maximum_constraint_violation": 3.5387845705206358,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            -1.6090832797837942,
+            -1.1308312327282382,
+            20.71092960394696
+          ],
+          "shifts": {
+            "xs": 2.428921495863478,
+            "xp1": -2.0190023878236363,
+            "xr1": -1.6090832797837942,
+            "xp2": -1.0918345871883297,
+            "xr2": -1.1308312327282382
+          },
+          "forward_efficiency": 0.2776129289324313,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -1.781615437759184,
+          "maximum_constraint_violation": 1.781615437759184,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            -1.1769164760546724,
+            -0.6672110561493834,
+            20.686743875278257
+          ],
+          "shifts": {
+            "xs": 1.9300687175036622,
+            "xp1": -1.5534925967791673,
+            "xr1": -1.1769164760546724,
+            "xp2": -0.6001263796247823,
+            "xr2": -0.6672110561493834
+          },
+          "forward_efficiency": 0.4994580556736251,
+          "backward_efficiency_printed": 0.23936078382606027,
+          "backward_efficiency_force_balance": 0.20969778379401827,
+          "minimum_constraint_margin": -0.9104881704275897,
+          "maximum_constraint_violation": 0.9104881704275897,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            -0.4505798056989867,
+            -0.11774377597823515,
+            20.71513131931658
+          ],
+          "shifts": {
+            "xs": 1.2820509537987845,
+            "xp1": -0.8663153797488856,
+            "xr1": -0.4505798056989867,
+            "xp2": -0.08365294463861353,
+            "xr2": -0.11774377597823515
+          },
+          "forward_efficiency": 0.7381211949727631,
+          "backward_efficiency_printed": 0.7149729158305955,
+          "backward_efficiency_force_balance": 0.6773621030656588,
+          "minimum_constraint_margin": -0.1744242621667488,
+          "maximum_constraint_violation": 0.1744242621667488,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            0.24468188616921793,
+            0.6665252346198676,
+            20.73223358572743
+          ],
+          "shifts": {
+            "xs": 0.6342838296096945,
+            "xp1": -0.1948009717202383,
+            "xr1": 0.24468188616921793,
+            "xp2": 0.6805686093680086,
+            "xr2": 0.6665252346198676
+          },
+          "forward_efficiency": 0.8513917546803271,
+          "backward_efficiency_printed": 0.8528321288779097,
+          "backward_efficiency_force_balance": 0.8320909610719943,
+          "minimum_constraint_margin": 0.006816501428162147,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            0.8797248231959882,
+            0.7737671730404005,
+            20.74775824471946
+          ],
+          "shifts": {
+            "xs": 0.042554788209236305,
+            "xp1": 0.41858501749337595,
+            "xr1": 0.8797248231959882,
+            "xp2": 0.7695028384402349,
+            "xr2": 0.7737671730404005
+          },
+          "forward_efficiency": 0.8788371072028015,
+          "backward_efficiency_printed": 0.8852046725039798,
+          "backward_efficiency_force_balance": 0.8662959988916464,
+          "minimum_constraint_margin": 0.003297466182362041,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            1.0792703945268012,
+            -0.010666780576415125,
+            20.75250621062218
+          ],
+          "shifts": {
+            "xs": -0.143706032620262,
+            "xp1": 0.6114882135735316,
+            "xr1": 1.0792703945268012,
+            "xp2": -0.020550915785395425,
+            "xr2": -0.010666780576415125
+          },
+          "forward_efficiency": 0.8901960175168807,
+          "backward_efficiency_printed": 0.9030223722000863,
+          "backward_efficiency_force_balance": 0.8810432590543522,
+          "minimum_constraint_margin": 0.0033447213732470393,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            0.8777309767590511,
+            0.8456274239700354,
+            20.747727450391384
+          ],
+          "shifts": {
+            "xs": 0.044462530303181036,
+            "xp1": 0.41663422322793503,
+            "xr1": 0.8777309767590511,
+            "xp2": 0.8413995066984667,
+            "xr2": 0.8456274239700354
+          },
+          "forward_efficiency": 0.8728923063374034,
+          "backward_efficiency_printed": 0.8774284108193393,
+          "backward_efficiency_force_balance": 0.8587042665674482,
+          "minimum_constraint_margin": 0.003299463659170221,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            0.9155984230821432,
+            -0.14067113513732643,
+            20.74849523764696
+          ],
+          "shifts": {
+            "xs": 0.008742124377933869,
+            "xp1": 0.4534281493521047,
+            "xr1": 0.9155984230821432,
+            "xp2": -0.14580715788396323,
+            "xr2": -0.14067113513732643
+          },
+          "forward_efficiency": 0.8838815257643318,
+          "backward_efficiency_printed": 0.8921394241621309,
+          "backward_efficiency_force_balance": 0.8727224620715102,
+          "minimum_constraint_margin": -0.022952516320758676,
+          "maximum_constraint_violation": 0.022952516320758676,
+          "feasible": false
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            0.8089473820816893,
+            0.26748250321034606,
+            20.74596984909913
+          ],
+          "shifts": {
+            "xs": 0.10833291357606045,
+            "xp1": 0.3503072342528144,
+            "xr1": 0.8089473820816893,
+            "xp2": 0.26533244830129127,
+            "xr2": 0.26748250321034606
+          },
+          "forward_efficiency": 0.9002307782936364,
+          "backward_efficiency_printed": 0.9115127808957932,
+          "backward_efficiency_force_balance": 0.8925989339809635,
+          "minimum_constraint_margin": 0.0033993003468155703,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            0.8902689478414443,
+            0.25928575166506285,
+            20.747957781084274
+          ],
+          "shifts": {
+            "xs": 0.03256860734796452,
+            "xp1": 0.4288501702467399,
+            "xr1": 0.8902689478414443,
+            "xp2": 0.25478543578581037,
+            "xr2": 0.25928575166506285
+          },
+          "forward_efficiency": 0.9007413074137961,
+          "backward_efficiency_printed": 0.9129167650755707,
+          "backward_efficiency_force_balance": 0.8933130133437117,
+          "minimum_constraint_margin": 0.0032877680376585117,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "variables": [
+            0.8888412441267457,
+            0.2592241597827796,
+            20.747934040539523
+          ],
+          "shifts": {
+            "xs": 0.03392992608699952,
+            "xp1": 0.4274556590198731,
+            "xr1": 0.8888412441267457,
+            "xp2": 0.2547519215059914,
+            "xr2": 0.2592241597827796
+          },
+          "forward_efficiency": 0.9007420494656315,
+          "backward_efficiency_printed": 0.9129005902010748,
+          "backward_efficiency_force_balance": 0.893311533691262,
+          "minimum_constraint_margin": 0.0032889968198109854,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "variables": [
+            0.8863870585610609,
+            0.2591760354671795,
+            20.747924348905613
+          ],
+          "shifts": {
+            "xs": 0.03635701135382663,
+            "xp1": 0.42501502360361715,
+            "xr1": 0.8863870585610609,
+            "xp2": 0.2547152592776031,
+            "xr2": 0.2591760354671795
+          },
+          "forward_efficiency": 0.9007441276539765,
+          "backward_efficiency_printed": 0.912872868726142,
+          "backward_efficiency_force_balance": 0.8933098264690195,
+          "minimum_constraint_margin": 0.0032911711290752876,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "variables": [
+            0.8828200687447603,
+            0.25924424901386356,
+            20.74799131082047
+          ],
+          "shifts": {
+            "xs": 0.040111245398546824,
+            "xp1": 0.4213544116731067,
+            "xr1": 0.8828200687447603,
+            "xp2": 0.25470427758369596,
+            "xr2": 0.25924424901386356
+          },
+          "forward_efficiency": 0.9007492860753399,
+          "backward_efficiency_printed": 0.9128328457341804,
+          "backward_efficiency_force_balance": 0.8933095790591582,
+          "minimum_constraint_margin": 0.003294488263365425,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "variables": [
+            0.8774106644796746,
+            0.2597357949607164,
+            20.748319187565777
+          ],
+          "shifts": {
+            "xs": 0.04643753556218,
+            "xp1": 0.4154865644587473,
+            "xr1": 0.8774106644796746,
+            "xp2": 0.25480801895697575,
+            "xr2": 0.2597357949607164
+          },
+          "forward_efficiency": 0.9007630801716222,
+          "backward_efficiency_printed": 0.912772947777778,
+          "backward_efficiency_force_balance": 0.8933154511171006,
+          "minimum_constraint_margin": 0.0032999529136553685,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "variables": [
+            0.8700133143522528,
+            0.26150956618755483,
+            20.749410697868505
+          ],
+          "shifts": {
+            "xs": 0.05688783176143819,
+            "xp1": 0.4065627412954073,
+            "xr1": 0.8700133143522528,
+            "xp2": 0.2552904463912828,
+            "xr2": 0.26150956618755483
+          },
+          "forward_efficiency": 0.900798914415013,
+          "backward_efficiency_printed": 0.9126935018422282,
+          "backward_efficiency_force_balance": 0.8933412679715155,
+          "minimum_constraint_margin": 0.0033086419564040126,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "variables": [
+            0.8613802291819637,
+            0.2669693241629605,
+            20.752663475299865
+          ],
+          "shifts": {
+            "xs": 0.07462446020279645,
+            "xp1": 0.3933778844895836,
+            "xr1": 0.8613802291819637,
+            "xp2": 0.2568988817026836,
+            "xr2": 0.2669693241629605
+          },
+          "forward_efficiency": 0.9008929500779179,
+          "backward_efficiency_printed": 0.9126091714087968,
+          "backward_efficiency_force_balance": 0.8934262480706755,
+          "minimum_constraint_margin": 0.003322446106494459,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "variables": [
+            0.8562815178216643,
+            0.28250416706613635,
+            20.761767785014975
+          ],
+          "shifts": {
+            "xs": 0.10524748616483348,
+            "xp1": 0.3755170158284154,
+            "xr1": 0.8562815178216643,
+            "xp2": 0.2616300785058297,
+            "xr2": 0.28250416706613635
+          },
+          "forward_efficiency": 0.9011378813617963,
+          "backward_efficiency_printed": 0.9125929017870233,
+          "backward_efficiency_force_balance": 0.8936758426712129,
+          "minimum_constraint_margin": 0.0033435454196898418,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "variables": [
+            0.871076910552028,
+            0.3248148365035495,
+            20.78631915400694
+          ],
+          "shifts": {
+            "xs": 0.159605083827006,
+            "xp1": 0.355735913362511,
+            "xr1": 0.871076910552028,
+            "xp2": 0.27463128605062614,
+            "xr2": 0.3248148365035495
+          },
+          "forward_efficiency": 0.9017692080109633,
+          "backward_efficiency_printed": 0.9128884184480626,
+          "backward_efficiency_force_balance": 0.894365905757587,
+          "minimum_constraint_margin": 0.0033726403992716536,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 20,
+          "variables": [
+            0.9523051950827561,
+            0.43413124046505036,
+            20.849226438811105
+          ],
+          "shifts": {
+            "xs": 0.25768227388365084,
+            "xp1": 0.34731146059955265,
+            "xr1": 0.9523051950827561,
+            "xp2": 0.3076985354655537,
+            "xr2": 0.43413124046505036
+          },
+          "forward_efficiency": 0.903325490884771,
+          "backward_efficiency_printed": 0.9141811725719682,
+          "backward_efficiency_force_balance": 0.8961428932108145,
+          "minimum_constraint_margin": 0.003399000087981552,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 21,
+          "variables": [
+            1.1992338300680934,
+            0.6835767030097006,
+            20.99110522980731
+          ],
+          "shifts": {
+            "xs": 0.42599001781042145,
+            "xp1": 0.38662190612883596,
+            "xr1": 1.1992338300680934,
+            "xp2": 0.3793165242954644,
+            "xr2": 0.6835767030097006
+          },
+          "forward_efficiency": 0.90664977698013,
+          "backward_efficiency_printed": 0.9178331013453386,
+          "backward_efficiency_force_balance": 0.9000436085857861,
+          "minimum_constraint_margin": 0.0033724181594642078,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 22,
+          "variables": [
+            1.6870499918950563,
+            1.099022054339121,
+            21.221959136972746
+          ],
+          "shifts": {
+            "xs": 0.6441617416033076,
+            "xp1": 0.5214441251458743,
+            "xr1": 1.6870499918950563,
+            "xp2": 0.489156009424493,
+            "xr2": 1.099022054339121
+          },
+          "forward_efficiency": 0.9119020108431052,
+          "backward_efficiency_printed": 0.9245143011221089,
+          "backward_efficiency_force_balance": 0.906263229281966,
+          "minimum_constraint_margin": 0.00319562243516891,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 23,
+          "variables": [
+            2.0,
+            1.3012525858047042,
+            21.3252496397283
+          ],
+          "shifts": {
+            "xs": 0.6585732199025895,
+            "xp1": 0.6707133900487052,
+            "xr1": 2.0,
+            "xp2": 0.5485494086155601,
+            "xr2": 1.3012525858047042
+          },
+          "forward_efficiency": 0.9172824934055748,
+          "backward_efficiency_printed": 0.93020206644976,
+          "backward_efficiency_force_balance": 0.912401584581481,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 24,
+          "variables": [
+            2.0,
+            1.189479782629856,
+            21.251497075607972
+          ],
+          "shifts": {
+            "xs": 0.42412446882608323,
+            "xp1": 0.7879377655869584,
+            "xr1": 2.0,
+            "xp2": 0.5391384405812761,
+            "xr2": 1.189479782629856
+          },
+          "forward_efficiency": 0.9198469732722439,
+          "backward_efficiency_printed": 0.9321503483387179,
+          "backward_efficiency_force_balance": 0.9152059168114127,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 25,
+          "variables": [
+            2.0,
+            1.1817263842198802,
+            21.25245640395225
+          ],
+          "shifts": {
+            "xs": 0.4271515895347342,
+            "xp1": 0.7864242052326329,
+            "xr1": 2.0,
+            "xp2": 0.5300654520494578,
+            "xr2": 1.1817263842198802
+          },
+          "forward_efficiency": 0.9198579864383675,
+          "backward_efficiency_printed": 0.9321621983973088,
+          "backward_efficiency_force_balance": 0.9152186704201053,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 26,
+          "variables": [
+            2.0,
+            1.1783897615215722,
+            21.252308148727188
+          ],
+          "shifts": {
+            "xs": 0.4266837373617105,
+            "xp1": 0.7866581313191447,
+            "xr1": 2.0,
+            "xp2": 0.5269327802976816,
+            "xr2": 1.1783897615215722
+          },
+          "forward_efficiency": 0.9198586692736078,
+          "backward_efficiency_printed": 0.9321631445659947,
+          "backward_efficiency_force_balance": 0.9152194482214129,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 27,
+          "variables": [
+            2.0,
+            1.1783492179559891,
+            21.252289320825493
+          ],
+          "shifts": {
+            "xs": 0.4266243227706328,
+            "xp1": 0.7866878386146836,
+            "xr1": 2.0,
+            "xp2": 0.5269181372583922,
+            "xr2": 1.1783492179559891
+          },
+          "forward_efficiency": 0.9198586694568786,
+          "backward_efficiency_printed": 0.9321631636848515,
+          "backward_efficiency_force_balance": 0.9152194472255774,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 28,
+          "variables": [
+            2.0,
+            1.1783492179559891,
+            21.252289320825493
+          ],
+          "shifts": {
+            "xs": 0.4266243227706328,
+            "xp1": 0.7866878386146836,
+            "xr1": 2.0,
+            "xp2": 0.5269181372583922,
+            "xr2": 1.1783492179559891
+          },
+          "forward_efficiency": 0.9198586694568786,
+          "backward_efficiency_printed": 0.9321631636848515,
+          "backward_efficiency_force_balance": 0.9152194472255774,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 5,
+      "initial_variables": [
+        0.5179144322903921,
+        1.161941807774988,
+        20.98087720425878
+      ],
+      "final_variables": [
+        2.0,
+        1.1783442374269657,
+        21.25228591193275
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 9,
+      "forward_efficiency": 0.9198586694535146,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            0.5179144322903921,
+            1.161941807774988,
+            20.98087720425878
+          ],
+          "shifts": {
+            "xs": 1.0768856197183596,
+            "xp1": -0.27948559371398374,
+            "xr1": 0.5179144322903921,
+            "xp2": 0.8707646134431393,
+            "xr2": 1.161941807774988
+          },
+          "forward_efficiency": 0.8275644532394371,
+          "backward_efficiency_printed": 0.8319542264995898,
+          "backward_efficiency_force_balance": 0.8031906164957997,
+          "minimum_constraint_margin": 0.006546223728523315,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            1.2097357078136213,
+            0.4181858833850711,
+            21.012503704403166
+          ],
+          "shifts": {
+            "xs": 0.47937986471076477,
+            "xp1": 0.36517792155142825,
+            "xr1": 1.2097357078136213,
+            "xp2": 0.08642506847961756,
+            "xr2": 0.4181858833850711
+          },
+          "forward_efficiency": 0.8975142463685725,
+          "backward_efficiency_printed": 0.9069097123100711,
+          "backward_efficiency_force_balance": 0.8891369534574466,
+          "minimum_constraint_margin": 0.003486140504789792,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            1.4026843830735896,
+            0.6029964831404984,
+            20.671294157006997
+          ],
+          "shifts": {
+            "xs": -0.6918839559059822,
+            "xp1": 1.0472841694897859,
+            "xr1": 1.4026843830735896,
+            "xp2": 0.6878882927445914,
+            "xr2": 0.6029964831404984
+          },
+          "forward_efficiency": 0.8393378047129518,
+          "backward_efficiency_printed": 0.8588479947513927,
+          "backward_efficiency_force_balance": 0.8210255988998687,
+          "minimum_constraint_margin": 0.005859214830903348,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            1.1644252550494079,
+            0.8286035024429719,
+            21.069020455969156
+          ],
+          "shifts": {
+            "xs": 0.6949882565843841,
+            "xp1": 0.23471849923251187,
+            "xr1": 1.1644252550494079,
+            "xp2": 0.4233792828851301,
+            "xr2": 0.8286035024429719
+          },
+          "forward_efficiency": 0.8971896988265698,
+          "backward_efficiency_printed": 0.9091767347419298,
+          "backward_efficiency_force_balance": 0.8892774435063338,
+          "minimum_constraint_margin": 0.0043156324766576715,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            1.5059590116739936,
+            0.8069201978243985,
+            21.049405397024234
+          ],
+          "shifts": {
+            "xs": 0.29409693636699474,
+            "xp1": 0.6059310376534994,
+            "xr1": 1.5059590116739936,
+            "xp2": 0.4273279169646067,
+            "xr2": 0.8069201978243985
+          },
+          "forward_efficiency": 0.9131971544695788,
+          "backward_efficiency_printed": 0.9251355275275791,
+          "backward_efficiency_force_balance": 0.9076163164942938,
+          "minimum_constraint_margin": 0.002832560407342588,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            2.0,
+            1.2175589693447573,
+            21.25495575139072
+          ],
+          "shifts": {
+            "xs": 0.43504097742174164,
+            "xp1": 0.7824795112891292,
+            "xr1": 2.0,
+            "xp2": 0.5624586134803536,
+            "xr2": 1.2175589693447573
+          },
+          "forward_efficiency": 0.9197724047477319,
+          "backward_efficiency_printed": 0.9320605886283732,
+          "backward_efficiency_force_balance": 0.9151202582716828,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            2.0,
+            1.1929927579255613,
+            21.252721425039645
+          ],
+          "shifts": {
+            "xs": 0.4279879577222925,
+            "xp1": 0.7860060211388538,
+            "xr1": 2.0,
+            "xp2": 0.5409672241880646,
+            "xr2": 1.1929927579255613
+          },
+          "forward_efficiency": 0.9198449416554164,
+          "backward_efficiency_printed": 0.9321466320139616,
+          "backward_efficiency_force_balance": 0.9152036373878712,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            1.9999999999999996,
+            1.178122956449851,
+            21.252223764689425
+          ],
+          "shifts": {
+            "xs": 0.4264174512177332,
+            "xp1": 0.7867912743911332,
+            "xr1": 1.9999999999999996,
+            "xp2": 0.5267820568347449,
+            "xr2": 1.178122956449851
+          },
+          "forward_efficiency": 0.9198586666971154,
+          "backward_efficiency_printed": 0.9321632274412881,
+          "backward_efficiency_force_balance": 0.9152194399956649,
+          "minimum_constraint_margin": 4.440892098500626e-16,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            2.0,
+            1.1783442374269657,
+            21.25228591193275
+          ],
+          "shifts": {
+            "xs": 0.4266135654643084,
+            "xp1": 0.7866932172678458,
+            "xr1": 2.0,
+            "xp2": 0.5269178461457856,
+            "xr2": 1.1783442374269657
+          },
+          "forward_efficiency": 0.9198586694535146,
+          "backward_efficiency_printed": 0.9321631671196524,
+          "backward_efficiency_force_balance": 0.9152194470052762,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            2.0,
+            1.1783442374269657,
+            21.25228591193275
+          ],
+          "shifts": {
+            "xs": 0.4266135654643084,
+            "xp1": 0.7866932172678458,
+            "xr1": 2.0,
+            "xp2": 0.5269178461457856,
+            "xr2": 1.1783442374269657
+          },
+          "forward_efficiency": 0.9198586694535146,
+          "backward_efficiency_printed": 0.9321631671196524,
+          "backward_efficiency_force_balance": 0.9152194470052762,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 6,
+      "initial_variables": [
+        -0.9819406015748033,
+        0.19650523325700497,
+        19.849052545517758
+      ],
+      "final_variables": [
+        2.0,
+        1.1783562644989325,
+        21.25228964162101
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 11,
+      "forward_efficiency": 0.9198586694540095,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            -0.9819406015748033,
+            0.19650523325700497,
+            19.849052545517758
+          ],
+          "shifts": {
+            "xs": -0.23891404932974192,
+            "xp1": -0.3715132761225307,
+            "xr1": -0.9819406015748033,
+            "xp2": 1.0444546313750056,
+            "xr2": 0.19650523325700497
+          },
+          "forward_efficiency": 0.6366960857197278,
+          "backward_efficiency_printed": 0.4511347712193224,
+          "backward_efficiency_force_balance": 0.4374047415894503,
+          "minimum_constraint_margin": -1.349159312531557,
+          "maximum_constraint_violation": 1.349159312531557,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            0.17928025232520595,
+            1.5277139242180207,
+            20.684159309559167
+          ],
+          "shifts": {
+            "xs": 0.566773546599629,
+            "xp1": -0.19374664713721151,
+            "xr1": 0.17928025232520595,
+            "xp2": 1.5977849200996566,
+            "xr2": 1.5277139242180207
+          },
+          "forward_efficiency": 0.7523348745110522,
+          "backward_efficiency_printed": 0.6951361527752141,
+          "backward_efficiency_force_balance": 0.6788090499721474,
+          "minimum_constraint_margin": -0.6167691961224224,
+          "maximum_constraint_violation": 0.6167691961224224,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            1.7078890607128603,
+            1.999999999642926,
+            21.212628806458017
+          ],
+          "shifts": {
+            "xs": 0.5940922590471209,
+            "xp1": 0.5568984008328697,
+            "xr1": 1.7078890607128603,
+            "xp2": 1.4028563348708625,
+            "xr2": 1.999999999642926
+          },
+          "forward_efficiency": 0.8656200515623979,
+          "backward_efficiency_printed": 0.8653389389918946,
+          "backward_efficiency_force_balance": 0.848673332917613,
+          "minimum_constraint_margin": -0.07291018498705121,
+          "maximum_constraint_violation": 0.07291018498705121,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            1.999999999771795,
+            1.3224032856899912,
+            21.12053260721449
+          ],
+          "shifts": {
+            "xs": 0.01655866328681954,
+            "xp1": 0.9917206682424877,
+            "xr1": 1.999999999771795,
+            "xp2": 0.8491913751060031,
+            "xr2": 1.3224032856899912
+          },
+          "forward_efficiency": 0.9009710959017728,
+          "backward_efficiency_printed": 0.9133483094499475,
+          "backward_efficiency_force_balance": 0.8935561199836771,
+          "minimum_constraint_margin": 2.2820501044407138e-10,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            -0.010335278556491634,
+            -0.6551638263207129,
+            20.544654044778778
+          ],
+          "shifts": {
+            "xs": 0.3814172295617957,
+            "xp1": -0.19587625405914366,
+            "xr1": -0.010335278556491634,
+            "xp2": -0.428407379453688,
+            "xr2": -0.6551638263207129
+          },
+          "forward_efficiency": 0.8287985821997692,
+          "backward_efficiency_printed": 0.817922541862444,
+          "backward_efficiency_force_balance": 0.7998594142831387,
+          "minimum_constraint_margin": -0.32072444580518233,
+          "maximum_constraint_violation": 0.32072444580518233,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            1.5734333300159138,
+            2.0,
+            21.37106989948777
+          ],
+          "shifts": {
+            "xs": 1.2325333390218738,
+            "xp1": 0.17044999549702,
+            "xr1": 1.5734333300159138,
+            "xp2": 1.1827851553565416,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.8560567729235956,
+          "backward_efficiency_printed": 0.8689969505872475,
+          "backward_efficiency_force_balance": 0.8403424008427908,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            1.5086192063598167,
+            0.8528866480689428,
+            21.04305503312944
+          ],
+          "shifts": {
+            "xs": 0.27227715454755397,
+            "xp1": 0.6181710259061314,
+            "xr1": 1.5086192063598167,
+            "xp2": 0.48156201300125373,
+            "xr2": 0.8528866480689428
+          },
+          "forward_efficiency": 0.9128187617598261,
+          "backward_efficiency_printed": 0.9247711502206883,
+          "backward_efficiency_force_balance": 0.907182958152799,
+          "minimum_constraint_margin": 0.0028188845538331675,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            1.8427466444870708,
+            1.103627194104079,
+            21.181984815935145
+          ],
+          "shifts": {
+            "xs": 0.36363556872437997,
+            "xp1": 0.7395555378813454,
+            "xr1": 1.8427466444870708,
+            "xp2": 0.5480540805412676,
+            "xr2": 1.103627194104079
+          },
+          "forward_efficiency": 0.9176675338046268,
+          "backward_efficiency_printed": 0.9298453838809729,
+          "backward_efficiency_force_balance": 0.9127241107583479,
+          "minimum_constraint_margin": 0.0026204853843271314,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            2.0,
+            1.178837267216069,
+            21.253186932920197
+          ],
+          "shifts": {
+            "xs": 0.4294571434013812,
+            "xp1": 0.7852714282993094,
+            "xr1": 2.0,
+            "xp2": 0.5261712547742308,
+            "xr2": 1.178837267216069
+          },
+          "forward_efficiency": 0.9198581784848051,
+          "backward_efficiency_printed": 0.9321618538165108,
+          "backward_efficiency_force_balance": 0.9152189608216059,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            2.0,
+            1.1782390284528095,
+            21.25230368003796
+          ],
+          "shifts": {
+            "xs": 0.4266696356450681,
+            "xp1": 0.786665182177466,
+            "xr1": 2.0,
+            "xp2": 0.5267881945740652,
+            "xr2": 1.1782390284528095
+          },
+          "forward_efficiency": 0.9198586679902319,
+          "backward_efficiency_printed": 0.9321631475304264,
+          "backward_efficiency_force_balance": 0.9152194464519512,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            2.0,
+            1.1783562644989325,
+            21.25228964162101
+          ],
+          "shifts": {
+            "xs": 0.4266253350925826,
+            "xp1": 0.7866873324537087,
+            "xr1": 2.0,
+            "xp2": 0.5269247425013035,
+            "xr2": 1.1783562644989325
+          },
+          "forward_efficiency": 0.9198586694540095,
+          "backward_efficiency_printed": 0.9321631633581294,
+          "backward_efficiency_force_balance": 0.9152194472426673,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            2.0,
+            1.1783562644989325,
+            21.25228964162101
+          ],
+          "shifts": {
+            "xs": 0.4266253350925826,
+            "xp1": 0.7866873324537087,
+            "xr1": 2.0,
+            "xp2": 0.5269247425013035,
+            "xr2": 1.1783562644989325
+          },
+          "forward_efficiency": 0.9198586694540095,
+          "backward_efficiency_printed": 0.9321631633581294,
+          "backward_efficiency_force_balance": 0.9152194472426673,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 7,
+      "initial_variables": [
+        1.1794722191732951,
+        0.4739918368394336,
+        21.919123099745246
+      ],
+      "final_variables": [
+        2.0,
+        1.1783479812239763,
+        21.25228824536731
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 20,
+      "forward_efficiency": 0.9198586694570386,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            1.1794722191732951,
+            0.4739918368394336,
+            21.919123099745246
+          ],
+          "shifts": {
+            "xs": 3.485580673853171,
+            "xp1": -1.153054227339938,
+            "xr1": 1.1794722191732951,
+            "xp2": -1.165198178782538,
+            "xr2": 0.4739918368394336
+          },
+          "forward_efficiency": 0.3964782879830078,
+          "backward_efficiency_printed": 0.05670246159796323,
+          "backward_efficiency_force_balance": 0.04188670390149289,
+          "minimum_constraint_margin": -1.854689920299485,
+          "maximum_constraint_violation": 1.854689920299485,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            1.3885621203254876,
+            0.8573112657096171,
+            21.623330070078215
+          ],
+          "shifts": {
+            "xs": 2.251760325166713,
+            "xp1": -0.4315991024206127,
+            "xr1": 1.3885621203254876,
+            "xp2": -0.3270973287564316,
+            "xr2": 0.8573112657096171
+          },
+          "forward_efficiency": 0.6904981052079489,
+          "backward_efficiency_printed": 0.678936957637377,
+          "backward_efficiency_force_balance": 0.6155057827799993,
+          "minimum_constraint_margin": -0.7186615214016628,
+          "maximum_constraint_violation": 0.7186615214016628,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            1.3386587933786336,
+            0.924755806693113,
+            21.27358422535523
+          ],
+          "shifts": {
+            "xs": 1.1553116380456796,
+            "xp1": 0.09167357766647699,
+            "xr1": 1.3386587933786336,
+            "xp2": 0.2439529573953082,
+            "xr2": 0.924755806693113
+          },
+          "forward_efficiency": 0.8674718304223143,
+          "backward_efficiency_printed": 0.8829785870434554,
+          "backward_efficiency_force_balance": 0.8548269449762663,
+          "minimum_constraint_margin": 0.0046656610373148055,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            1.2948890355398617,
+            1.3777808651868666,
+            20.960860107112577
+          ],
+          "shifts": {
+            "xs": 0.24058599811455794,
+            "xp1": 0.5271515187126519,
+            "xr1": 1.2948890355398617,
+            "xp2": 1.1120917097531704,
+            "xr2": 1.3777808651868666
+          },
+          "forward_efficiency": 0.8717328154669011,
+          "backward_efficiency_printed": 0.8735907138697984,
+          "backward_efficiency_force_balance": 0.8566684945930937,
+          "minimum_constraint_margin": 0.002985271919345167,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            1.2602455940952821,
+            0.3404879997236776,
+            20.738061890117983
+          ],
+          "shifts": {
+            "xs": -0.3650411681855843,
+            "xp1": 0.8126433811404332,
+            "xr1": 1.2602455940952821,
+            "xp2": 0.347670424508556,
+            "xr2": 0.3404879997236776
+          },
+          "forward_efficiency": 0.8860864442410212,
+          "backward_efficiency_printed": 0.9046030811663911,
+          "backward_efficiency_force_balance": 0.8772071782207558,
+          "minimum_constraint_margin": 0.003986276295626201,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            1.3052235868455941,
+            -0.09024886794729992,
+            21.057040629733553
+          ],
+          "shifts": {
+            "xs": 0.5179057275715404,
+            "xp1": 0.39365892963702687,
+            "xr1": 1.3052235868455941,
+            "xp2": -0.4798014889730818,
+            "xr2": -0.09024886794729992
+          },
+          "forward_efficiency": 0.8349545548931406,
+          "backward_efficiency_printed": 0.8230553377732335,
+          "backward_efficiency_force_balance": 0.8069083640918976,
+          "minimum_constraint_margin": -0.03791238510908501,
+          "maximum_constraint_violation": 0.03791238510908501,
+          "feasible": false
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            1.294681473903739,
+            0.6518278191473827,
+            20.970754065957266
+          ],
+          "shifts": {
+            "xs": 0.2700804836960229,
+            "xp1": 0.5123004951038581,
+            "xr1": 1.294681473903739,
+            "xp2": 0.37355987610902974,
+            "xr2": 0.6518278191473827
+          },
+          "forward_efficiency": 0.909819218374611,
+          "backward_efficiency_printed": 0.9214555718740168,
+          "backward_efficiency_force_balance": 0.9037185212612717,
+          "minimum_constraint_margin": 0.0030085960794411504,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            1.295880522974743,
+            0.6658661249849218,
+            20.977877778519026
+          ],
+          "shifts": {
+            "xs": 0.29001176247433813,
+            "xp1": 0.5029343802502024,
+            "xr1": 1.295880522974743,
+            "xp2": 0.3785179769953017,
+            "xr2": 0.6658661249849218
+          },
+          "forward_efficiency": 0.9098363893241587,
+          "backward_efficiency_printed": 0.9214097027813964,
+          "backward_efficiency_force_balance": 0.9037320240316996,
+          "minimum_constraint_margin": 0.003026575687622546,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            1.2959682869976912,
+            0.6681370102306912,
+            20.97726045283673
+          ],
+          "shifts": {
+            "xs": 0.28809144932635067,
+            "xp1": 0.5039384188356703,
+            "xr1": 1.2959682869976912,
+            "xp2": 0.3815765067271128,
+            "xr2": 0.6681370102306912
+          },
+          "forward_efficiency": 0.9098406988947569,
+          "backward_efficiency_printed": 0.9214201965990685,
+          "backward_efficiency_force_balance": 0.9037375642635942,
+          "minimum_constraint_margin": 0.0030245095105080333,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            1.2966498180484396,
+            0.6708839709898511,
+            20.976356168274332
+          ],
+          "shifts": {
+            "xs": 0.2847260164246235,
+            "xp1": 0.5059619008119081,
+            "xr1": 1.2966498180484396,
+            "xp2": 0.3854769774657324,
+            "xr2": 0.6708839709898511
+          },
+          "forward_efficiency": 0.9098532775719492,
+          "backward_efficiency_printed": 0.9214442713484418,
+          "backward_efficiency_force_balance": 0.9037530899402172,
+          "minimum_constraint_margin": 0.003020408526706042,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            1.3002439948397866,
+            0.6788378865309848,
+            20.97511930484104
+          ],
+          "shifts": {
+            "xs": 0.27746179831891515,
+            "xp1": 0.5113910982604357,
+            "xr1": 1.3002439948397866,
+            "xp2": 0.3950081325844725,
+            "xr2": 0.6788378865309848
+          },
+          "forward_efficiency": 0.9098995191352249,
+          "backward_efficiency_printed": 0.9215180209310888,
+          "backward_efficiency_force_balance": 0.9038087151716145,
+          "minimum_constraint_margin": 0.0030097175379902863,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            1.3102587484593267,
+            0.6938781913500489,
+            20.975372361813957
+          ],
+          "shifts": {
+            "xs": 0.2681978302153114,
+            "xp1": 0.5210304591220076,
+            "xr1": 1.3102587484593267,
+            "xp2": 0.40972578885458805,
+            "xr2": 0.6938781913500489
+          },
+          "forward_efficiency": 0.9100069962350662,
+          "backward_efficiency_printed": 0.9216668584332381,
+          "backward_efficiency_force_balance": 0.903935756449414,
+          "minimum_constraint_margin": 0.00299147518874332,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "variables": [
+            1.3401724992305977,
+            0.7290838854895507,
+            20.981240405801746
+          ],
+          "shifts": {
+            "xs": 0.25570663455095244,
+            "xp1": 0.5422329323398226,
+            "xr1": 1.3401724992305977,
+            "xp2": 0.43744279589302143,
+            "xr2": 0.7290838854895507
+          },
+          "forward_efficiency": 0.9102983135029227,
+          "backward_efficiency_printed": 0.9220303139720067,
+          "backward_efficiency_force_balance": 0.9042759971784893,
+          "minimum_constraint_margin": 0.002953388287534553,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "variables": [
+            1.4200234567313856,
+            0.8092911859822727,
+            21.004345694791297
+          ],
+          "shifts": {
+            "xs": 0.24469554387136205,
+            "xp1": 0.5876639564300118,
+            "xr1": 1.4200234567313856,
+            "xp2": 0.48803533239988395,
+            "xr2": 0.8092911859822727
+          },
+          "forward_efficiency": 0.9110314369191473,
+          "backward_efficiency_printed": 0.9228708076205885,
+          "backward_efficiency_force_balance": 0.9051240325538908,
+          "minimum_constraint_margin": 0.0028777002959501363,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "variables": [
+            1.6295593430928403,
+            0.9997146662840048,
+            21.07624646864737
+          ],
+          "shifts": {
+            "xs": 0.2517881931575312,
+            "xp1": 0.6888855749676546,
+            "xr1": 1.6295593430928403,
+            "xp2": 0.5850119520588576,
+            "xr2": 0.9997146662840048
+          },
+          "forward_efficiency": 0.9128789519563525,
+          "backward_efficiency_printed": 0.9248346584243938,
+          "backward_efficiency_force_balance": 0.9072414770022987,
+          "minimum_constraint_margin": 0.0027284106824717602,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "variables": [
+            2.0,
+            1.3091283433033465,
+            21.216909517717646
+          ],
+          "shifts": {
+            "xs": 0.31538500260898505,
+            "xp1": 0.8423074986955075,
+            "xr1": 2.0,
+            "xp2": 0.706151471366081,
+            "xr2": 1.3091283433033465
+          },
+          "forward_efficiency": 0.916518152779875,
+          "backward_efficiency_printed": 0.9285239583924108,
+          "backward_efficiency_force_balance": 0.9113843564052451,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "variables": [
+            2.0,
+            1.2744714542026578,
+            21.22794715149259
+          ],
+          "shifts": {
+            "xs": 0.35000126834826606,
+            "xp1": 0.824999365825867,
+            "xr1": 2.0,
+            "xp2": 0.6564245133979236,
+            "xr2": 1.2744714542026578
+          },
+          "forward_efficiency": 0.9181486238961254,
+          "backward_efficiency_printed": 0.9303000136842021,
+          "backward_efficiency_force_balance": 0.9132578086747487,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "variables": [
+            2.0,
+            1.1718306663529674,
+            21.25202992183659
+          ],
+          "shifts": {
+            "xs": 0.42580576929101044,
+            "xp1": 0.7870971153544948,
+            "xr1": 2.0,
+            "xp2": 0.5207564144350292,
+            "xr2": 1.1718306663529674
+          },
+          "forward_efficiency": 0.9198560353340042,
+          "backward_efficiency_printed": 0.9321603433636968,
+          "backward_efficiency_force_balance": 0.915216392771842,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "variables": [
+            2.0,
+            1.1784857388002496,
+            21.25227753345952
+          ],
+          "shifts": {
+            "xs": 0.42658712588387404,
+            "xp1": 0.786706437058063,
+            "xr1": 2.0,
+            "xp2": 0.5270708732827383,
+            "xr2": 1.1784857388002496
+          },
+          "forward_efficiency": 0.9198586676015039,
+          "backward_efficiency_printed": 0.9321631734157454,
+          "backward_efficiency_force_balance": 0.915219444338895,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "variables": [
+            2.0,
+            1.1783479812239763,
+            21.25228824536731
+          ],
+          "shifts": {
+            "xs": 0.42662092898949355,
+            "xp1": 0.7866895355052532,
+            "xr1": 2.0,
+            "xp2": 0.5269183799723758,
+            "xr2": 1.1783479812239763
+          },
+          "forward_efficiency": 0.9198586694570386,
+          "backward_efficiency_printed": 0.9321631647693835,
+          "backward_efficiency_force_balance": 0.9152194471574132,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 20,
+          "variables": [
+            2.0,
+            1.1783479812239763,
+            21.25228824536731
+          ],
+          "shifts": {
+            "xs": 0.42662092898949355,
+            "xp1": 0.7866895355052532,
+            "xr1": 2.0,
+            "xp2": 0.5269183799723758,
+            "xr2": 1.1783479812239763
+          },
+          "forward_efficiency": 0.9198586694570386,
+          "backward_efficiency_printed": 0.9321631647693835,
+          "backward_efficiency_force_balance": 0.9152194471574132,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 8,
+      "initial_variables": [
+        -0.523706514732474,
+        1.6945128878216518,
+        22.321745179735174
+      ],
+      "final_variables": [
+        2.0,
+        -2.0,
+        19.493124779476005
+      ],
+      "solver_success": false,
+      "solver_message": "Inequality constraints incompatible",
+      "iterations": 6,
+      "forward_efficiency": 0.25017266192061954,
+      "minimum_constraint_margin": -4.131207026903079,
+      "feasible": false,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            -0.523706514732474,
+            1.6945128878216518,
+            22.321745179735174
+          ],
+          "shifts": {
+            "xs": 6.656906448071965,
+            "xp1": -3.5903064814022194,
+            "xr1": -0.523706514732474,
+            "xp2": -0.601670008740526,
+            "xr2": 1.6945128878216518
+          },
+          "forward_efficiency": 0.08450768481633052,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.656906448071965,
+          "maximum_constraint_violation": 4.656906448071965,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            -0.9662679839855088,
+            1.629184658955975,
+            21.842922515000684
+          ],
+          "shifts": {
+            "xs": 5.362772051753069,
+            "xp1": -3.164520017869289,
+            "xr1": -0.9662679839855088,
+            "xp2": 0.10952441466237883,
+            "xr2": 1.629184658955975
+          },
+          "forward_efficiency": 0.12671102724080968,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.3903367941787166,
+          "maximum_constraint_violation": 3.3903367941787166,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            -1.4458942134967536,
+            1.0307420424056986,
+            21.159501911284067
+          ],
+          "shifts": {
+            "xs": 3.582533610807694,
+            "xp1": -2.514213912152224,
+            "xr1": -1.4458942134967536,
+            "xp2": 0.5054579377775374,
+            "xr2": 1.0307420424056986
+          },
+          "forward_efficiency": 0.18991624259855938,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -2.900550517012234,
+          "maximum_constraint_violation": 2.900550517012234,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            -1.7138320408076366,
+            0.026493934518154738,
+            20.295093853135732
+          ],
+          "shifts": {
+            "xs": 1.4567520327128347,
+            "xp1": -1.5852920367602357,
+            "xr1": -1.7138320408076366,
+            "xp2": 0.5097043618051672,
+            "xr2": 0.026493934518154738
+          },
+          "forward_efficiency": 0.3969428727696815,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -2.4064863663434863,
+          "maximum_constraint_violation": 2.4064863663434863,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            2.0,
+            -2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": -0.9967382759267478,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.25017266192061954,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.131207026903079,
+          "maximum_constraint_violation": 4.131207026903079,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            2.0,
+            -2.0,
+            19.493124779476005
+          ],
+          "shifts": {
+            "xs": -3.8011241118142216,
+            "xp1": 2.900562055907111,
+            "xr1": 2.0,
+            "xp2": -0.9967382759267478,
+            "xr2": -2.0
+          },
+          "forward_efficiency": 0.25017266192061954,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.131207026903079,
+          "maximum_constraint_violation": 4.131207026903079,
+          "feasible": false
+        }
+      ]
+    },
+    {
+      "start_index": 9,
+      "initial_variables": [
+        1.0021805894655427,
+        -1.0993006517329167,
+        21.050369904365134
+      ],
+      "final_variables": [
+        2.0,
+        1.178355348627365,
+        21.252289286360632
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 9,
+      "forward_efficiency": 0.9198586694545003,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            1.0021805894655427,
+            -1.0993006517329167,
+            21.050369904365134
+          ],
+          "shifts": {
+            "xs": 0.8007878203814367,
+            "xp1": 0.10069638454205299,
+            "xr1": 1.0021805894655427,
+            "xp2": -1.4801499571494225,
+            "xr2": -1.0993006517329167
+          },
+          "forward_efficiency": 0.5599267326121099,
+          "backward_efficiency_printed": 0.20301890300642028,
+          "backward_efficiency_force_balance": 0.1980808007008579,
+          "minimum_constraint_margin": -0.7723189110437081,
+          "maximum_constraint_violation": 0.7723189110437081,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            1.6787563816027395,
+            -0.4784465995465037,
+            21.07659213561623
+          ],
+          "shifts": {
+            "xs": 0.203641305200291,
+            "xp1": 0.7375575382012243,
+            "xr1": 1.6787563816027395,
+            "xp2": -0.8936032143520787,
+            "xr2": -0.4784465995465037
+          },
+          "forward_efficiency": 0.7545273617483124,
+          "backward_efficiency_printed": 0.6913237660419593,
+          "backward_efficiency_force_balance": 0.6779671183841253,
+          "minimum_constraint_margin": -0.24319906682074732,
+          "maximum_constraint_violation": 0.24319906682074732,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            1.999999999999905,
+            0.27170287712331875,
+            21.164009571394732
+          ],
+          "shifts": {
+            "xs": 0.15059528285730206,
+            "xp1": 0.9247023585713015,
+            "xr1": 1.999999999999905,
+            "xp2": -0.259639582063262,
+            "xr2": 0.27170287712331875
+          },
+          "forward_efficiency": 0.8709833784523593,
+          "backward_efficiency_printed": 0.8729843172880616,
+          "backward_efficiency_force_balance": 0.8557168466336006,
+          "minimum_constraint_margin": 9.50350909079134e-14,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            1.9999999999999925,
+            1.4685000522378187,
+            21.55445320127896
+          ],
+          "shifts": {
+            "xs": 1.4087595410502165,
+            "xp1": 0.295620229474888,
+            "xr1": 1.9999999999999925,
+            "xp2": 0.3863155229800761,
+            "xr2": 1.4685000522378187
+          },
+          "forward_efficiency": 0.8705810607167034,
+          "backward_efficiency_printed": 0.8921487702446663,
+          "backward_efficiency_force_balance": 0.8596248092297268,
+          "minimum_constraint_margin": -0.0516118641556146,
+          "maximum_constraint_violation": 0.0516118641556146,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            1.9999999999999942,
+            1.411345682916306,
+            21.285329408081868
+          ],
+          "shifts": {
+            "xs": 0.5312400932291932,
+            "xp1": 0.7343799533854005,
+            "xr1": 1.9999999999999942,
+            "xp2": 0.7142767511585278,
+            "xr2": 1.411345682916306
+          },
+          "forward_efficiency": 0.9173579315781081,
+          "backward_efficiency_printed": 0.92941648532137,
+          "backward_efficiency_force_balance": 0.9123597835215801,
+          "minimum_constraint_margin": 5.773159728050814e-15,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            2.0,
+            0.91310692476035,
+            21.235695075975762
+          ],
+          "shifts": {
+            "xs": 0.37434792753537316,
+            "xp1": 0.8128260362323134,
+            "xr1": 2.0,
+            "xp2": 0.28445624764667643,
+            "xr2": 0.91310692476035
+          },
+          "forward_efficiency": 0.9156348438167327,
+          "backward_efficiency_printed": 0.9272487661144868,
+          "backward_efficiency_force_balance": 0.9103275044646756,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            2.0,
+            1.1738632559178628,
+            21.24843238769167
+          ],
+          "shifts": {
+            "xs": 0.4144579724270221,
+            "xp1": 0.792771013786489,
+            "xr1": 2.0,
+            "xp2": 0.5277353835366272,
+            "xr2": 1.1738632559178628
+          },
+          "forward_efficiency": 0.9198509965347264,
+          "backward_efficiency_printed": 0.9321612077773079,
+          "backward_efficiency_force_balance": 0.9152107738025433,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            2.0,
+            1.1782444910538699,
+            21.25227691516262
+          ],
+          "shifts": {
+            "xs": 0.4265851747532765,
+            "xp1": 0.7867074126233617,
+            "xr1": 2.0,
+            "xp2": 0.5268304760894024,
+            "xr2": 1.1782444910538699
+          },
+          "forward_efficiency": 0.9198586689151577,
+          "backward_efficiency_printed": 0.9321631755862761,
+          "backward_efficiency_force_balance": 0.9152194458160178,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            2.0,
+            1.178355348627365,
+            21.252289286360632
+          ],
+          "shifts": {
+            "xs": 0.4266242140112122,
+            "xp1": 0.7866878929943939,
+            "xr1": 2.0,
+            "xp2": 0.5269243153411024,
+            "xr2": 1.178355348627365
+          },
+          "forward_efficiency": 0.9198586694545003,
+          "backward_efficiency_printed": 0.9321631637167977,
+          "backward_efficiency_force_balance": 0.9152194472206411,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            2.0,
+            1.178355348627365,
+            21.252289286360632
+          ],
+          "shifts": {
+            "xs": 0.4266242140112122,
+            "xp1": 0.7866878929943939,
+            "xr1": 2.0,
+            "xp2": 0.5269243153411024,
+            "xr2": 1.178355348627365
+          },
+          "forward_efficiency": 0.9198586694545003,
+          "backward_efficiency_printed": 0.9321631637167977,
+          "backward_efficiency_force_balance": 0.9152194472206411,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    },
+    {
+      "start_index": 10,
+      "initial_variables": [
+        -1.6423064431659764,
+        -1.244557828556828,
+        21.695383812749018
+      ],
+      "final_variables": [
+        -1.6423064509159246,
+        1.9999999991787063,
+        21.69538381644914
+      ],
+      "solver_success": false,
+      "solver_message": "Positive directional derivative for linesearch",
+      "iterations": 20,
+      "forward_efficiency": 0.09480003686944537,
+      "minimum_constraint_margin": -3.5277871721522907,
+      "feasible": false,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            -1.6423064431659764,
+            -1.244557828556828,
+            21.695383812749018
+          ],
+          "shifts": {
+            "xs": 5.527787151737478,
+            "xp1": -3.585046797451727,
+            "xr1": -1.6423064431659764,
+            "xp2": -2.537427538410756,
+            "xr2": -1.244557828556828
+          },
+          "forward_efficiency": 0.06897583943618336,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871517374777,
+          "maximum_constraint_violation": 3.5277871517374777,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            -1.6423064431896437,
+            -0.9341448926442188,
+            21.695383812749867
+          ],
+          "shifts": {
+            "xs": 5.527787151764054,
+            "xp1": -3.5850467974768487,
+            "xr1": -1.6423064431896437,
+            "xp2": -2.227014602499436,
+            "xr2": -0.9341448926442188
+          },
+          "forward_efficiency": 0.07347967341814547,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871517640538,
+          "maximum_constraint_violation": 3.5277871517640538,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            -1.6423064431746397,
+            -0.6015203645792149,
+            21.6953838127515
+          ],
+          "shifts": {
+            "xs": 5.52778715175465,
+            "xp1": -3.5850467974646447,
+            "xr1": -1.6423064431746397,
+            "xp2": -1.8943900744369095,
+            "xr2": -0.6015203645792149
+          },
+          "forward_efficiency": 0.07888581119293665,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871517546497,
+          "maximum_constraint_violation": 3.5277871517546497,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            -1.6423064431665584,
+            -0.3766656454646784,
+            21.695383812751597
+          ],
+          "shifts": {
+            "xs": 5.527787151746895,
+            "xp1": -3.5850467974567266,
+            "xr1": -1.6423064431665584,
+            "xp2": -1.6695353553225187,
+            "xr2": -0.3766656454646784
+          },
+          "forward_efficiency": 0.08275070644408831,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.527787151746895,
+          "maximum_constraint_violation": 3.527787151746895,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            -1.6423064431603165,
+            0.42192548416751086,
+            21.695383812741863
+          ],
+          "shifts": {
+            "xs": 5.527787151707331,
+            "xp1": -3.585046797433824,
+            "xr1": -1.6423064431603165,
+            "xp2": -0.8709442256755735,
+            "xr2": 0.42192548416751086
+          },
+          "forward_efficiency": 0.09025919736274755,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.527787151707331,
+          "maximum_constraint_violation": 3.527787151707331,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            -1.6423064432299939,
+            1.1993995131057784,
+            21.695383812798738
+          ],
+          "shifts": {
+            "xs": 5.527787151971676,
+            "xp1": -3.585046797600835,
+            "xr1": -1.6423064432299939,
+            "xp2": -0.0934701968235252,
+            "xr2": 1.1993995131057784
+          },
+          "forward_efficiency": 0.09370993781319292,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.527787151971676,
+          "maximum_constraint_violation": 3.527787151971676,
+          "feasible": false
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            -1.6423064432205519,
+            1.8405160407439594,
+            21.6953838127959
+          ],
+          "shifts": {
+            "xs": 5.527787151952527,
+            "xp1": -3.585046797586539,
+            "xr1": -1.6423064432205519,
+            "xp2": 0.5476463308189605,
+            "xr2": 1.8405160407439594
+          },
+          "forward_efficiency": 0.09474494706789972,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.527787151952527,
+          "maximum_constraint_violation": 3.527787151952527,
+          "feasible": false
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            -1.6423064432716565,
+            1.9999999794703847,
+            21.69538381281807
+          ],
+          "shifts": {
+            "xs": 5.527787152079501,
+            "xp1": -3.585046797675579,
+            "xr1": -1.6423064432716565,
+            "xp2": 0.7071302695117823,
+            "xr2": 1.9999999794703847
+          },
+          "forward_efficiency": 0.09480003821302277,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.527787152079501,
+          "maximum_constraint_violation": 3.527787152079501,
+          "feasible": false
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            -1.6423064432789969,
+            1.999999999997501,
+            21.695383812821696
+          ],
+          "shifts": {
+            "xs": 5.527787152099263,
+            "xp1": -3.58504679768913,
+            "xr1": -1.6423064432789969,
+            "xp2": 0.7071302900333984,
+            "xr2": 1.999999999997501
+          },
+          "forward_efficiency": 0.09480003821414779,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.527787152099263,
+          "maximum_constraint_violation": 3.527787152099263,
+          "feasible": false
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            -1.6423110406591077,
+            2.0,
+            21.695385996875366
+          ],
+          "shifts": {
+            "xs": 5.527799225107364,
+            "xp1": -3.5850551328832356,
+            "xr1": -1.6423110406591077,
+            "xp2": 0.7071269792045511,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.09479922872909734,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277992251073638,
+          "maximum_constraint_violation": 3.5277992251073638,
+          "feasible": false
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            -1.642309913062986,
+            2.0,
+            21.695385461196032
+          ],
+          "shifts": {
+            "xs": 5.527796263975729,
+            "xp1": -3.5850530885193574,
+            "xr1": -1.642309913062986,
+            "xp2": 0.707127791246962,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.09479942727178324,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277962639757288,
+          "maximum_constraint_violation": 3.5277962639757288,
+          "feasible": false
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            -1.6423064509177594,
+            2.0,
+            21.695383816450377
+          ],
+          "shifts": {
+            "xs": 5.527787172158349,
+            "xp1": -3.5850468115380543,
+            "xr1": -1.6423064509177594,
+            "xp2": 0.7071302845351399,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.09480003686918301,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.527787172158349,
+          "maximum_constraint_violation": 3.527787172158349,
+          "feasible": false
+        },
+        {
+          "iteration": 12,
+          "variables": [
+            -1.6423064508927732,
+            2.0,
+            21.695383816450562
+          ],
+          "shifts": {
+            "xs": 5.5277871721339995,
+            "xp1": -3.5850468115133864,
+            "xr1": -1.6423064508927732,
+            "xp2": 0.7071302845348597,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.0948000368723823,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871721339995,
+          "maximum_constraint_violation": 3.5277871721339995,
+          "feasible": false
+        },
+        {
+          "iteration": 13,
+          "variables": [
+            -1.6423064509159238,
+            1.9999999991776196,
+            21.695383816449137
+          ],
+          "shifts": {
+            "xs": 5.527787172152267,
+            "xp1": -3.585046811534095,
+            "xr1": -1.6423064509159238,
+            "xp2": 0.7071302837146429,
+            "xr2": 1.9999999991776196
+          },
+          "forward_efficiency": 0.09480003686944563,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871721522667,
+          "maximum_constraint_violation": 3.5277871721522667,
+          "feasible": false
+        },
+        {
+          "iteration": 14,
+          "variables": [
+            -1.6423064509174656,
+            2.0,
+            21.695383816454413
+          ],
+          "shifts": {
+            "xs": 5.527787172171877,
+            "xp1": -3.585046811544671,
+            "xr1": -1.6423064509174656,
+            "xp2": 0.7071302845290233,
+            "xr2": 2.0
+          },
+          "forward_efficiency": 0.09480003686881916,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871721718768,
+          "maximum_constraint_violation": 3.5277871721718768,
+          "feasible": false
+        },
+        {
+          "iteration": 15,
+          "variables": [
+            -1.6423064509159715,
+            1.99999999991656,
+            21.695383816449002
+          ],
+          "shifts": {
+            "xs": 5.5277871721518705,
+            "xp1": -3.585046811533921,
+            "xr1": -1.6423064509159715,
+            "xp2": 0.707130284453785,
+            "xr2": 1.99999999991656
+          },
+          "forward_efficiency": 0.09480003686953972,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871721518705,
+          "maximum_constraint_violation": 3.5277871721518705,
+          "feasible": false
+        },
+        {
+          "iteration": 16,
+          "variables": [
+            -1.6423064509159246,
+            1.9999999991787063,
+            21.69538381644914
+          ],
+          "shifts": {
+            "xs": 5.527787172152291,
+            "xp1": -3.5850468115341076,
+            "xr1": -1.6423064509159246,
+            "xp2": 0.7071302837157183,
+            "xr2": 1.9999999991787063
+          },
+          "forward_efficiency": 0.09480003686944537,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871721522907,
+          "maximum_constraint_violation": 3.5277871721522907,
+          "feasible": false
+        }
+      ]
+    },
+    {
+      "start_index": 11,
+      "initial_variables": [
+        0.8811437612681416,
+        1.683035036763156,
+        20.630268612603583
+      ],
+      "final_variables": [
+        2.0,
+        1.1783479857315662,
+        21.25228838512072
+      ],
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "iterations": 12,
+      "forward_efficiency": 0.9198586694570895,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "variables": [
+            0.8811437612681416,
+            1.683035036763156,
+            20.630268612603583
+          ],
+          "shifts": {
+            "xs": -0.28186022048141895,
+            "xp1": 0.5815019908747803,
+            "xr1": 0.8811437612681416,
+            "xp2": 1.8146928007899557,
+            "xr2": 1.683035036763156
+          },
+          "forward_efficiency": 0.7297141784201476,
+          "backward_efficiency_printed": 0.6563348164086725,
+          "backward_efficiency_force_balance": 0.6381781228211981,
+          "minimum_constraint_margin": -0.8637070138778028,
+          "maximum_constraint_violation": 0.8637070138778028,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "variables": [
+            0.9063997194654476,
+            1.451229264299609,
+            21.014506492408337
+          ],
+          "shifts": {
+            "xs": 0.7887124006049819,
+            "xp1": 0.05884365943023284,
+            "xr1": 0.9063997194654476,
+            "xp2": 1.116885627748358,
+            "xr2": 1.451229264299609
+          },
+          "forward_efficiency": 0.8506396171376476,
+          "backward_efficiency_printed": 0.851610579931572,
+          "backward_efficiency_force_balance": 0.8307588768309039,
+          "minimum_constraint_margin": 0.005467479922182106,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 2,
+          "variables": [
+            1.4116019100499662,
+            0.8969310880531332,
+            21.117135786152765
+          ],
+          "shifts": {
+            "xs": 0.5945383892569329,
+            "xp1": 0.4085317603965166,
+            "xr1": 1.4116019100499662,
+            "xp2": 0.4282322249641039,
+            "xr2": 0.8969310880531332
+          },
+          "forward_efficiency": 0.9073592473878561,
+          "backward_efficiency_printed": 0.9193455953730599,
+          "backward_efficiency_force_balance": 0.900988722855596,
+          "minimum_constraint_margin": 0.0034762896453550685,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "variables": [
+            1.5679264107652098,
+            0.9836481761673466,
+            20.80699017793166
+          ],
+          "shifts": {
+            "xs": -0.47865931556419505,
+            "xp1": 1.0232928631647025,
+            "xr1": 1.5679264107652098,
+            "xp2": 0.9085907248822334,
+            "xr2": 0.9836481761673466
+          },
+          "forward_efficiency": 0.8507117085954693,
+          "backward_efficiency_printed": 0.8633228274004116,
+          "backward_efficiency_force_balance": 0.8333691555154682,
+          "minimum_constraint_margin": 0.004599202439369288,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "variables": [
+            1.8532889490724322,
+            0.749272353298561,
+            21.078938609516094
+          ],
+          "shifts": {
+            "xs": 0.0362396021009288,
+            "xp1": 0.9085246734857517,
+            "xr1": 1.8532889490724322,
+            "xp2": 0.3310333840610464,
+            "xr2": 0.749272353298561
+          },
+          "forward_efficiency": 0.9108290537064911,
+          "backward_efficiency_printed": 0.9248450522220116,
+          "backward_efficiency_force_balance": 0.9051731846703844,
+          "minimum_constraint_margin": 0.002844787176439989,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "variables": [
+            1.8275075761015236,
+            0.9307085282580836,
+            21.168683130112456
+          ],
+          "shifts": {
+            "xs": 0.3375715658442373,
+            "xp1": 0.7449680051286431,
+            "xr1": 1.8275075761015236,
+            "xp2": 0.3930771193746819,
+            "xr2": 0.9307085282580836
+          },
+          "forward_efficiency": 0.9170114023186359,
+          "backward_efficiency_printed": 0.929157934816176,
+          "backward_efficiency_force_balance": 0.9119736710352981,
+          "minimum_constraint_margin": 0.0026210888108731956,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "variables": [
+            2.0,
+            1.1102671095174172,
+            21.255234689362588
+          ],
+          "shifts": {
+            "xs": 0.43592171818924674,
+            "xp1": 0.7820391409053766,
+            "xr1": 2.0,
+            "xp2": 0.454782766246248,
+            "xr2": 1.1102671095174172
+          },
+          "forward_efficiency": 0.9194621333481506,
+          "backward_efficiency_printed": 0.9316957393010027,
+          "backward_efficiency_force_balance": 0.914762050590003,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "variables": [
+            2.0,
+            1.178482212632459,
+            21.255607265407782
+          ],
+          "shifts": {
+            "xs": 0.43709819778889925,
+            "xp1": 0.7814509011055504,
+            "xr1": 2.0,
+            "xp2": 0.522484937715701,
+            "xr2": 1.178482212632459
+          },
+          "forward_efficiency": 0.9198506945379336,
+          "backward_efficiency_printed": 0.9321527965725985,
+          "backward_efficiency_force_balance": 0.9152107708065821,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "variables": [
+            1.9999999999999996,
+            1.1800314506042695,
+            21.253226585450832
+          ],
+          "shifts": {
+            "xs": 0.4295822969246941,
+            "xp1": 0.7852088515376527,
+            "xr1": 1.9999999999999996,
+            "xp2": 0.5273108779672796,
+            "xr2": 1.1800314506042695
+          },
+          "forward_efficiency": 0.9198582484585744,
+          "backward_efficiency_printed": 0.932161911629535,
+          "backward_efficiency_force_balance": 0.9152190461834605,
+          "minimum_constraint_margin": 4.440892098500626e-16,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "variables": [
+            2.0,
+            1.178649974681036,
+            21.25235546234525
+          ],
+          "shifts": {
+            "xs": 0.4268330444066737,
+            "xp1": 0.7865834777966632,
+            "xr1": 2.0,
+            "xp2": 0.5271279061342188,
+            "xr2": 1.178649974681036
+          },
+          "forward_efficiency": 0.9198586651321703,
+          "backward_efficiency_printed": 0.9321630928628631,
+          "backward_efficiency_force_balance": 0.9152194465658153,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "variables": [
+            2.0,
+            1.1783679340858164,
+            21.252289440104793
+          ],
+          "shifts": {
+            "xs": 0.4266246991756728,
+            "xp1": 0.7866876504121636,
+            "xr1": 2.0,
+            "xp2": 0.5269366893025212,
+            "xr2": 1.1783679340858164
+          },
+          "forward_efficiency": 0.9198586694333659,
+          "backward_efficiency_printed": 0.9321631635369803,
+          "backward_efficiency_force_balance": 0.9152194472060274,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "variables": [
+            2.0,
+            1.1783479857315662,
+            21.25228838512072
+          ],
+          "shifts": {
+            "xs": 0.42662137000380174,
+            "xp1": 0.7866893149980991,
+            "xr1": 2.0,
+            "xp2": 0.5269181922292575,
+            "xr2": 1.1783479857315662
+          },
+          "forward_efficiency": 0.9198586694570895,
+          "backward_efficiency_printed": 0.9321631646285068,
+          "backward_efficiency_force_balance": 0.9152194471663494,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "variables": [
+            2.0,
+            1.1783479857315662,
+            21.25228838512072
+          ],
+          "shifts": {
+            "xs": 0.42662137000380174,
+            "xp1": 0.7866893149980991,
+            "xr1": 2.0,
+            "xp2": 0.5269181922292575,
+            "xr2": 1.1783479857315662
+          },
+          "forward_efficiency": 0.9198586694570895,
+          "backward_efficiency_printed": 0.9321631646285068,
+          "backward_efficiency_force_balance": 0.9152194471663494,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "摩擦係数の数値は論文に見つからないため設定値を使う。論文へのフィットはしない。",
+    "Table IIIの転位・モジュールは丸められ、3つの復元中心距離に微小差がある。",
+    "歯先径は論文式(82)-(86)。表のかみあい率と完全には一致しない。",
+    "SLSQPは局所法。複数初期値で確認するが大域最適性の証明ではない。",
+    "切下げ、歯強度・許容トルク、加工工具との干渉、実歯形の検証は対象外。",
+    "論文の実測順駆動効率89.0%は、この計算モデルの予測値と別である。",
+    "逆駆動は印刷式(75)と式(74)のトルク釣合いによる再導出値を区別する。再導出値にはeta_aが掛かる。"
+  ],
+  "best": {
+    "center_mm": 21.252288560795947,
+    "shifts": {
+      "xs": 0.42662192437516566,
+      "xp1": 0.786689037812417,
+      "xr1": 1.9999999999999996,
+      "xp2": 0.5269179608852921,
+      "xr2": 1.178347996053891
+    },
+    "meshes": [
+      {
+        "name": "a",
+        "z1": 12,
+        "z2": 39,
+        "sign": 1,
+        "module": 0.8,
+        "center": 21.252288560795947,
+        "working_angle": 0.446398535069609,
+        "base_radius1": 4.510524579772361,
+        "base_radius2": 14.659204884260173,
+        "tip_radius1": 5.822937330546014,
+        "tip_radius2": 16.910991021295814,
+        "tip_angle1": 0.6846929400430207,
+        "tip_angle2": 0.5219576197737369,
+        "approach_ratio": 0.599247828379733,
+        "recess_ratio": 0.6452113796440853,
+        "basic_efficiency": 0.9818232280356
+      },
+      {
+        "name": "b",
+        "z1": 39,
+        "z2": 90,
+        "sign": -1,
+        "module": 0.8,
+        "center": 21.252288560795947,
+        "working_angle": 0.446398535069609,
+        "base_radius1": 14.659204884260173,
+        "base_radius2": 33.828934348292705,
+        "tip_radius1": 16.910991021295814,
+        "tip_radius2": 36.8,
+        "tip_angle1": 0.5219576197737369,
+        "tip_angle2": 0.4045883418104952,
+        "approach_ratio": 0.7220503772494852,
+        "recess_ratio": 0.599247828379733,
+        "basic_efficiency": 0.9974476142501641
+      },
+      {
+        "name": "c",
+        "z1": 32,
+        "z2": 81,
+        "sign": -1,
+        "module": 0.8467,
+        "center": 21.252288560795947,
+        "working_angle": 0.40973924252956057,
+        "base_radius1": 12.73020387231086,
+        "base_radius2": 32.223328551786864,
+        "tip_radius1": 14.840041437481577,
+        "tip_radius2": 34.44235724825883,
+        "tip_angle1": 0.5397677733424582,
+        "tip_angle2": 0.3609190178392339,
+        "approach_ratio": 0.7331268148571507,
+        "recess_ratio": 0.8392827044467835,
+        "basic_efficiency": 0.996024093615555
+      }
+    ],
+    "forward_efficiency": 0.9198586694571155,
+    "backward_efficiency": 0.932163164451388,
+    "backward_efficiency_force_balance": 0.9152194471775417
+  },
+  "constraint_margins": {
+    "xs_lower": 2.4266219243751657,
+    "xs_upper": 1.5733780756248343,
+    "xp1_lower": 2.786689037812417,
+    "xp1_upper": 1.213310962187583,
+    "xr1_lower": 3.9999999999999996,
+    "xr1_upper": 4.440892098500626e-16,
+    "xp2_lower": 2.5269179608852923,
+    "xp2_upper": 1.473082039114708,
+    "xr2_lower": 3.178347996053891,
+    "xr2_upper": 0.821652003946109,
+    "a_tip1_above_base": 1.6405159384670664,
+    "a_tip2_above_base": 2.814732671294551,
+    "a_approach_nonnegative": 0.599247828379733,
+    "a_recess_nonnegative": 0.6452113796440853,
+    "a_contact_lower": 0.24445920802381815,
+    "a_contact_upper": 0.7555407919761818,
+    "a_basic_efficiency_lower": 0.9818232280356,
+    "a_basic_efficiency_upper": 0.01817677196440004,
+    "b_tip1_above_base": 2.814732671294551,
+    "b_tip2_above_base": 3.713832064634115,
+    "b_approach_nonnegative": 0.7220503772494852,
+    "b_recess_nonnegative": 0.599247828379733,
+    "b_contact_lower": 0.3212982056292182,
+    "b_contact_upper": 0.6787017943707818,
+    "b_basic_efficiency_lower": 0.9974476142501641,
+    "b_basic_efficiency_upper": 0.0025523857498358504,
+    "b_trochoid": 0.01316524758489146,
+    "b_trimming": 0.025545407569542655,
+    "c_tip1_above_base": 2.491836028310757,
+    "c_tip2_above_base": 2.6207968542245967,
+    "c_approach_nonnegative": 0.7331268148571507,
+    "c_recess_nonnegative": 0.8392827044467835,
+    "c_contact_lower": 0.5724095193039342,
+    "c_contact_upper": 0.42759048069606576,
+    "c_basic_efficiency_lower": 0.996024093615555,
+    "c_basic_efficiency_upper": 0.003975906384445005,
+    "c_trochoid": 0.013590149096923798,
+    "c_trimming": 0.027928976573765918,
+    "b_planet_clearance": 3.7350769022772567,
+    "c_planet_clearance": 8.420881881953795,
+    "total_efficiency_lower": 0.9198586694571155,
+    "total_efficiency_upper": 0.08014133054288453
+  },
+  "selected_trial": 0,
+  "comparison": [
+    {
+      "parameter": "xs",
+      "paper": 0.476,
+      "optimized": 0.42662192437516566,
+      "difference": -0.04937807562483432
+    },
+    {
+      "parameter": "xp1",
+      "paper": 0.762,
+      "optimized": 0.786689037812417,
+      "difference": 0.024689037812416936
+    },
+    {
+      "parameter": "xr1",
+      "paper": 2.0,
+      "optimized": 1.9999999999999996,
+      "difference": -4.440892098500626e-16
+    },
+    {
+      "parameter": "xp2",
+      "paper": 0.536,
+      "optimized": 0.5269179608852921,
+      "difference": -0.009082039114707952
+    },
+    {
+      "parameter": "xr2",
+      "paper": 1.21,
+      "optimized": 1.178347996053891,
+      "difference": -0.03165200394610901
+    },
+    {
+      "parameter": "contact_ratio_a",
+      "paper": 1.232,
+      "optimized": 1.2444592080238182,
+      "difference": 0.012459208023818169
+    },
+    {
+      "parameter": "contact_ratio_b",
+      "paper": 1.42,
+      "optimized": 1.3212982056292182,
+      "difference": -0.09870179437078175
+    },
+    {
+      "parameter": "contact_ratio_c",
+      "paper": 1.565,
+      "optimized": 1.5724095193039342,
+      "difference": 0.007409519303934298
+    }
+  ],
+  "efficiency_comparison": [
+    {
+      "quantity": "forward_eq64",
+      "paper_measured_percent": 89.0,
+      "calculated_percent": 91.98586694571155,
+      "difference_pp": 2.985866945711546
+    },
+    {
+      "quantity": "backward_printed_eq75",
+      "paper_measured_percent": 85.3,
+      "calculated_percent": 93.2163164451388,
+      "difference_pp": 7.916316445138804
+    },
+    {
+      "quantity": "backward_force_balance_eq74",
+      "paper_measured_percent": 85.3,
+      "calculated_percent": 91.52194471775417,
+      "difference_pp": 6.221944717754169
+    }
+  ]
+}

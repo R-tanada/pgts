@@ -1,0 +1,5884 @@
+{
+  "status": "success",
+  "method": "L-BFGS-B + augmented Lagrangian",
+  "gearbox": {
+    "zs": 12,
+    "zp1": 39,
+    "zr1": 90,
+    "zp2": 32,
+    "zr2": 81,
+    "module_a": 0.8,
+    "module_c": 0.8467,
+    "pressure_angle_deg": 20.0,
+    "planet_count": 3
+  },
+  "settings": {
+    "friction_coefficient": 0.1,
+    "shift_lower": -2.0,
+    "shift_upper": 2.0,
+    "contact_ratio_lower": 1.0,
+    "contact_ratio_upper": 2.0,
+    "planet_clearance_mm": 0.0,
+    "include_trimming_constraint": true,
+    "start_count": 12,
+    "random_seed": 42,
+    "max_iterations": 1000,
+    "ftol": 1e-11,
+    "feasibility_tolerance": 1e-07,
+    "output_directory": "quasi_newton_output"
+  },
+  "library_versions": {
+    "scipy": "1.18.1",
+    "numpy": "2.5.3"
+  },
+  "speed_ratio_exact": "62/5967",
+  "reduction_abs": 96.24193548387096,
+  "fixed_assembly_checks": {
+    "first_layer_equal_spacing": true,
+    "compound_equal_spacing": true
+  },
+  "paper_shifts": {
+    "xs": 0.476,
+    "xp1": 0.762,
+    "xr1": 2.0,
+    "xp2": 0.536,
+    "xr2": 1.21
+  },
+  "paper_contact_ratios": {
+    "a": 1.232,
+    "b": 1.42,
+    "c": 1.565
+  },
+  "paper_measured_efficiencies": {
+    "forward": 0.89,
+    "backward": 0.853
+  },
+  "paper_efficiency_table": "Table IV (Table V is absent in the supplied PDF)",
+  "objective_equation": "64",
+  "reference_center_distances_mm": {
+    "a": 21.26791100127434,
+    "b": 21.26791100127434,
+    "c": 21.268662049205854
+  },
+  "reference_common_center_evaluation": {
+    "center_mm": 21.26791100127434,
+    "shifts": {
+      "xs": 0.4759999999999973,
+      "xp1": 0.7620000000000013,
+      "xr1": 2.0,
+      "xp2": 0.5370372835476067,
+      "xr2": 1.21
+    },
+    "meshes": [
+      {
+        "name": "a",
+        "z1": 12,
+        "z2": 39,
+        "sign": 1,
+        "module": 0.8,
+        "center": 21.26791100127434,
+        "working_angle": 0.4479308142680778,
+        "base_radius1": 4.510524579772361,
+        "base_radius2": 14.659204884260173,
+        "tip_radius1": 5.858311001274336,
+        "tip_radius2": 16.88711100127434,
+        "tip_angle1": 0.6920554647500216,
+        "tip_angle2": 0.5194937418667991,
+        "approach_ratio": 0.567225673457763,
+        "recess_ratio": 0.665188705578207,
+        "basic_efficiency": 0.9817934390957846
+      },
+      {
+        "name": "b",
+        "z1": 39,
+        "z2": 90,
+        "sign": -1,
+        "module": 0.8,
+        "center": 21.26791100127434,
+        "working_angle": 0.4479308142680778,
+        "base_radius1": 14.659204884260173,
+        "base_radius2": 33.828934348292705,
+        "tip_radius1": 16.88711100127434,
+        "tip_radius2": 36.8,
+        "tip_angle1": 0.5194937418667991,
+        "tip_angle2": 0.4045883418104952,
+        "approach_ratio": 0.7490463479167255,
+        "recess_ratio": 0.567225673457763,
+        "basic_efficiency": 0.9974138953367536
+      },
+      {
+        "name": "c",
+        "z1": 32,
+        "z2": 81,
+        "sign": -1,
+        "module": 0.8467,
+        "center": 21.26791100127434,
+        "working_angle": 0.4114272333219765,
+        "base_radius1": 12.73020387231086,
+        "base_radius2": 32.223328551786864,
+        "tip_radius1": 14.84860946797976,
+        "tip_radius2": 34.469157,
+        "tip_angle1": 0.5407301324365217,
+        "tip_angle2": 0.36297328993545264,
+        "approach_ratio": 0.7287322050956938,
+        "recess_ratio": 0.8357210054980386,
+        "basic_efficiency": 0.9960504261079796
+      }
+    ],
+    "forward_efficiency": 0.9197416164892867,
+    "backward_efficiency": 0.9320620079004608,
+    "backward_efficiency_force_balance": 0.9150923641871158
+  },
+  "reference_constraint_margins": {
+    "xs_lower": 2.4759999999999973,
+    "xs_upper": 1.5240000000000027,
+    "xp1_lower": 2.7620000000000013,
+    "xp1_upper": 1.2379999999999987,
+    "xr1_lower": 4.0,
+    "xr1_upper": 0.0,
+    "xp2_lower": 2.5370372835476065,
+    "xp2_upper": 1.4629627164523933,
+    "xr2_lower": 3.21,
+    "xr2_upper": 0.79,
+    "a_tip1_above_base": 1.6847330268774685,
+    "a_tip2_above_base": 2.78488264626771,
+    "a_approach_nonnegative": 0.567225673457763,
+    "a_recess_nonnegative": 0.665188705578207,
+    "a_contact_lower": 0.23241437903597006,
+    "a_contact_upper": 0.7675856209640299,
+    "a_basic_efficiency_lower": 0.9817934390957846,
+    "a_basic_efficiency_upper": 0.018206560904215352,
+    "b_tip1_above_base": 2.78488264626771,
+    "b_tip2_above_base": 3.713832064634115,
+    "b_approach_nonnegative": 0.7490463479167255,
+    "b_recess_nonnegative": 0.567225673457763,
+    "b_contact_lower": 0.3162720213744885,
+    "b_contact_upper": 0.6837279786255115,
+    "b_basic_efficiency_lower": 0.9974138953367536,
+    "b_basic_efficiency_upper": 0.0025861046632463802,
+    "b_trochoid": 0.013314184127228124,
+    "b_trimming": 0.02575370140953176,
+    "c_tip1_above_base": 2.501955350973072,
+    "c_tip2_above_base": 2.6524488581707084,
+    "c_approach_nonnegative": 0.7287322050956938,
+    "c_recess_nonnegative": 0.8357210054980386,
+    "c_contact_lower": 0.5644532105937325,
+    "c_contact_upper": 0.43554678940626745,
+    "c_basic_efficiency_lower": 0.9960504261079796,
+    "c_basic_efficiency_upper": 0.0039495738920204415,
+    "c_trochoid": 0.013655275896433283,
+    "c_trimming": 0.028116242148401083,
+    "b_planet_clearance": 3.8286005281394253,
+    "c_planet_clearance": 8.432601262667657,
+    "total_efficiency_lower": 0.9197416164892867,
+    "total_efficiency_upper": 0.08025838351071335
+  },
+  "trials": [
+    {
+      "start_index": 0,
+      "initial_variables": [
+        0.0,
+        0.0,
+        21.149596174022854
+      ],
+      "final_variables": [
+        2.0,
+        1.1783483004495179,
+        21.252288629150307
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 18,
+      "forward_efficiency": 0.9198586694571192,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            0.0,
+            0.0,
+            21.149596174022854
+          ],
+          "shifts": {
+            "xs": 2.106018702642363,
+            "xp1": -1.0530093513211816,
+            "xr1": 0.0,
+            "xp2": -0.511996101212287,
+            "xr2": 0.0
+          },
+          "forward_efficiency": 0.6085004438050992,
+          "backward_efficiency_printed": 0.5244671002267258,
+          "backward_efficiency_force_balance": 0.46750497919252,
+          "minimum_constraint_margin": -0.8071122864887449,
+          "maximum_constraint_violation": 0.8071122864887449,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.7948909372513504,
+            0.6327486602470351,
+            20.491239124352155
+          ],
+          "shifts": {
+            "xs": -0.5630016853773265,
+            "xp1": 0.6789463113143385,
+            "xr1": 0.7948909372513504,
+            "xp2": 0.9170686867376048,
+            "xr2": 0.6327486602470351
+          },
+          "forward_efficiency": 0.8113387926881769,
+          "backward_efficiency_printed": 0.8099611098878381,
+          "backward_efficiency_force_balance": 0.7796140986061175,
+          "minimum_constraint_margin": -0.136988562624145,
+          "maximum_constraint_violation": 0.136988562624145,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.7646296837356514,
+            0.5588809374902262,
+            20.535928917354607
+          ],
+          "shifts": {
+            "xs": -0.41645391377839713,
+            "xp1": 0.5905417987570243,
+            "xr1": 0.7646296837356514,
+            "xp2": 0.7951347428792219,
+            "xr2": 0.5588809374902262
+          },
+          "forward_efficiency": 0.8400978194855914,
+          "backward_efficiency_printed": 0.8450729753537493,
+          "backward_efficiency_force_balance": 0.8181911969696315,
+          "minimum_constraint_margin": 0.004211809821001333,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.7409315159799523,
+            0.5248118697804518,
+            20.562854845909975
+          ],
+          "shifts": {
+            "xs": -0.32185607010941486,
+            "xp1": 0.5313937930446836,
+            "xr1": 0.7409315159799523,
+            "xp2": 0.731639439779459,
+            "xr2": 0.5248118697804518
+          },
+          "forward_efficiency": 0.8542774448175826,
+          "backward_efficiency_printed": 0.8611876008104132,
+          "backward_efficiency_force_balance": 0.8363784528896349,
+          "minimum_constraint_margin": 0.0038896360385829443,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.6085969316166011,
+            0.26786071351098206,
+            20.75750677937745
+          ],
+          "shifts": {
+            "xs": 0.34097808433830723,
+            "xp1": 0.13380942363914694,
+            "xr1": 0.6085969316166011,
+            "xp2": 0.25204736050620513,
+            "xr2": 0.26786071351098206
+          },
+          "forward_efficiency": 0.8934684286624669,
+          "backward_efficiency_printed": 0.9028286043152359,
+          "backward_efficiency_force_balance": 0.8844682830427102,
+          "minimum_constraint_margin": 0.004196625022575007,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.6618869259562605,
+            0.3115347281708116,
+            20.72830641285241
+          ],
+          "shifts": {
+            "xs": 0.20615213251043674,
+            "xp1": 0.2278673967229119,
+            "xr1": 0.6618869259562605,
+            "xp2": 0.3301928030167516,
+            "xr2": 0.3115347281708116
+          },
+          "forward_efficiency": 0.8963262702000734,
+          "backward_efficiency_printed": 0.9062931169438959,
+          "backward_efficiency_force_balance": 0.8878673544017742,
+          "minimum_constraint_margin": 0.003739249918271126,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.7031794774178302,
+            0.31484997725890773,
+            20.73088830481873
+          ],
+          "shifts": {
+            "xs": 0.17204185891109214,
+            "xp1": 0.265568809253369,
+            "xr1": 0.7031794774178302,
+            "xp2": 0.33047490185804723,
+            "xr2": 0.31484997725890773
+          },
+          "forward_efficiency": 0.8974835787586868,
+          "backward_efficiency_printed": 0.9078108556863844,
+          "backward_efficiency_force_balance": 0.8892659094162257,
+          "minimum_constraint_margin": 0.003613988456085071,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.9647642968402574,
+            0.31173814198811334,
+            20.78052787960499
+          ],
+          "shifts": {
+            "xs": 0.04956341719126156,
+            "xp1": 0.45760043982449794,
+            "xr1": 0.9647642968402574,
+            "xp2": 0.2684911967782487,
+            "xr2": 0.31173814198811334
+          },
+          "forward_efficiency": 0.9022964158305452,
+          "backward_efficiency_printed": 0.9145257401797702,
+          "backward_efficiency_force_balance": 0.8951228842158455,
+          "minimum_constraint_margin": 0.0032218294649941637,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.1249245451770165,
+            0.3520170565362566,
+            20.838147419161164
+          ],
+          "shifts": {
+            "xs": 0.053265648770484786,
+            "xp1": 0.5358294482032658,
+            "xr1": 1.1249245451770165,
+            "xp2": 0.23913166805024416,
+            "xr2": 0.3520170565362566
+          },
+          "forward_efficiency": 0.9044475606846325,
+          "backward_efficiency_printed": 0.9169724257498812,
+          "backward_efficiency_force_balance": 0.8976466380240289,
+          "minimum_constraint_margin": 0.0030961178053207083,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.5816023413389484,
+            0.573398920378219,
+            21.022942900938514
+          ],
+          "shifts": {
+            "xs": 0.1388003125461028,
+            "xp1": 0.7214010143964228,
+            "xr1": 1.5816023413389484,
+            "xp2": 0.22815892970387963,
+            "xr2": 0.573398920378219
+          },
+          "forward_efficiency": 0.9097251421743991,
+          "backward_efficiency_printed": 0.9220629551719024,
+          "backward_efficiency_force_balance": 0.9036770541073379,
+          "minimum_constraint_margin": 0.002786655836925056,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.7884678463440538,
+            0.8125388392068436,
+            21.180597278065346
+          ],
+          "shifts": {
+            "xs": 0.4136004212448814,
+            "xp1": 0.6874337125495862,
+            "xr1": 1.7884678463440538,
+            "xp2": 0.25884019978118233,
+            "xr2": 0.8125388392068436
+          },
+          "forward_efficiency": 0.9131267513852376,
+          "backward_efficiency_printed": 0.9244729518855889,
+          "backward_efficiency_force_balance": 0.907441606533806,
+          "minimum_constraint_margin": 0.002690514349804718,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.7956023655522446,
+            0.8244026161961817,
+            21.187660200421956
+          ],
+          "shifts": {
+            "xs": 0.4284382966785101,
+            "xp1": 0.6835820344368673,
+            "xr1": 1.7956023655522446,
+            "xp2": 0.26115535652472777,
+            "xr2": 0.8244026161961817
+          },
+          "forward_efficiency": 0.9131361413320283,
+          "backward_efficiency_printed": 0.9244816650180014,
+          "backward_efficiency_force_balance": 0.9074531918794985,
+          "minimum_constraint_margin": 0.0026980036181515343,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            0.9599699050039585,
+            21.246026837679437
+          ],
+          "shifts": {
+            "xs": 0.4068747683306264,
+            "xp1": 0.7965626158346868,
+            "xr1": 2.0,
+            "xp2": 0.31714702917127957,
+            "xr2": 0.9599699050039585
+          },
+          "forward_efficiency": 0.9166774719024292,
+          "backward_efficiency_printed": 0.9284243074244973,
+          "backward_efficiency_force_balance": 0.911534918091047,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1047130212455474,
+            21.235536990648406
+          ],
+          "shifts": {
+            "xs": 0.37385077727502747,
+            "xp1": 0.8130746113624863,
+            "xr1": 2.0,
+            "xp2": 0.47627890563711095,
+            "xr2": 1.1047130212455474
+          },
+          "forward_efficiency": 0.9195971355127363,
+          "backward_efficiency_printed": 0.9319323881885639,
+          "backward_efficiency_force_balance": 0.9149245377062626,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1663977426535492,
+            21.248154844327445
+          ],
+          "shifts": {
+            "xs": 0.4135828589675121,
+            "xp1": 0.7932085705162439,
+            "xr1": 2.0,
+            "xp2": 0.5206512899357488,
+            "xr2": 1.1663977426535492
+          },
+          "forward_efficiency": 0.919849292531025,
+          "backward_efficiency_printed": 0.9321599579125581,
+          "backward_efficiency_force_balance": 0.9152088532517317,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1782688472709233,
+            21.25216995307913
+          ],
+          "shifts": {
+            "xs": 0.42624764323976505,
+            "xp1": 0.7868761783801175,
+            "xr1": 2.0,
+            "xp2": 0.527001971497199,
+            "xr2": 1.1782688472709233
+          },
+          "forward_efficiency": 0.9198586612138485,
+          "backward_efficiency_printed": 0.9321632773647087,
+          "backward_efficiency_force_balance": 0.9152194305317216,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783604717315161,
+            21.252286004006148
+          ],
+          "shifts": {
+            "xs": 0.4266138560165471,
+            "xp1": 0.7866930719917264,
+            "xr1": 2.0,
+            "xp2": 0.5269339537903434,
+            "xr2": 1.1783604717315161
+          },
+          "forward_efficiency": 0.9198586694327899,
+          "backward_efficiency_printed": 0.9321631670023464,
+          "backward_efficiency_force_balance": 0.9152194469871948,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783489481846217,
+            21.252288708991326
+          ],
+          "shifts": {
+            "xs": 0.42662239202948893,
+            "xp1": 0.7866888039852555,
+            "xr1": 2.0,
+            "xp2": 0.5269187091521657,
+            "xr2": 1.1783489481846217
+          },
+          "forward_efficiency": 0.9198586694570983,
+          "backward_efficiency_printed": 0.932163164301939,
+          "backward_efficiency_force_balance": 0.9152194471869392,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483004495179,
+            21.252288629150307
+          ],
+          "shifts": {
+            "xs": 0.4266221400783343,
+            "xp1": 0.7866889299608328,
+            "xr1": 2.0,
+            "xp2": 0.5269181712497554,
+            "xr2": 1.1783483004495179
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643824672,
+          "backward_efficiency_force_balance": 0.9152194471818887,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483004495179,
+            21.252288629150307
+          ],
+          "shifts": {
+            "xs": 0.4266221400783343,
+            "xp1": 0.7866889299608328,
+            "xr1": 2.0,
+            "xp2": 0.5269181712497554,
+            "xr2": 1.1783483004495179
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643824672,
+          "backward_efficiency_force_balance": 0.9152194471818887,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 18,
+          "function_evaluations": 161,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 1,
+      "initial_variables": [
+        0.986241774801468,
+        -0.22003761689261192,
+        22.218809127681823
+      ],
+      "final_variables": [
+        2.0,
+        1.178348305987733,
+        21.252288628648
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 12,
+      "forward_efficiency": 0.9198586694571182,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            0.986241774801468,
+            -0.22003761689261192,
+            22.218809127681823
+          ],
+          "shifts": {
+            "xs": 4.763998659928267,
+            "xp1": -1.8888784425633993,
+            "xr1": 0.986241774801468,
+            "xp2": -2.344330562650735,
+            "xr2": -0.22003761689261192
+          },
+          "forward_efficiency": 0.1057549079384217,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.6374177894515647,
+          "maximum_constraint_violation": 3.6374177894515647,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.5216738597185362,
+            0.9525095844623683,
+            20.779196785103935
+          ],
+          "shifts": {
+            "xs": -0.5111014192032073,
+            "xp1": 1.0163876394608717,
+            "xr1": 1.5216738597185362,
+            "xp2": 0.910854983264534,
+            "xr2": 0.9525095844623683
+          },
+          "forward_efficiency": 0.8458543438075978,
+          "backward_efficiency_printed": 0.8580936001579889,
+          "backward_efficiency_force_balance": 0.8272761027016251,
+          "minimum_constraint_margin": 0.004758848908609115,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.4705225599534106,
+            0.854585163523963,
+            20.863312630146947
+          ],
+          "shifts": {
+            "xs": -0.2199735618525449,
+            "xp1": 0.8452480609029778,
+            "xr1": 1.4705225599534106,
+            "xp2": 0.7108557026138493,
+            "xr2": 0.854585163523963
+          },
+          "forward_efficiency": 0.8854452729401147,
+          "backward_efficiency_printed": 0.8992067029394225,
+          "backward_efficiency_force_balance": 0.8755895900983917,
+          "minimum_constraint_margin": 0.0034779534933740974,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.3847485240602873,
+            0.6570362315897147,
+            21.030481629936435
+          ],
+          "shifts": {
+            "xs": 0.3582960230990475,
+            "xp1": 0.5132262504806199,
+            "xr1": 1.3847485240602873,
+            "xp2": 0.30203660711404,
+            "xr2": 0.6570362315897147
+          },
+          "forward_efficiency": 0.9101901765768972,
+          "backward_efficiency_printed": 0.9215939171054399,
+          "backward_efficiency_force_balance": 0.9041146236226761,
+          "minimum_constraint_margin": 0.003011589418347449,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.410015271565459,
+            0.6971308877159226,
+            21.002385221466167
+          ],
+          "shifts": {
+            "xs": 0.24884795143328575,
+            "xp1": 0.5805836600660866,
+            "xr1": 1.410015271565459,
+            "xp2": 0.3783957423868429,
+            "xr2": 0.6971308877159226
+          },
+          "forward_efficiency": 0.9115652948946971,
+          "backward_efficiency_printed": 0.9234992648090173,
+          "backward_efficiency_force_balance": 0.9057510542207317,
+          "minimum_constraint_margin": 0.0028878952957679394,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.6046062150193658,
+            0.7675103822275342,
+            21.061854947404687
+          ],
+          "shifts": {
+            "xs": 0.2330926167592151,
+            "xp1": 0.6857567991300754,
+            "xr1": 1.6046062150193658,
+            "xp2": 0.37166623004636407,
+            "xr2": 0.7675103822275342
+          },
+          "forward_efficiency": 0.913859171723394,
+          "backward_efficiency_printed": 0.9261460265787148,
+          "backward_efficiency_force_balance": 0.9084081717976537,
+          "minimum_constraint_margin": 0.002743450270965342,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.7729918732822827,
+            0.9848802245339483,
+            21.193670331210853
+          ],
+          "shifts": {
+            "xs": 0.469772053246015,
+            "xp1": 0.6516099100181338,
+            "xr1": 1.7729918732822827,
+            "xp2": 0.4134938195146849,
+            "xr2": 0.9848802245339483
+          },
+          "forward_efficiency": 0.9161376696004125,
+          "backward_efficiency_printed": 0.928164587307393,
+          "backward_efficiency_force_balance": 0.9109796517077913,
+          "minimum_constraint_margin": 0.002762589550796446,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1207405341223873,
+            21.25651283280244
+          ],
+          "shifts": {
+            "xs": 0.43995807343493043,
+            "xp1": 0.7800209632825348,
+            "xr1": 2.0,
+            "xp2": 0.4634963511788641,
+            "xr2": 1.1207405341223873
+          },
+          "forward_efficiency": 0.9195394292487092,
+          "backward_efficiency_printed": 0.9317873414007285,
+          "backward_efficiency_force_balance": 0.9148516754485836,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1620414068573082,
+            21.248555808396905
+          ],
+          "shifts": {
+            "xs": 0.4148471425232474,
+            "xp1": 0.7925764287383763,
+            "xr1": 2.0,
+            "xp2": 0.5157439125356931,
+            "xr2": 1.1620414068573082
+          },
+          "forward_efficiency": 0.9198458943423992,
+          "backward_efficiency_printed": 0.9321548861344573,
+          "backward_efficiency_force_balance": 0.9152048665207114,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1754515338170113,
+            21.25131690951034
+          ],
+          "shifts": {
+            "xs": 0.4235560287432105,
+            "xp1": 0.7882219856283947,
+            "xr1": 2.0,
+            "xp2": 0.5253579813872642,
+            "xr2": 1.1754515338170113
+          },
+          "forward_efficiency": 0.9198581387049489,
+          "backward_efficiency_printed": 0.9321637219333759,
+          "backward_efficiency_force_balance": 0.9152188000181106,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178346371577614,
+            21.25227560279673
+          ],
+          "shifts": {
+            "xs": 0.42658103338245335,
+            "xp1": 0.7867094833087733,
+            "xr1": 2.0,
+            "xp2": 0.5269341619538237,
+            "xr2": 1.178346371577614
+          },
+          "forward_efficiency": 0.9198586693390008,
+          "backward_efficiency_printed": 0.9321631774146902,
+          "backward_efficiency_force_balance": 0.915219446222687,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178349189992025,
+            21.252288409803104
+          ],
+          "shifts": {
+            "xs": 0.42662144789301903,
+            "xp1": 0.7866892760534905,
+            "xr1": 2.0,
+            "xp2": 0.5269193625355858,
+            "xr2": 1.178349189992025
+          },
+          "forward_efficiency": 0.9198586694569738,
+          "backward_efficiency_printed": 0.9321631646034801,
+          "backward_efficiency_force_balance": 0.9152194471677838,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348305987733,
+            21.252288628648
+          ],
+          "shifts": {
+            "xs": 0.4266221384932183,
+            "xp1": 0.7866889307533909,
+            "xr1": 2.0,
+            "xp2": 0.5269181774789712,
+            "xr2": 1.178348305987733
+          },
+          "forward_efficiency": 0.9198586694571182,
+          "backward_efficiency_printed": 0.9321631643829732,
+          "backward_efficiency_force_balance": 0.9152194471818563,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348305987733,
+            21.252288628648
+          ],
+          "shifts": {
+            "xs": 0.4266221384932183,
+            "xp1": 0.7866889307533909,
+            "xr1": 2.0,
+            "xp2": 0.5269181774789712,
+            "xr2": 1.178348305987733
+          },
+          "forward_efficiency": 0.9198586694571182,
+          "backward_efficiency_printed": 0.9321631643829732,
+          "backward_efficiency_force_balance": 0.9152194471818563,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 12,
+          "function_evaluations": 133,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 2,
+      "initial_variables": [
+        0.7105249046137101,
+        -1.4609615476044617,
+        22.56773485019095
+      ],
+      "final_variables": [
+        2.0,
+        1.1783482930475215,
+        21.252288625196705
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 14,
+      "forward_efficiency": 0.9198586694571192,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            0.7105249046137101,
+            -1.4609615476044617,
+            22.56773485019095
+          ],
+          "shifts": {
+            "xs": 6.357834666461052,
+            "xp1": -2.823654880923671,
+            "xr1": 0.7105249046137101,
+            "xp2": -4.178174956132182,
+            "xr2": -1.4609615476044617
+          },
+          "forward_efficiency": 0.04443575320825521,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.357834666461052,
+          "maximum_constraint_violation": 4.357834666461052,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.3593028093071835,
+            0.28036357694697234,
+            21.020796032554983
+          ],
+          "shifts": {
+            "xs": 0.35465923535309396,
+            "xp1": 0.5023217869770448,
+            "xr1": 1.3593028093071835,
+            "xp2": -0.06210099691287224,
+            "xr2": 0.28036357694697234
+          },
+          "forward_efficiency": 0.8918214655116887,
+          "backward_efficiency_printed": 0.8990728960704814,
+          "backward_efficiency_force_balance": 0.8819869691280069,
+          "minimum_constraint_margin": 0.0030350580137967764,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.3670427632313737,
+            0.31303660363098595,
+            21.004430679310204
+          ],
+          "shifts": {
+            "xs": 0.2979301410112736,
+            "xp1": 0.5345563111100501,
+            "xr1": 1.3670427632313737,
+            "xp2": -0.008328553135534156,
+            "xr2": 0.31303660363098595
+          },
+          "forward_efficiency": 0.896840924871489,
+          "backward_efficiency_printed": 0.9054098762021693,
+          "backward_efficiency_force_balance": 0.8881361373226805,
+          "minimum_constraint_margin": 0.0029619125519889655,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.3923650887535448,
+            0.488583990308741,
+            20.936835799572545
+          ],
+          "shifts": {
+            "xs": 0.07229037929140181,
+            "xp1": 0.6600373547310715,
+            "xr1": 1.3923650887535448,
+            "xp2": 0.25328014096380236,
+            "xr2": 0.488583990308741
+          },
+          "forward_efficiency": 0.9077871826378918,
+          "backward_efficiency_printed": 0.9206208604427103,
+          "backward_efficiency_force_balance": 0.9015287858587799,
+          "minimum_constraint_margin": 0.0029240714776139765,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.3857853788067533,
+            0.5168922770771509,
+            20.942903253685024
+          ],
+          "shifts": {
+            "xs": 0.09671641287801092,
+            "xp1": 0.6445344829643712,
+            "xr1": 1.3857853788067533,
+            "xp2": 0.2739357202183735,
+            "xr2": 0.5168922770771509
+          },
+          "forward_efficiency": 0.9085560904026208,
+          "backward_efficiency_printed": 0.9212354443592498,
+          "backward_efficiency_force_balance": 0.902392465799325,
+          "minimum_constraint_margin": 0.002911038323026083,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.4025043853238999,
+            0.7088021344710893,
+            21.005255016937845
+          ],
+          "shifts": {
+            "xs": 0.26493161352237937,
+            "xp1": 0.5687863859007602,
+            "xr1": 1.4025043853238999,
+            "xp2": 0.3863766100496923,
+            "xr2": 0.7088021344710893
+          },
+          "forward_efficiency": 0.9115399889308355,
+          "backward_efficiency_printed": 0.9233997231025476,
+          "backward_efficiency_force_balance": 0.9057140788301022,
+          "minimum_constraint_margin": 0.002903228679032588,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.4604173357492831,
+            0.7982145188496563,
+            21.04196456009506
+          ],
+          "shifts": {
+            "xs": 0.31719180899497124,
+            "xp1": 0.5716127633771559,
+            "xr1": 1.4604173357492831,
+            "xp2": 0.42830807346960115,
+            "xr2": 0.7982145188496563
+          },
+          "forward_efficiency": 0.9125240282607197,
+          "backward_efficiency_printed": 0.9243224574695335,
+          "backward_efficiency_force_balance": 0.9068335913907796,
+          "minimum_constraint_margin": 0.0028897121106210566,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.8412261771397924,
+            1.2100323846694518,
+            21.230736826415317
+          ],
+          "shifts": {
+            "xs": 0.5175366994914308,
+            "xp1": 0.6618447388241808,
+            "xr1": 1.8412261771397924,
+            "xp2": 0.5881699137488171,
+            "xr2": 1.2100323846694518
+          },
+          "forward_efficiency": 0.9168129930015998,
+          "backward_efficiency_printed": 0.9290103024698415,
+          "backward_efficiency_force_balance": 0.9117702152494465,
+          "minimum_constraint_margin": 0.002762928744016735,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.317215627152175,
+            21.27686306737208
+          ],
+          "shifts": {
+            "xs": 0.5043658949533247,
+            "xp1": 0.7478170525233376,
+            "xr1": 2.0,
+            "xp2": 0.631876574009006,
+            "xr2": 1.317215627152175
+          },
+          "forward_efficiency": 0.9189784582628036,
+          "backward_efficiency_printed": 0.9312321457714312,
+          "backward_efficiency_force_balance": 0.9142217857326328,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.2202381373138302,
+            21.252836435690984
+          ],
+          "shifts": {
+            "xs": 0.4283509288525873,
+            "xp1": 0.7858245355737064,
+            "xr1": 2.0,
+            "xp2": 0.5680543706929561,
+            "xr2": 1.2202381373138302
+          },
+          "forward_efficiency": 0.91973998257848,
+          "backward_efficiency_printed": 0.9320231513525473,
+          "backward_efficiency_force_balance": 0.915082501896817,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1789209493102768,
+            21.25052777854222
+          ],
+          "shifts": {
+            "xs": 0.4210664982634027,
+            "xp1": 0.7894667508682987,
+            "xr1": 2.0,
+            "xp2": 0.5299125888738822,
+            "xr2": 1.1789209493102768
+          },
+          "forward_efficiency": 0.9198560942261469,
+          "backward_efficiency_printed": 0.9321625748511491,
+          "backward_efficiency_force_balance": 0.9152164523220202,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1779585927124447,
+            21.25204318177145
+          ],
+          "shifts": {
+            "xs": 0.42584761097846346,
+            "xp1": 0.7870761945107683,
+            "xr1": 2.0,
+            "xp2": 0.5268661010121297,
+            "xr2": 1.1779585927124447
+          },
+          "forward_efficiency": 0.9198586402676788,
+          "backward_efficiency_printed": 0.9321633904270419,
+          "backward_efficiency_force_balance": 0.9152193996279279,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783331999489155,
+            21.252285307032125
+          ],
+          "shifts": {
+            "xs": 0.4266116566044249,
+            "xp1": 0.7866941716977875,
+            "xr1": 2.0,
+            "xp2": 0.5269076407940928,
+            "xr2": 1.1783331999489155
+          },
+          "forward_efficiency": 0.919858669446315,
+          "backward_efficiency_printed": 0.9321631677219074,
+          "backward_efficiency_force_balance": 0.9152194469586337,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348078471851,
+            21.25228861623213
+          ],
+          "shifts": {
+            "xs": 0.4266220993129468,
+            "xp1": 0.7866889503435266,
+            "xr1": 2.0,
+            "xp2": 0.5269179670428875,
+            "xr2": 1.178348078471851
+          },
+          "forward_efficiency": 0.9198586694571174,
+          "backward_efficiency_printed": 0.9321631643954914,
+          "backward_efficiency_force_balance": 0.9152194471810663,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482930475215,
+            21.252288625196705
+          ],
+          "shifts": {
+            "xs": 0.4266221276021085,
+            "xp1": 0.7866889361989458,
+            "xr1": 2.0,
+            "xp2": 0.5269181692865031,
+            "xr2": 1.1783482930475215
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643864535,
+          "backward_efficiency_force_balance": 0.9152194471816374,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482930475215,
+            21.252288625196705
+          ],
+          "shifts": {
+            "xs": 0.4266221276021085,
+            "xp1": 0.7866889361989458,
+            "xr1": 2.0,
+            "xp2": 0.5269181692865031,
+            "xr2": 1.1783482930475215
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643864535,
+          "backward_efficiency_force_balance": 0.9152194471816374,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 14,
+          "function_evaluations": 133,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 3,
+      "initial_variables": [
+        0.9401029271652708,
+        1.0298314989970336,
+        20.040761740932034
+      ],
+      "final_variables": [
+        2.0,
+        1.1783482918767256,
+        21.252288626047438
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 13,
+      "forward_efficiency": 0.9198586694571186,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            0.9401029271652708,
+            1.0298314989970336,
+            20.040761740932034
+          ],
+          "shifts": {
+            "xs": -1.7743572442993174,
+            "xp1": 1.357230085732294,
+            "xr1": 0.9401029271652708,
+            "xp2": 1.7379585577009276,
+            "xr2": 1.0298314989970336
+          },
+          "forward_efficiency": 0.47698574845438296,
+          "backward_efficiency_printed": 0.1451947093018534,
+          "backward_efficiency_force_balance": 0.12377843450298749,
+          "minimum_constraint_margin": -1.644410357659647,
+          "maximum_constraint_violation": 1.644410357659647,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.4288818615787804,
+            0.5030085523738084,
+            20.521589326529682
+          ],
+          "shifts": {
+            "xs": -0.11820885308910326,
+            "xp1": 0.2735453573339418,
+            "xr1": 0.4288818615787804,
+            "xp2": 0.7547913701715676,
+            "xr2": 0.5030085523738084
+          },
+          "forward_efficiency": 0.8523066025724111,
+          "backward_efficiency_printed": 0.8530353684636476,
+          "backward_efficiency_force_balance": 0.8324391115173515,
+          "minimum_constraint_margin": 0.0037478682428392363,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.40498801683859353,
+            0.45670203830508305,
+            20.55315334072028
+          ],
+          "shifts": {
+            "xs": -0.011529721776310953,
+            "xp1": 0.20825886930745224,
+            "xr1": 0.40498801683859353,
+            "xp2": 0.6741718739674776,
+            "xr2": 0.45670203830508305
+          },
+          "forward_efficiency": 0.8642168289871659,
+          "backward_efficiency_printed": 0.8673457793984468,
+          "backward_efficiency_force_balance": 0.8478397037084996,
+          "minimum_constraint_margin": 0.0038031258420192504,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.38086677536848645,
+            0.2503009526293001,
+            20.668259905755683
+          ],
+          "shifts": {
+            "xs": 0.32163870623145707,
+            "xp1": 0.02961403456851469,
+            "xr1": 0.38086677536848645,
+            "xp2": 0.33867750795577767,
+            "xr2": 0.2503009526293001
+          },
+          "forward_efficiency": 0.8853794999416202,
+          "backward_efficiency_printed": 0.8932375640808106,
+          "backward_efficiency_force_balance": 0.8746666922287641,
+          "minimum_constraint_margin": 0.0046467366576165015,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.4374478463495648,
+            0.2241738259278918,
+            20.670783665799522
+          ],
+          "shifts": {
+            "xs": 0.2719564913627457,
+            "xp1": 0.08274567749340955,
+            "xr1": 0.4374478463495648,
+            "xp2": 0.3096522069735728,
+            "xr2": 0.2241738259278918
+          },
+          "forward_efficiency": 0.8890491943452387,
+          "backward_efficiency_printed": 0.8976144694940421,
+          "backward_efficiency_force_balance": 0.8791182341580372,
+          "minimum_constraint_margin": 0.00433640185928319,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.7596904293620774,
+            0.13193092489274116,
+            20.708572628365705
+          ],
+          "shifts": {
+            "xs": 0.05362840102720501,
+            "xp1": 0.3530310141674362,
+            "xr1": 0.7596904293620774,
+            "xp2": 0.17367613614291932,
+            "xr2": 0.13193092489274116
+          },
+          "forward_efficiency": 0.8983612035854677,
+          "backward_efficiency_printed": 0.9098618901447898,
+          "backward_efficiency_force_balance": 0.8904490655726476,
+          "minimum_constraint_margin": 0.003420458296755746,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.858663106821639,
+            0.18701316904227916,
+            20.740264583503816
+          ],
+          "shifts": {
+            "xs": 0.04268540765297402,
+            "xp1": 0.4079888495843325,
+            "xr1": 0.858663106821639,
+            "xp2": 0.19159881678495574,
+            "xr2": 0.18701316904227916
+          },
+          "forward_efficiency": 0.9000346992438,
+          "backward_efficiency_printed": 0.9119468115102232,
+          "backward_efficiency_force_balance": 0.8924534419415664,
+          "minimum_constraint_margin": 0.0033171835574218322,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.0015567595681198,
+            21.218411538073948
+          ],
+          "shifts": {
+            "xs": 0.3200909514736465,
+            "xp1": 0.8399545242631767,
+            "xr1": 2.0,
+            "xp2": 0.3965316142258948,
+            "xr2": 1.0015567595681198
+          },
+          "forward_efficiency": 0.9183702411154614,
+          "backward_efficiency_printed": 0.9306893982248444,
+          "backward_efficiency_force_balance": 0.9135301156175136,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.0611133497064174,
+            21.257444298842387
+          ],
+          "shifts": {
+            "xs": 0.44290029344210646,
+            "xp1": 0.7785498532789468,
+            "xr1": 2.0,
+            "xp2": 0.4025863048691426,
+            "xr2": 1.0611133497064174
+          },
+          "forward_efficiency": 0.9186711137752646,
+          "backward_efficiency_printed": 0.9307658183942876,
+          "backward_efficiency_force_balance": 0.9138481194237269,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1438882762057903,
+            21.250348841003223
+          ],
+          "shifts": {
+            "xs": 0.420502046798529,
+            "xp1": 0.7897489766007355,
+            "xr1": 2.0,
+            "xp2": 0.49512595619218513,
+            "xr2": 1.1438882762057903
+          },
+          "forward_efficiency": 0.9197886550551146,
+          "backward_efficiency_printed": 0.9320836211910031,
+          "backward_efficiency_force_balance": 0.9151386257163469,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1769494218493688,
+            21.25205242636168
+          ],
+          "shifts": {
+            "xs": 0.42587678232455195,
+            "xp1": 0.787061608837724,
+            "xr1": 2.0,
+            "xp2": 0.5258442136621974,
+            "xr2": 1.1769494218493688
+          },
+          "forward_efficiency": 0.9198585780574263,
+          "backward_efficiency_printed": 0.9321633070325714,
+          "backward_efficiency_force_balance": 0.9152193282945226,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178331595371536,
+            21.252284272289298
+          ],
+          "shifts": {
+            "xs": 0.4266083913098142,
+            "xp1": 0.7866958043450929,
+            "xr1": 2.0,
+            "xp2": 0.5269074596515145,
+            "xr2": 1.178331595371536
+          },
+          "forward_efficiency": 0.9198586694429609,
+          "backward_efficiency_printed": 0.932163168763021,
+          "backward_efficiency_force_balance": 0.9152194468892382,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482823615818,
+            21.25228860458512
+          ],
+          "shifts": {
+            "xs": 0.42662206255894386,
+            "xp1": 0.7866889687205281,
+            "xr1": 2.0,
+            "xp2": 0.5269181869547366,
+            "xr2": 1.1783482823615818
+          },
+          "forward_efficiency": 0.9198586694571181,
+          "backward_efficiency_printed": 0.9321631644072365,
+          "backward_efficiency_force_balance": 0.9152194471803272,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482918767256,
+            21.252288626047438
+          ],
+          "shifts": {
+            "xs": 0.42662213028673346,
+            "xp1": 0.7866889348566333,
+            "xr1": 2.0,
+            "xp2": 0.5269181669454013,
+            "xr2": 1.1783482918767256
+          },
+          "forward_efficiency": 0.9198586694571186,
+          "backward_efficiency_printed": 0.932163164385596,
+          "backward_efficiency_force_balance": 0.9152194471816917,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482918767256,
+            21.252288626047438
+          ],
+          "shifts": {
+            "xs": 0.42662213028673346,
+            "xp1": 0.7866889348566333,
+            "xr1": 2.0,
+            "xp2": 0.5269181669454013,
+            "xr2": 1.1783482918767256
+          },
+          "forward_efficiency": 0.9198586694571186,
+          "backward_efficiency_printed": 0.932163164385596,
+          "backward_efficiency_force_balance": 0.9152194471816917,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 13,
+          "function_evaluations": 126,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 4,
+      "initial_variables": [
+        -0.17861062357595858,
+        -0.4651271127627077,
+        22.422059367222115
+      ],
+      "final_variables": [
+        2.0,
+        1.1783483249836917,
+        21.252288638072944
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 19,
+      "forward_efficiency": 0.9198586694571199,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            -0.17861062357595858,
+            -0.4651271127627077,
+            22.422059367222115
+          ],
+          "shifts": {
+            "xs": 6.689823035680011,
+            "xp1": -3.4342168296279842,
+            "xr1": -0.17861062357595858,
+            "xp2": -2.931291208249937,
+            "xr2": -0.4651271127627077
+          },
+          "forward_efficiency": 0.06031598000904276,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.689823035680011,
+          "maximum_constraint_violation": 4.689823035680011,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0841677525786064,
+            0.9637235403932807,
+            20.724374052300572
+          ],
+          "shifts": {
+            "xs": -0.2270575341557502,
+            "xp1": 0.6556126433671783,
+            "xr1": 1.0841677525786064,
+            "xp2": 0.9869957157527409,
+            "xr2": 0.9637235403932807
+          },
+          "forward_efficiency": 0.8510490964562412,
+          "backward_efficiency_printed": 0.8536880451781904,
+          "backward_efficiency_force_balance": 0.8312754769448573,
+          "minimum_constraint_margin": -0.0023271955424888865,
+          "maximum_constraint_violation": 0.0023271955424888865,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0830705868548969,
+            0.9612524880376281,
+            20.72623379263228
+          ],
+          "shifts": {
+            "xs": -0.22079329615736576,
+            "xp1": 0.6519319415061313,
+            "xr1": 1.0830705868548969,
+            "xp2": 0.9823433421047576,
+            "xr2": 0.9612524880376281
+          },
+          "forward_efficiency": 0.8519724051482237,
+          "backward_efficiency_printed": 0.8547779485285294,
+          "backward_efficiency_force_balance": 0.8324698402905488,
+          "minimum_constraint_margin": 0.0035165720324769056,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0390513674197028,
+            0.8968948164749233,
+            20.78912352805214
+          ],
+          "shifts": {
+            "xs": -0.0004406286804250481,
+            "xp1": 0.5197459980500639,
+            "xr1": 1.0390513674197028,
+            "xp2": 0.8433472015025665,
+            "xr2": 0.8968948164749233
+          },
+          "forward_efficiency": 0.8769213283438476,
+          "backward_efficiency_printed": 0.8832191322355042,
+          "backward_efficiency_force_balance": 0.8639417212684224,
+          "minimum_constraint_margin": 0.0031829498744723184,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.9857107052811749,
+            0.7203698299032402,
+            20.93386281735543
+          ],
+          "shifts": {
+            "xs": 0.4702100486327794,
+            "xp1": 0.25775032832419775,
+            "xr1": 0.9857107052811749,
+            "xp2": 0.48881045578079485,
+            "xr2": 0.7203698299032402
+          },
+          "forward_efficiency": 0.8991310534635697,
+          "backward_efficiency_printed": 0.9094694166708482,
+          "backward_efficiency_force_balance": 0.8912327209352612,
+          "minimum_constraint_margin": 0.003854017011841404,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0288712180539465,
+            0.7168379095417041,
+            20.923389096185346
+          ],
+          "shifts": {
+            "xs": 0.396328783753948,
+            "xp1": 0.3162712171499993,
+            "xr1": 1.0288712180539465,
+            "xp2": 0.4984425427326849,
+            "xr2": 0.7168379095417041
+          },
+          "forward_efficiency": 0.9015759374574276,
+          "backward_efficiency_printed": 0.9119499179022516,
+          "backward_efficiency_force_balance": 0.8940561317288933,
+          "minimum_constraint_margin": 0.003569046985999469,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.2195541721109664,
+            0.6450526045132112,
+            20.922585554588842
+          ],
+          "shifts": {
+            "xs": 0.20329225148462537,
+            "xp1": 0.5081309603131705,
+            "xr1": 1.2195541721109664,
+            "xp2": 0.42766539396630776,
+            "xr2": 0.6450526045132112
+          },
+          "forward_efficiency": 0.9078447939615383,
+          "backward_efficiency_printed": 0.9195143574172215,
+          "backward_efficiency_force_balance": 0.9014492267913491,
+          "minimum_constraint_margin": 0.0030327593128424146,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.334974160006849,
+            0.5954351941485556,
+            20.950284628140388
+          ],
+          "shifts": {
+            "xs": 0.16927465237024064,
+            "xp1": 0.5828497538183042,
+            "xr1": 1.334974160006849,
+            "xp2": 0.3431493293121708,
+            "xr2": 0.5954351941485556
+          },
+          "forward_efficiency": 0.9097319308089155,
+          "backward_efficiency_printed": 0.9219260208297682,
+          "backward_efficiency_force_balance": 0.9036827740063588,
+          "minimum_constraint_margin": 0.0029252398015672254,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.4302524040271338,
+            0.6210263083041978,
+            20.98924295180748
+          ],
+          "shifts": {
+            "xs": 0.18942643992936525,
+            "xp1": 0.6204129820488843,
+            "xr1": 1.4302524040271338,
+            "xp2": 0.31915121114413897,
+            "xr2": 0.6210263083041978
+          },
+          "forward_efficiency": 0.9109571965439378,
+          "backward_efficiency_printed": 0.9231472098686394,
+          "backward_efficiency_force_balance": 0.9050827538771345,
+          "minimum_constraint_margin": 0.0028574770582583398,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.8214074338918307,
+            0.8196414548460567,
+            21.156698917335664
+          ],
+          "shifts": {
+            "xs": 0.30656064907434644,
+            "xp1": 0.7574233924087421,
+            "xr1": 1.8214074338918307,
+            "xp2": 0.29812096356360596,
+            "xr2": 0.8196414548460567
+          },
+          "forward_efficiency": 0.9148815229222207,
+          "backward_efficiency_printed": 0.9267607639544365,
+          "backward_efficiency_force_balance": 0.9095105051157876,
+          "minimum_constraint_margin": 0.002619343741079194,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.8592473487178554,
+            0.8923305996507054,
+            21.202565380556404
+          ],
+          "shifts": {
+            "xs": 0.411271028084661,
+            "xp1": 0.7239881603165972,
+            "xr1": 1.8592473487178554,
+            "xp2": 0.30887491178114945,
+            "xr2": 0.8923305996507054
+          },
+          "forward_efficiency": 0.9153689007038399,
+          "backward_efficiency_printed": 0.9270436468415381,
+          "backward_efficiency_force_balance": 0.9100433927804326,
+          "minimum_constraint_margin": 0.0026356473733674113,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.8619055659654653,
+            0.8975415205043502,
+            21.205769793633007
+          ],
+          "shifts": {
+            "xs": 0.4186240573613791,
+            "xp1": 0.7216407543020431,
+            "xr1": 1.8619055659654653,
+            "xp2": 0.3097311229062878,
+            "xr2": 0.8975415205043502
+          },
+          "forward_efficiency": 0.9153712747165113,
+          "backward_efficiency_printed": 0.9270422302411846,
+          "backward_efficiency_force_balance": 0.910046018090641,
+          "minimum_constraint_margin": 0.002638989114539414,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            0.9870941496732044,
+            21.243177904762582
+          ],
+          "shifts": {
+            "xs": 0.3978987158905456,
+            "xp1": 0.8010506420547272,
+            "xr1": 2.0,
+            "xp2": 0.34818286142891475,
+            "xr2": 0.9870941496732044
+          },
+          "forward_efficiency": 0.917581579145349,
+          "backward_efficiency_printed": 0.9295062260802944,
+          "backward_efficiency_force_balance": 0.9125862691537927,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.111154487403088,
+            21.23665567328905
+          ],
+          "shifts": {
+            "xs": 0.37736918562728095,
+            "xp1": 0.8113154071863595,
+            "xr1": 2.0,
+            "xp2": 0.48118769995036637,
+            "xr2": 1.111154487403088
+          },
+          "forward_efficiency": 0.9196395261684917,
+          "backward_efficiency_printed": 0.9319733929362085,
+          "backward_efficiency_force_balance": 0.9149725118200975,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1663828202235016,
+            21.247723394019467
+          ],
+          "shifts": {
+            "xs": 0.41222256553244163,
+            "xp1": 0.7938887172337792,
+            "xr1": 2.0,
+            "xp2": 0.5212292443755204,
+            "xr2": 1.1663828202235016
+          },
+          "forward_efficiency": 0.9198479283070051,
+          "backward_efficiency_printed": 0.9321595902765345,
+          "backward_efficiency_force_balance": 0.9152073590847708,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783105048512272,
+            21.25204608453268
+          ],
+          "shifts": {
+            "xs": 0.4258567706486134,
+            "xp1": 0.7870716146756933,
+            "xr1": 2.0,
+            "xp2": 0.5272140202323616,
+            "xr2": 1.1783105048512272
+          },
+          "forward_efficiency": 0.9198586286129105,
+          "backward_efficiency_printed": 0.9321633734986016,
+          "backward_efficiency_force_balance": 0.9152193863216743,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783906863268596,
+            21.252281717649954
+          ],
+          "shifts": {
+            "xs": 0.426600329744387,
+            "xp1": 0.7866998351278065,
+            "xr1": 2.0,
+            "xp2": 0.5269700648722537,
+            "xr2": 1.1783906863268596
+          },
+          "forward_efficiency": 0.919858669214009,
+          "backward_efficiency_printed": 0.9321631710759687,
+          "backward_efficiency_force_balance": 0.9152194464635101,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783503753720335,
+            21.252288962969807
+          ],
+          "shifts": {
+            "xs": 0.4266231934994149,
+            "xp1": 0.7866884032502925,
+            "xr1": 2.0,
+            "xp2": 0.5269197869559764,
+            "xr2": 1.1783503753720335
+          },
+          "forward_efficiency": 0.9198586694569156,
+          "backward_efficiency_printed": 0.9321631640456526,
+          "backward_efficiency_force_balance": 0.9152194472028697,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483255903748,
+            21.252288638289613
+          ],
+          "shifts": {
+            "xs": 0.4266221689188763,
+            "xp1": 0.7866889155405619,
+            "xr1": 2.0,
+            "xp2": 0.5269181838181985,
+            "xr2": 1.1783483255903748
+          },
+          "forward_efficiency": 0.9198586694571195,
+          "backward_efficiency_printed": 0.9321631643732525,
+          "backward_efficiency_force_balance": 0.9152194471824703,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483249836917,
+            21.252288638072944
+          ],
+          "shifts": {
+            "xs": 0.42662216823514054,
+            "xp1": 0.7866889158824297,
+            "xr1": 2.0,
+            "xp2": 0.5269181835095754,
+            "xr2": 1.1783483249836917
+          },
+          "forward_efficiency": 0.9198586694571199,
+          "backward_efficiency_printed": 0.9321631643734715,
+          "backward_efficiency_force_balance": 0.9152194471824568,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 20,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483249836917,
+            21.252288638072944
+          ],
+          "shifts": {
+            "xs": 0.42662216823514054,
+            "xp1": 0.7866889158824297,
+            "xr1": 2.0,
+            "xp2": 0.5269181835095754,
+            "xr2": 1.1783483249836917
+          },
+          "forward_efficiency": 0.9198586694571199,
+          "backward_efficiency_printed": 0.9321631643734715,
+          "backward_efficiency_force_balance": 0.9152194471824568,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "inner_iterations": 19,
+          "function_evaluations": 210,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 5,
+      "initial_variables": [
+        0.5179144322903921,
+        1.161941807774988,
+        20.98087720425878
+      ],
+      "final_variables": [
+        2.0,
+        1.178348291598129,
+        21.252288626135094
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 16,
+      "forward_efficiency": 0.9198586694571194,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            0.5179144322903921,
+            1.161941807774988,
+            20.98087720425878
+          ],
+          "shifts": {
+            "xs": 1.0768856197183596,
+            "xp1": -0.27948559371398374,
+            "xr1": 0.5179144322903921,
+            "xp2": 0.8707646134431393,
+            "xr2": 1.161941807774988
+          },
+          "forward_efficiency": 0.8275644532394371,
+          "backward_efficiency_printed": 0.8319542264995898,
+          "backward_efficiency_force_balance": 0.8031906164957997,
+          "minimum_constraint_margin": 0.006546223728523315,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.6234439740669528,
+            1.0952446333466925,
+            20.874944162952044
+          ],
+          "shifts": {
+            "xs": 0.6607104356001701,
+            "xp1": -0.01863323076660861,
+            "xr1": 0.6234439740669528,
+            "xp2": 0.9371718909990763,
+            "xr2": 1.0952446333466925
+          },
+          "forward_efficiency": 0.8541303138304851,
+          "backward_efficiency_printed": 0.8550703012322136,
+          "backward_efficiency_force_balance": 0.8351565853072377,
+          "minimum_constraint_margin": 0.005613668615261358,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.7961062874895486,
+            0.9290409352266011,
+            20.82539325148531
+          ],
+          "shifts": {
+            "xs": 0.34559398448201706,
+            "xp1": 0.22525615150376577,
+            "xr1": 0.7961062874895486,
+            "xp2": 0.8316888441911072,
+            "xr2": 0.9290409352266011
+          },
+          "forward_efficiency": 0.8764153164885758,
+          "backward_efficiency_printed": 0.8806018006274858,
+          "backward_efficiency_force_balance": 0.8630244411601571,
+          "minimum_constraint_margin": 0.003840734610616181,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.130542018856362,
+            0.5619586827757592,
+            20.841880724795175
+          ],
+          "shifts": {
+            "xs": 0.05835256593768423,
+            "xp1": 0.5360947264593389,
+            "xr1": 1.130542018856362,
+            "xp2": 0.4445138571836885,
+            "xr2": 0.5619586827757592
+          },
+          "forward_efficiency": 0.9033907439088321,
+          "backward_efficiency_printed": 0.9156148750565821,
+          "backward_efficiency_force_balance": 0.8963765341526695,
+          "minimum_constraint_margin": 0.0030902379295963955,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.2476000395006985,
+            0.506826340706318,
+            20.937709386358968
+          ],
+          "shifts": {
+            "xs": 0.21962327695185158,
+            "xp1": 0.5139883812744235,
+            "xr1": 1.2476000395006985,
+            "xp2": 0.2704215490936671,
+            "xr2": 0.506826340706318
+          },
+          "forward_efficiency": 0.9082056420555448,
+          "backward_efficiency_printed": 0.9198152485744625,
+          "backward_efficiency_force_balance": 0.9018554722784571,
+          "minimum_constraint_margin": 0.003016131662633592,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.2471437986959142,
+            0.5303796001610164,
+            20.93951046833465
+          ],
+          "shifts": {
+            "xs": 0.22537542701687907,
+            "xp1": 0.5108841858395176,
+            "xr1": 1.2471437986959142,
+            "xp2": 0.2917040424600728,
+            "xr2": 0.5303796001610164
+          },
+          "forward_efficiency": 0.9085030253870912,
+          "backward_efficiency_printed": 0.9201415487375418,
+          "backward_efficiency_force_balance": 0.9022031727745542,
+          "minimum_constraint_margin": 0.003020285476039719,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.3300276854637443,
+            0.6697656207363676,
+            20.979635905255588
+          ],
+          "shifts": {
+            "xs": 0.26108514573321817,
+            "xp1": 0.534471269865263,
+            "xr1": 1.3300276854637443,
+            "xp2": 0.3801734796254642,
+            "xr2": 0.6697656207363676
+          },
+          "forward_efficiency": 0.9103897979752419,
+          "backward_efficiency_printed": 0.9221292476339975,
+          "backward_efficiency_force_balance": 0.9043839054862077,
+          "minimum_constraint_margin": 0.002966735561153455,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.6668133504041744,
+            1.03681263594348,
+            21.127735184421436
+          ],
+          "shifts": {
+            "xs": 0.3718621963196429,
+            "xp1": 0.6474755770422658,
+            "xr1": 1.6668133504041744,
+            "xp2": 0.5540175116692657,
+            "xr2": 1.03681263594348
+          },
+          "forward_efficiency": 0.9149563230910915,
+          "backward_efficiency_printed": 0.926841329597853,
+          "backward_efficiency_force_balance": 0.9096125775682836,
+          "minimum_constraint_margin": 0.002754187142996356,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.6871407431251093,
+            1.080744208234175,
+            21.148505491766677
+          ],
+          "shifts": {
+            "xs": 0.4155104600274311,
+            "xp1": 0.6358151415488391,
+            "xr1": 1.6871407431251093,
+            "xp2": 0.5702090560915902,
+            "xr2": 1.080744208234175
+          },
+          "forward_efficiency": 0.9150380808737538,
+          "backward_efficiency_printed": 0.926905875256344,
+          "backward_efficiency_force_balance": 0.9097065607343358,
+          "minimum_constraint_margin": 0.0027776544414250814,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.6965407058466155,
+            1.0987030020024235,
+            21.156836591321508
+          ],
+          "shifts": {
+            "xs": 0.4318531610431413,
+            "xp1": 0.6323437724017371,
+            "xr1": 1.6965407058466155,
+            "xp2": 0.5769977195983501,
+            "xr2": 1.0987030020024235
+          },
+          "forward_efficiency": 0.9150490949157426,
+          "backward_efficiency_printed": 0.9269231128050668,
+          "backward_efficiency_force_balance": 0.9097210565352583,
+          "minimum_constraint_margin": 0.0027872618496980195,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.2846469468964137,
+            21.262905745154644
+          ],
+          "shifts": {
+            "xs": 0.4601626430358454,
+            "xp1": 0.7699186784820773,
+            "xr1": 2.0,
+            "xp2": 0.6185921485992785,
+            "xr2": 1.2846469468964137
+          },
+          "forward_efficiency": 0.9192843047151336,
+          "backward_efficiency_printed": 0.9315010087365458,
+          "backward_efficiency_force_balance": 0.9145601028163091,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1900648887192693,
+            21.24886363178433
+          ],
+          "shifts": {
+            "xs": 0.4158178141274318,
+            "xp1": 0.7920910929362841,
+            "xr1": 2.0,
+            "xp2": 0.5433443177736399,
+            "xr2": 1.1900648887192693
+          },
+          "forward_efficiency": 0.9198293793436452,
+          "backward_efficiency_printed": 0.9321346926747949,
+          "backward_efficiency_force_balance": 0.9151857629968281,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1773292677079987,
+            21.25119461771942
+          ],
+          "shifts": {
+            "xs": 0.4231701992436432,
+            "xp1": 0.7884149003781784,
+            "xr1": 2.0,
+            "xp2": 0.5274039017066099,
+            "xr2": 1.1773292677079987
+          },
+          "forward_efficiency": 0.9198580181033656,
+          "backward_efficiency_printed": 0.9321637574176985,
+          "backward_efficiency_force_balance": 0.9152186603161024,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178164852648945,
+            21.252223194163008
+          ],
+          "shifts": {
+            "xs": 0.4264156508540915,
+            "xp1": 0.7867921745729543,
+            "xr1": 2.0,
+            "xp2": 0.5268247378614506,
+            "xr2": 1.178164852648945
+          },
+          "forward_efficiency": 0.9198586671591406,
+          "backward_efficiency_printed": 0.932163228575504,
+          "backward_efficiency_force_balance": 0.9152194404947391,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783434430602897,
+            21.25228803327493
+          ],
+          "shifts": {
+            "xs": 0.42662025969798645,
+            "xp1": 0.7866898701510068,
+            "xr1": 2.0,
+            "xp2": 0.5269141335719401,
+            "xr2": 1.1783434430602897
+          },
+          "forward_efficiency": 0.9198586694559588,
+          "backward_efficiency_printed": 0.9321631649820165,
+          "backward_efficiency_force_balance": 0.9152194471426949,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482670213834,
+            21.252288630601683
+          ],
+          "shifts": {
+            "xs": 0.4266221446583822,
+            "xp1": 0.7866889276708089,
+            "xr1": 2.0,
+            "xp2": 0.5269181358250482,
+            "xr2": 1.1783482670213834
+          },
+          "forward_efficiency": 0.9198586694571191,
+          "backward_efficiency_printed": 0.9321631643810044,
+          "backward_efficiency_force_balance": 0.9152194471819818,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348291598129,
+            21.252288626135094
+          ],
+          "shifts": {
+            "xs": 0.4266221305633451,
+            "xp1": 0.7866889347183275,
+            "xr1": 2.0,
+            "xp2": 0.5269181665462234,
+            "xr2": 1.178348291598129
+          },
+          "forward_efficiency": 0.9198586694571194,
+          "backward_efficiency_printed": 0.9321631643855077,
+          "backward_efficiency_force_balance": 0.9152194471816975,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348291598129,
+            21.252288626135094
+          ],
+          "shifts": {
+            "xs": 0.4266221305633451,
+            "xp1": 0.7866889347183275,
+            "xr1": 2.0,
+            "xp2": 0.5269181665462234,
+            "xr2": 1.178348291598129
+          },
+          "forward_efficiency": 0.9198586694571194,
+          "backward_efficiency_printed": 0.9321631643855077,
+          "backward_efficiency_force_balance": 0.9152194471816975,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 16,
+          "function_evaluations": 147,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 6,
+      "initial_variables": [
+        -0.9819406015748033,
+        0.19650523325700497,
+        19.849052545517758
+      ],
+      "final_variables": [
+        2.0,
+        1.17834829330963,
+        21.252288626631444
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 21,
+      "forward_efficiency": 0.9198586694571195,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            -0.9819406015748033,
+            0.19650523325700497,
+            19.849052545517758
+          ],
+          "shifts": {
+            "xs": -0.23891404932974192,
+            "xp1": -0.3715132761225307,
+            "xr1": -0.9819406015748033,
+            "xp2": 1.0444546313750056,
+            "xr2": 0.19650523325700497
+          },
+          "forward_efficiency": 0.6366960857197278,
+          "backward_efficiency_printed": 0.4511347712193224,
+          "backward_efficiency_force_balance": 0.4374047415894503,
+          "minimum_constraint_margin": -1.349159312531557,
+          "maximum_constraint_violation": 1.349159312531557,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            -0.5761220621176215,
+            -0.10242176253884128,
+            20.25147891080959
+          ],
+          "shifts": {
+            "xs": 0.21529547002625926,
+            "xp1": -0.3957087660719404,
+            "xr1": -0.5761220621176215,
+            "xp2": 0.42216621470062743,
+            "xr2": -0.10242176253884128
+          },
+          "forward_efficiency": 0.8256305962143713,
+          "backward_efficiency_printed": 0.8147665884225841,
+          "backward_efficiency_force_balance": 0.7960316507481243,
+          "minimum_constraint_margin": -0.21751752780202205,
+          "maximum_constraint_violation": 0.21751752780202205,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            -0.5380954386612258,
+            -0.11286978869695807,
+            20.254111777854238
+          ],
+          "shifts": {
+            "xs": 0.18347799301069978,
+            "xp1": -0.3607867158359628,
+            "xr1": -0.5380954386612258,
+            "xp2": 0.40925145860189904,
+            "xr2": -0.11286978869695807
+          },
+          "forward_efficiency": 0.8305286599871767,
+          "backward_efficiency_printed": 0.8216804599667742,
+          "backward_efficiency_force_balance": 0.8028662704705581,
+          "minimum_constraint_margin": -0.19359712125068507,
+          "maximum_constraint_violation": 0.19359712125068507,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            -0.2794113162607055,
+            -0.1978607189157222,
+            20.267769241625956
+          ],
+          "shifts": {
+            "xs": -0.0428862728582009,
+            "xp1": -0.11826252170125229,
+            "xr1": -0.2794113162607055,
+            "xp2": 0.31140035174601555,
+            "xr2": -0.1978607189157222
+          },
+          "forward_efficiency": 0.8559018217996212,
+          "backward_efficiency_printed": 0.8581251271848773,
+          "backward_efficiency_force_balance": 0.8375319128187506,
+          "minimum_constraint_margin": -0.043784650734632447,
+          "maximum_constraint_violation": 0.043784650734632447,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            -0.20371167910345678,
+            -0.22918323968939913,
+            20.272410048634768
+          ],
+          "shifts": {
+            "xs": -0.1075613577390041,
+            "xp1": -0.04807516068222634,
+            "xr1": -0.20371167910345678,
+            "xp2": 0.2756834482722592,
+            "xr2": -0.22918323968939913
+          },
+          "forward_efficiency": 0.8610033814090929,
+          "backward_efficiency_printed": 0.8659506956950234,
+          "backward_efficiency_force_balance": 0.844423773749421,
+          "minimum_constraint_margin": -0.00430640944391758,
+          "maximum_constraint_violation": 0.00430640944391758,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            -0.1749806702553207,
+            -0.2443949782990531,
+            20.27685637391189
+          ],
+          "shifts": {
+            "xs": -0.12570979634383067,
+            "xp1": -0.02463543695574502,
+            "xr1": -0.1749806702553207,
+            "xp2": 0.25624989432576695,
+            "xr2": -0.2443949782990531
+          },
+          "forward_efficiency": 0.8632396137656981,
+          "backward_efficiency_printed": 0.8692427449602448,
+          "backward_efficiency_force_balance": 0.8473987505680758,
+          "minimum_constraint_margin": 0.004540478236218171,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            -0.09205220889140553,
+            -0.2915830966313955,
+            20.29708623398953
+          ],
+          "shifts": {
+            "xs": -0.1602437287093174,
+            "xp1": 0.03409575990895594,
+            "xr1": -0.09205220889140553,
+            "xp2": 0.18971126761578244,
+            "xr2": -0.2915830966313955
+          },
+          "forward_efficiency": 0.8698105457477989,
+          "backward_efficiency_printed": 0.8785141288430655,
+          "backward_efficiency_force_balance": 0.8559822861604127,
+          "minimum_constraint_margin": 0.004371172103796228,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.19518840669661852,
+            -0.367165018570365,
+            20.400050065584093
+          ],
+          "shifts": {
+            "xs": -0.19506324157702326,
+            "xp1": 0.1951258241368209,
+            "xr1": 0.19518840669661852,
+            "xp2": 0.012138543758359044,
+            "xr2": -0.367165018570365
+          },
+          "forward_efficiency": 0.8809878739361394,
+          "backward_efficiency_printed": 0.893289571070639,
+          "backward_efficiency_force_balance": 0.8701047171700202,
+          "minimum_constraint_margin": -0.016634222587672554,
+          "maximum_constraint_violation": 0.016634222587672554,
+          "feasible": false
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.11060693359112417,
+            -0.2961002569853133,
+            20.385031948761352
+          ],
+          "shifts": {
+            "xs": -0.14792316479769196,
+            "xp1": 0.12926504919440807,
+            "xr1": 0.11060693359112417,
+            "xp2": 0.09843507216554226,
+            "xr2": -0.2961002569853133
+          },
+          "forward_efficiency": 0.8802987442355856,
+          "backward_efficiency_printed": 0.891443532699169,
+          "backward_efficiency_force_balance": 0.8690855891892263,
+          "minimum_constraint_margin": 0.004104721806231337,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.17360314871274118,
+            -0.2777930717753705,
+            20.419341019840488
+          ],
+          "shifts": {
+            "xs": -0.1250781484921733,
+            "xp1": 0.14934064860245724,
+            "xr1": 0.17360314871274118,
+            "xp2": 0.0817717921611607,
+            "xr2": -0.2777930717753705
+          },
+          "forward_efficiency": 0.8827442755118393,
+          "backward_efficiency_printed": 0.8939731798316445,
+          "backward_efficiency_force_balance": 0.8720176405438466,
+          "minimum_constraint_margin": 0.0040330444559546486,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.5333564855988215,
+            -0.14505763002810212,
+            20.621854032537573
+          ],
+          "shifts": {
+            "xs": 0.043225634708614846,
+            "xp1": 0.24506542544510335,
+            "xr1": 0.5333564855988215,
+            "xp2": -0.003902274630419339,
+            "xr2": -0.14505763002810212
+          },
+          "forward_efficiency": 0.8900046002539215,
+          "backward_efficiency_printed": 0.8998930016040493,
+          "backward_efficiency_force_balance": 0.8803782996656788,
+          "minimum_constraint_margin": 0.0036833714658709438,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.6001653228051738,
+            -0.0965690904690859,
+            20.66388713506504
+          ],
+          "shifts": {
+            "xs": 0.09039919089218162,
+            "xp1": 0.25488306595649607,
+            "xr1": 0.6001653228051738,
+            "xp2": -0.003177783047733737,
+            "xr2": -0.0965690904690859
+          },
+          "forward_efficiency": 0.8909729831508283,
+          "backward_efficiency_printed": 0.9004995639308926,
+          "backward_efficiency_force_balance": 0.8814599956987877,
+          "minimum_constraint_margin": 0.0036448823309577216,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.9730710615724574,
+            0.16498430712205536,
+            20.856970428350767
+          ],
+          "shifts": {
+            "xs": 0.25919695792959363,
+            "xp1": 0.35693705182143187,
+            "xr1": 0.9730710615724574,
+            "xp2": 0.029052567843082466,
+            "xr2": 0.16498430712205536
+          },
+          "forward_efficiency": 0.8960915057604674,
+          "backward_efficiency_printed": 0.905237498950612,
+          "backward_efficiency_force_balance": 0.8874064458411602,
+          "minimum_constraint_margin": 0.0033731083874697365,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.604300150115923,
+            0.5908418751174742,
+            21.131051633002375
+          ],
+          "shifts": {
+            "xs": 0.44457100497505797,
+            "xp1": 0.5798645725704326,
+            "xr1": 1.604300150115923,
+            "xp2": 0.10362783523038477,
+            "xr2": 0.5908418751174742
+          },
+          "forward_efficiency": 0.9038416727673633,
+          "backward_efficiency_printed": 0.9136193737038579,
+          "backward_efficiency_force_balance": 0.8965167839406087,
+          "minimum_constraint_margin": 0.0028944970123245817,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.7275029696417397,
+            0.7549147644480625,
+            21.21557596037913
+          ],
+          "shifts": {
+            "xs": 0.5837051328142433,
+            "xp1": 0.5718989184137482,
+            "xr1": 1.7275029696417397,
+            "xp2": 0.1537557785919509,
+            "xr2": 0.7549147644480625
+          },
+          "forward_efficiency": 0.9046465189296546,
+          "backward_efficiency_printed": 0.9150784771472854,
+          "backward_efficiency_force_balance": 0.8975639219036432,
+          "minimum_constraint_margin": 0.00300147958587349,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            0.9402774178311946,
+            21.280506558023355
+          ],
+          "shifts": {
+            "xs": 0.5159255700513534,
+            "xp1": 0.7420372149743233,
+            "xr1": 2.0,
+            "xp2": 0.2498933917128736,
+            "xr2": 0.9402774178311946
+          },
+          "forward_efficiency": 0.9132148645147121,
+          "backward_efficiency_printed": 0.924435308852239,
+          "backward_efficiency_force_balance": 0.9075182533617979,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.0972819517077803,
+            21.238012293032895
+          ],
+          "shifts": {
+            "xs": 0.3816370326018599,
+            "xp1": 0.8091814836990701,
+            "xr1": 2.0,
+            "xp2": 0.46545592261056945,
+            "xr2": 1.0972819517077803
+          },
+          "forward_efficiency": 0.9195491329408454,
+          "backward_efficiency_printed": 0.9318570629553253,
+          "backward_efficiency_force_balance": 0.9148670570274755,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1627851633764483,
+            21.248057854699695
+          ],
+          "shifts": {
+            "xs": 0.4132770557400316,
+            "xp1": 0.7933614721299842,
+            "xr1": 2.0,
+            "xp2": 0.5171719944023455,
+            "xr2": 1.1627851633764483
+          },
+          "forward_efficiency": 0.9198460333837489,
+          "backward_efficiency_printed": 0.9321563978953349,
+          "backward_efficiency_force_balance": 0.915205109089764,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1780856511338995,
+            21.25217859409048
+          ],
+          "shifts": {
+            "xs": 0.4262749106984023,
+            "xp1": 0.7868625446507989,
+            "xr1": 2.0,
+            "xp2": 0.5268068887571472,
+            "xr2": 1.1780856511338995
+          },
+          "forward_efficiency": 0.9198586634637311,
+          "backward_efficiency_printed": 0.9321632708743038,
+          "backward_efficiency_force_balance": 0.9152194336205551,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783502817235658,
+            21.252287311943093
+          ],
+          "shifts": {
+            "xs": 0.42661798341997503,
+            "xp1": 0.7866910082900125,
+            "xr1": 2.0,
+            "xp2": 0.5269219645296811,
+            "xr2": 1.1783502817235658
+          },
+          "forward_efficiency": 0.9198586694548573,
+          "backward_efficiency_printed": 0.9321631657083548,
+          "backward_efficiency_force_balance": 0.9152194470956261,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 20,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783484979913852,
+            21.252288606839414
+          ],
+          "shifts": {
+            "xs": 0.4266220696727334,
+            "xp1": 0.7866889651636333,
+            "xr1": 2.0,
+            "xp2": 0.5269183994834372,
+            "xr2": 1.1783484979913852
+          },
+          "forward_efficiency": 0.9198586694571143,
+          "backward_efficiency_printed": 0.9321631644049592,
+          "backward_efficiency_force_balance": 0.9152194471804663,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 21,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.17834829330963,
+            21.252288626631444
+          ],
+          "shifts": {
+            "xs": 0.4266221321296535,
+            "xp1": 0.7866889339351733,
+            "xr1": 2.0,
+            "xp2": 0.5269181675749259,
+            "xr2": 1.17834829330963
+          },
+          "forward_efficiency": 0.9198586694571195,
+          "backward_efficiency_printed": 0.9321631643850073,
+          "backward_efficiency_force_balance": 0.915219447181729,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 22,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.17834829330963,
+            21.252288626631444
+          ],
+          "shifts": {
+            "xs": 0.4266221321296535,
+            "xp1": 0.7866889339351733,
+            "xr1": 2.0,
+            "xp2": 0.5269181675749259,
+            "xr2": 1.17834829330963
+          },
+          "forward_efficiency": 0.9198586694571195,
+          "backward_efficiency_printed": 0.9321631643850073,
+          "backward_efficiency_force_balance": 0.915219447181729,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 21,
+          "function_evaluations": 168,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 7,
+      "initial_variables": [
+        1.1794722191732951,
+        0.4739918368394336,
+        21.919123099745246
+      ],
+      "final_variables": [
+        2.0,
+        1.1783482891773898,
+        21.252288625378338
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 19,
+      "forward_efficiency": 0.9198586694571191,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            1.1794722191732951,
+            0.4739918368394336,
+            21.919123099745246
+          ],
+          "shifts": {
+            "xs": 3.485580673853171,
+            "xp1": -1.153054227339938,
+            "xr1": 1.1794722191732951,
+            "xp2": -1.165198178782538,
+            "xr2": 0.4739918368394336
+          },
+          "forward_efficiency": 0.3964782879830078,
+          "backward_efficiency_printed": 0.05670246159796323,
+          "backward_efficiency_force_balance": 0.04188670390149289,
+          "minimum_constraint_margin": -1.854689920299485,
+          "maximum_constraint_violation": 1.854689920299485,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.5899896787646228,
+            1.2374675034708975,
+            20.705374228980205
+          ],
+          "shifts": {
+            "xs": -0.7855105048420755,
+            "xp1": 1.1877500918033492,
+            "xr1": 1.5899896787646228,
+            "xp2": 1.2829386098814006,
+            "xr2": 1.2374675034708975
+          },
+          "forward_efficiency": 0.7751226512488817,
+          "backward_efficiency_printed": 0.768400987862269,
+          "backward_efficiency_force_balance": 0.7302934402419939,
+          "minimum_constraint_margin": -0.305745385287699,
+          "maximum_constraint_violation": 0.305745385287699,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.590343651913992,
+            1.193208330372935,
+            20.742798825569157
+          ],
+          "shifts": {
+            "xs": -0.6819215087630535,
+            "xp1": 1.1361325803385227,
+            "xr1": 1.590343651913992,
+            "xp2": 1.1948037504519151,
+            "xr2": 1.193208330372935
+          },
+          "forward_efficiency": 0.7993063409130176,
+          "backward_efficiency_printed": 0.7997090490401113,
+          "backward_efficiency_force_balance": 0.7646141538110699,
+          "minimum_constraint_margin": -0.19065613610914783,
+          "maximum_constraint_violation": 0.19065613610914783,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.5889610951711193,
+            1.1139650122687903,
+            20.809461874186404
+          ],
+          "shifts": {
+            "xs": -0.49266681456945527,
+            "xp1": 1.0408139548702873,
+            "xr1": 1.5889610951711193,
+            "xp2": 1.0359213657911954,
+            "xr2": 1.1139650122687903
+          },
+          "forward_efficiency": 0.8383629299079983,
+          "backward_efficiency_printed": 0.8468488423696405,
+          "backward_efficiency_force_balance": 0.8169696412218171,
+          "minimum_constraint_margin": 0.004683710092225901,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.580128824747415,
+            1.0861751562808428,
+            20.843616650390313
+          ],
+          "shifts": {
+            "xs": -0.3862532848938498,
+            "xp1": 0.9831910548206324,
+            "xr1": 1.580128824747415,
+            "xp2": 0.9666083228129362,
+            "xr2": 1.0861751562808428
+          },
+          "forward_efficiency": 0.8553202194629748,
+          "backward_efficiency_printed": 0.8656031658149457,
+          "backward_efficiency_force_balance": 0.8384759118323195,
+          "minimum_constraint_margin": 0.004142988512963575,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.5238447588425212,
+            0.8244899577612834,
+            21.149186623839412
+          ],
+          "shifts": {
+            "xs": 0.5809093570782538,
+            "xp1": 0.47146770088213374,
+            "xr1": 1.5238447588425212,
+            "xp2": 0.3130424914561343,
+            "xr2": 0.8244899577612834
+          },
+          "forward_efficiency": 0.9083082270302117,
+          "backward_efficiency_printed": 0.9200313108996618,
+          "backward_efficiency_force_balance": 0.9020211124071617,
+          "minimum_constraint_margin": 0.0032659894183363347,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.55161415579235,
+            0.8886052643093496,
+            21.077090566941386
+          ],
+          "shifts": {
+            "xs": 0.3322979311948153,
+            "xp1": 0.6096581122987673,
+            "xr1": 1.55161415579235,
+            "xp2": 0.47279407418838293,
+            "xr2": 0.8886052643093496
+          },
+          "forward_efficiency": 0.913822180038153,
+          "backward_efficiency_printed": 0.9257115904712766,
+          "backward_efficiency_force_balance": 0.9083241304776276,
+          "minimum_constraint_margin": 0.0028202762429767603,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.562671563636406,
+            0.8839111433370013,
+            21.084182771436947
+          ],
+          "shifts": {
+            "xs": 0.34280756072186236,
+            "xp1": 0.6099320014572718,
+            "xr1": 1.562671563636406,
+            "xp2": 0.45877605945073674,
+            "xr2": 0.8839111433370013
+          },
+          "forward_efficiency": 0.9140642018265508,
+          "backward_efficiency_printed": 0.9259643797016779,
+          "backward_efficiency_force_balance": 0.9086022825073012,
+          "minimum_constraint_margin": 0.0028190957233823477,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.6553582464161334,
+            0.870005765919879,
+            21.118407850283422
+          ],
+          "shifts": {
+            "xs": 0.35468267249438545,
+            "xp1": 0.650337786960874,
+            "xr1": 1.6553582464161334,
+            "xp2": 0.39961731614174273,
+            "xr2": 0.870005765919879
+          },
+          "forward_efficiency": 0.9151935477484695,
+          "backward_efficiency_printed": 0.9271613313936321,
+          "backward_efficiency_force_balance": 0.9098935413786793,
+          "minimum_constraint_margin": 0.0027503820715827354,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.7684560785430814,
+            0.8819165709056476,
+            21.14798791235537
+          ],
+          "shifts": {
+            "xs": 0.3325973694483668,
+            "xp1": 0.7179293545473573,
+            "xr1": 1.7684560785430814,
+            "xp2": 0.3720745581295879,
+            "xr2": 0.8819165709056476
+          },
+          "forward_efficiency": 0.9161226750362838,
+          "backward_efficiency_printed": 0.9281827450955894,
+          "backward_efficiency_force_balance": 0.9109544012499979,
+          "minimum_constraint_margin": 0.0026564962657271707,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.9913869355847407,
+            0.9805689558991726,
+            21.218274099425038
+          ],
+          "shifts": {
+            "xs": 0.3282733481884397,
+            "xp1": 0.8315567936981505,
+            "xr1": 1.9913869355847407,
+            "xp2": 0.3757312653534375,
+            "xr2": 0.9805689558991726
+          },
+          "forward_efficiency": 0.9179855487014724,
+          "backward_efficiency_printed": 0.9302029003673088,
+          "backward_efficiency_force_balance": 0.9130809258704983,
+          "minimum_constraint_margin": 0.002535605224266546,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.9924617425907822,
+            1.0299218911749288,
+            21.246808110434426
+          ],
+          "shifts": {
+            "xs": 0.4168754811422737,
+            "xp1": 0.7877931307242543,
+            "xr1": 1.9924617425907822,
+            "xp2": 0.3860258391752822,
+            "xr2": 1.0299218911749288
+          },
+          "forward_efficiency": 0.9183707824205366,
+          "backward_efficiency_printed": 0.9304252474595986,
+          "backward_efficiency_force_balance": 0.9135009553327104,
+          "minimum_constraint_margin": 0.0025520205639415483,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.9924984071128922,
+            1.0321857684917726,
+            21.248079091979235
+          ],
+          "shifts": {
+            "xs": 0.4208456081374812,
+            "xp1": 0.7858263994877055,
+            "xr1": 1.9924984071128922,
+            "xp2": 0.3865434153938224,
+            "xr2": 1.0321857684917726
+          },
+          "forward_efficiency": 0.9183715587400512,
+          "backward_efficiency_printed": 0.930423687474982,
+          "backward_efficiency_force_balance": 0.9135017716156907,
+          "minimum_constraint_margin": 0.00255393970106077,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.9924988785704394,
+            1.032214978240737,
+            21.24809549018782
+          ],
+          "shifts": {
+            "xs": 0.4208968391717369,
+            "xp1": 0.7858010196993512,
+            "xr1": 1.9924988785704394,
+            "xp2": 0.38655009073099267,
+            "xr2": 1.032214978240737
+          },
+          "forward_efficiency": 0.9183715588693415,
+          "backward_efficiency_printed": 0.9304236601060487,
+          "backward_efficiency_force_balance": 0.9135017713057592,
+          "minimum_constraint_margin": 0.002553965125267066,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.9924992789936056,
+            1.0322397683584348,
+            21.24810940240669
+          ],
+          "shifts": {
+            "xs": 0.42094030321235465,
+            "xp1": 0.7857794878906255,
+            "xr1": 1.9924992789936056,
+            "xp2": 0.3865557626105117,
+            "xr2": 1.0322397683584348
+          },
+          "forward_efficiency": 0.9183715589623951,
+          "backward_efficiency_printed": 0.9304236369546481,
+          "backward_efficiency_force_balance": 0.9135017710356103,
+          "minimum_constraint_margin": 0.0025539867078671064,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.0456308943741774,
+            21.23212525396027
+          ],
+          "shifts": {
+            "xs": 0.36312544349822584,
+            "xp1": 0.8184372782508871,
+            "xr1": 2.0,
+            "xp2": 0.42186842152004866,
+            "xr2": 1.0456308943741774
+          },
+          "forward_efficiency": 0.9190085069839407,
+          "backward_efficiency_printed": 0.931269901594946,
+          "backward_efficiency_force_balance": 0.9142478406247715,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1361640064155152,
+            21.24330188385065
+          ],
+          "shifts": {
+            "xs": 0.3982892235000204,
+            "xp1": 0.8008553882499898,
+            "xr1": 2.0,
+            "xp2": 0.49708255291414394,
+            "xr2": 1.1361640064155152
+          },
+          "forward_efficiency": 0.9197744260343085,
+          "backward_efficiency_printed": 0.9320904256793281,
+          "backward_efficiency_force_balance": 0.9151239641704852,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1771649174413104,
+            21.252089931436892
+          ],
+          "shifts": {
+            "xs": 0.4259951303265863,
+            "xp1": 0.7870024348367068,
+            "xr1": 2.0,
+            "xp2": 0.5260081184788463,
+            "xr2": 1.1771649174413104
+          },
+          "forward_efficiency": 0.9198586040191112,
+          "backward_efficiency_printed": 0.9321632962481755,
+          "backward_efficiency_force_balance": 0.9152193601705455,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783388490010873,
+            21.252287046874983
+          ],
+          "shifts": {
+            "xs": 0.42661714695523223,
+            "xp1": 0.7866914265223839,
+            "xr1": 2.0,
+            "xp2": 0.5269108964460191,
+            "xr2": 1.1783388490010873
+          },
+          "forward_efficiency": 0.9198586694529516,
+          "backward_efficiency_printed": 0.9321631659735545,
+          "backward_efficiency_force_balance": 0.9152194470766054,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482891773898,
+            21.252288625378338
+          ],
+          "shifts": {
+            "xs": 0.42662212817528333,
+            "xp1": 0.7866889359123583,
+            "xr1": 2.0,
+            "xp2": 0.5269181651665102,
+            "xr2": 1.1783482891773898
+          },
+          "forward_efficiency": 0.9198586694571191,
+          "backward_efficiency_printed": 0.9321631643862707,
+          "backward_efficiency_force_balance": 0.9152194471816492,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 20,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482891773898,
+            21.252288625378338
+          ],
+          "shifts": {
+            "xs": 0.42662212817528333,
+            "xp1": 0.7866889359123583,
+            "xr1": 2.0,
+            "xp2": 0.5269181651665102,
+            "xr2": 1.1783482891773898
+          },
+          "forward_efficiency": 0.9198586694571191,
+          "backward_efficiency_printed": 0.9321631643862707,
+          "backward_efficiency_force_balance": 0.9152194471816492,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 19,
+          "function_evaluations": 182,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 8,
+      "initial_variables": [
+        -0.523706514732474,
+        1.6945128878216518,
+        22.321745179735174
+      ],
+      "final_variables": [
+        2.0,
+        1.178348305813389,
+        21.252288628953345
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 20,
+      "forward_efficiency": 0.9198586694571192,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            -0.523706514732474,
+            1.6945128878216518,
+            22.321745179735174
+          ],
+          "shifts": {
+            "xs": 6.656906448071965,
+            "xp1": -3.5903064814022194,
+            "xr1": -0.523706514732474,
+            "xp2": -0.601670008740526,
+            "xr2": 1.6945128878216518
+          },
+          "forward_efficiency": 0.08450768481633052,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -4.656906448071965,
+          "maximum_constraint_violation": 4.656906448071965,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.9121579120285634,
+            1.8683199746006571,
+            20.71239980386319
+          ],
+          "shifts": {
+            "xs": -0.08825088099482775,
+            "xp1": 0.5002043965116956,
+            "xr1": 0.9121579120285634,
+            "xp2": 1.9056009297063625,
+            "xr2": 1.8683199746006571
+          },
+          "forward_efficiency": 0.736541773058824,
+          "backward_efficiency_printed": 0.6633454278560392,
+          "backward_efficiency_force_balance": 0.6478961795850613,
+          "minimum_constraint_margin": -0.8626133926929104,
+          "maximum_constraint_violation": 0.8626133926929104,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.8878631461899875,
+            1.8127554936927224,
+            20.781333531581744
+          ],
+          "shifts": {
+            "xs": 0.1287381344361449,
+            "xp1": 0.3795625058769213,
+            "xr1": 0.8878631461899875,
+            "xp2": 1.7685444106069772,
+            "xr2": 1.8127554936927224
+          },
+          "forward_efficiency": 0.768509906505097,
+          "backward_efficiency_printed": 0.7182031649878793,
+          "backward_efficiency_force_balance": 0.7034818417324363,
+          "minimum_constraint_margin": -0.6812462582503424,
+          "maximum_constraint_violation": 0.6812462582503424,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.8040382177251146,
+            1.600839764815238,
+            21.0169811365572
+          ],
+          "shifts": {
+            "xs": 0.8984871478909962,
+            "xp1": -0.04722446508294076,
+            "xr1": 0.8040382177251146,
+            "xp2": 1.2633026980471729,
+            "xr2": 1.600839764815238
+          },
+          "forward_efficiency": 0.8272234624135129,
+          "backward_efficiency_printed": 0.8221290810777969,
+          "backward_efficiency_force_balance": 0.7995595422663642,
+          "minimum_constraint_margin": -0.06146259249945948,
+          "maximum_constraint_violation": 0.06146259249945948,
+          "feasible": false
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.8002004337249939,
+            1.5778391203418374,
+            21.03782013771835
+          ],
+          "shifts": {
+            "xs": 0.9649229935158425,
+            "xp1": -0.0823612798954243,
+            "xr1": 0.8002004337249939,
+            "xp2": 1.2133185493703036,
+            "xr2": 1.5778391203418374
+          },
+          "forward_efficiency": 0.8281921804850229,
+          "backward_efficiency_printed": 0.825848733811621,
+          "backward_efficiency_force_balance": 0.8016879191456506,
+          "minimum_constraint_margin": -0.004042505665677049,
+          "maximum_constraint_violation": 0.004042505665677049,
+          "feasible": false
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.8044379176180718,
+            1.5738735037778513,
+            21.038596006720923
+          ],
+          "shifts": {
+            "xs": 0.963022021223719,
+            "xp1": -0.07929205180282362,
+            "xr1": 0.8044379176180718,
+            "xp2": 1.208345143341559,
+            "xr2": 1.5738735037778513
+          },
+          "forward_efficiency": 0.8289857697504159,
+          "backward_efficiency_printed": 0.826900539444588,
+          "backward_efficiency_force_balance": 0.8027727901477976,
+          "minimum_constraint_margin": 0.0008918671586946365,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.9807676467795559,
+            1.4564581444850728,
+            21.03292000924098
+          ],
+          "shifts": {
+            "xs": 0.7696088999886253,
+            "xp1": 0.1055793733954653,
+            "xr1": 0.9807676467795559,
+            "xp2": 1.0982972202092744,
+            "xr2": 1.4564581444850728
+          },
+          "forward_efficiency": 0.8568390889673071,
+          "backward_efficiency_printed": 0.8592405340245777,
+          "backward_efficiency_force_balance": 0.8387838504821167,
+          "minimum_constraint_margin": 0.005143062711911228,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.769788012394128,
+            0.9268993931669947,
+            21.03340421056746
+          ],
+          "shifts": {
+            "xs": -0.017955016817385205,
+            "xp1": 0.8938715146057566,
+            "xr1": 1.769788012394128,
+            "xp2": 0.5681104478338143,
+            "xr2": 0.9268993931669947
+          },
+          "forward_efficiency": 0.907254215540601,
+          "backward_efficiency_printed": 0.9214978159299089,
+          "backward_efficiency_force_balance": 0.9011094535619986,
+          "minimum_constraint_margin": 0.0029544433118862123,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.7273535259864832,
+            0.9876491007164683,
+            21.066890467786234
+          ],
+          "shifts": {
+            "xs": 0.1256014572881412,
+            "xp1": 0.800876034349171,
+            "xr1": 1.7273535259864832,
+            "xp2": 0.5852151448742109,
+            "xr2": 0.9876491007164683
+          },
+          "forward_efficiency": 0.9116146352181793,
+          "backward_efficiency_printed": 0.9244458529030768,
+          "backward_efficiency_force_balance": 0.9059075493795923,
+          "minimum_constraint_margin": 0.0027418653771592583,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.766490989364521,
+            1.045413782646003,
+            21.15229876699982
+          ],
+          "shifts": {
+            "xs": 0.3478754582276613,
+            "xp1": 0.7093077655684299,
+            "xr1": 1.766490989364521,
+            "xp2": 0.5297957750723091,
+            "xr2": 1.045413782646003
+          },
+          "forward_efficiency": 0.9166965078926274,
+          "backward_efficiency_printed": 0.9288206998325986,
+          "backward_efficiency_force_balance": 0.9116172020884283,
+          "minimum_constraint_margin": 0.002663905848350412,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.8515988552798182,
+            1.0348354085879046,
+            21.194942468432323
+          ],
+          "shifts": {
+            "xs": 0.3951312063820436,
+            "xp1": 0.7282338244488873,
+            "xr1": 1.8515988552798182,
+            "xp2": 0.4617245996832757,
+            "xr2": 1.0348354085879046
+          },
+          "forward_efficiency": 0.9179769337989446,
+          "backward_efficiency_printed": 0.9301509028479162,
+          "backward_efficiency_force_balance": 0.9130766040531006,
+          "minimum_constraint_margin": 0.002630561824873756,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.9171330558204893,
+            1.0223022090765848,
+            21.213183266024508
+          ],
+          "shifts": {
+            "xs": 0.38658369879578736,
+            "xp1": 0.765274678512351,
+            "xr1": 1.9171330558204893,
+            "xp2": 0.424403357376003,
+            "xr2": 1.0223022090765848
+          },
+          "forward_efficiency": 0.9183564738925475,
+          "backward_efficiency_printed": 0.9305308362254274,
+          "backward_efficiency_force_balance": 0.9135027301316272,
+          "minimum_constraint_margin": 0.0025837034579432316,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.984325409982361,
+            1.0459022322206142,
+            21.2344672034845
+          ],
+          "shifts": {
+            "xs": 0.38616150502896973,
+            "xp1": 0.7990819524766957,
+            "xr1": 1.984325409982361,
+            "xp2": 0.41893339397519624,
+            "xr2": 1.0459022322206142
+          },
+          "forward_efficiency": 0.9188961836662634,
+          "backward_efficiency_printed": 0.9310947870660138,
+          "backward_efficiency_force_balance": 0.9141142620580431,
+          "minimum_constraint_margin": 0.0025448272578536546,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.984987190168197,
+            1.0592972830155851,
+            21.242912929152833
+          ],
+          "shifts": {
+            "xs": 0.41207694273603357,
+            "xp1": 0.7864551237160817,
+            "xr1": 1.984987190168197,
+            "xp2": 0.4207496645101154,
+            "xr2": 1.0592972830155851
+          },
+          "forward_efficiency": 0.9189292044785827,
+          "backward_efficiency_printed": 0.9310961005020637,
+          "backward_efficiency_force_balance": 0.9141490030418807,
+          "minimum_constraint_margin": 0.0025542035909947858,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.0736347990955322,
+            21.23582073988881
+          ],
+          "shifts": {
+            "xs": 0.37474312983262426,
+            "xp1": 0.8126284350836879,
+            "xr1": 2.0,
+            "xp2": 0.44481196849954263,
+            "xr2": 1.0736347990955322
+          },
+          "forward_efficiency": 0.919334422495789,
+          "backward_efficiency_printed": 0.9316210179739896,
+          "backward_efficiency_force_balance": 0.9146208495105504,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1382148704232127,
+            21.24307112923924
+          ],
+          "shifts": {
+            "xs": 0.397562403840908,
+            "xp1": 0.801218798079546,
+            "xr1": 2.0,
+            "xp2": 0.4994501307516477,
+            "xr2": 1.1382148704232127
+          },
+          "forward_efficiency": 0.91978102169684,
+          "backward_efficiency_printed": 0.9320993082866343,
+          "backward_efficiency_force_balance": 0.9151316829478408,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1771604601863688,
+            21.251816486329925
+          ],
+          "shifts": {
+            "xs": 0.42513228982837337,
+            "xp1": 0.7874338550858133,
+            "xr1": 2.0,
+            "xp2": 0.5263797924484285,
+            "xr2": 1.1771604601863688
+          },
+          "forward_efficiency": 0.9198585568222796,
+          "backward_efficiency_printed": 0.932163555659379,
+          "backward_efficiency_force_balance": 0.9152192935911476,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783508997093648,
+            21.252277099608147
+          ],
+          "shifts": {
+            "xs": 0.4265857567993714,
+            "xp1": 0.7867071216003143,
+            "xr1": 2.0,
+            "xp2": 0.5269366310145361,
+            "xr2": 1.1783508997093648
+          },
+          "forward_efficiency": 0.9198586693508448,
+          "backward_efficiency_printed": 0.9321631759114873,
+          "backward_efficiency_force_balance": 0.9152194463304149,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 18,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783496904944712,
+            21.252288448753575
+          ],
+          "shifts": {
+            "xs": 0.42662157080747853,
+            "xp1": 0.7866892145962607,
+            "xr1": 2.0,
+            "xp2": 0.5269198094561116,
+            "xr2": 1.1783496904944712
+          },
+          "forward_efficiency": 0.9198586694568884,
+          "backward_efficiency_printed": 0.9321631645641024,
+          "backward_efficiency_force_balance": 0.9152194471701607,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 19,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483210069976,
+            21.252288631835153
+          ],
+          "shifts": {
+            "xs": 0.42662214855079794,
+            "xp1": 0.786688925724601,
+            "xr1": 2.0,
+            "xp2": 0.5269181881138498,
+            "xr2": 1.1783483210069976
+          },
+          "forward_efficiency": 0.919858669457119,
+          "backward_efficiency_printed": 0.9321631643797599,
+          "backward_efficiency_force_balance": 0.9152194471820593,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 20,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348305813389,
+            21.252288628953345
+          ],
+          "shifts": {
+            "xs": 0.4266221394567862,
+            "xp1": 0.7866889302716069,
+            "xr1": 2.0,
+            "xp2": 0.526918176884581,
+            "xr2": 1.178348305813389
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643826662,
+          "backward_efficiency_force_balance": 0.9152194471818766,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 21,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348305813389,
+            21.252288628953345
+          ],
+          "shifts": {
+            "xs": 0.4266221394567862,
+            "xp1": 0.7866889302716069,
+            "xr1": 2.0,
+            "xp2": 0.526918176884581,
+            "xr2": 1.178348305813389
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643826662,
+          "backward_efficiency_force_balance": 0.9152194471818766,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 20,
+          "function_evaluations": 189,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 9,
+      "initial_variables": [
+        1.0021805894655427,
+        -1.0993006517329167,
+        21.050369904365134
+      ],
+      "final_variables": [
+        2.0,
+        1.1783482936933587,
+        21.252288626622253
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 16,
+      "forward_efficiency": 0.919858669457119,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            1.0021805894655427,
+            -1.0993006517329167,
+            21.050369904365134
+          ],
+          "shifts": {
+            "xs": 0.8007878203814367,
+            "xp1": 0.10069638454205299,
+            "xr1": 1.0021805894655427,
+            "xp2": -1.4801499571494225,
+            "xr2": -1.0993006517329167
+          },
+          "forward_efficiency": 0.5599267326121099,
+          "backward_efficiency_printed": 0.20301890300642028,
+          "backward_efficiency_force_balance": 0.1980808007008579,
+          "minimum_constraint_margin": -0.7723189110437081,
+          "maximum_constraint_violation": 0.7723189110437081,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.2607751125816162,
+            0.08196824906823119,
+            20.456840768710872
+          ],
+          "shifts": {
+            "xs": -1.1171931907318755,
+            "xp1": 1.1889841516567459,
+            "xr1": 1.2607751125816162,
+            "xp2": 0.4026139782614638,
+            "xr2": 0.08196824906823119
+          },
+          "forward_efficiency": 0.7883187144248195,
+          "backward_efficiency_printed": 0.8214878049648952,
+          "backward_efficiency_force_balance": 0.7606409561363456,
+          "minimum_constraint_margin": -0.14369953064497432,
+          "maximum_constraint_violation": 0.14369953064497432,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.092927378564915,
+            0.0845647393169342,
+            20.675943791838698
+          ],
+          "shifts": {
+            "xs": -0.36940140347249123,
+            "xp1": 0.7311643910187031,
+            "xr1": 1.092927378564915,
+            "xp2": 0.16410861205437466,
+            "xr2": 0.0845647393169342
+          },
+          "forward_efficiency": 0.8851603105412965,
+          "backward_efficiency_printed": 0.9034748049125131,
+          "backward_efficiency_force_balance": 0.8760836578285516,
+          "minimum_constraint_margin": 0.003997241415269692,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0757932342823038,
+            0.08862715367980734,
+            20.703073361548203
+          ],
+          "shifts": {
+            "xs": -0.27766807552940187,
+            "xp1": 0.6767306549058528,
+            "xr1": 1.0757932342823038,
+            "xp2": 0.13677582450253428,
+            "xr2": 0.08862715367980734
+          },
+          "forward_efficiency": 0.8903055510391699,
+          "backward_efficiency_printed": 0.9068213403020786,
+          "backward_efficiency_force_balance": 0.8818131497715355,
+          "minimum_constraint_margin": 0.003678448539701784,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0165961025903032,
+            0.12040818741334691,
+            20.792742979109626
+          ],
+          "shifts": {
+            "xs": 0.032256810569959216,
+            "xp1": 0.492169646010172,
+            "xr1": 1.0165961025903032,
+            "xp2": 0.06251387547131965,
+            "xr2": 0.12040818741334691
+          },
+          "forward_efficiency": 0.8982021659869974,
+          "backward_efficiency_printed": 0.9096916786064324,
+          "backward_efficiency_force_balance": 0.8902278742458587,
+          "minimum_constraint_margin": 0.0031833055776894215,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.9931163473235034,
+            0.21947820940401286,
+            20.822723767598113
+          ],
+          "shifts": {
+            "xs": 0.14096212627545301,
+            "xp1": 0.4260771105240252,
+            "xr1": 0.9931163473235034,
+            "xp2": 0.1253687975694667,
+            "xr2": 0.21947820940401286
+          },
+          "forward_efficiency": 0.9012398444889083,
+          "backward_efficiency_printed": 0.9122206847893858,
+          "backward_efficiency_force_balance": 0.8937069746049546,
+          "minimum_constraint_margin": 0.0032196627089986496,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0105738890964258,
+            0.38940536489233324,
+            20.85034024408861
+          ],
+          "shifts": {
+            "xs": 0.20261537507483673,
+            "xp1": 0.4039792570107945,
+            "xr1": 1.0105738890964258,
+            "xp2": 0.261607934183604,
+            "xr2": 0.38940536489233324
+          },
+          "forward_efficiency": 0.9043932572806662,
+          "backward_efficiency_printed": 0.9156128483936042,
+          "backward_efficiency_force_balance": 0.897417154082324,
+          "minimum_constraint_margin": 0.0032514422231118,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.080434508411014,
+            0.5043060225158826,
+            20.88070943834869
+          ],
+          "shifts": {
+            "xs": 0.2204141679434657,
+            "xp1": 0.4300101702337742,
+            "xr1": 1.080434508411014,
+            "xp2": 0.33910366478020965,
+            "xr2": 0.5043060225158826
+          },
+          "forward_efficiency": 0.9059546205781936,
+          "backward_efficiency_printed": 0.9173124009586676,
+          "backward_efficiency_force_balance": 0.899239635057756,
+          "minimum_constraint_margin": 0.003189701167083503,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.3114915824871218,
+            0.773098341371885,
+            20.977151329423815
+          ],
+          "shifts": {
+            "xs": 0.27224424623263044,
+            "xp1": 0.5196236681272457,
+            "xr1": 1.3114915824871218,
+            "xp2": 0.48667705294293967,
+            "xr2": 0.773098341371885
+          },
+          "forward_efficiency": 0.9092060766338205,
+          "backward_efficiency_printed": 0.9206866615909286,
+          "backward_efficiency_force_balance": 0.9029890617602258,
+          "minimum_constraint_margin": 0.0029937260850866343,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.8184134462449735,
+            1.2606122893185603,
+            21.18967891551407
+          ],
+          "shifts": {
+            "xs": 0.4119134181168578,
+            "xp1": 0.7032500140640578,
+            "xr1": 1.8184134462449735,
+            "xp2": 0.6946326264565862,
+            "xr2": 1.2606122893185603
+          },
+          "forward_efficiency": 0.9147699638381347,
+          "backward_efficiency_printed": 0.9263879700972871,
+          "backward_efficiency_force_balance": 0.909355290209293,
+          "minimum_constraint_margin": 0.002666056593282895,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.8219339273585806,
+            1.2749470537450005,
+            21.198066315312317
+          ],
+          "shifts": {
+            "xs": 0.4345398741742539,
+            "xp1": 0.6936970265921634,
+            "xr1": 1.8219339273585806,
+            "xp2": 0.6975994071134046,
+            "xr2": 1.2749470537450005
+          },
+          "forward_efficiency": 0.914793716614564,
+          "backward_efficiency_printed": 0.9264222436871079,
+          "backward_efficiency_force_balance": 0.9093857341200824,
+          "minimum_constraint_margin": 0.002682506587013078,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.3966552022990362,
+            21.278264420387437
+          ],
+          "shifts": {
+            "xs": 0.50881094788476,
+            "xp1": 0.74559452605762,
+            "xr1": 2.0,
+            "xp2": 0.7093762940703658,
+            "xr2": 1.3966552022990362
+          },
+          "forward_efficiency": 0.9175788327958897,
+          "backward_efficiency_printed": 0.929594922895977,
+          "backward_efficiency_force_balance": 0.9126031093178488,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.2326541462099287,
+            21.26501925953503
+          ],
+          "shifts": {
+            "xs": 0.46684813744793185,
+            "xp1": 0.7665759312760341,
+            "xr1": 2.0,
+            "xp2": 0.5636834607019621,
+            "xr2": 1.2326541462099287
+          },
+          "forward_efficiency": 0.9197168585542389,
+          "backward_efficiency_printed": 0.9320182708951817,
+          "backward_efficiency_force_balance": 0.915061241502465,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1770987881517962,
+            21.253191910451275
+          ],
+          "shifts": {
+            "xs": 0.42947285370597,
+            "xp1": 0.785263573147015,
+            "xr1": 2.0,
+            "xp2": 0.5244259268685636,
+            "xr2": 1.1770987881517962
+          },
+          "forward_efficiency": 0.91985765192789,
+          "backward_efficiency_printed": 0.9321612317955194,
+          "backward_efficiency_force_balance": 0.9152183537277233,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178336660140682,
+            21.25238237110756
+          ],
+          "shifts": {
+            "xs": 0.42691796072831467,
+            "xp1": 0.7865410196358427,
+            "xr1": 2.0,
+            "xp2": 0.5267775740165522,
+            "xr2": 1.178336660140682
+          },
+          "forward_efficiency": 0.9198586626937351,
+          "backward_efficiency_printed": 0.9321630637864482,
+          "backward_efficiency_force_balance": 0.915219445585674,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783478495382829,
+            21.25228852018414
+          ],
+          "shifts": {
+            "xs": 0.4266217962181025,
+            "xp1": 0.7866891018909488,
+            "xr1": 2.0,
+            "xp2": 0.5269178702370076,
+            "xr2": 1.1783478495382829
+          },
+          "forward_efficiency": 0.9198586694571094,
+          "backward_efficiency_printed": 0.9321631644923324,
+          "backward_efficiency_force_balance": 0.9152194471749542,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482936933587,
+            21.252288626622253
+          ],
+          "shifts": {
+            "xs": 0.4266221321006558,
+            "xp1": 0.7866889339496721,
+            "xr1": 2.0,
+            "xp2": 0.5269181679712992,
+            "xr2": 1.1783482936933587
+          },
+          "forward_efficiency": 0.919858669457119,
+          "backward_efficiency_printed": 0.9321631643850165,
+          "backward_efficiency_force_balance": 0.9152194471817283,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 17,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482936933587,
+            21.252288626622253
+          ],
+          "shifts": {
+            "xs": 0.4266221321006558,
+            "xp1": 0.7866889339496721,
+            "xr1": 2.0,
+            "xp2": 0.5269181679712992,
+            "xr2": 1.1783482936933587
+          },
+          "forward_efficiency": 0.919858669457119,
+          "backward_efficiency_printed": 0.9321631643850165,
+          "backward_efficiency_force_balance": 0.9152194471817283,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 16,
+          "function_evaluations": 154,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 10,
+      "initial_variables": [
+        -1.6423064431659764,
+        -1.244557828556828,
+        21.695383812749018
+      ],
+      "final_variables": [
+        2.0,
+        1.1783482928709743,
+        21.252288626477917
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 15,
+      "forward_efficiency": 0.9198586694571189,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            -1.6423064431659764,
+            -1.244557828556828,
+            21.695383812749018
+          ],
+          "shifts": {
+            "xs": 5.527787151737478,
+            "xp1": -3.585046797451727,
+            "xr1": -1.6423064431659764,
+            "xp2": -2.537427538410756,
+            "xr2": -1.244557828556828
+          },
+          "forward_efficiency": 0.06897583943618336,
+          "backward_efficiency_printed": 0.0,
+          "backward_efficiency_force_balance": 0.0,
+          "minimum_constraint_margin": -3.5277871517374777,
+          "maximum_constraint_violation": 3.5277871517374777,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.4078110783624891,
+            0.5816819340027637,
+            20.455814901811117
+          ],
+          "shifts": {
+            "xs": -0.26684651730857756,
+            "xp1": 0.3373287978355333,
+            "xr1": 0.4078110783624891,
+            "xp2": 0.9034018911666284,
+            "xr2": 0.5816819340027637
+          },
+          "forward_efficiency": 0.8230860683217553,
+          "backward_efficiency_printed": 0.815146069993989,
+          "backward_efficiency_force_balance": 0.7927591919542734,
+          "minimum_constraint_margin": -0.15880238021578386,
+          "maximum_constraint_violation": 0.15880238021578386,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.3976698287590543,
+            0.5482104961997565,
+            20.47306448990033
+          ],
+          "shifts": {
+            "xs": -0.2125698309884985,
+            "xp1": 0.3051198298737764,
+            "xr1": 0.3976698287590543,
+            "xp2": 0.8517972066119934,
+            "xr2": 0.5482104961997565
+          },
+          "forward_efficiency": 0.8332716938914619,
+          "backward_efficiency_printed": 0.8284821765887992,
+          "backward_efficiency_force_balance": 0.8068298265271429,
+          "minimum_constraint_margin": -0.08505408561483635,
+          "maximum_constraint_violation": 0.08505408561483635,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.38409204301357835,
+            0.5041579142886676,
+            20.495659202311924
+          ],
+          "shifts": {
+            "xs": -0.1407794036242661,
+            "xp1": 0.26243572331892223,
+            "xr1": 0.38409204301357835,
+            "xp2": 0.7837675051568979,
+            "xr2": 0.5041579142886676
+          },
+          "forward_efficiency": 0.84538485679842,
+          "backward_efficiency_printed": 0.8439589010107114,
+          "backward_efficiency_force_balance": 0.8231843847019341,
+          "minimum_constraint_margin": 0.0038000844861142413,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.34826035268960664,
+            0.3910707994044751,
+            20.566057788086397
+          ],
+          "shifts": {
+            "xs": 0.07929023359967302,
+            "xp1": 0.1344850595449668,
+            "xr1": 0.34826035268960664,
+            "xp2": 0.5943750265945561,
+            "xr2": 0.3910707994044751
+          },
+          "forward_efficiency": 0.8710047778819533,
+          "backward_efficiency_printed": 0.8753800880392928,
+          "backward_efficiency_force_balance": 0.8564918355682056,
+          "minimum_constraint_margin": 0.0040086011568423174,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.34363460373852606,
+            0.22528684767321883,
+            20.657695172289092
+          ],
+          "shifts": {
+            "xs": 0.33004785078482435,
+            "xp1": 0.006793376476850854,
+            "xr1": 0.34363460373852606,
+            "xp2": 0.32576451745392654,
+            "xr2": 0.22528684767321883
+          },
+          "forward_efficiency": 0.8840439933788841,
+          "backward_efficiency_printed": 0.8916858084048498,
+          "backward_efficiency_force_balance": 0.8730497242917656,
+          "minimum_constraint_margin": 0.004774098967465501,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.3858385270915434,
+            0.21358693334023027,
+            20.660536199517104
+          ],
+          "shifts": {
+            "xs": 0.29558595112203234,
+            "xp1": 0.04512628798475554,
+            "xr1": 0.3858385270915434,
+            "xp2": 0.3108153399753505,
+            "xr2": 0.21358693334023027
+          },
+          "forward_efficiency": 0.8867566191847067,
+          "backward_efficiency_printed": 0.8948945069562589,
+          "backward_efficiency_force_balance": 0.8763437706653806,
+          "minimum_constraint_margin": 0.004535619977964034,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.7805059640508829,
+            0.14004342750678012,
+            20.715819422684802
+          ],
+          "shifts": {
+            "xs": 0.05287161933989304,
+            "xp1": 0.36381717235549493,
+            "xr1": 0.7805059640508829,
+            "xp2": 0.1733301128179866,
+            "xr2": 0.14004342750678012
+          },
+          "forward_efficiency": 0.8986968636663111,
+          "backward_efficiency_printed": 0.9102597818732402,
+          "backward_efficiency_force_balance": 0.890848272934283,
+          "minimum_constraint_margin": 0.0033979367234707736,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.9026943135806671,
+            0.21012734394265165,
+            20.755902643628616
+          ],
+          "shifts": {
+            "xs": 0.04238408050926934,
+            "xp1": 0.4301551165356989,
+            "xr1": 0.9026943135806671,
+            "xp2": 0.1962171928112724,
+            "xr2": 0.21012734394265165
+          },
+          "forward_efficiency": 0.9007495054837313,
+          "backward_efficiency_printed": 0.9127840461761654,
+          "backward_efficiency_force_balance": 0.893300098190516,
+          "minimum_constraint_margin": 0.003276497586429561,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.0932083376636013,
+            21.270553078981752
+          ],
+          "shifts": {
+            "xs": 0.484366432192747,
+            "xp1": 0.7578167839036265,
+            "xr1": 2.0,
+            "xp2": 0.41659575646844416,
+            "xr2": 1.0932083376636013
+          },
+          "forward_efficiency": 0.9186622825445476,
+          "backward_efficiency_printed": 0.9308080102490309,
+          "backward_efficiency_force_balance": 0.9138477595806819,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.155017207727385,
+            21.25456724623044
+          ],
+          "shifts": {
+            "xs": 0.4338143645286858,
+            "xp1": 0.7830928177356571,
+            "xr1": 2.0,
+            "xp2": 0.5004516255651874,
+            "xr2": 1.155017207727385
+          },
+          "forward_efficiency": 0.9198012968012241,
+          "backward_efficiency_printed": 0.9320945353234961,
+          "backward_efficiency_force_balance": 0.9151535264583504,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1764210456741861,
+            21.251789612002913
+          ],
+          "shifts": {
+            "xs": 0.4250474920325362,
+            "xp1": 0.7874762539837319,
+            "xr1": 2.0,
+            "xp2": 0.5256773429232283,
+            "xr2": 1.1764210456741861
+          },
+          "forward_efficiency": 0.9198584815584945,
+          "backward_efficiency_printed": 0.9321634998641706,
+          "backward_efficiency_force_balance": 0.9152192057749068,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1780463301110702,
+            21.25217492664158
+          ],
+          "shifts": {
+            "xs": 0.42626333774030867,
+            "xp1": 0.7868683311298457,
+            "xr1": 2.0,
+            "xp2": 0.5267726126919632,
+            "xr2": 1.1780463301110702
+          },
+          "forward_efficiency": 0.9198586627462939,
+          "backward_efficiency_printed": 0.9321632739042086,
+          "backward_efficiency_force_balance": 0.9152194325831028,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783495787208929,
+            21.252287245292827
+          ],
+          "shifts": {
+            "xs": 0.42661777309441007,
+            "xp1": 0.786691113452795,
+            "xr1": 2.0,
+            "xp2": 0.5269213532139129,
+            "xr2": 1.1783495787208929
+          },
+          "forward_efficiency": 0.9198586694551175,
+          "backward_efficiency_printed": 0.9321631657759055,
+          "backward_efficiency_force_balance": 0.9152194470916974,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.178348416863431,
+            21.2522886068338
+          ],
+          "shifts": {
+            "xs": 0.42662206965501426,
+            "xp1": 0.7866889651724929,
+            "xr1": 2.0,
+            "xp2": 0.5269183183632067,
+            "xr2": 1.178348416863431
+          },
+          "forward_efficiency": 0.9198586694571166,
+          "backward_efficiency_printed": 0.9321631644049674,
+          "backward_efficiency_force_balance": 0.9152194471804684,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482928709743,
+            21.252288626477917
+          ],
+          "shifts": {
+            "xs": 0.42662213164517393,
+            "xp1": 0.786688934177413,
+            "xr1": 2.0,
+            "xp2": 0.5269181673474683,
+            "xr2": 1.1783482928709743
+          },
+          "forward_efficiency": 0.9198586694571189,
+          "backward_efficiency_printed": 0.9321631643851622,
+          "backward_efficiency_force_balance": 0.9152194471817194,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783482928709743,
+            21.252288626477917
+          ],
+          "shifts": {
+            "xs": 0.42662213164517393,
+            "xp1": 0.786688934177413,
+            "xr1": 2.0,
+            "xp2": 0.5269181673474683,
+            "xr2": 1.1783482928709743
+          },
+          "forward_efficiency": 0.9198586694571189,
+          "backward_efficiency_printed": 0.9321631643851622,
+          "backward_efficiency_force_balance": 0.9152194471817194,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "inner_iterations": 15,
+          "function_evaluations": 133,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    },
+    {
+      "start_index": 11,
+      "initial_variables": [
+        0.8811437612681416,
+        1.683035036763156,
+        20.630268612603583
+      ],
+      "final_variables": [
+        2.0,
+        1.1783483781069646,
+        21.252288645626997
+      ],
+      "solver_success": true,
+      "solver_message": "Outer residual and feasibility converged; CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 15,
+      "forward_efficiency": 0.9198586694571192,
+      "minimum_constraint_margin": 0.0,
+      "feasible": true,
+      "history": [
+        {
+          "iteration": 0,
+          "outer_iteration": 0,
+          "penalty": 10.0,
+          "variables": [
+            0.8811437612681416,
+            1.683035036763156,
+            20.630268612603583
+          ],
+          "shifts": {
+            "xs": -0.28186022048141895,
+            "xp1": 0.5815019908747803,
+            "xr1": 0.8811437612681416,
+            "xp2": 1.8146928007899557,
+            "xr2": 1.683035036763156
+          },
+          "forward_efficiency": 0.7297141784201476,
+          "backward_efficiency_printed": 0.6563348164086725,
+          "backward_efficiency_force_balance": 0.6381781228211981,
+          "minimum_constraint_margin": -0.8637070138778028,
+          "maximum_constraint_violation": 0.8637070138778028,
+          "feasible": false
+        },
+        {
+          "iteration": 1,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.8457017022087037,
+            1.4396379563678772,
+            20.774058478332005
+          ],
+          "shifts": {
+            "xs": 0.15038748889334697,
+            "xp1": 0.34765710665767835,
+            "xr1": 0.8457017022087037,
+            "xp2": 1.404123117495914,
+            "xr2": 1.4396379563678772
+          },
+          "forward_efficiency": 0.8147350041244974,
+          "backward_efficiency_printed": 0.7937787724409271,
+          "backward_efficiency_force_balance": 0.7776001936555309,
+          "minimum_constraint_margin": -0.361547748311514,
+          "maximum_constraint_violation": 0.361547748311514,
+          "feasible": false
+        },
+        {
+          "iteration": 2,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.8204971082784702,
+            1.2496839265227093,
+            20.871933372957713
+          ],
+          "shifts": {
+            "xs": 0.4549489342107855,
+            "xp1": 0.18277408703384235,
+            "xr1": 0.8204971082784702,
+            "xp2": 1.0953291469870532,
+            "xr2": 1.2496839265227093
+          },
+          "forward_efficiency": 0.8545865636219573,
+          "backward_efficiency_printed": 0.8518959648890093,
+          "backward_efficiency_force_balance": 0.834556421072744,
+          "minimum_constraint_margin": -0.0001943519897639528,
+          "maximum_constraint_violation": 0.0001943519897639528,
+          "feasible": false
+        },
+        {
+          "iteration": 3,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            0.8419663656535121,
+            1.1409289624428838,
+            20.906314926506994
+          ],
+          "shifts": {
+            "xs": 0.5333251680499731,
+            "xp1": 0.15432059880176952,
+            "xr1": 0.8419663656535121,
+            "xp2": 0.9439006421018666,
+            "xr2": 1.1409289624428838
+          },
+          "forward_efficiency": 0.8683414886569777,
+          "backward_efficiency_printed": 0.8712056455047973,
+          "backward_efficiency_force_balance": 0.8529766579139578,
+          "minimum_constraint_margin": 0.00438606919092932,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 4,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.0256973089816412,
+            0.6737287188150227,
+            20.982033938287163
+          ],
+          "shifts": {
+            "xs": 0.5725397599851016,
+            "xp1": 0.2265787744982698,
+            "xr1": 1.0256973089816412,
+            "xp2": 0.38107392212648644,
+            "xr2": 0.6737287188150227
+          },
+          "forward_efficiency": 0.8982757118026107,
+          "backward_efficiency_printed": 0.9092784347275348,
+          "backward_efficiency_force_balance": 0.8903717976871675,
+          "minimum_constraint_margin": 0.00412886759405684,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 5,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.1592374085127437,
+            0.564110808322404,
+            20.94982575100852
+          ],
+          "shifts": {
+            "xs": 0.3436583079030262,
+            "xp1": 0.40778955030485875,
+            "xr1": 1.1592374085127437,
+            "xp2": 0.3124055368469308,
+            "xr2": 0.564110808322404
+          },
+          "forward_efficiency": 0.9067163160493346,
+          "backward_efficiency_printed": 0.9178172740946677,
+          "backward_efficiency_force_balance": 0.9000949694961409,
+          "minimum_constraint_margin": 0.0032637939135975458,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 6,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.2480218855728262,
+            0.5588036790009063,
+            20.928639675240884
+          ],
+          "shifts": {
+            "xs": 0.19256871730577152,
+            "xp1": 0.5277265841335274,
+            "xr1": 1.2480218855728262,
+            "xp2": 0.3338144589462315,
+            "xr2": 0.5588036790009063
+          },
+          "forward_efficiency": 0.9086761872936656,
+          "backward_efficiency_printed": 0.9205576322105933,
+          "backward_efficiency_force_balance": 0.9024337845068355,
+          "minimum_constraint_margin": 0.003001585449167732,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 7,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.274777937043031,
+            0.5585385641329199,
+            20.933614039918208
+          ],
+          "shifts": {
+            "xs": 0.18041219296386823,
+            "xp1": 0.5471828720395814,
+            "xr1": 1.274777937043031,
+            "xp2": 0.3272923683747001,
+            "xr2": 0.5585385641329199
+          },
+          "forward_efficiency": 0.9089408603780598,
+          "backward_efficiency_printed": 0.920939246061702,
+          "backward_efficiency_force_balance": 0.9027514164409698,
+          "minimum_constraint_margin": 0.002974471357069075,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 8,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            1.5023152876635497,
+            0.6488513800004978,
+            21.000861178431013
+          ],
+          "shifts": {
+            "xs": 0.15199762460007982,
+            "xp1": 0.675158831531735,
+            "xr1": 1.5023152876635497,
+            "xp2": 0.33207478579504146,
+            "xr2": 0.6488513800004978
+          },
+          "forward_efficiency": 0.9113840811681693,
+          "backward_efficiency_printed": 0.9239501782036871,
+          "backward_efficiency_force_balance": 0.9056178473349875,
+          "minimum_constraint_margin": 0.002819779187478555,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 9,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.0061563023151252,
+            21.22246677693787
+          ],
+          "shifts": {
+            "xs": 0.332803724713425,
+            "xp1": 0.8335981376432875,
+            "xr1": 2.0,
+            "xp2": 0.3955971963443846,
+            "xr2": 1.0061563023151252
+          },
+          "forward_efficiency": 0.9184428245260795,
+          "backward_efficiency_printed": 0.9307158764554148,
+          "backward_efficiency_force_balance": 0.9136068503499555,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 10,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1223906797676584,
+            21.245204642680854
+          ],
+          "shifts": {
+            "xs": 0.40428376031426305,
+            "xp1": 0.7978581198428685,
+            "xr1": 2.0,
+            "xp2": 0.4806969651878754,
+            "xr2": 1.1223906797676584
+          },
+          "forward_efficiency": 0.9197038647913204,
+          "backward_efficiency_printed": 0.9319990228634883,
+          "backward_efficiency_force_balance": 0.9150417550146194,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 11,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1762768296037827,
+            21.252378622307244
+          ],
+          "shifts": {
+            "xs": 0.42690613056358995,
+            "xp1": 0.786546934718205,
+            "xr1": 2.0,
+            "xp2": 0.5247229006067177,
+            "xr2": 1.1762768296037827
+          },
+          "forward_efficiency": 0.9198583058089845,
+          "backward_efficiency_printed": 0.932162647935518,
+          "backward_efficiency_force_balance": 0.9152190334686304,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 12,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783343651819416,
+            21.252312807154905
+          ],
+          "shifts": {
+            "xs": 0.42669843784452777,
+            "xp1": 0.7866507810777361,
+            "xr1": 2.0,
+            "xp2": 0.5268709755921596,
+            "xr2": 1.1783343651819416
+          },
+          "forward_efficiency": 0.9198586689222197,
+          "backward_efficiency_printed": 0.9321631394992146,
+          "backward_efficiency_force_balance": 0.9152194481177581,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 13,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783509388411209,
+            21.25228989741909
+          ],
+          "shifts": {
+            "xs": 0.42662614230468954,
+            "xp1": 0.7866869288476552,
+            "xr1": 2.0,
+            "xp2": 0.5269190649566979,
+            "xr2": 1.1783509388411209
+          },
+          "forward_efficiency": 0.9198586694563431,
+          "backward_efficiency_printed": 0.9321631631030683,
+          "backward_efficiency_force_balance": 0.9152194472616314,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 14,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483967974213,
+            21.252288649882665
+          ],
+          "shifts": {
+            "xs": 0.4266222055026123,
+            "xp1": 0.7866888972486938,
+            "xr1": 2.0,
+            "xp2": 0.5269182390773512,
+            "xr2": 1.1783483967974213
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643615622,
+          "backward_efficiency_force_balance": 0.9152194471832062,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 15,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483781069646,
+            21.252288645626997
+          ],
+          "shifts": {
+            "xs": 0.42662219207317964,
+            "xp1": 0.7866889039634102,
+            "xr1": 2.0,
+            "xp2": 0.5269182262411709,
+            "xr2": 1.1783483781069646
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643658533,
+          "backward_efficiency_force_balance": 0.9152194471829358,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        },
+        {
+          "iteration": 16,
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "variables": [
+            2.0,
+            1.1783483781069646,
+            21.252288645626997
+          ],
+          "shifts": {
+            "xs": 0.42662219207317964,
+            "xp1": 0.7866889039634102,
+            "xr1": 2.0,
+            "xp2": 0.5269182262411709,
+            "xr2": 1.1783483781069646
+          },
+          "forward_efficiency": 0.9198586694571192,
+          "backward_efficiency_printed": 0.9321631643658533,
+          "backward_efficiency_force_balance": 0.9152194471829358,
+          "minimum_constraint_margin": 0.0,
+          "maximum_constraint_violation": 0.0,
+          "feasible": true
+        }
+      ],
+      "outer_stages": [
+        {
+          "outer_iteration": 1,
+          "penalty": 10.0,
+          "inner_success": true,
+          "inner_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "inner_iterations": 15,
+          "function_evaluations": 140,
+          "maximum_constraint_violation": 0.0,
+          "multiplier_residual": 2e-08
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "摩擦係数の数値は論文に見つからないため設定値を使う。論文へのフィットはしない。",
+    "Table IIIの転位・モジュールは丸められ、3つの復元中心距離に微小差がある。",
+    "歯先径は論文式(82)-(86)。表のかみあい率と完全には一致しない。",
+    "L-BFGS-B + augmented Lagrangianは局所法。複数初期値で確認するが大域最適性の証明ではない。",
+    "切下げ、歯強度・許容トルク、加工工具との干渉、実歯形の検証は対象外。",
+    "論文の実測順駆動効率89.0%は、この計算モデルの予測値と別である。",
+    "逆駆動は印刷式(75)と式(74)のトルク釣合いによる再導出値を区別する。再導出値にはeta_aが掛かる。"
+  ],
+  "best": {
+    "center_mm": 21.252288638072944,
+    "shifts": {
+      "xs": 0.42662216823514054,
+      "xp1": 0.7866889158824297,
+      "xr1": 2.0,
+      "xp2": 0.5269181835095754,
+      "xr2": 1.1783483249836917
+    },
+    "meshes": [
+      {
+        "name": "a",
+        "z1": 12,
+        "z2": 39,
+        "sign": 1,
+        "module": 0.8,
+        "center": 21.252288638072944,
+        "working_angle": 0.4463985426667966,
+        "base_radius1": 4.510524579772361,
+        "base_radius2": 14.659204884260173,
+        "tip_radius1": 5.822937505367,
+        "tip_radius2": 16.910990903484834,
+        "tip_angle1": 0.684692976815282,
+        "tip_angle2": 0.5219576076614842,
+        "approach_ratio": 0.5992476703689775,
+        "recess_ratio": 0.6452114788554316,
+        "basic_efficiency": 0.9818232281229404
+      },
+      {
+        "name": "b",
+        "z1": 39,
+        "z2": 90,
+        "sign": -1,
+        "module": 0.8,
+        "center": 21.252288638072944,
+        "working_angle": 0.4463985426667966,
+        "base_radius1": 14.659204884260173,
+        "base_radius2": 33.828934348292705,
+        "tip_radius1": 16.910990903484834,
+        "tip_radius2": 36.8,
+        "tip_angle1": 0.5219576076614842,
+        "tip_angle2": 0.4045883418104952,
+        "approach_ratio": 0.7220505109998372,
+        "recess_ratio": 0.5992476703689775,
+        "basic_efficiency": 0.9974476141221961
+      },
+      {
+        "name": "c",
+        "z1": 32,
+        "z2": 81,
+        "sign": -1,
+        "module": 0.8467,
+        "center": 21.252288638072944,
+        "working_angle": 0.40973925090164265,
+        "base_radius1": 12.73020387231086,
+        "base_radius2": 32.223328551786864,
+        "tip_radius1": 14.840041625977557,
+        "tip_radius2": 34.44235752676369,
+        "tip_angle1": 0.5397677945435144,
+        "tip_angle2": 0.3609190392621045,
+        "approach_ratio": 0.7331266276248449,
+        "recess_ratio": 0.8392828004977505,
+        "basic_efficiency": 0.9960240937469299
+      }
+    ],
+    "forward_efficiency": 0.9198586694571199,
+    "backward_efficiency": 0.9321631643734715,
+    "backward_efficiency_force_balance": 0.9152194471824568
+  },
+  "constraint_margins": {
+    "xs_lower": 2.4266221682351405,
+    "xs_upper": 1.5733778317648595,
+    "xp1_lower": 2.7866889158824297,
+    "xp1_upper": 1.2133110841175703,
+    "xr1_lower": 4.0,
+    "xr1_upper": 0.0,
+    "xp2_lower": 2.5269181835095753,
+    "xp2_upper": 1.4730818164904247,
+    "xr2_lower": 3.1783483249836917,
+    "xr2_upper": 0.8216516750163083,
+    "a_tip1_above_base": 1.6405161569932991,
+    "a_tip2_above_base": 2.814732524030825,
+    "a_approach_nonnegative": 0.5992476703689775,
+    "a_recess_nonnegative": 0.6452114788554316,
+    "a_contact_lower": 0.24445914922440926,
+    "a_contact_upper": 0.7555408507755907,
+    "a_basic_efficiency_lower": 0.9818232281229404,
+    "a_basic_efficiency_upper": 0.018176771877059572,
+    "b_tip1_above_base": 2.814732524030825,
+    "b_tip2_above_base": 3.713832064634115,
+    "b_approach_nonnegative": 0.7220505109998372,
+    "b_recess_nonnegative": 0.5992476703689775,
+    "b_contact_lower": 0.3212981813688147,
+    "b_contact_upper": 0.6787018186311853,
+    "b_basic_efficiency_lower": 0.9974476141221961,
+    "b_basic_efficiency_upper": 0.002552385877803931,
+    "b_trochoid": 0.013165248321879708,
+    "b_trimming": 0.025545408607249742,
+    "c_tip1_above_base": 2.491836250935039,
+    "c_tip2_above_base": 2.6207971831543992,
+    "c_approach_nonnegative": 0.7331266276248449,
+    "c_recess_nonnegative": 0.8392828004977505,
+    "c_contact_lower": 0.5724094281225955,
+    "c_contact_upper": 0.42759057187740446,
+    "c_basic_efficiency_lower": 0.9960240937469299,
+    "c_basic_efficiency_upper": 0.003975906253070094,
+    "c_trochoid": 0.01359014865007846,
+    "c_trimming": 0.02792897664976296,
+    "b_planet_clearance": 3.7350773641143142,
+    "c_planet_clearance": 8.420881594786824,
+    "total_efficiency_lower": 0.9198586694571199,
+    "total_efficiency_upper": 0.08014133054288008
+  },
+  "selected_trial": 4,
+  "comparison": [
+    {
+      "parameter": "xs",
+      "paper": 0.476,
+      "optimized": 0.42662216823514054,
+      "difference": -0.04937783176485944
+    },
+    {
+      "parameter": "xp1",
+      "paper": 0.762,
+      "optimized": 0.7866889158824297,
+      "difference": 0.02468891588242972
+    },
+    {
+      "parameter": "xr1",
+      "paper": 2.0,
+      "optimized": 2.0,
+      "difference": 0.0
+    },
+    {
+      "parameter": "xp2",
+      "paper": 0.536,
+      "optimized": 0.5269181835095754,
+      "difference": -0.00908181649042461
+    },
+    {
+      "parameter": "xr2",
+      "paper": 1.21,
+      "optimized": 1.1783483249836917,
+      "difference": -0.03165167501630828
+    },
+    {
+      "parameter": "contact_ratio_a",
+      "paper": 1.232,
+      "optimized": 1.2444591492244093,
+      "difference": 0.012459149224409272
+    },
+    {
+      "parameter": "contact_ratio_b",
+      "paper": 1.42,
+      "optimized": 1.3212981813688147,
+      "difference": -0.09870181863118521
+    },
+    {
+      "parameter": "contact_ratio_c",
+      "paper": 1.565,
+      "optimized": 1.5724094281225955,
+      "difference": 0.007409428122595596
+    }
+  ],
+  "efficiency_comparison": [
+    {
+      "quantity": "forward_eq64",
+      "paper_measured_percent": 89.0,
+      "calculated_percent": 91.98586694571199,
+      "difference_pp": 2.98586694571199
+    },
+    {
+      "quantity": "backward_printed_eq75",
+      "paper_measured_percent": 85.3,
+      "calculated_percent": 93.21631643734715,
+      "difference_pp": 7.916316437347149
+    },
+    {
+      "quantity": "backward_force_balance_eq74",
+      "paper_measured_percent": 85.3,
+      "calculated_percent": 91.52194471824569,
+      "difference_pp": 6.221944718245687
+    }
+  ],
+  "quasi_newton_settings": {
+    "base_config": "optimization_config.json",
+    "output_directory": "quasi_newton_output",
+    "outer_max_iterations": 20,
+    "initial_penalty": 10.0,
+    "penalty_growth": 5.0,
+    "inner_gtol": 1e-08,
+    "inner_ftol": 1e-14,
+    "constraint_buffer": 2e-08
+  },
+  "paper_method_note": "論文は準ニュートン法とのみ記載。L-BFGS-Bと拡張ラグランジュ法は本実装の選択であり、完全再現ではありません。"
+}

@@ -1,0 +1,75 @@
+{
+  "status": "success",
+  "limits": [
+    2.0,
+    0.9
+  ],
+  "comparison": [
+    {
+      "quantity": "xs",
+      "paper": 0.476,
+      "limit_2.0": 0.42662192437516566,
+      "limit_0.9": 0.19468671775985402,
+      "difference_0.9_minus_2.0": -0.23193520661531164
+    },
+    {
+      "quantity": "xp1",
+      "paper": 0.762,
+      "limit_2.0": 0.786689037812417,
+      "limit_0.9": 0.352656641120073,
+      "difference_0.9_minus_2.0": -0.43403239669234395
+    },
+    {
+      "quantity": "xr1",
+      "paper": 2.0,
+      "limit_2.0": 1.9999999999999996,
+      "limit_0.9": 0.9,
+      "difference_0.9_minus_2.0": -1.0999999999999996
+    },
+    {
+      "quantity": "xp2",
+      "paper": 0.536,
+      "limit_2.0": 0.5269179608852921,
+      "limit_0.9": 0.28869114309714444,
+      "difference_0.9_minus_2.0": -0.23822681778814764
+    },
+    {
+      "quantity": "xr2",
+      "paper": 1.21,
+      "limit_2.0": 1.178347996053891,
+      "limit_0.9": 0.3660516086242659,
+      "difference_0.9_minus_2.0": -0.8122963874296251
+    },
+    {
+      "quantity": "center_mm",
+      "paper": null,
+      "limit_2.0": 21.252288560795947,
+      "limit_0.9": 20.80889658580155,
+      "difference_0.9_minus_2.0": -0.4433919749943982
+    },
+    {
+      "quantity": "forward_percent_eq64",
+      "paper": 89.0,
+      "limit_2.0": 91.98586694571155,
+      "limit_0.9": 90.24155344528162,
+      "difference_0.9_minus_2.0": -1.744313500429925
+    },
+    {
+      "quantity": "backward_percent_printed_eq75",
+      "paper": 85.3,
+      "limit_2.0": 93.2163164451388,
+      "limit_0.9": 91.34143254717888,
+      "difference_0.9_minus_2.0": -1.8748838979599185
+    },
+    {
+      "quantity": "backward_percent_force_balance",
+      "paper": 85.3,
+      "limit_2.0": 91.52194471775417,
+      "limit_0.9": 89.51017686535515,
+      "difference_0.9_minus_2.0": -2.011767852399018
+    }
+  ],
+  "objective_equation": "64",
+  "friction_coefficient": 0.1,
+  "note": "同じ歯数・摩擦係数・制約・初期値数・乱数シード。各範囲内で独立に探索。論文の転位は±0.9では不可行。"
+}

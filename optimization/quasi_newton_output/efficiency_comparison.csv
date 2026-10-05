@@ -1,0 +1,4 @@
+﻿quantity,paper_measured_percent,calculated_percent,difference_pp
+forward_eq64,89.0,91.98586694571199,2.98586694571199
+backward_printed_eq75,85.3,93.21631643734715,7.916316437347149
+backward_force_balance_eq74,85.3,91.52194471824569,6.221944718245687

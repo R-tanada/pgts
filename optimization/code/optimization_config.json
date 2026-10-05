@@ -1,0 +1,15 @@
+{
+  "friction_coefficient": 0.1,
+  "shift_lower": -2.0,
+  "shift_upper": 2.0,
+  "contact_ratio_lower": 1.0,
+  "contact_ratio_upper": 2.0,
+  "planet_clearance_mm": 0.0,
+  "include_trimming_constraint": true,
+  "start_count": 12,
+  "random_seed": 42,
+  "max_iterations": 1000,
+  "ftol": 1e-11,
+  "feasibility_tolerance": 1e-7,
+  "output_directory": "../optimization_output"
+}

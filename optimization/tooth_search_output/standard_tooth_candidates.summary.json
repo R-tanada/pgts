@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "tooth_ranges": {
+      "sun": {
+        "minimum": 20,
+        "maximum": 60
+      },
+      "planet1": {
+        "minimum": 20,
+        "maximum": 60
+      },
+      "ring1": {
+        "minimum": 60,
+        "maximum": 180
+      },
+      "planet2": {
+        "minimum": 20,
+        "maximum": 60
+      },
+      "ring2": {
+        "minimum": 60,
+        "maximum": 180
+      }
+    },
+    "module1_mm": 1.0,
+    "module2_mm": 1.0,
+    "planet_count": 3,
+    "reduction_min": 90,
+    "reduction_max": 110,
+    "direction": "both",
+    "planet_clearance_mm": 0.0,
+    "output_csv": "standard_tooth_candidates.csv"
+  },
+  "counts": {
+    "center_matched_combinations": 68921,
+    "rejected_reduction_ratio": 67248,
+    "accepted": 565,
+    "rejected_equal_spacing": 1108
+  },
+  "notes": [
+    "無転位・標準20度。切下げは未判定。",
+    "トロコイド判定は歯数差>9の保守的な十分条件。",
+    "不合格件数は最初に不合格になった条件のみを集計。"
+  ]
+}

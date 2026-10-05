@@ -1,0 +1,10 @@
+{
+  "base_config": "optimization_config.json",
+  "output_directory": "../quasi_newton_output",
+  "outer_max_iterations": 20,
+  "initial_penalty": 10.0,
+  "penalty_growth": 5.0,
+  "inner_gtol": 1e-8,
+  "inner_ftol": 1e-14,
+  "constraint_buffer": 2e-8
+}
