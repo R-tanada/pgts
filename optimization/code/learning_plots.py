@@ -60,15 +60,8 @@ class LearningPlotter:
         shifts = self.best["shifts"]
         self.variables = [shifts["xr1"], shifts["xr2"], self.best["center_mm"]]
         self.entries = []
-        self.pending_figures = {}
-        self.defer_saving = False
-        self.comparison_ranges = None
 
     def save(self, figure, stem, title, explanation):
-        if self.defer_saving:
-            self.pending_figures[stem] = figure
-            self.entries.append({"stem": stem, "title": title, "explanation": explanation})
-            return
         figure.savefig(self.figures / f"{stem}.png", dpi=150)
         figure.savefig(self.figures / f"{stem}.svg")
         self.plt.close(figure)
@@ -155,7 +148,7 @@ class LearningPlotter:
 
     def objective_surfaces(self):
         np = self.np
-        ranges = self.comparison_ranges or self.variable_ranges()
+        ranges = self.variable_ranges()
         pairs = ((0, 1), (0, 2), (1, 2))
         labels = ("xr1 [-]", "xr2 [-]", "共通中心距離 [mm]")
         data = []
@@ -174,8 +167,7 @@ class LearningPlotter:
         if not valid_values:
             raise ValueError("目的関数断面に可行な格子点がありません")
         all_values = np.concatenate(valid_values)
-        levels = (np.linspace(0, 100, 51) if self.comparison_ranges
-                  else np.linspace(float(all_values.min()), float(all_values.max()) + 1e-8, 18))
+        levels = np.linspace(float(all_values.min()), float(all_values.max()) + 1e-8, 18)
         figure, axes = self.plt.subplots(1, 3, figsize=(15, 5), layout="constrained")
         for axis, (ix, iy), (x, y, values, feasible) in zip(axes, pairs, data):
             axis.set_facecolor("#e5e7eb")
@@ -200,10 +192,9 @@ class LearningPlotter:
         figure, axes = self.plt.subplots(1, 3, figsize=(15, 4.5), layout="constrained")
         labels = ("xr1 [-]", "xr2 [-]", "共通中心距離 [mm]")
         for index, axis in enumerate(axes):
-            lower, upper = (self.comparison_ranges or self.variable_ranges())[index]
+            lower, upper = self.variable_ranges()[index]
             span = (upper - lower) * 0.18
-            x = (np.linspace(lower, upper, 180) if self.comparison_ranges else
-                 np.linspace(max(lower, self.variables[index]-span), min(upper, self.variables[index]+span), 180))
+            x = np.linspace(max(lower, self.variables[index]-span), min(upper, self.variables[index]+span), 180)
             evaluated = []
             for value in x:
                 variables = list(self.variables)

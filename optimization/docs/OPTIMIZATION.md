@@ -5,19 +5,7 @@
 
 # 固定歯数での転位係数の最適化
 
-## 転位範囲±2.0と±0.9の比較
-
-```powershell
-python code/optimize_profile_shift.py --compare-limits
-# または
-python code/compare_shift_limits.py
-```
-
-両ケースを同じ歯数、μ、かみあい率・干渉条件、初期値数、乱数シードで独立に最適化します。乱数の正規化座標は同じで、実際の初期値は各探索範囲に合わせて変換します。
-
-`optimization_output/limits_comparison.html` に数値と全8図を左右に並べて保存します。対応する数値軸と断面の色尺度を共通にしています。目的関数断面・感度図の他の変数は各ケースの最適値に固定します。初期値・反復スライダーは各ケースのページで操作できます。
-
-数値は `limits_comparison.csv`、設定と比較は `limits_comparison.json`、各ケースの詳細は `limit_2.0` と `limit_0.9` に保存します。既存の単一ケース出力は維持します。転位の論文値は±0.9の範囲に入らないため、狭い範囲の可行解として扱いません。
+転位範囲を変更する場合は、`optimization_config.json` の `shift_lower` と `shift_upper` を変更します。各範囲の結果を残す場合は、`output_directory` も分けて指定してください。
 
 Table IIIの歯数とモジュールを固定し、順駆動効率を最大化します。論文の転位係数は、目的関数にも初期値にも使いません。比較用の定数としてのみ保持しています。
 

@@ -292,19 +292,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=Path(__file__).with_name("optimization_config.json"))
     parser.add_argument("--no-plots", action="store_true", help="学習用グラフを生成しない")
-    parser.add_argument("--compare-limits", action="store_true", help="転位範囲±2.0と±0.9を並べて比較")
     args = parser.parse_args()
     try:
         config = load_config(args.config)
-        if args.compare_limits:
-            from compare_shift_limits import run_comparison
-            output = args.config.resolve().parent / config["output_directory"]
-            output.mkdir(parents=True, exist_ok=True)
-            run_comparison(config, output, with_plots=not args.no_plots)
-            print(f"範囲比較: {output / 'limits_comparison.md'}")
-            if not args.no_plots:
-                print(f"比較グラフ: {output / 'limits_comparison.html'}")
-            return
         gearbox = Gearbox()
         best, trials, versions = optimize(gearbox, config)
         output = args.config.resolve().parent / config["output_directory"]

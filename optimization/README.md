@@ -23,9 +23,6 @@ python code/tooth_search.py
 # 固定歯数の転位最適化（SLSQP）
 python code/optimize_profile_shift.py
 
-# 転位範囲±2と±0.9の比較
-python code/optimize_profile_shift.py --compare-limits
-
 # 固定歯数の転位最適化（準ニュートン法）
 python code/optimize_profile_shift_quasi_newton.py
 
