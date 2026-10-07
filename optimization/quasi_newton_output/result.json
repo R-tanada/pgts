@@ -28,8 +28,8 @@
     "output_directory": "../quasi_newton_output"
   },
   "library_versions": {
-    "scipy": "1.18.1",
-    "numpy": "2.5.3"
+    "scipy": "1.17.1",
+    "numpy": "2.4.6"
   },
   "speed_ratio_exact": "62/5967",
   "reduction_abs": 96.24193548387096,

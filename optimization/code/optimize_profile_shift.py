@@ -311,8 +311,15 @@ def main():
         report = write_results(output, gearbox, config, best, trials, versions)
     except (ValueError, OSError, RuntimeError) as error:
         parser.error(str(error))
+    successful_count = sum(
+        trial["solver_success"] and trial["feasible"]
+        and math.isfinite(trial["forward_efficiency"])
+        for trial in trials
+    )
+    convergence_summary = f"収束して制約を満たした試行: {successful_count}/{len(trials)}"
     if report["status"] != "success":
         print(f"収束した可行解なし。詳細: {output / 'result.json'}")
+        print(convergence_summary)
         raise SystemExit(1)
     print(f"予測順駆動効率: {best[0].forward_efficiency:.6%}")
     print(f"逆効率（式75）: {best[0].backward_efficiency:.6%}")
@@ -325,8 +332,10 @@ def main():
             gallery = generate_learning_graphs(report, output)
         except (RuntimeError, ValueError, OSError) as error:
             print(f"最適化結果は保存済みですが、グラフ生成に失敗しました: {error}", file=sys.stderr)
+            print(convergence_summary)
             raise SystemExit(2)
         print(f"学習用グラフ: {gallery}")
+    print(convergence_summary)
 
 
 if __name__ == "__main__":

@@ -34,7 +34,7 @@ result = minimize(
     x0=initial_guess,
     method="SLSQP",  # 逐次二次計画法
     bounds=variable_bounds(gearbox, config),
-    constraints={"type": "ineq", "fun": constraints},
+    # constraints={"type": "ineq", "fun": constraints},
     options={"maxiter": 1000, "ftol": 1e-11},
 )
 
