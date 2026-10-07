@@ -7,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "code"))
 
 import optimize_profile_shift as shared
 import optimize_profile_shift_quasi_newton as quasi
-from profile_shift_model import Gearbox, evaluate, reference_center_distances
+from profile_shift_model import Gearbox, Model, reference_center_distances
 
 
 class QuasiNewtonTests(unittest.TestCase):
@@ -25,7 +25,8 @@ class QuasiNewtonTests(unittest.TestCase):
         self.assertIsNotNone(best)
         final, margins, index = best
         center = reference_center_distances(gearbox)["a"]
-        reference = evaluate([2, 1.21, center], gearbox, config["friction_coefficient"])
+        reference = Model(gearbox, config["friction_coefficient"])
+        reference.calculate([2, 1.21, center])
         self.assertGreaterEqual(final.forward_efficiency, reference.forward_efficiency)
         self.assertGreaterEqual(min(margins.values()), -config["feasibility_tolerance"])
         trial = trials[index]

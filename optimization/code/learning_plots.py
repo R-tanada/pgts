@@ -15,7 +15,7 @@ import os
 import sys
 from pathlib import Path
 
-from profile_shift_model import Gearbox, evaluate, constraint_margins
+from profile_shift_model import Gearbox, Model, constraint_margins
 
 
 def plotting_libraries():
@@ -83,7 +83,8 @@ class LearningPlotter:
     def point(self, variables):
         """断面の評価。定義域外・特異点はNaNとして描画から除外する。"""
         try:
-            result = evaluate(variables, self.gearbox, self.config["friction_coefficient"])
+            result = Model(self.gearbox, self.config["friction_coefficient"])
+            result.calculate(variables)
             feasible = min(self.margins(result).values()) >= -self.config["feasibility_tolerance"]
             value = result.forward_efficiency * 100
             return (value, feasible) if math.isfinite(value) else (math.nan, False)
@@ -228,23 +229,19 @@ class LearningPlotter:
         x = np.arange(3)
         paper = self.report["paper_measured_efficiencies"]
         forward = [paper["forward"], self.reference["forward_efficiency"], self.best["forward_efficiency"]]
-        backward = [paper["backward"], self.reference["backward_efficiency_force_balance"], self.best["backward_efficiency_force_balance"]]
-        for offset, values, color, label in ((-0.21, forward, "#1769aa", "順効率（式64）"),
-                                             (0.0, backward, "#218b65", "逆効率（式74の釣合いから再導出）")):
+        backward = [paper["backward"], self.reference["backward_efficiency"], self.best["backward_efficiency"]]
+        for offset, values, color, label in ((-0.105, forward, "#1769aa", "順効率（式64）"),
+                                             (0.105, backward, "#218b65", "逆効率（式75）")):
             bars = axis.bar(x+offset, np.array(values)*100, width=0.20, color=color, label=label)
             axis.bar_label(bars, fmt="%.3f", fontsize=9, padding=3)
-        printed = [self.reference["backward_efficiency"], self.best["backward_efficiency"]]
-        bars = axis.bar(x[1:]+0.21, np.array(printed)*100, width=0.20,
-                        facecolor="white", edgecolor="#c77419", hatch="///", label="逆効率（印刷式75の参考値）")
-        axis.bar_label(bars, fmt="%.3f", fontsize=9, padding=3)
         axis.set_xticks(x, ["Table IV\n実測値", "Table III転位\nモデル計算", "最適化した転位\nモデル計算"])
-        axis.set_ylim(0, max(max(forward), max(backward), max(printed))*100 + 12)
+        axis.set_ylim(0, max(max(forward), max(backward))*100 + 12)
         axis.set_ylabel("効率 [%]")
         axis.set_title(f"順効率・逆効率：モデルの μ={self.config['friction_coefficient']} は仮定値")
         axis.legend(loc="lower right", fontsize=9)
         self.save(figure, "05_efficiency_comparison", "5. 論文の実測値との比較",
                   "実測値はTable IVの順89.0%・逆85.3%。計算値は同じ歯面摩擦係数を仮定したモデル予測です。"
-                  "斜線の逆効率は印刷式75の値で、式74のトルク釣合いから得た逆効率と区別します。"
+                  "逆効率は分子にeta_aを含む式75で、式74のトルク釣合いとも一致します。"
                   "実測との差は最適化の誤差だけを意味せず、摩擦係数やモデル化の差も含みます。")
 
     def active_constraints(self):
@@ -270,11 +267,14 @@ class LearningPlotter:
     def friction_sensitivity(self):
         np = self.np
         friction = np.linspace(0.02, 0.20, 140)
-        results = [evaluate(self.variables, self.gearbox, float(value)) for value in friction]
+        results = []
+        for value in friction:
+            result = Model(self.gearbox, float(value))
+            result.calculate(self.variables)
+            results.append(result)
         figure, axis = self.plt.subplots(figsize=(10, 5.5), layout="constrained")
         axis.plot(friction, [100*e.forward_efficiency for e in results], color="#1769aa", label="順効率：式64")
-        axis.plot(friction, [100*e.backward_efficiency_force_balance for e in results], color="#218b65", label="逆効率：式74の再導出")
-        axis.plot(friction, [100*e.backward_efficiency for e in results], color="#c77419", ls="--", label="逆効率：印刷式75")
+        axis.plot(friction, [100*e.backward_efficiency for e in results], color="#218b65", label="逆効率：式75")
         for key, color, label in (("forward", "#1769aa", "実測順89.0%"), ("backward", "#218b65", "実測逆85.3%")):
             axis.axhline(100*self.report["paper_measured_efficiencies"][key], ls=":", color=color, label=label)
         axis.axvline(self.config["friction_coefficient"], color="black", ls="-.", label="計算に使用したμ")

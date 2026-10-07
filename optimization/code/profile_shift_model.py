@@ -1,87 +1,218 @@
-"""Table IIIの固定歯数モデル。数式と幾何制約だけを扱う（SciPy不要）。
+"""論文の転位歯車モデル。角度はラジアン、長さはmmで計算する。
 
-独立変数: [xr1, xr2, center_mm]。
-歯先径は一般的な転位歯車式で置き換えず、論文式(82)-(86)を使う。
+使い方:
+    gearbox = Gearbox()
+    model = Model(gearbox, friction=0.1)
+    model.calculate([1.0, 0.5, 21.0])  # xr1, xr2, 共通中心間距離
+    print(model.forward_efficiency)
+
+calculate()は計算結果を返さず、selfの変数に保存する。
+歯先径は論文の式(82)-(86)。P1の歯先半径は式(83)で求め、両かみ合いで共通に使う。
 """
-from __future__ import annotations
-
 import math
-from dataclasses import asdict, dataclass
 from fractions import Fraction
 
 
-@dataclass(frozen=True)
 class Gearbox:
-    zs: int = 12
-    zp1: int = 39
-    zr1: int = 90
-    zp2: int = 32
-    zr2: int = 81
-    module_a: float = 0.8
-    module_c: float = 0.8467
-    pressure_angle_deg: float = 20.0
-    planet_count: int = 3
+    """歯数、モジュール、圧力角を保存する。初期値はTable III。
 
-    @property
-    def alpha(self) -> float:
-        return math.radians(self.pressure_angle_deg)
+    条件を変える場合は Gearbox(zs=..., ...) として作り直す。
+    alpha、i1、i2なども__init__で一緒に計算するため。
+    """
 
-    @property
-    def i1(self) -> float:
-        return self.zr1 / self.zs
+    def __init__(self, zs=12, zp1=39, zr1=90, zp2=32, zr2=81,
+                 module_a=0.8, module_c=0.8467,
+                 pressure_angle_deg=20.0, planet_count=3):
+        self.zs = zs
+        self.zp1 = zp1
+        self.zr1 = zr1
+        self.zp2 = zp2
+        self.zr2 = zr2
+        self.module_a = module_a
+        self.module_c = module_c
+        self.pressure_angle_deg = pressure_angle_deg
+        self.planet_count = planet_count
 
-    @property
-    def i2(self) -> float:
-        return self.zr1 * self.zp2 / (self.zr2 * self.zp1)
+        self.alpha = math.radians(pressure_angle_deg)
+        self.i1 = zr1 / zs
+        self.i2 = zr1 * zp2 / (zr2 * zp1)
+        # Fractionは整数の比を丸めずに保存するために使う。
+        self.speed_ratio = Fraction(
+            zs * (zr2 * zp1 - zr1 * zp2),
+            zr2 * zp1 * (zs + zr1),
+        )
 
-    @property
-    def speed_ratio(self) -> Fraction:
-        return Fraction(self.zs * (self.zr2 * self.zp1 - self.zr1 * self.zp2),
-                        self.zr2 * self.zp1 * (self.zs + self.zr1))
+    def to_dict(self):
+        """ファイル保存用。普通の辞書を返す。"""
+        return {
+            "zs": self.zs, "zp1": self.zp1, "zr1": self.zr1,
+            "zp2": self.zp2, "zr2": self.zr2,
+            "module_a": self.module_a, "module_c": self.module_c,
+            "pressure_angle_deg": self.pressure_angle_deg,
+            "planet_count": self.planet_count,
+        }
 
 
-@dataclass(frozen=True)
 class ProfileShifts:
-    xs: float
-    xp1: float
-    xr1: float
-    xp2: float
-    xr2: float
+    """5つの転位係数を名前付きで保存するだけのクラス。"""
+
+    def __init__(self, xs, xp1, xr1, xp2, xr2):
+        self.xs = xs
+        self.xp1 = xp1
+        self.xr1 = xr1
+        self.xp2 = xp2
+        self.xr2 = xr2
+
+    def to_dict(self):
+        return {"xs": self.xs, "xp1": self.xp1, "xr1": self.xr1,
+                "xp2": self.xp2, "xr2": self.xr2}
 
 
-@dataclass(frozen=True)
 class Mesh:
-    """式(77)-(81)の一つのかみあい。1は外歯、2は相手歯車。"""
-    name: str
-    z1: int
-    z2: int
-    sign: int                  # 外歯かみあい:+1、内歯かみあい:-1
-    module: float
-    center: float
-    working_angle: float
-    base_radius1: float
-    base_radius2: float
-    tip_radius1: float
-    tip_radius2: float
-    tip_angle1: float
-    tip_angle2: float
-    approach_ratio: float
-    recess_ratio: float
-    basic_efficiency: float
+    """1組のかみ合いを計算する。signは外歯同士で+1、内歯で-1。"""
 
-    @property
-    def contact_ratio(self) -> float:
-        return self.approach_ratio + self.recess_ratio
+    def __init__(self, name, z1, z2, sign, module, center,
+                 tip1, tip2, alpha, friction):
+        self.name = name
+        self.z1 = z1
+        self.z2 = z2
+        self.sign = sign
+        self.module = module
+        self.center = center
+        self.tip_radius1 = tip1
+        self.tip_radius2 = tip2
+
+        # 式(81): 作動圧力角と基礎円半径
+        self.working_angle = working_angle(z1, z2, sign, module, center, alpha)
+        self.base_radius1 = module * z1 * math.cos(alpha) / 2
+        self.base_radius2 = module * z2 * math.cos(alpha) / 2
+
+        # 最適化の途中には不合格点も現れる。acosの範囲を保ち、制約で除外する。
+        self.tip_angle1 = math.acos(min(1.0, self.base_radius1 / max(tip1, 1e-12)))
+        self.tip_angle2 = math.acos(min(1.0, self.base_radius2 / max(tip2, 1e-12)))
+
+        # 式(79)、(80): 近寄りかみ合い率と遠のきかみ合い率
+        self.approach_ratio = sign * z2 * (
+            math.tan(self.tip_angle2) - math.tan(self.working_angle)
+        ) / (2 * math.pi)
+        self.recess_ratio = z1 * (
+            math.tan(self.tip_angle1) - math.tan(self.working_angle)
+        ) / (2 * math.pi)
+        self.contact_ratio = self.approach_ratio + self.recess_ratio
+
+        # 式(78)、(77): かみ合い損失と基礎効率
+        approach = self.approach_ratio
+        recess = self.recess_ratio
+        loss_factor = approach**2 + recess**2 - approach - recess + 1
+        self.basic_efficiency = 1 - friction * math.pi * (1 / z1 + sign / z2) * loss_factor
+
+    def to_dict(self):
+        """従来のグラフ・JSONと同じ項目で保存する。"""
+        return {
+            "name": self.name, "z1": self.z1, "z2": self.z2,
+            "sign": self.sign, "module": self.module, "center": self.center,
+            "working_angle": self.working_angle,
+            "base_radius1": self.base_radius1, "base_radius2": self.base_radius2,
+            "tip_radius1": self.tip_radius1, "tip_radius2": self.tip_radius2,
+            "tip_angle1": self.tip_angle1, "tip_angle2": self.tip_angle2,
+            "approach_ratio": self.approach_ratio, "recess_ratio": self.recess_ratio,
+            "basic_efficiency": self.basic_efficiency,
+        }
 
 
-@dataclass(frozen=True)
-class Evaluation:
-    center_mm: float
-    shifts: ProfileShifts
-    meshes: tuple[Mesh, Mesh, Mesh]
-    forward_efficiency: float
-    backward_efficiency: float
-    backward_efficiency_force_balance: float
+class Model:
+    """固定した歯車仕様で、転位と中心間距離を変えて効率を計算する。"""
+
+    def __init__(self, gearbox, friction=0.1):
+        self.gearbox = gearbox
+        self.friction = friction
+        # 結果はcalculate()を呼んだ後に読む。
+        self.center_mm = None
+        self.shifts = None
+        self.meshes = []
+        self.forward_efficiency = None
+        self.backward_efficiency = None
+        self.backward_efficiency_force_balance = None
+
+    def calculate(self, variables):
+        """最適化用。転位係数を求めてから効率を計算する。"""
+        xs, xp1, xr1, xp2, xr2 = self.calculate_shifts(variables)
+        center = float(variables[2])
+        self.calculate_efficiency(xs, xp1, xr1, xp2, xr2, center)
+
+    def calculate_shifts(self, variables):
+        """決定変数[xr1, xr2, center]から5つの転位係数を返す。
+
+        戻り値はxs, xp1, xr1, xp2, xr2の5つの数値。モデルの状態は変更しない。
+        """
+        g = self.gearbox
+        xr1 = float(variables[0])
+        xr2 = float(variables[1])
+        center = float(variables[2])
+
+        # 1. 各かみ合いの作動圧力角を求める。共通のcenterを使用。
+        angle_a = working_angle(g.zs, g.zp1, 1, g.module_a, center, g.alpha)
+        angle_b = working_angle(g.zp1, g.zr1, -1, g.module_a, center, g.alpha)
+        angle_c = working_angle(g.zp2, g.zr2, -1, g.module_c, center, g.alpha)
+
+        # 2. 式(88): 転位和・転位差から残り3つの転位係数を計算。
+        ka = (g.zs + g.zp1) * (involute(angle_a) - involute(g.alpha)) / (2 * math.tan(g.alpha))
+        kb = (g.zp1 - g.zr1) * (involute(angle_b) - involute(g.alpha)) / (2 * math.tan(g.alpha))
+        kc = (g.zp2 - g.zr2) * (involute(angle_c) - involute(g.alpha)) / (2 * math.tan(g.alpha))
+        xp1 = xr1 + kb
+        xs = ka - xp1
+        xp2 = xr2 + kc
+        return xs, xp1, xr1, xp2, xr2
+
+    def calculate_efficiency(self, xs, xp1, xr1, xp2, xr2, center):
+        """指定した5つの転位係数と中心間距離で効率を計算し、selfに保存する。
+
+        転位係数を逆算・補正せず、そのまま代入する確認用の入口。
+        任意の転位係数とcenterの組み合わせが幾何学的に整合するとは限らない。
+        """
+        g = self.gearbox
+        self.shifts = ProfileShifts(xs, xp1, xr1, xp2, xr2)
+        self.center_mm = center
+
+        # 1. 式(82)-(87): 歯先「半径」を計算（論文の直径を2で割る）。
+        ma = g.module_a
+        mc = g.module_c
+        ya = center / ma - (g.zs + g.zp1) / 2
+        tip_s = ma * g.zs / 2 + ma * (1 + ya - xp1)
+        tip_p1 = ma * g.zp1 / 2 + ma * (1 + min(ya - xs, xp1))
+        tip_r1 = ma * g.zr1 / 2 - ma * (1 - xr1)
+        tip_p2 = mc * g.zp2 / 2 + mc * (1 + xp2)
+        tip_r2 = mc * g.zr2 / 2 - mc * (1 - xr2)
+
+        # 2. S-P1、P1-R1、P2-R2のかみ合いを計算。
+        mesh_a = Mesh("a", g.zs, g.zp1, 1, ma, center, tip_s, tip_p1, g.alpha, self.friction)
+        mesh_b = Mesh("b", g.zp1, g.zr1, -1, ma, center, tip_p1, tip_r1, g.alpha, self.friction)
+        mesh_c = Mesh("c", g.zp2, g.zr2, -1, mc, center, tip_p2, tip_r2, g.alpha, self.friction)
+        self.meshes = [mesh_a, mesh_b, mesh_c]
+
+        # 3. 各かみ合いの基礎効率から、減速機全体の効率を求める。
+        forward, backward = total_efficiencies(
+            g, mesh_a.basic_efficiency, mesh_b.basic_efficiency, mesh_c.basic_efficiency
+        )
+        self.forward_efficiency = forward
+        self.backward_efficiency = backward
+        # 式(75)には既にeta_aが含まれる。二重に掛けない。
+        # 旧コードとの互換用の名前も、同じ正しい逆効率を保持する。
+        self.backward_efficiency_force_balance = backward
+
+    def to_dict(self):
+        """結果保存用。計算を理解する際は後回しでよい。"""
+        mesh_data = []
+        for mesh in self.meshes:
+            mesh_data.append(mesh.to_dict())
+        return {
+            "center_mm": self.center_mm,
+            "shifts": self.shifts.to_dict(),
+            "meshes": mesh_data,
+            "forward_efficiency": self.forward_efficiency,
+            "backward_efficiency": self.backward_efficiency,
+            "backward_efficiency_force_balance": self.backward_efficiency_force_balance,
+        }
 
 
 PAPER_SHIFTS = ProfileShifts(xs=0.476, xp1=0.762, xr1=2.000, xp2=0.536, xr2=1.210)
@@ -89,11 +220,11 @@ PAPER_CONTACT_RATIOS = {"a": 1.232, "b": 1.420, "c": 1.565}
 PAPER_MEASURED_EFFICIENCIES = {"forward": 0.890, "backward": 0.853}
 
 
-def involute(angle: float) -> float:
+def involute(angle):
     return math.tan(angle) - angle
 
 
-def angle_from_involute(value: float) -> float:
+def angle_from_involute(value):
     """単調なインボリュート関数を二分法で反転する。"""
     if value < 0:
         raise ValueError("インボリュート関数の値は非負である必要があります")
@@ -107,7 +238,7 @@ def angle_from_involute(value: float) -> float:
     return (lower + upper) / 2
 
 
-def center_for_external_shift_sum(gearbox: Gearbox, shift_sum: float) -> float:
+def center_for_external_shift_sum(gearbox, shift_sum):
     """式(88)、(81)。外歯かみあいの転位和から中心距離を求める。"""
     tooth_sum = gearbox.zs + gearbox.zp1
     value = involute(gearbox.alpha) + 2 * math.tan(gearbox.alpha) * shift_sum / tooth_sum
@@ -115,51 +246,22 @@ def center_for_external_shift_sum(gearbox: Gearbox, shift_sum: float) -> float:
     return gearbox.module_a * tooth_sum * math.cos(gearbox.alpha) / (2 * math.cos(angle))
 
 
-def working_angle(z1: int, z2: int, sign: int, module: float,
-                  center: float, alpha: float) -> float:
+def working_angle(z1, z2, sign, module,
+                  center, alpha):
     base_center = module * abs(z1 + sign * z2) * math.cos(alpha) / 2
     if center < base_center:
         raise ValueError("中心距離が基礎円接線の限界より小さい")
     return math.acos(min(1.0, base_center / center))
 
 
-def shifts_from_variables(variables, gearbox: Gearbox) -> ProfileShifts:
-    """式(88)。共通中心距離から従属変数xs,xp1,xp2を計算。"""
-    xr1, xr2, center = map(float, variables)
-    alpha = gearbox.alpha
-    def shift_relation(z1, z2, sign, module):
-        angle = working_angle(z1, z2, sign, module, center, alpha)
-        return (z1 + sign * z2) * (involute(angle) - involute(alpha)) / (2 * math.tan(alpha))
-    ka = shift_relation(gearbox.zs, gearbox.zp1, 1, gearbox.module_a)
-    kb = shift_relation(gearbox.zp1, gearbox.zr1, -1, gearbox.module_a)
-    kc = shift_relation(gearbox.zp2, gearbox.zr2, -1, gearbox.module_c)
-    xp1 = xr1 + kb
-    return ProfileShifts(xs=ka - xp1, xp1=xp1, xr1=xr1, xp2=xr2 + kc, xr2=xr2)
-
-
-def mesh_evaluation(name, z1, z2, sign, module, center, tip1, tip2,
-                    alpha, friction) -> Mesh:
-    angle_w = working_angle(z1, z2, sign, module, center, alpha)
-    base1, base2 = module * z1 * math.cos(alpha) / 2, module * z2 * math.cos(alpha) / 2
-    # SLSQPは不合格点も評価する。定義域外で計算を止めず、制約で除外する。
-    angle1 = math.acos(min(1.0, base1 / max(tip1, 1e-12)))
-    angle2 = math.acos(min(1.0, base2 / max(tip2, 1e-12)))
-    approach = sign * z2 * (math.tan(angle2) - math.tan(angle_w)) / (2 * math.pi)
-    recess = z1 * (math.tan(angle1) - math.tan(angle_w)) / (2 * math.pi)
-    loss_factor = approach**2 + recess**2 - approach - recess + 1
-    efficiency = 1 - friction * math.pi * (1 / z1 + sign / z2) * loss_factor
-    return Mesh(name, z1, z2, sign, module, center, angle_w, base1, base2,
-                tip1, tip2, angle1, angle2, approach, recess, efficiency)
-
-
-def total_efficiencies(gearbox: Gearbox, eta_a: float, eta_b: float,
-                       eta_c: float) -> tuple[float, float]:
+def total_efficiencies(gearbox, eta_a, eta_b,
+                       eta_c):
     """順駆動:式(64)/(67)、逆駆動:式(75)/(76)。"""
     i1, i2 = gearbox.i1, gearbox.i2
     if i2 < 1:
         forward = ((1 + eta_a * eta_b * i1) * (1 - i2)
                    / ((1 + i1) * (1 - eta_b * eta_c * i2)))
-        backward = ((1 + i1) * (eta_b * eta_c - i2)
+        backward = ((1 + i1) * eta_a * (eta_b * eta_c - i2)
                     / (eta_c * (eta_a * eta_b + i1) * (1 - i2)))
     elif i2 > 1:
         forward = (eta_c * (eta_b + eta_a * i1) * (1 - i2)
@@ -172,31 +274,7 @@ def total_efficiencies(gearbox: Gearbox, eta_a: float, eta_b: float,
     return forward, max(0.0, backward)
 
 
-def evaluate(variables, gearbox: Gearbox, friction: float) -> Evaluation:
-    """式(77)-(88)を順に計算。歯先径は論文特有の式を忠実に使う。"""
-    shifts = shifts_from_variables(variables, gearbox)
-    center = float(variables[2])
-    ma, mc = gearbox.module_a, gearbox.module_c
-    ya = center / ma - (gearbox.zs + gearbox.zp1) / 2  # 式(87)
-    tip_s = ma * gearbox.zs / 2 + ma * (1 + ya - shifts.xp1)  # 式(82)
-    tip_p1 = ma * gearbox.zp1 / 2 + ma * (1 + min(ya - shifts.xs, shifts.xp1))  # 式(83)
-    tip_r1 = ma * gearbox.zr1 / 2 - ma * (1 - shifts.xr1)  # 式(84)
-    tip_p2 = mc * gearbox.zp2 / 2 + mc * (1 + shifts.xp2)  # 式(85)
-    tip_r2 = mc * gearbox.zr2 / 2 - mc * (1 - shifts.xr2)  # 式(86)
-    common = dict(center=center, alpha=gearbox.alpha, friction=friction)
-    mesh_a = mesh_evaluation("a", gearbox.zs, gearbox.zp1, 1, ma, tip1=tip_s, tip2=tip_p1, **common)
-    mesh_b = mesh_evaluation("b", gearbox.zp1, gearbox.zr1, -1, ma, tip1=tip_p1, tip2=tip_r1, **common)
-    mesh_c = mesh_evaluation("c", gearbox.zp2, gearbox.zr2, -1, mc, tip1=tip_p2, tip2=tip_r2, **common)
-    forward, backward = total_efficiencies(gearbox, mesh_a.basic_efficiency,
-                                          mesh_b.basic_efficiency, mesh_c.basic_efficiency)
-    # 式(74)のトルク釣合いから導くと、I2<1の逆効率にはeta_aが掛かる。
-    # 印刷された式(75)の値は変更せず、別の名前で両方保存する。
-    force_balance_backward = backward * mesh_a.basic_efficiency if gearbox.i2 < 1 else backward
-    return Evaluation(center, shifts, (mesh_a, mesh_b, mesh_c), forward, backward,
-                      force_balance_backward)
-
-
-def internal_trochoid_margin(mesh: Mesh) -> float:
+def internal_trochoid_margin(mesh):
     """歯先円交点での歯位相の非重複条件。無転位の歯数差条件は使わない。
 
     theta1*z1/z2 + inv(alpha_w) - inv(alpha_a2) - theta2 >= 0。
@@ -213,7 +291,7 @@ def internal_trochoid_margin(mesh: Mesh) -> float:
             - involute(mesh.tip_angle2) - theta2)
 
 
-def internal_trimming_margin(mesh: Mesh) -> float:
+def internal_trimming_margin(mesh):
     """KHKの転位歯車にも使う角度式。半径方向組付けの条件。"""
     cosine_p, cosine_r = math.cos(mesh.tip_angle1), math.cos(mesh.tip_angle2)
     ratio = mesh.z1 / mesh.z2
@@ -226,13 +304,13 @@ def internal_trimming_margin(mesh: Mesh) -> float:
             - (theta_r + involute(mesh.tip_angle2) - involute(mesh.working_angle)) / ratio)
 
 
-def constraint_margins(evaluation: Evaluation, gearbox: Gearbox,
-                       shift_lower: float, shift_upper: float,
-                       contact_lower: float, contact_upper: float,
-                       clearance_mm: float, include_trimming: bool) -> dict[str, float]:
+def constraint_margins(evaluation, gearbox,
+                       shift_lower, shift_upper,
+                       contact_lower, contact_upper,
+                       clearance_mm, include_trimming):
     """すべて margin >= 0 が合格。名前を付けて結果の監査を可能にする。"""
     margins = {}
-    for name, value in asdict(evaluation.shifts).items():
+    for name, value in evaluation.shifts.to_dict().items():
         margins[f"{name}_lower"] = value - shift_lower
         margins[f"{name}_upper"] = shift_upper - value
     for mesh in evaluation.meshes:
@@ -257,7 +335,7 @@ def constraint_margins(evaluation: Evaluation, gearbox: Gearbox,
     return margins
 
 
-def reference_center_distances(gearbox: Gearbox) -> dict[str, float]:
+def reference_center_distances(gearbox):
     """丸められたTable IIIの転位係数から3つの中心距離を独立に復元。"""
     reference = PAPER_SHIFTS
     centers = {}

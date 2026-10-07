@@ -1,7 +1,6 @@
 """論文式の数値確認、幾何制約、複数初期値の最適化を検証。"""
 import math
 import unittest
-from dataclasses import asdict
 from fractions import Fraction
 from pathlib import Path
 import sys
@@ -17,7 +16,20 @@ class ProfileModelTests(unittest.TestCase):
         self.gearbox = model.Gearbox()
         self.center = model.reference_center_distances(self.gearbox)["a"]
         self.variables = [2.0, 1.210, self.center]
-        self.reference = model.evaluate(self.variables, self.gearbox, 0.1)
+        self.reference = model.Model(self.gearbox, 0.1)
+        self.reference.calculate(self.variables)
+
+    def test_calculate_updates_same_model_without_returning_result(self):
+        snapshot = self.reference.to_dict()
+        candidate = [1.0, 0.5, 21.0]
+        self.assertIsNone(self.reference.calculate(candidate))
+        fresh = model.Model(self.gearbox, 0.1)
+        fresh.calculate(candidate)
+        self.assertEqual(self.reference.to_dict(), fresh.to_dict())
+        self.assertEqual(snapshot["center_mm"], self.center)
+        self.assertNotEqual(snapshot["shifts"], self.reference.shifts.to_dict())
+        self.reference.calculate(self.variables)
+        self.assertEqual(self.reference.to_dict(), snapshot)
 
     def test_fixed_tooth_ratio(self):
         self.assertEqual(self.gearbox.speed_ratio, Fraction(62, 5967))
@@ -90,15 +102,16 @@ class ProfileModelTests(unittest.TestCase):
         torque_out = -rs*eta_a*force_sp1
         torque_in = rr2*eta_c
         efficiency = torque_out/torque_in/float(gearbox.speed_ratio)
-        self.assertAlmostEqual(efficiency, reference.backward_efficiency_force_balance, places=12)
+        self.assertAlmostEqual(efficiency, reference.backward_efficiency, places=12)
         self.assertAlmostEqual(reference.backward_efficiency_force_balance,
-                               reference.backward_efficiency*eta_a, places=12)
+                               reference.backward_efficiency, places=12)
 
     def test_efficiency_comparison_is_measured_table_iv(self):
         rows = optimizer.efficiency_comparison_rows(self.reference)
         self.assertEqual(rows[0]["paper_measured_percent"], 89.0)
         self.assertEqual(rows[1]["paper_measured_percent"], 85.3)
-        self.assertEqual(rows[2]["paper_measured_percent"], 85.3)
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(rows[1]["quantity"], "backward_eq75")
         self.assertAlmostEqual(rows[0]["difference_pp"],
                                100*self.reference.forward_efficiency-89.0)
 
@@ -106,7 +119,8 @@ class ProfileModelTests(unittest.TestCase):
         margins = model.constraint_margins(self.reference, self.gearbox, -2, 2, 1, 2, 0, True)
         self.assertGreaterEqual(min(margins.values()), -1e-10)
         # 転位上限を超えた点を可行と誤認しない。
-        bad = model.evaluate([2.1, 1.21, self.center], self.gearbox, 0.1)
+        bad = model.Model(self.gearbox, 0.1)
+        bad.calculate([2.1, 1.21, self.center])
         bad_margins = model.constraint_margins(bad, self.gearbox, -2, 2, 1, 2, 0, True)
         self.assertLess(bad_margins["xr1_upper"], 0)
 
@@ -118,7 +132,7 @@ class ProfileModelTests(unittest.TestCase):
             (72, 80, True, False), (73, 80, False, False),
             (64, 80, True, True), (65, 80, True, False),
         ):
-            mesh = model.mesh_evaluation("test", planet, ring, -1, 1,
+            mesh = model.Mesh("test", planet, ring, -1, 1,
                                          (ring - planet)/2, (planet+2)/2,
                                          (ring-2)/2, math.radians(20), 0.1)
             self.assertEqual(model.internal_trochoid_margin(mesh) >= 0, trochoid_ok)
@@ -138,7 +152,8 @@ class OptimizationTests(unittest.TestCase):
         self.assertTrue(trials[index]["history"][-1]["feasible"])
         self.assertGreaterEqual(min(margins.values()), -config["feasibility_tolerance"])
         center = model.reference_center_distances(gearbox)["a"]
-        reference = model.evaluate([2, 1.21, center], gearbox, config["friction_coefficient"])
+        reference = model.Model(gearbox, config["friction_coefficient"])
+        reference.calculate([2, 1.21, center])
         self.assertGreaterEqual(best.forward_efficiency, reference.forward_efficiency - 1e-9)
         successful = [trial["forward_efficiency"] for trial in trials if trial["solver_success"] and trial["feasible"]]
         self.assertGreaterEqual(len(successful), 2)
@@ -146,7 +161,7 @@ class OptimizationTests(unittest.TestCase):
         self.assertAlmostEqual(best.shifts.xr1, 2.0, places=5)
         # 論文値の完全再現ではなく、独立して計算した結果であることを確認。
         self.assertGreater(abs(best.shifts.xs - model.PAPER_SHIFTS.xs), 0.01)
-        self.assertEqual(set(asdict(best.shifts)), set(asdict(model.PAPER_SHIFTS)))
+        self.assertEqual(set(best.shifts.to_dict()), set(model.PAPER_SHIFTS.to_dict()))
 
 
 if __name__ == "__main__":

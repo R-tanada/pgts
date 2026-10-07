@@ -9,11 +9,10 @@ from __future__ import annotations
 import argparse
 import json
 import math
-from dataclasses import asdict
 from pathlib import Path
 
 import optimize_profile_shift as shared
-from profile_shift_model import Gearbox, evaluate
+from profile_shift_model import Gearbox, Model
 
 METHOD = "L-BFGS-B + augmented Lagrangian"
 
@@ -60,10 +59,9 @@ def optimize(gearbox, config, settings):
     def decode(point):
         return lower + width * np.asarray(point)
 
-    def state(point):
-        evaluation = evaluate(decode(point), gearbox, config["friction_coefficient"])
-        margins = shared.margins_for(evaluation, gearbox, config)
-        return evaluation, margins
+    def calculate_margins(point, model):
+        model.calculate(decode(point))
+        return shared.margins_for(model, gearbox, config)
 
     rng = np.random.default_rng(config["random_seed"])
     starts = [np.full(3, 0.5)]
@@ -72,20 +70,22 @@ def optimize(gearbox, config, settings):
     for index, start in enumerate(starts):
         point = np.array(start, copy=True)
         history, stages = [], []
-        multipliers = np.zeros(len(state(point)[1]))
+        initial_model = Model(gearbox, config["friction_coefficient"])
+        multipliers = np.zeros(len(calculate_margins(point, initial_model)))
         penalty = settings["initial_penalty"]
         previous_violation = math.inf
         outer_converged = False
 
         def record(point, outer_iteration):
-            current, margins = state(point)
+            current = Model(gearbox, config["friction_coefficient"])
+            margins = calculate_margins(point, current)
             minimum = min(margins.values())
             history.append({
                 "iteration": len(history), "outer_iteration": outer_iteration,
                 "penalty": penalty, "variables": decode(point).tolist(),
-                "shifts": asdict(current.shifts),
+                "shifts": current.shifts.to_dict(),
                 "forward_efficiency": current.forward_efficiency,
-                "backward_efficiency_printed": current.backward_efficiency,
+                "backward_efficiency": current.backward_efficiency,
                 "backward_efficiency_force_balance": current.backward_efficiency_force_balance,
                 "minimum_constraint_margin": minimum,
                 "maximum_constraint_violation": max(0.0, -minimum),
@@ -96,7 +96,8 @@ def optimize(gearbox, config, settings):
         for outer in range(1, settings["outer_max_iterations"] + 1):
             # 内側計算中は乗数とrhoを固定。変えるのは外側反復の境界だけ。
             def objective(candidate):
-                current, margins = state(candidate)
+                current = Model(gearbox, config["friction_coefficient"])
+                margins = calculate_margins(candidate, current)
                 buffered = np.array(list(margins.values())) - settings["constraint_buffer"]
                 return augmented_objective(-current.forward_efficiency, buffered,
                                            multipliers, penalty, np)
@@ -111,7 +112,8 @@ def optimize(gearbox, config, settings):
             )
             point = result.x
             record(point, outer)
-            final, margins = state(point)
+            final = Model(gearbox, config["friction_coefficient"])
+            margins = calculate_margins(point, final)
             buffered = np.array(list(margins.values())) - settings["constraint_buffer"]
             updated = np.maximum(0.0, multipliers - penalty * buffered)
             # 可行性だけで止めず、乗数更新の残差（相補性を含む）も確認する。
@@ -131,7 +133,8 @@ def optimize(gearbox, config, settings):
                 penalty *= settings["penalty_growth"]
             previous_violation = violation
 
-        final, margins = state(point)
+        final = Model(gearbox, config["friction_coefficient"])
+        margins = calculate_margins(point, final)
         feasible = min(margins.values()) >= -config["feasibility_tolerance"]
         trial = {
             "start_index": index, "initial_variables": decode(start).tolist(),
@@ -170,9 +173,8 @@ def main():
     if best is None:
         raise SystemExit(f"収束した可行解なし。試行履歴: {output / 'result.json'}")
     print(f"順効率: {best[0].forward_efficiency:.8%}")
-    print(f"逆効率（印刷式）: {best[0].backward_efficiency:.8%}")
-    print(f"逆効率（トルク釣合い）: {best[0].backward_efficiency_force_balance:.8%}")
-    print(f"転位係数: {asdict(best[0].shifts)}")
+    print(f"逆効率（式75）: {best[0].backward_efficiency:.8%}")
+    print(f"転位係数: {best[0].shifts.to_dict()}")
     print(f"収束・可行試行: {sum(t['solver_success'] and t['feasible'] for t in trials)}/{len(trials)}")
     print(f"結果: {comparison}")
     if not args.no_plots:

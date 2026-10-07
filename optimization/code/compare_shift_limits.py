@@ -29,8 +29,7 @@ def run_comparison(config, output, with_plots=True):
     quantities += [
         ("center_mm", None, lambda r: r["best"]["center_mm"]),
         ("forward_percent_eq64", 89.0, lambda r: 100*r["best"]["forward_efficiency"]),
-        ("backward_percent_printed_eq75", 85.3, lambda r: 100*r["best"]["backward_efficiency"]),
-        ("backward_percent_force_balance", 85.3, lambda r: 100*r["best"]["backward_efficiency_force_balance"]),
+        ("backward_percent_eq75", 85.3, lambda r: 100*r["best"]["backward_efficiency"]),
     ]
     for name, reference, getter in quantities:
         wide, narrow = (getter(report) for report in reports)

@@ -25,7 +25,7 @@
     "max_iterations": 1000,
     "ftol": 1e-11,
     "feasibility_tolerance": 1e-07,
-    "output_directory": "optimization_output"
+    "output_directory": "../optimization_output"
   },
   "library_versions": {
     "scipy": "1.18.1",
@@ -126,8 +126,8 @@
       }
     ],
     "forward_efficiency": 0.9197416164892867,
-    "backward_efficiency": 0.9320620079004608,
-    "backward_efficiency_force_balance": 0.9150923641871158
+    "backward_efficiency": 0.9150923641871157,
+    "backward_efficiency_force_balance": 0.9150923641871157
   },
   "reference_constraint_margins": {
     "xs_lower": 1.3759999999999972,
@@ -208,7 +208,7 @@
             "xr2": 0.0
           },
           "forward_efficiency": 0.8691371114073704,
-          "backward_efficiency_printed": 0.8740420618321445,
+          "backward_efficiency": 0.8547045754062529,
           "backward_efficiency_force_balance": 0.8547045754062529,
           "minimum_constraint_margin": 0.0057086762042130035,
           "maximum_constraint_violation": 0.0,
@@ -229,7 +229,7 @@
             "xr2": -0.049539180099964164
           },
           "forward_efficiency": 0.8453805696595178,
-          "backward_efficiency_printed": 0.8545304510473971,
+          "backward_efficiency": 0.8259200430846156,
           "backward_efficiency_force_balance": 0.8259200430846156,
           "minimum_constraint_margin": 0.004528715815563578,
           "maximum_constraint_violation": 0.0,
@@ -250,8 +250,8 @@
             "xr2": -0.1825968923786928
           },
           "forward_efficiency": 0.887979263120942,
-          "backward_efficiency_printed": 0.898954515444564,
-          "backward_efficiency_force_balance": 0.8781857809542356,
+          "backward_efficiency": 0.8781857809542355,
+          "backward_efficiency_force_balance": 0.8781857809542355,
           "minimum_constraint_margin": 0.0038643068112063084,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -271,8 +271,8 @@
             "xr2": -0.14816750647380106
           },
           "forward_efficiency": 0.8896792031919667,
-          "backward_efficiency_printed": 0.9002337016652033,
-          "backward_efficiency_force_balance": 0.8801253080738015,
+          "backward_efficiency": 0.8801253080738016,
+          "backward_efficiency_force_balance": 0.8801253080738016,
           "minimum_constraint_margin": 0.003819170986719689,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -292,7 +292,7 @@
             "xr2": 0.11502736414858072
           },
           "forward_efficiency": 0.8970122144457806,
-          "backward_efficiency_printed": 0.906984594406943,
+          "backward_efficiency": 0.8886405893129886,
           "backward_efficiency_force_balance": 0.8886405893129886,
           "minimum_constraint_margin": 0.003502949580389214,
           "maximum_constraint_violation": 0.0,
@@ -313,8 +313,8 @@
             "xr2": 0.26049880848545015
           },
           "forward_efficiency": 0.9006450221569894,
-          "backward_efficiency_printed": 0.9110483437980825,
-          "backward_efficiency_force_balance": 0.8929560756626759,
+          "backward_efficiency": 0.8929560756626757,
+          "backward_efficiency_force_balance": 0.8929560756626757,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -334,7 +334,7 @@
             "xr2": 0.36358285107072896
           },
           "forward_efficiency": 0.9024151517010496,
-          "backward_efficiency_printed": 0.9134185927270767,
+          "backward_efficiency": 0.895101862670067,
           "backward_efficiency_force_balance": 0.895101862670067,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -355,7 +355,7 @@
             "xr2": 0.3656490052153002
           },
           "forward_efficiency": 0.9024155232308497,
-          "backward_efficiency_printed": 0.913416502694645,
+          "backward_efficiency": 0.8951020105627161,
           "backward_efficiency_force_balance": 0.8951020105627161,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
@@ -376,7 +376,7 @@
             "xr2": 0.36601970752148605
           },
           "forward_efficiency": 0.9024155341769833,
-          "backward_efficiency_printed": 0.9134147006387151,
+          "backward_efficiency": 0.8951018120578518,
           "backward_efficiency_force_balance": 0.8951018120578518,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -397,8 +397,8 @@
             "xr2": 0.3660526591253729
           },
           "forward_efficiency": 0.9024155344516711,
-          "backward_efficiency_printed": 0.9134143407455776,
-          "backward_efficiency_force_balance": 0.8951017704310307,
+          "backward_efficiency": 0.8951017704310306,
+          "backward_efficiency_force_balance": 0.8951017704310306,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -418,8 +418,8 @@
             "xr2": 0.3660526591253729
           },
           "forward_efficiency": 0.9024155344516711,
-          "backward_efficiency_printed": 0.9134143407455776,
-          "backward_efficiency_force_balance": 0.8951017704310307,
+          "backward_efficiency": 0.8951017704310306,
+          "backward_efficiency_force_balance": 0.8951017704310306,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -460,7 +460,7 @@
             "xr2": -0.09901692760167535
           },
           "forward_efficiency": 0.6391382090229135,
-          "backward_efficiency_printed": 0.5544744947694286,
+          "backward_efficiency": 0.5079879217310036,
           "backward_efficiency_force_balance": 0.5079879217310036,
           "minimum_constraint_margin": -1.0312037703963708,
           "maximum_constraint_violation": 1.0312037703963708,
@@ -481,7 +481,7 @@
             "xr2": 0.1146828739493474
           },
           "forward_efficiency": 0.8385125341456786,
-          "backward_efficiency_printed": 0.8415898635516236,
+          "backward_efficiency": 0.8164966514134856,
           "backward_efficiency_force_balance": 0.8164966514134856,
           "minimum_constraint_margin": -0.02791798891965902,
           "maximum_constraint_violation": 0.02791798891965902,
@@ -502,8 +502,8 @@
             "xr2": 0.29290188481599844
           },
           "forward_efficiency": 0.8845604161341354,
-          "backward_efficiency_printed": 0.8934989375629808,
-          "backward_efficiency_force_balance": 0.873726755889439,
+          "backward_efficiency": 0.8737267558894389,
+          "backward_efficiency_force_balance": 0.8737267558894389,
           "minimum_constraint_margin": 0.0036911560887957773,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -523,8 +523,8 @@
             "xr2": 0.11079489188216696
           },
           "forward_efficiency": 0.8354477579248838,
-          "backward_efficiency_printed": 0.8377172904555513,
-          "backward_efficiency_force_balance": 0.8124031552610569,
+          "backward_efficiency": 0.812403155261057,
+          "backward_efficiency_force_balance": 0.812403155261057,
           "minimum_constraint_margin": -0.04931692528564202,
           "maximum_constraint_violation": 0.04931692528564202,
           "feasible": false
@@ -544,8 +544,8 @@
             "xr2": 0.14419014546009723
           },
           "forward_efficiency": 0.8987950304286292,
-          "backward_efficiency_printed": 0.9100276340052766,
-          "backward_efficiency_force_balance": 0.890915937042891,
+          "backward_efficiency": 0.8909159370428911,
+          "backward_efficiency_force_balance": 0.8909159370428911,
           "minimum_constraint_margin": 0.0034214885084628,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -565,8 +565,8 @@
             "xr2": 0.16743569585741158
           },
           "forward_efficiency": 0.8997318123920373,
-          "backward_efficiency_printed": 0.9112603382309756,
-          "backward_efficiency_force_balance": 0.8920458603539888,
+          "backward_efficiency": 0.8920458603539887,
+          "backward_efficiency_force_balance": 0.8920458603539887,
           "minimum_constraint_margin": 0.0033456089737383676,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -586,8 +586,8 @@
             "xr2": 0.2596630805820258
           },
           "forward_efficiency": 0.9016981957309972,
-          "backward_efficiency_printed": 0.9132605671304564,
-          "backward_efficiency_force_balance": 0.894338261400317,
+          "backward_efficiency": 0.8943382614003169,
+          "backward_efficiency_force_balance": 0.8943382614003169,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -607,7 +607,7 @@
             "xr2": 0.34953851792934787
           },
           "forward_efficiency": 0.9024001026172751,
-          "backward_efficiency_printed": 0.9134575874569973,
+          "backward_efficiency": 0.8950906756606067,
           "backward_efficiency_force_balance": 0.8950906756606067,
           "minimum_constraint_margin": 4.440892098500626e-16,
           "maximum_constraint_violation": 0.0,
@@ -628,8 +628,8 @@
             "xr2": 0.3652717710222134
           },
           "forward_efficiency": 0.9024154344638752,
-          "backward_efficiency_printed": 0.913412197815309,
-          "backward_efficiency_force_balance": 0.8951014155469659,
+          "backward_efficiency": 0.8951014155469658,
+          "backward_efficiency_force_balance": 0.8951014155469658,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -649,8 +649,8 @@
             "xr2": 0.3660189642299
           },
           "forward_efficiency": 0.9024155317559939,
-          "backward_efficiency_printed": 0.9134135045707445,
-          "backward_efficiency_force_balance": 0.8951016702404874,
+          "backward_efficiency": 0.8951016702404873,
+          "backward_efficiency_force_balance": 0.8951016702404873,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -670,8 +670,8 @@
             "xr2": 0.3660567679412364
           },
           "forward_efficiency": 0.9024155344499816,
-          "backward_efficiency_printed": 0.9134142883972493,
-          "backward_efficiency_force_balance": 0.8951017643331824,
+          "backward_efficiency": 0.8951017643331827,
+          "backward_efficiency_force_balance": 0.8951017643331827,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -691,8 +691,8 @@
             "xr2": 0.3660567679412364
           },
           "forward_efficiency": 0.9024155344499816,
-          "backward_efficiency_printed": 0.9134142883972493,
-          "backward_efficiency_force_balance": 0.8951017643331824,
+          "backward_efficiency": 0.8951017643331827,
+          "backward_efficiency_force_balance": 0.8951017643331827,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -733,7 +733,7 @@
             "xr2": -0.6574326964220079
           },
           "forward_efficiency": 0.39001094227480426,
-          "backward_efficiency_printed": 0.0,
+          "backward_efficiency": 0.0,
           "backward_efficiency_force_balance": 0.0,
           "minimum_constraint_margin": -1.872748350730474,
           "maximum_constraint_violation": 1.872748350730474,
@@ -754,7 +754,7 @@
             "xr2": 0.019078465813756607
           },
           "forward_efficiency": 0.6376632093632139,
-          "backward_efficiency_printed": 0.5456720170410065,
+          "backward_efficiency": 0.5009407667692737,
           "backward_efficiency_force_balance": 0.5009407667692737,
           "minimum_constraint_margin": -1.1003896313516077,
           "maximum_constraint_violation": 1.1003896313516077,
@@ -775,7 +775,7 @@
             "xr2": 0.18986760707756678
           },
           "forward_efficiency": 0.8400267995680695,
-          "backward_efficiency_printed": 0.8426684394649016,
+          "backward_efficiency": 0.818107728042933,
           "backward_efficiency_force_balance": 0.818107728042933,
           "minimum_constraint_margin": -0.0589179415882799,
           "maximum_constraint_violation": 0.0589179415882799,
@@ -796,8 +796,8 @@
             "xr2": 0.6783920667994406
           },
           "forward_efficiency": 0.8930718759630265,
-          "backward_efficiency_printed": 0.9036684884059673,
-          "backward_efficiency_force_balance": 0.8842511708895855,
+          "backward_efficiency": 0.8842511708895856,
+          "backward_efficiency_force_balance": 0.8842511708895856,
           "minimum_constraint_margin": 7.324232331740177e-10,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -817,8 +817,8 @@
             "xr2": 0.8999999999999991
           },
           "forward_efficiency": 0.8874013376785638,
-          "backward_efficiency_printed": 0.894705154158221,
-          "backward_efficiency_force_balance": 0.8768560704004011,
+          "backward_efficiency": 0.876856070400401,
+          "backward_efficiency_force_balance": 0.876856070400401,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -838,8 +838,8 @@
             "xr2": 0.7276976251944828
           },
           "forward_efficiency": 0.8936913916563323,
-          "backward_efficiency_printed": 0.9038570638803806,
-          "backward_efficiency_force_balance": 0.8848846378331849,
+          "backward_efficiency": 0.884884637833185,
+          "backward_efficiency_force_balance": 0.884884637833185,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -859,8 +859,8 @@
             "xr2": 0.7210575211729601
           },
           "forward_efficiency": 0.8939852777915951,
-          "backward_efficiency_printed": 0.9041510394677833,
-          "backward_efficiency_force_balance": 0.8852276074246795,
+          "backward_efficiency": 0.8852276074246794,
+          "backward_efficiency_force_balance": 0.8852276074246794,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -880,7 +880,7 @@
             "xr2": 0.689394212447381
           },
           "forward_efficiency": 0.8953599893885248,
-          "backward_efficiency_printed": 0.9055231064138594,
+          "backward_efficiency": 0.8868290627345482,
           "backward_efficiency_force_balance": 0.8868290627345482,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
@@ -901,7 +901,7 @@
             "xr2": 0.5448187341673277
           },
           "forward_efficiency": 0.9001253710361549,
-          "backward_efficiency_printed": 0.9104379921855806,
+          "backward_efficiency": 0.8923777645532506,
           "backward_efficiency_force_balance": 0.8923777645532506,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
@@ -922,8 +922,8 @@
             "xr2": 0.3533431514849624
           },
           "forward_efficiency": 0.9024045198407795,
-          "backward_efficiency_printed": 0.9134190744336208,
-          "backward_efficiency_force_balance": 0.8950907130867499,
+          "backward_efficiency": 0.8950907130867498,
+          "backward_efficiency_force_balance": 0.8950907130867498,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -943,8 +943,8 @@
             "xr2": 0.3670136731878769
           },
           "forward_efficiency": 0.9024154468740501,
-          "backward_efficiency_printed": 0.9134143836349031,
-          "backward_efficiency_force_balance": 0.8951016830143553,
+          "backward_efficiency": 0.8951016830143552,
+          "backward_efficiency_force_balance": 0.8951016830143552,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -964,8 +964,8 @@
             "xr2": 0.36605893246950283
           },
           "forward_efficiency": 0.9024155344492447,
-          "backward_efficiency_printed": 0.9134142898918441,
-          "backward_efficiency_force_balance": 0.895101764506451,
+          "backward_efficiency": 0.8951017645064508,
+          "backward_efficiency_force_balance": 0.8951017645064508,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -985,8 +985,8 @@
             "xr2": 0.36605893246950283
           },
           "forward_efficiency": 0.9024155344492447,
-          "backward_efficiency_printed": 0.9134142898918441,
-          "backward_efficiency_force_balance": 0.895101764506451,
+          "backward_efficiency": 0.8951017645064508,
+          "backward_efficiency_force_balance": 0.8951017645064508,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1027,8 +1027,8 @@
             "xr2": 0.46342417454866525
           },
           "forward_efficiency": 0.47751866566093065,
-          "backward_efficiency_printed": 0.1362542875460555,
-          "backward_efficiency_force_balance": 0.11686785166529946,
+          "backward_efficiency": 0.11686785166529948,
+          "backward_efficiency_force_balance": 0.11686785166529948,
           "minimum_constraint_margin": -1.6762036189441418,
           "maximum_constraint_violation": 1.6762036189441418,
           "feasible": false
@@ -1048,8 +1048,8 @@
             "xr2": -0.9
           },
           "forward_efficiency": 0.5313076918537902,
-          "backward_efficiency_printed": 0.29351977014265507,
-          "backward_efficiency_force_balance": 0.25892021611820104,
+          "backward_efficiency": 0.2589202161182011,
+          "backward_efficiency_force_balance": 0.2589202161182011,
           "minimum_constraint_margin": -1.4121137123067615,
           "maximum_constraint_violation": 1.4121137123067615,
           "feasible": false
@@ -1069,7 +1069,7 @@
             "xr2": -0.9
           },
           "forward_efficiency": 0.5838018630075072,
-          "backward_efficiency_printed": 0.3720445304971169,
+          "backward_efficiency": 0.3458032997528273,
           "backward_efficiency_force_balance": 0.3458032997528273,
           "minimum_constraint_margin": -1.4121137138397168,
           "maximum_constraint_violation": 1.4121137138397168,
@@ -1090,7 +1090,7 @@
             "xr2": -0.8999999988080924
           },
           "forward_efficiency": 0.7223342711366005,
-          "backward_efficiency_printed": 0.6764199815633418,
+          "backward_efficiency": 0.6416766056775771,
           "backward_efficiency_force_balance": 0.6416766056775771,
           "minimum_constraint_margin": -0.5156845619284719,
           "maximum_constraint_violation": 0.5156845619284719,
@@ -1111,7 +1111,7 @@
             "xr2": -0.9
           },
           "forward_efficiency": 0.7819247816703533,
-          "backward_efficiency_printed": 0.7725972226281344,
+          "backward_efficiency": 0.7383469217041129,
           "backward_efficiency_force_balance": 0.7383469217041129,
           "minimum_constraint_margin": -0.06071259178683974,
           "maximum_constraint_violation": 0.06071259178683974,
@@ -1132,7 +1132,7 @@
             "xr2": -0.9
           },
           "forward_efficiency": 0.7892010165011186,
-          "backward_efficiency_printed": 0.7829269118143496,
+          "backward_efficiency": 0.7490830392307818,
           "backward_efficiency_force_balance": 0.7490830392307818,
           "minimum_constraint_margin": -0.0008215951055705798,
           "maximum_constraint_violation": 0.0008215951055705798,
@@ -1153,8 +1153,8 @@
             "xr2": -0.899999999996412
           },
           "forward_efficiency": 0.7893387564419839,
-          "backward_efficiency_printed": 0.7831181616314414,
-          "backward_efficiency_force_balance": 0.7492837727718088,
+          "backward_efficiency": 0.7492837727718089,
+          "backward_efficiency_force_balance": 0.7492837727718089,
           "minimum_constraint_margin": 3.588018770983581e-12,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1174,8 +1174,8 @@
             "xr2": -0.899999999999327
           },
           "forward_efficiency": 0.789934181252273,
-          "backward_efficiency_printed": 0.7840084489562567,
-          "backward_efficiency_force_balance": 0.75017317444906,
+          "backward_efficiency": 0.7501731744490601,
+          "backward_efficiency_force_balance": 0.7501731744490601,
           "minimum_constraint_margin": 6.730171975277699e-13,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1195,7 +1195,7 @@
             "xr2": -0.9
           },
           "forward_efficiency": 0.7928456667208951,
-          "backward_efficiency_printed": 0.7883350070244516,
+          "backward_efficiency": 0.7545010274367789,
           "backward_efficiency_force_balance": 0.7545010274367789,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1216,8 +1216,8 @@
             "xr2": -0.9
           },
           "forward_efficiency": 0.8058829875917979,
-          "backward_efficiency_printed": 0.8071615092024274,
-          "backward_efficiency_force_balance": 0.7734591881361285,
+          "backward_efficiency": 0.7734591881361286,
+          "backward_efficiency_force_balance": 0.7734591881361286,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1237,7 +1237,7 @@
             "xr2": -0.8148346177881485
           },
           "forward_efficiency": 0.8315454580327937,
-          "backward_efficiency_printed": 0.8402339041606326,
+          "backward_efficiency": 0.8085097635531813,
           "backward_efficiency_force_balance": 0.8085097635531813,
           "minimum_constraint_margin": 0.0031891950011286863,
           "maximum_constraint_violation": 0.0,
@@ -1258,7 +1258,7 @@
             "xr2": 0.10117766634251002
           },
           "forward_efficiency": 0.8973710792025615,
-          "backward_efficiency_printed": 0.9103176904760143,
+          "backward_efficiency": 0.88950093616328,
           "backward_efficiency_force_balance": 0.88950093616328,
           "minimum_constraint_margin": 0.003346211284764644,
           "maximum_constraint_violation": 0.0,
@@ -1279,8 +1279,8 @@
             "xr2": 0.3557284264085664
           },
           "forward_efficiency": 0.8969295903105124,
-          "backward_efficiency_printed": 0.9067693003376259,
-          "backward_efficiency_force_balance": 0.8885814092054378,
+          "backward_efficiency": 0.8885814092054377,
+          "backward_efficiency_force_balance": 0.8885814092054377,
           "minimum_constraint_margin": 2.1811974448837645e-10,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1300,7 +1300,7 @@
             "xr2": 0.2678334013680851
           },
           "forward_efficiency": 0.9016945840520112,
-          "backward_efficiency_printed": 0.9126429647456765,
+          "backward_efficiency": 0.894251100153176,
           "backward_efficiency_force_balance": 0.894251100153176,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1321,8 +1321,8 @@
             "xr2": 0.36231204621520374
           },
           "forward_efficiency": 0.902414718294965,
-          "backward_efficiency_printed": 0.9134229370998753,
-          "backward_efficiency_force_balance": 0.8951019142283441,
+          "backward_efficiency": 0.8951019142283442,
+          "backward_efficiency_force_balance": 0.8951019142283442,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1342,8 +1342,8 @@
             "xr2": 0.3658976515146929
           },
           "forward_efficiency": 0.902415533103252,
-          "backward_efficiency_printed": 0.9134147628311956,
-          "backward_efficiency_force_balance": 0.8951018181695716,
+          "backward_efficiency": 0.8951018181695717,
+          "backward_efficiency_force_balance": 0.8951018181695717,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1363,7 +1363,7 @@
             "xr2": 0.3660509588416213
           },
           "forward_efficiency": 0.9024155344528045,
-          "backward_efficiency_printed": 0.913414328967865,
+          "backward_efficiency": 0.8951017690606681,
           "backward_efficiency_force_balance": 0.8951017690606681,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1384,7 +1384,7 @@
             "xr2": 0.3660509588416213
           },
           "forward_efficiency": 0.9024155344528045,
-          "backward_efficiency_printed": 0.913414328967865,
+          "backward_efficiency": 0.8951017690606681,
           "backward_efficiency_force_balance": 0.8951017690606681,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1426,7 +1426,7 @@
             "xr2": -0.2093072007432185
           },
           "forward_efficiency": 0.42132903113417863,
-          "backward_efficiency_printed": 0.08708045054026078,
+          "backward_efficiency": 0.06827205780039314,
           "backward_efficiency_force_balance": 0.06827205780039314,
           "minimum_constraint_margin": -1.9695260013311997,
           "maximum_constraint_violation": 1.9695260013311997,
@@ -1447,7 +1447,7 @@
             "xr2": 0.10572996260378742
           },
           "forward_efficiency": 0.6863191566987712,
-          "backward_efficiency_printed": 0.6513078803098508,
+          "backward_efficiency": 0.600335262574936,
           "backward_efficiency_force_balance": 0.600335262574936,
           "minimum_constraint_margin": -0.9039751323326429,
           "maximum_constraint_violation": 0.9039751323326429,
@@ -1468,8 +1468,8 @@
             "xr2": 0.5236693598438068
           },
           "forward_efficiency": 0.8660191546335875,
-          "backward_efficiency_printed": 0.8767660631861426,
-          "backward_efficiency_force_balance": 0.8522079336478362,
+          "backward_efficiency": 0.8522079336478361,
+          "backward_efficiency_force_balance": 0.8522079336478361,
           "minimum_constraint_margin": -0.0048735548481384505,
           "maximum_constraint_violation": 0.0048735548481384505,
           "feasible": false
@@ -1489,7 +1489,7 @@
             "xr2": 0.8038832945186648
           },
           "forward_efficiency": 0.8854407872546974,
-          "backward_efficiency_printed": 0.8965879518033038,
+          "backward_efficiency": 0.8754071362786411,
           "backward_efficiency_force_balance": 0.8754071362786411,
           "minimum_constraint_margin": 4.440892098500626e-16,
           "maximum_constraint_violation": 0.0,
@@ -1510,7 +1510,7 @@
             "xr2": 0.7116495773433894
           },
           "forward_efficiency": 0.8862338583136071,
-          "backward_efficiency_printed": 0.8975791699831523,
+          "backward_efficiency": 0.8763836637024608,
           "backward_efficiency_force_balance": 0.8763836637024608,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
@@ -1531,8 +1531,8 @@
             "xr2": 0.6990893548318845
           },
           "forward_efficiency": 0.8863437006470042,
-          "backward_efficiency_printed": 0.8976796246346688,
-          "backward_efficiency_force_balance": 0.8765110861740992,
+          "backward_efficiency": 0.8765110861740991,
+          "backward_efficiency_force_balance": 0.8765110861740991,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1552,7 +1552,7 @@
             "xr2": 0.6518042624113151
           },
           "forward_efficiency": 0.8870661283898288,
-          "backward_efficiency_printed": 0.8982805433810364,
+          "backward_efficiency": 0.8773362604831981,
           "backward_efficiency_force_balance": 0.8773362604831981,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
@@ -1573,8 +1573,8 @@
             "xr2": 0.5303756230366578
           },
           "forward_efficiency": 0.8893021582819343,
-          "backward_efficiency_printed": 0.8999073803450525,
-          "backward_efficiency_force_balance": 0.8798375248223951,
+          "backward_efficiency": 0.8798375248223952,
+          "backward_efficiency_force_balance": 0.8798375248223952,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1594,7 +1594,7 @@
             "xr2": 0.41530485990380284
           },
           "forward_efficiency": 0.8925181981901273,
-          "backward_efficiency_printed": 0.9024193934148556,
+          "backward_efficiency": 0.883457898498293,
           "backward_efficiency_force_balance": 0.883457898498293,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1615,8 +1615,8 @@
             "xr2": 0.28740672168260695
           },
           "forward_efficiency": 0.8982667692677734,
-          "backward_efficiency_printed": 0.9080609134683867,
-          "backward_efficiency_force_balance": 0.8901098090116012,
+          "backward_efficiency": 0.8901098090116011,
+          "backward_efficiency_force_balance": 0.8901098090116011,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1636,8 +1636,8 @@
             "xr2": 0.2851191380396173
           },
           "forward_efficiency": 0.901792084699783,
-          "backward_efficiency_printed": 0.9126426186572777,
-          "backward_efficiency_force_balance": 0.8943535243792032,
+          "backward_efficiency": 0.8943535243792031,
+          "backward_efficiency_force_balance": 0.8943535243792031,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1657,7 +1657,7 @@
             "xr2": 0.34023007251310855
           },
           "forward_efficiency": 0.9023778124628875,
-          "backward_efficiency_printed": 0.9134635157012531,
+          "backward_efficiency": 0.8950680370191146,
           "backward_efficiency_force_balance": 0.8950680370191146,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
@@ -1678,7 +1678,7 @@
             "xr2": 0.3627185631911741
           },
           "forward_efficiency": 0.9024146928561327,
-          "backward_efficiency_printed": 0.9134332488142062,
+          "backward_efficiency": 0.8951031009586615,
           "backward_efficiency_force_balance": 0.8951031009586615,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1699,7 +1699,7 @@
             "xr2": 0.3660182178476422
           },
           "forward_efficiency": 0.9024155328230979,
-          "backward_efficiency_printed": 0.9134151524616768,
+          "backward_efficiency": 0.895101863268884,
           "backward_efficiency_force_balance": 0.895101863268884,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1720,8 +1720,8 @@
             "xr2": 0.36605479554949316
           },
           "forward_efficiency": 0.9024155344492226,
-          "backward_efficiency_printed": 0.9134143459784624,
-          "backward_efficiency_force_balance": 0.8951017710378396,
+          "backward_efficiency": 0.8951017710378395,
+          "backward_efficiency_force_balance": 0.8951017710378395,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1741,8 +1741,8 @@
             "xr2": 0.36605479554949316
           },
           "forward_efficiency": 0.9024155344492226,
-          "backward_efficiency_printed": 0.9134143459784624,
-          "backward_efficiency_force_balance": 0.8951017710378396,
+          "backward_efficiency": 0.8951017710378395,
+          "backward_efficiency_force_balance": 0.8951017710378395,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1783,8 +1783,8 @@
             "xr2": 0.5228738134987446
           },
           "forward_efficiency": 0.8290950231888315,
-          "backward_efficiency_printed": 0.820382257610413,
-          "backward_efficiency_force_balance": 0.8003547037811152,
+          "backward_efficiency": 0.8003547037811151,
+          "backward_efficiency_force_balance": 0.8003547037811151,
           "minimum_constraint_margin": -0.11989009475581835,
           "maximum_constraint_violation": 0.11989009475581835,
           "feasible": false
@@ -1804,7 +1804,7 @@
             "xr2": 0.4611208660702165
           },
           "forward_efficiency": 0.8538301709390315,
-          "backward_efficiency_printed": 0.8595752603607272,
+          "backward_efficiency": 0.8363414820281353,
           "backward_efficiency_force_balance": 0.8363414820281353,
           "minimum_constraint_margin": 0.005265897398997854,
           "maximum_constraint_violation": 0.0,
@@ -1825,7 +1825,7 @@
             "xr2": 0.37052575498030194
           },
           "forward_efficiency": 0.8825444594179312,
-          "backward_efficiency_printed": 0.8894250434975564,
+          "backward_efficiency": 0.8710430425032962,
           "backward_efficiency_force_balance": 0.8710430425032962,
           "minimum_constraint_margin": 0.004359736950045767,
           "maximum_constraint_violation": 0.0,
@@ -1846,8 +1846,8 @@
             "xr2": 0.07726237561637872
           },
           "forward_efficiency": 0.8974576227548172,
-          "backward_efficiency_printed": 0.908479537089935,
-          "backward_efficiency_force_balance": 0.8893096505247511,
+          "backward_efficiency": 0.8893096505247512,
+          "backward_efficiency_force_balance": 0.8893096505247512,
           "minimum_constraint_margin": 0.003373405609508273,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1867,8 +1867,8 @@
             "xr2": 0.16773202842467494
           },
           "forward_efficiency": 0.8993080258729163,
-          "backward_efficiency_printed": 0.910621119505221,
-          "backward_efficiency_force_balance": 0.8915258646905058,
+          "backward_efficiency": 0.8915258646905059,
+          "backward_efficiency_force_balance": 0.8915258646905059,
           "minimum_constraint_margin": 0.0034035986486068426,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1888,8 +1888,8 @@
             "xr2": 0.2665385960670351
           },
           "forward_efficiency": 0.9011097083456838,
-          "backward_efficiency_printed": 0.9124987298148101,
-          "backward_efficiency_force_balance": 0.8936341630513657,
+          "backward_efficiency": 0.8936341630513658,
+          "backward_efficiency_force_balance": 0.8936341630513658,
           "minimum_constraint_margin": 0.003350997350967444,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1909,8 +1909,8 @@
             "xr2": 0.3701989209248563
           },
           "forward_efficiency": 0.9024129002720019,
-          "backward_efficiency_printed": 0.9134205550005212,
-          "backward_efficiency_force_balance": 0.8950997183279465,
+          "backward_efficiency": 0.8950997183279467,
+          "backward_efficiency_force_balance": 0.8950997183279467,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1930,7 +1930,7 @@
             "xr2": 0.3683622377392032
           },
           "forward_efficiency": 0.9024150817008522,
-          "backward_efficiency_printed": 0.9134130495743269,
+          "backward_efficiency": 0.8951011423467594,
           "backward_efficiency_force_balance": 0.8951011423467594,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -1951,8 +1951,8 @@
             "xr2": 0.36618758556940356
           },
           "forward_efficiency": 0.9024155331424598,
-          "backward_efficiency_printed": 0.913413571229567,
-          "backward_efficiency_force_balance": 0.895101679461691,
+          "backward_efficiency": 0.8951016794616907,
+          "backward_efficiency_force_balance": 0.8951016794616907,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1972,8 +1972,8 @@
             "xr2": 0.36605929837927
           },
           "forward_efficiency": 0.9024155344434924,
-          "backward_efficiency_printed": 0.9134142562040047,
-          "backward_efficiency_force_balance": 0.8951017605774875,
+          "backward_efficiency": 0.8951017605774874,
+          "backward_efficiency_force_balance": 0.8951017605774874,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -1993,8 +1993,8 @@
             "xr2": 0.3660516086242659
           },
           "forward_efficiency": 0.9024155344528163,
-          "backward_efficiency_printed": 0.9134143254717888,
-          "backward_efficiency_force_balance": 0.8951017686535515,
+          "backward_efficiency": 0.8951017686535514,
+          "backward_efficiency_force_balance": 0.8951017686535514,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2035,8 +2035,8 @@
             "xr2": 0.08842735496565224
           },
           "forward_efficiency": 0.5433898072054285,
-          "backward_efficiency_printed": 0.2465195620574157,
-          "backward_efficiency_force_balance": 0.22799075115102885,
+          "backward_efficiency": 0.22799075115102888,
+          "backward_efficiency_force_balance": 0.22799075115102888,
           "minimum_constraint_margin": -1.7174824625107243,
           "maximum_constraint_violation": 1.7174824625107243,
           "feasible": false
@@ -2056,8 +2056,8 @@
             "xr2": 0.18624608168837298
           },
           "forward_efficiency": 0.7457938829249365,
-          "backward_efficiency_printed": 0.7033763524116433,
-          "backward_efficiency_force_balance": 0.6756904600860097,
+          "backward_efficiency": 0.6756904600860096,
+          "backward_efficiency_force_balance": 0.6756904600860096,
           "minimum_constraint_margin": -0.5745245758881755,
           "maximum_constraint_violation": 0.5745245758881755,
           "feasible": false
@@ -2077,8 +2077,8 @@
             "xr2": 0.24019749178919414
           },
           "forward_efficiency": 0.8648558158740569,
-          "backward_efficiency_printed": 0.8676596167165861,
-          "backward_efficiency_force_balance": 0.8486765601138663,
+          "backward_efficiency": 0.8486765601138664,
+          "backward_efficiency_force_balance": 0.8486765601138664,
           "minimum_constraint_margin": 0.004425930932169031,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2098,8 +2098,8 @@
             "xr2": 0.25732484622239793
           },
           "forward_efficiency": 0.8648945719486618,
-          "backward_efficiency_printed": 0.8727166975062767,
-          "backward_efficiency_force_balance": 0.8502273823057537,
+          "backward_efficiency": 0.8502273823057538,
+          "backward_efficiency_force_balance": 0.8502273823057538,
           "minimum_constraint_margin": 0.005200767719084176,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2119,7 +2119,7 @@
             "xr2": 0.11738117240367962
           },
           "forward_efficiency": 0.8947558264372035,
-          "backward_efficiency_printed": 0.9037483763407383,
+          "backward_efficiency": 0.8858179913097891,
           "backward_efficiency_force_balance": 0.8858179913097891,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -2140,8 +2140,8 @@
             "xr2": -0.016007130545480197
           },
           "forward_efficiency": 0.8276430774377617,
-          "backward_efficiency_printed": 0.8510605563788377,
-          "backward_efficiency_force_balance": 0.8074944998295288,
+          "backward_efficiency": 0.8074944998295289,
+          "backward_efficiency_force_balance": 0.8074944998295289,
           "minimum_constraint_margin": 0.006771194871384001,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2161,8 +2161,8 @@
             "xr2": 0.12277222627182505
           },
           "forward_efficiency": 0.8987034931986816,
-          "backward_efficiency_printed": 0.9099244528540366,
-          "backward_efficiency_force_balance": 0.8907999098803635,
+          "backward_efficiency": 0.8907999098803636,
+          "backward_efficiency_force_balance": 0.8907999098803636,
           "minimum_constraint_margin": 0.0033707166929630716,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2182,8 +2182,8 @@
             "xr2": 0.14427416333272614
           },
           "forward_efficiency": 0.8990890950574489,
-          "backward_efficiency_printed": 0.9102497833462029,
-          "backward_efficiency_force_balance": 0.8912444591847188,
+          "backward_efficiency": 0.8912444591847187,
+          "backward_efficiency_force_balance": 0.8912444591847187,
           "minimum_constraint_margin": 0.003388618477278782,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2203,8 +2203,8 @@
             "xr2": 0.27099689090608925
           },
           "forward_efficiency": 0.9011757814966608,
-          "backward_efficiency_printed": 0.9121794948664415,
-          "backward_efficiency_force_balance": 0.8936604090247763,
+          "backward_efficiency": 0.8936604090247764,
+          "backward_efficiency_force_balance": 0.8936604090247764,
           "minimum_constraint_margin": 0.003400291288226276,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2224,8 +2224,8 @@
             "xr2": 0.37140779019422243
           },
           "forward_efficiency": 0.9024130931988115,
-          "backward_efficiency_printed": 0.9133778244085075,
-          "backward_efficiency_force_balance": 0.8950949932985928,
+          "backward_efficiency": 0.8950949932985929,
+          "backward_efficiency_force_balance": 0.8950949932985929,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2245,8 +2245,8 @@
             "xr2": 0.3680241746368379
           },
           "forward_efficiency": 0.9024153137162884,
-          "backward_efficiency_printed": 0.9134082201630503,
-          "backward_efficiency_force_balance": 0.8951008262344687,
+          "backward_efficiency": 0.8951008262344688,
+          "backward_efficiency_force_balance": 0.8951008262344688,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2266,8 +2266,8 @@
             "xr2": 0.3663184129614402
           },
           "forward_efficiency": 0.9024155275845613,
-          "backward_efficiency_printed": 0.9134143847605064,
-          "backward_efficiency_force_balance": 0.8951017683106673,
+          "backward_efficiency": 0.8951017683106675,
+          "backward_efficiency_force_balance": 0.8951017683106675,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2287,8 +2287,8 @@
             "xr2": 0.3660517273954721
           },
           "forward_efficiency": 0.9024155344253126,
-          "backward_efficiency_printed": 0.9134144200580571,
-          "backward_efficiency_force_balance": 0.8951017796397607,
+          "backward_efficiency": 0.8951017796397605,
+          "backward_efficiency_force_balance": 0.8951017796397605,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2308,8 +2308,8 @@
             "xr2": 0.366050502964162
           },
           "forward_efficiency": 0.9024155344527398,
-          "backward_efficiency_printed": 0.9134143327638422,
-          "backward_efficiency_force_balance": 0.8951017695026536,
+          "backward_efficiency": 0.8951017695026537,
+          "backward_efficiency_force_balance": 0.8951017695026537,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2329,8 +2329,8 @@
             "xr2": 0.366050502964162
           },
           "forward_efficiency": 0.9024155344527398,
-          "backward_efficiency_printed": 0.9134143327638422,
-          "backward_efficiency_force_balance": 0.8951017695026536,
+          "backward_efficiency": 0.8951017695026537,
+          "backward_efficiency_force_balance": 0.8951017695026537,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2371,8 +2371,8 @@
             "xr2": 0.2132963265777451
           },
           "forward_efficiency": 0.8003957944921852,
-          "backward_efficiency_printed": 0.8003265219457965,
-          "backward_efficiency_force_balance": 0.7671430902775835,
+          "backward_efficiency": 0.7671430902775834,
+          "backward_efficiency_force_balance": 0.7671430902775834,
           "minimum_constraint_margin": -0.3538560540025938,
           "maximum_constraint_violation": 0.3538560540025938,
           "feasible": false
@@ -2392,7 +2392,7 @@
             "xr2": 0.39873803725231516
           },
           "forward_efficiency": 0.8916850410447038,
-          "backward_efficiency_printed": 0.9006386112715152,
+          "backward_efficiency": 0.8822963417576858,
           "backward_efficiency_force_balance": 0.8822963417576858,
           "minimum_constraint_margin": 0.004229079234723598,
           "maximum_constraint_violation": 0.0,
@@ -2413,7 +2413,7 @@
             "xr2": 0.4062178537683082
           },
           "forward_efficiency": 0.8130000918207344,
-          "backward_efficiency_printed": 0.8219037148191938,
+          "backward_efficiency": 0.7849641820164744,
           "backward_efficiency_force_balance": 0.7849641820164744,
           "minimum_constraint_margin": 0.005908754023492779,
           "maximum_constraint_violation": 0.0,
@@ -2434,8 +2434,8 @@
             "xr2": 0.34068699429976956
           },
           "forward_efficiency": 0.8996299489260641,
-          "backward_efficiency_printed": 0.9103004544818721,
-          "backward_efficiency_force_balance": 0.8918186215163834,
+          "backward_efficiency": 0.8918186215163835,
+          "backward_efficiency_force_balance": 0.8918186215163835,
           "minimum_constraint_margin": 0.0035052755808918645,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2455,8 +2455,8 @@
             "xr2": 0.31319670131172705
           },
           "forward_efficiency": 0.9022565843949302,
-          "backward_efficiency_printed": 0.9134303169557049,
-          "backward_efficiency_force_balance": 0.894937369054774,
+          "backward_efficiency": 0.8949373690547741,
+          "backward_efficiency_force_balance": 0.8949373690547741,
           "minimum_constraint_margin": 7.722213979377557e-10,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2476,8 +2476,8 @@
             "xr2": 0.3255402090984113
           },
           "forward_efficiency": 0.9023223886754846,
-          "backward_efficiency_printed": 0.9134569072838375,
-          "backward_efficiency_force_balance": 0.8950093007161575,
+          "backward_efficiency": 0.8950093007161576,
+          "backward_efficiency_force_balance": 0.8950093007161576,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2497,8 +2497,8 @@
             "xr2": 0.3654052928791519
           },
           "forward_efficiency": 0.9024155076296131,
-          "backward_efficiency_printed": 0.9134154278140696,
-          "backward_efficiency_force_balance": 0.8951018687761175,
+          "backward_efficiency": 0.8951018687761176,
+          "backward_efficiency_force_balance": 0.8951018687761176,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2518,8 +2518,8 @@
             "xr2": 0.36604202064254776
           },
           "forward_efficiency": 0.9024155344474508,
-          "backward_efficiency_printed": 0.9134143462769332,
-          "backward_efficiency_force_balance": 0.8951017710707282,
+          "backward_efficiency": 0.8951017710707283,
+          "backward_efficiency_force_balance": 0.8951017710707283,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2539,7 +2539,7 @@
             "xr2": 0.36605161771713746
           },
           "forward_efficiency": 0.9024155344528162,
-          "backward_efficiency_printed": 0.9134143258301233,
+          "backward_efficiency": 0.8951017686952812,
           "backward_efficiency_force_balance": 0.8951017686952812,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -2581,7 +2581,7 @@
             "xr2": 0.7625307995197433
           },
           "forward_efficiency": 0.4802101664817908,
-          "backward_efficiency_printed": 0.3441800471777342,
+          "backward_efficiency": 0.2699156638794309,
           "backward_efficiency_force_balance": 0.2699156638794309,
           "minimum_constraint_margin": -1.9190754793260836,
           "maximum_constraint_violation": 1.9190754793260836,
@@ -2602,7 +2602,7 @@
             "xr2": 0.8495531532284873
           },
           "forward_efficiency": 0.7204311266964699,
-          "backward_efficiency_printed": 0.7190190560557848,
+          "backward_efficiency": 0.6620351200713042,
           "backward_efficiency_force_balance": 0.6620351200713042,
           "minimum_constraint_margin": -0.91228797600872,
           "maximum_constraint_violation": 0.91228797600872,
@@ -2623,8 +2623,8 @@
             "xr2": 0.899999999999955
           },
           "forward_efficiency": 0.8619468105043344,
-          "backward_efficiency_printed": 0.8717763846020605,
-          "backward_efficiency_force_balance": 0.8470838216193831,
+          "backward_efficiency": 0.8470838216193832,
+          "backward_efficiency_force_balance": 0.8470838216193832,
           "minimum_constraint_margin": -0.006068979137154429,
           "maximum_constraint_violation": 0.006068979137154429,
           "feasible": false
@@ -2644,8 +2644,8 @@
             "xr2": 0.8217401262250515
           },
           "forward_efficiency": 0.8875352998058429,
-          "backward_efficiency_printed": 0.8981089772511416,
-          "backward_efficiency_force_balance": 0.8777537022005034,
+          "backward_efficiency": 0.8777537022005033,
+          "backward_efficiency_force_balance": 0.8777537022005033,
           "minimum_constraint_margin": 1.4944712134479232e-09,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2665,8 +2665,8 @@
             "xr2": 0.5863299758063333
           },
           "forward_efficiency": 0.8889879977342046,
-          "backward_efficiency_printed": 0.8998756109851943,
-          "backward_efficiency_force_balance": 0.8795276288249002,
+          "backward_efficiency": 0.8795276288249001,
+          "backward_efficiency_force_balance": 0.8795276288249001,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2686,7 +2686,7 @@
             "xr2": 0.6653336671244231
           },
           "forward_efficiency": 0.8895117291115557,
-          "backward_efficiency_printed": 0.9005290911402586,
+          "backward_efficiency": 0.8801694566681006,
           "backward_efficiency_force_balance": 0.8801694566681006,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -2707,8 +2707,8 @@
             "xr2": 0.6662004762274646
           },
           "forward_efficiency": 0.8895878813067154,
-          "backward_efficiency_printed": 0.9005978905539769,
-          "backward_efficiency_force_balance": 0.8802572954160304,
+          "backward_efficiency": 0.8802572954160303,
+          "backward_efficiency_force_balance": 0.8802572954160303,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2728,7 +2728,7 @@
             "xr2": 0.6620267422997274
           },
           "forward_efficiency": 0.8899722953455221,
-          "backward_efficiency_printed": 0.9009454371825985,
+          "backward_efficiency": 0.8807006329081071,
           "backward_efficiency_force_balance": 0.8807006329081071,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -2749,7 +2749,7 @@
             "xr2": 0.6394053194541968
           },
           "forward_efficiency": 0.891781252474679,
-          "backward_efficiency_printed": 0.9025878124628248,
+          "backward_efficiency": 0.8827854944795432,
           "backward_efficiency_force_balance": 0.8827854944795432,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -2770,8 +2770,8 @@
             "xr2": 0.5344315339608813
           },
           "forward_efficiency": 0.8983054317468064,
-          "backward_efficiency_printed": 0.9086836713500998,
-          "backward_efficiency_force_balance": 0.8902941838377552,
+          "backward_efficiency": 0.8902941838377553,
+          "backward_efficiency_force_balance": 0.8902941838377553,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2791,8 +2791,8 @@
             "xr2": 0.3630302507977624
           },
           "forward_efficiency": 0.9024149536130204,
-          "backward_efficiency_printed": 0.9134191445815638,
-          "backward_efficiency_force_balance": 0.8951017182612446,
+          "backward_efficiency": 0.8951017182612447,
+          "backward_efficiency_force_balance": 0.8951017182612447,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2812,7 +2812,7 @@
             "xr2": 0.3663083600544005
           },
           "forward_efficiency": 0.9024155288931468,
-          "backward_efficiency_printed": 0.9134142304247896,
+          "backward_efficiency": 0.8951017517187931,
           "backward_efficiency_force_balance": 0.8951017517187931,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -2833,8 +2833,8 @@
             "xr2": 0.36605198858247256
           },
           "forward_efficiency": 0.9024155344527981,
-          "backward_efficiency_printed": 0.9134143242219624,
-          "backward_efficiency_force_balance": 0.895101768507987,
+          "backward_efficiency": 0.8951017685079871,
+          "backward_efficiency_force_balance": 0.8951017685079871,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2854,8 +2854,8 @@
             "xr2": 0.36605198858247256
           },
           "forward_efficiency": 0.9024155344527981,
-          "backward_efficiency_printed": 0.9134143242219624,
-          "backward_efficiency_force_balance": 0.895101768507987,
+          "backward_efficiency": 0.8951017685079871,
+          "backward_efficiency_force_balance": 0.8951017685079871,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2896,8 +2896,8 @@
             "xr2": -0.49468529327981253
           },
           "forward_efficiency": 0.8722691674303756,
-          "backward_efficiency_printed": 0.8824599910413228,
-          "backward_efficiency_force_balance": 0.8591709164156605,
+          "backward_efficiency": 0.8591709164156603,
+          "backward_efficiency_force_balance": 0.8591709164156603,
           "minimum_constraint_margin": -0.16248935613633098,
           "maximum_constraint_violation": 0.16248935613633098,
           "feasible": false
@@ -2917,7 +2917,7 @@
             "xr2": -0.21324908091895356
           },
           "forward_efficiency": 0.8768301639594415,
-          "backward_efficiency_printed": 0.8920851776970732,
+          "backward_efficiency": 0.8656686508966926,
           "backward_efficiency_force_balance": 0.8656686508966926,
           "minimum_constraint_margin": 0.004105473124893622,
           "maximum_constraint_violation": 0.0,
@@ -2938,7 +2938,7 @@
             "xr2": 0.24430529391316191
           },
           "forward_efficiency": 0.8587539633480853,
-          "backward_efficiency_printed": 0.8645491952238632,
+          "backward_efficiency": 0.8423879913183664,
           "backward_efficiency_force_balance": 0.8423879913183664,
           "minimum_constraint_margin": 0.005139494274742251,
           "maximum_constraint_violation": 0.0,
@@ -2959,8 +2959,8 @@
             "xr2": -0.08037053943004491
           },
           "forward_efficiency": 0.8903266220437107,
-          "backward_efficiency_printed": 0.900529936528712,
-          "backward_efficiency_force_balance": 0.8808447311868213,
+          "backward_efficiency": 0.8808447311868212,
+          "backward_efficiency_force_balance": 0.8808447311868212,
           "minimum_constraint_margin": 0.0038906295818028624,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -2980,7 +2980,7 @@
             "xr2": -0.03969717578056753
           },
           "forward_efficiency": 0.8929493899478217,
-          "backward_efficiency_printed": 0.9032631862629713,
+          "backward_efficiency": 0.8839414663728802,
           "backward_efficiency_force_balance": 0.8839414663728802,
           "minimum_constraint_margin": 0.0037257950126590167,
           "maximum_constraint_violation": 0.0,
@@ -3001,7 +3001,7 @@
             "xr2": 0.1695222950910017
           },
           "forward_efficiency": 0.8991609839327448,
-          "backward_efficiency_printed": 0.9095425180625821,
+          "backward_efficiency": 0.8912041138942689,
           "backward_efficiency_force_balance": 0.8912041138942689,
           "minimum_constraint_margin": 2.4734478909493873e-09,
           "maximum_constraint_violation": 0.0,
@@ -3022,8 +3022,8 @@
             "xr2": 0.2353217480486759
           },
           "forward_efficiency": 0.9009097305442306,
-          "backward_efficiency_printed": 0.9116090431239435,
-          "backward_efficiency_force_balance": 0.8932998223299965,
+          "backward_efficiency": 0.8932998223299964,
+          "backward_efficiency_force_balance": 0.8932998223299964,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3043,8 +3043,8 @@
             "xr2": 0.3545804183870108
           },
           "forward_efficiency": 0.9024081010579902,
-          "backward_efficiency_printed": 0.9134430286605382,
-          "backward_efficiency_force_balance": 0.8950973259731885,
+          "backward_efficiency": 0.8950973259731884,
+          "backward_efficiency_force_balance": 0.8950973259731884,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3064,8 +3064,8 @@
             "xr2": 0.3656447198484952
           },
           "forward_efficiency": 0.9024155167649845,
-          "backward_efficiency_printed": 0.9134140199863202,
-          "backward_efficiency_force_balance": 0.8951017144180566,
+          "backward_efficiency": 0.8951017144180565,
+          "backward_efficiency_force_balance": 0.8951017144180565,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3085,8 +3085,8 @@
             "xr2": 0.36604965150966884
           },
           "forward_efficiency": 0.9024155344451159,
-          "backward_efficiency_printed": 0.9134143818839976,
-          "backward_efficiency_force_balance": 0.8951017752149286,
+          "backward_efficiency": 0.8951017752149285,
+          "backward_efficiency_force_balance": 0.8951017752149285,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3106,8 +3106,8 @@
             "xr2": 0.36605190134153254
           },
           "forward_efficiency": 0.9024155344528031,
-          "backward_efficiency_printed": 0.9134143242101109,
-          "backward_efficiency_force_balance": 0.8951017685066123,
+          "backward_efficiency": 0.8951017685066122,
+          "backward_efficiency_force_balance": 0.8951017685066122,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3148,8 +3148,8 @@
             "xr2": -0.5600510228505726
           },
           "forward_efficiency": 0.5145776760757083,
-          "backward_efficiency_printed": 0.2913237210153415,
-          "backward_efficiency_force_balance": 0.253700319335613,
+          "backward_efficiency": 0.25370031933561304,
+          "backward_efficiency_force_balance": 0.25370031933561304,
           "minimum_constraint_margin": -1.199514093932669,
           "maximum_constraint_violation": 1.199514093932669,
           "feasible": false
@@ -3169,8 +3169,8 @@
             "xr2": -0.1995233465066547
           },
           "forward_efficiency": 0.7572648595827738,
-          "backward_efficiency_printed": 0.7378968328544339,
-          "backward_efficiency_force_balance": 0.7038839099411498,
+          "backward_efficiency": 0.7038839099411499,
+          "backward_efficiency_force_balance": 0.7038839099411499,
           "minimum_constraint_margin": -0.3257222220889452,
           "maximum_constraint_violation": 0.3257222220889452,
           "feasible": false
@@ -3190,7 +3190,7 @@
             "xr2": 0.1645382944510395
           },
           "forward_efficiency": 0.880062839386906,
-          "backward_efficiency_printed": 0.8872529890251339,
+          "backward_efficiency": 0.8682671432009095,
           "backward_efficiency_force_balance": 0.8682671432009095,
           "minimum_constraint_margin": 0.005279759418451935,
           "maximum_constraint_violation": 0.0,
@@ -3211,7 +3211,7 @@
             "xr2": 0.3212586237642795
           },
           "forward_efficiency": 0.8690331970123175,
-          "backward_efficiency_printed": 0.8821690052029367,
+          "backward_efficiency": 0.8558481670208152,
           "backward_efficiency_force_balance": 0.8558481670208152,
           "minimum_constraint_margin": 0.003989668718737627,
           "maximum_constraint_violation": 0.0,
@@ -3232,8 +3232,8 @@
             "xr2": 0.015212063752405913
           },
           "forward_efficiency": 0.8915488429813617,
-          "backward_efficiency_printed": 0.9066180410182407,
-          "backward_efficiency_force_balance": 0.8830311725513191,
+          "backward_efficiency": 0.8830311725513189,
+          "backward_efficiency_force_balance": 0.8830311725513189,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3253,7 +3253,7 @@
             "xr2": 0.02456659023185148
           },
           "forward_efficiency": 0.8954391394768451,
-          "backward_efficiency_printed": 0.9060489331149796,
+          "backward_efficiency": 0.8868998563887645,
           "backward_efficiency_force_balance": 0.8868998563887645,
           "minimum_constraint_margin": 0.003558414057010739,
           "maximum_constraint_violation": 0.0,
@@ -3274,7 +3274,7 @@
             "xr2": 0.09609982910940162
           },
           "forward_efficiency": 0.8964627155113368,
-          "backward_efficiency_printed": 0.9081256214565215,
+          "backward_efficiency": 0.8882596836864345,
           "backward_efficiency_force_balance": 0.8882596836864345,
           "minimum_constraint_margin": 0.003495915276329642,
           "maximum_constraint_violation": 0.0,
@@ -3295,7 +3295,7 @@
             "xr2": 0.08499858712385422
           },
           "forward_efficiency": 0.8967726510290581,
-          "backward_efficiency_printed": 0.9085757366402368,
+          "backward_efficiency": 0.8886402652275194,
           "backward_efficiency_force_balance": 0.8886402652275194,
           "minimum_constraint_margin": 0.003461991956086874,
           "maximum_constraint_violation": 0.0,
@@ -3316,7 +3316,7 @@
             "xr2": 0.08937202301657665
           },
           "forward_efficiency": 0.8975523298796947,
-          "backward_efficiency_printed": 0.9094207033185022,
+          "backward_efficiency": 0.8895553087459058,
           "backward_efficiency_force_balance": 0.8895553087459058,
           "minimum_constraint_margin": 0.003398877986351523,
           "maximum_constraint_violation": 0.0,
@@ -3337,7 +3337,7 @@
             "xr2": 0.14454738369792086
           },
           "forward_efficiency": 0.8995205266679946,
-          "backward_efficiency_printed": 0.9112146055338372,
+          "backward_efficiency": 0.8918148158092997,
           "backward_efficiency_force_balance": 0.8918148158092997,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3358,7 +3358,7 @@
             "xr2": 0.21074337473647808
           },
           "forward_efficiency": 0.9008934495976836,
-          "backward_efficiency_printed": 0.9119798470532973,
+          "backward_efficiency": 0.8933316059329715,
           "backward_efficiency_force_balance": 0.8933316059329715,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3379,7 +3379,7 @@
             "xr2": 0.3167040668420996
           },
           "forward_efficiency": 0.9021166118942381,
-          "backward_efficiency_printed": 0.9129903424778857,
+          "backward_efficiency": 0.8947369905027974,
           "backward_efficiency_force_balance": 0.8947369905027974,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3400,7 +3400,7 @@
             "xr2": 0.36149861365863056
           },
           "forward_efficiency": 0.9023939067282017,
-          "backward_efficiency_printed": 0.9133250606843388,
+          "backward_efficiency": 0.8950687401632247,
           "backward_efficiency_force_balance": 0.8950687401632247,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3421,8 +3421,8 @@
             "xr2": 0.36725664831194316
           },
           "forward_efficiency": 0.9024152516634566,
-          "backward_efficiency_printed": 0.9134019361806299,
-          "backward_efficiency_force_balance": 0.895100033876661,
+          "backward_efficiency": 0.8951000338766609,
+          "backward_efficiency_force_balance": 0.8951000338766609,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3442,7 +3442,7 @@
             "xr2": 0.3662890677849603
           },
           "forward_efficiency": 0.9024155309356723,
-          "backward_efficiency_printed": 0.9134131896802928,
+          "backward_efficiency": 0.8951016327314858,
           "backward_efficiency_force_balance": 0.8951016327314858,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3463,7 +3463,7 @@
             "xr2": 0.3660616138986551
           },
           "forward_efficiency": 0.9024155344450185,
-          "backward_efficiency_printed": 0.9134143170757277,
+          "backward_efficiency": 0.8951017676675811,
           "backward_efficiency_force_balance": 0.8951017676675811,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
@@ -3484,8 +3484,8 @@
             "xr2": 0.3660514648951859
           },
           "forward_efficiency": 0.9024155344528105,
-          "backward_efficiency_printed": 0.9134143276672925,
-          "backward_efficiency_force_balance": 0.8951017689092189,
+          "backward_efficiency": 0.8951017689092188,
+          "backward_efficiency_force_balance": 0.8951017689092188,
           "minimum_constraint_margin": 2.220446049250313e-16,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3526,7 +3526,7 @@
             "xr2": 0.7573657665434202
           },
           "forward_efficiency": 0.6859473730102426,
-          "backward_efficiency_printed": 0.6027832565333059,
+          "backward_efficiency": 0.5714113296486979,
           "backward_efficiency_force_balance": 0.5714113296486979,
           "minimum_constraint_margin": -0.8923831965381459,
           "maximum_constraint_violation": 0.8923831965381459,
@@ -3547,7 +3547,7 @@
             "xr2": 0.575496182416107
           },
           "forward_efficiency": 0.8584178641509077,
-          "backward_efficiency_printed": 0.8595828074950089,
+          "backward_efficiency": 0.8401799104997799,
           "backward_efficiency_force_balance": 0.8401799104997799,
           "minimum_constraint_margin": 0.0037065806951803726,
           "maximum_constraint_violation": 0.0,
@@ -3568,7 +3568,7 @@
             "xr2": 0.4892517065430967
           },
           "forward_efficiency": 0.8648771037297235,
-          "backward_efficiency_printed": 0.8741656506826334,
+          "backward_efficiency": 0.8505677169395026,
           "backward_efficiency_force_balance": 0.8505677169395026,
           "minimum_constraint_margin": 0.0047130676630129376,
           "maximum_constraint_violation": 0.0,
@@ -3589,8 +3589,8 @@
             "xr2": 0.40515039070328684
           },
           "forward_efficiency": 0.8895679209402283,
-          "backward_efficiency_printed": 0.8989138596679116,
-          "backward_efficiency_force_balance": 0.8799249978438444,
+          "backward_efficiency": 0.8799249978438445,
+          "backward_efficiency_force_balance": 0.8799249978438445,
           "minimum_constraint_margin": 0.004708817644213492,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3610,8 +3610,8 @@
             "xr2": 0.28021576982132423
           },
           "forward_efficiency": 0.9019546893517819,
-          "backward_efficiency_printed": 0.9130573647316704,
-          "backward_efficiency_force_balance": 0.8945751956394056,
+          "backward_efficiency": 0.8945751956394055,
+          "backward_efficiency_force_balance": 0.8945751956394055,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3631,7 +3631,7 @@
             "xr2": 0.31363609723890706
           },
           "forward_efficiency": 0.9022530978213485,
-          "backward_efficiency_printed": 0.913478978538222,
+          "backward_efficiency": 0.8949400620177652,
           "backward_efficiency_force_balance": 0.8949400620177652,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3652,7 +3652,7 @@
             "xr2": 0.3505929161594702
           },
           "forward_efficiency": 0.9023924747856426,
-          "backward_efficiency_printed": 0.9135037558267228,
+          "backward_efficiency": 0.8950883574778656,
           "backward_efficiency_force_balance": 0.8950883574778656,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3673,8 +3673,8 @@
             "xr2": 0.36567738539319417
           },
           "forward_efficiency": 0.9024149628136351,
-          "backward_efficiency_printed": 0.9134286386706789,
-          "backward_efficiency_force_balance": 0.8951028417884753,
+          "backward_efficiency": 0.8951028417884752,
+          "backward_efficiency_force_balance": 0.8951028417884752,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3694,7 +3694,7 @@
             "xr2": 0.3662663038629287
           },
           "forward_efficiency": 0.9024155260219792,
-          "backward_efficiency_printed": 0.9134149730024764,
+          "backward_efficiency": 0.8951018351827885,
           "backward_efficiency_force_balance": 0.8951018351827885,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
@@ -3715,8 +3715,8 @@
             "xr2": 0.36607341351974
           },
           "forward_efficiency": 0.9024155344242898,
-          "backward_efficiency_printed": 0.9134142724769909,
-          "backward_efficiency_force_balance": 0.8951017624521744,
+          "backward_efficiency": 0.8951017624521745,
+          "backward_efficiency_force_balance": 0.8951017624521745,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3736,8 +3736,8 @@
             "xr2": 0.3660516319986503
           },
           "forward_efficiency": 0.9024155344528105,
-          "backward_efficiency_printed": 0.913414324495619,
-          "backward_efficiency_force_balance": 0.8951017685398679,
+          "backward_efficiency": 0.8951017685398681,
+          "backward_efficiency_force_balance": 0.8951017685398681,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3757,8 +3757,8 @@
             "xr2": 0.3660516319986503
           },
           "forward_efficiency": 0.9024155344528105,
-          "backward_efficiency_printed": 0.913414324495619,
-          "backward_efficiency_force_balance": 0.8951017685398679,
+          "backward_efficiency": 0.8951017685398681,
+          "backward_efficiency_force_balance": 0.8951017685398681,
           "minimum_constraint_margin": 0.0,
           "maximum_constraint_violation": 0.0,
           "feasible": true
@@ -3773,7 +3773,7 @@
     "SLSQPは局所法。複数初期値で確認するが大域最適性の証明ではない。",
     "切下げ、歯強度・許容トルク、加工工具との干渉、実歯形の検証は対象外。",
     "論文の実測順駆動効率89.0%は、この計算モデルの予測値と別である。",
-    "逆駆動は印刷式(75)と式(74)のトルク釣合いによる再導出値を区別する。再導出値にはeta_aが掛かる。"
+    "逆効率は分子にeta_aを含む式(75)。式(74)のトルク釣合いによる独立計算とも一致する。"
   ],
   "best": {
     "center_mm": 20.80889658580155,
@@ -3841,8 +3841,8 @@
       }
     ],
     "forward_efficiency": 0.9024155344528163,
-    "backward_efficiency": 0.9134143254717888,
-    "backward_efficiency_force_balance": 0.8951017686535515
+    "backward_efficiency": 0.8951017686535514,
+    "backward_efficiency_force_balance": 0.8951017686535514
   },
   "constraint_margins": {
     "xs_lower": 1.094686717759854,
@@ -3947,16 +3947,10 @@
       "difference_pp": 1.241553445281629
     },
     {
-      "quantity": "backward_printed_eq75",
+      "quantity": "backward_eq75",
       "paper_measured_percent": 85.3,
-      "calculated_percent": 91.34143254717888,
-      "difference_pp": 6.041432547178882
-    },
-    {
-      "quantity": "backward_force_balance_eq74",
-      "paper_measured_percent": 85.3,
-      "calculated_percent": 89.51017686535515,
-      "difference_pp": 4.2101768653551535
+      "calculated_percent": 89.51017686535513,
+      "difference_pp": 4.210176865355142
     }
   ]
 }

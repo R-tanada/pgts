@@ -55,18 +55,11 @@
       "difference_0.9_minus_2.0": -1.744313500429925
     },
     {
-      "quantity": "backward_percent_printed_eq75",
-      "paper": 85.3,
-      "limit_2.0": 93.2163164451388,
-      "limit_0.9": 91.34143254717888,
-      "difference_0.9_minus_2.0": -1.8748838979599185
-    },
-    {
-      "quantity": "backward_percent_force_balance",
+      "quantity": "backward_percent_eq75",
       "paper": 85.3,
       "limit_2.0": 91.52194471775417,
-      "limit_0.9": 89.51017686535515,
-      "difference_0.9_minus_2.0": -2.011767852399018
+      "limit_0.9": 89.51017686535513,
+      "difference_0.9_minus_2.0": -2.011767852399032
     }
   ],
   "objective_equation": "64",

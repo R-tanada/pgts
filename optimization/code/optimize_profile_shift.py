@@ -11,12 +11,11 @@ import importlib.util
 import json
 import math
 import sys
-from dataclasses import asdict
 from pathlib import Path
 
 from profile_shift_model import (
     Gearbox, PAPER_CONTACT_RATIOS, PAPER_SHIFTS, PAPER_MEASURED_EFFICIENCIES, center_for_external_shift_sum,
-    constraint_margins, evaluate, reference_center_distances,
+    constraint_margins, Model, reference_center_distances,
 )
 
 
@@ -110,14 +109,14 @@ def optimize(gearbox: Gearbox, config: dict):
     def decode(normalized):
         return lower + width * np.asarray(normalized)
 
-    def evaluation_at(normalized):
-        return evaluate(decode(normalized), gearbox, config["friction_coefficient"])
-
     def objective(normalized):
-        return -evaluation_at(normalized).forward_efficiency
+        model = Model(gearbox, config["friction_coefficient"])
+        model.calculate(decode(normalized))
+        return -model.forward_efficiency
 
     def constraints(normalized):
-        result = evaluation_at(normalized)
+        result = Model(gearbox, config["friction_coefficient"])
+        result.calculate(decode(normalized))
         return np.array(list(margins_for(result, gearbox, config).values()))
 
     # 論文の転位係数を参照せず、独立した固定シードで初期点を生成。
@@ -129,14 +128,15 @@ def optimize(gearbox: Gearbox, config: dict):
         history = []
 
         def record_iteration(normalized):
-            current = evaluation_at(normalized)
+            current = Model(gearbox, config["friction_coefficient"])
+            current.calculate(decode(normalized))
             current_margins = margins_for(current, gearbox, config)
             minimum_margin = min(current_margins.values())
             history.append({
                 "iteration": len(history), "variables": decode(normalized).tolist(),
-                "shifts": asdict(current.shifts),
+                "shifts": current.shifts.to_dict(),
                 "forward_efficiency": current.forward_efficiency,
-                "backward_efficiency_printed": current.backward_efficiency,
+                "backward_efficiency": current.backward_efficiency,
                 "backward_efficiency_force_balance": current.backward_efficiency_force_balance,
                 "minimum_constraint_margin": minimum_margin,
                 "maximum_constraint_violation": max(0.0, -minimum_margin),
@@ -149,7 +149,8 @@ def optimize(gearbox: Gearbox, config: dict):
                           constraints={"type": "ineq", "fun": constraints},
                           callback=record_iteration,
                           options={"maxiter": config["max_iterations"], "ftol": config["ftol"]})
-        final = evaluation_at(result.x)
+        final = Model(gearbox, config["friction_coefficient"])
+        final.calculate(decode(result.x))
         if history[-1]["variables"] != decode(result.x).tolist():
             record_iteration(result.x)
         margins = margins_for(final, gearbox, config)
@@ -174,7 +175,7 @@ def optimize(gearbox: Gearbox, config: dict):
 
 def comparison_rows(best):
     rows = []
-    for name, paper_value in asdict(PAPER_SHIFTS).items():
+    for name, paper_value in PAPER_SHIFTS.to_dict().items():
         actual = getattr(best.shifts, name)
         rows.append({"parameter": name, "paper": paper_value,
                      "optimized": actual, "difference": actual - paper_value})
@@ -190,8 +191,7 @@ def efficiency_comparison_rows(best):
     rows = []
     for label, actual, paper in (
         ("forward_eq64", best.forward_efficiency, PAPER_MEASURED_EFFICIENCIES["forward"]),
-        ("backward_printed_eq75", best.backward_efficiency, PAPER_MEASURED_EFFICIENCIES["backward"]),
-        ("backward_force_balance_eq74", best.backward_efficiency_force_balance, PAPER_MEASURED_EFFICIENCIES["backward"]),
+        ("backward_eq75", best.backward_efficiency, PAPER_MEASURED_EFFICIENCIES["backward"]),
     ):
         rows.append({"quantity": label, "paper_measured_percent": 100*paper,
                      "calculated_percent": 100*actual, "difference_pp": 100*(actual-paper)})
@@ -204,20 +204,21 @@ def write_results(output: Path, gearbox: Gearbox, config: dict,
     center_reference = reference_center_distances(gearbox)
     # 共通中心距離を厳密に保つためaの復元値を使い、従属転位は再計算。
     reference_variables = [PAPER_SHIFTS.xr1, PAPER_SHIFTS.xr2, center_reference["a"]]
-    reference = evaluate(reference_variables, gearbox, config["friction_coefficient"])
+    reference = Model(gearbox, config["friction_coefficient"])
+    reference.calculate(reference_variables)
     report = {
         "status": "success" if best_record else "no_converged_feasible_solution",
-        "method": method, "gearbox": asdict(gearbox), "settings": config,
+        "method": method, "gearbox": gearbox.to_dict(), "settings": config,
         "library_versions": versions, "speed_ratio_exact": str(gearbox.speed_ratio),
         "reduction_abs": float(abs(1 / gearbox.speed_ratio)),
         "fixed_assembly_checks": fixed_assembly_checks(gearbox),
-        "paper_shifts": asdict(PAPER_SHIFTS),
+        "paper_shifts": PAPER_SHIFTS.to_dict(),
         "paper_contact_ratios": PAPER_CONTACT_RATIOS,
         "paper_measured_efficiencies": PAPER_MEASURED_EFFICIENCIES,
         "paper_efficiency_table": "Table IV (Table V is absent in the supplied PDF)",
         "objective_equation": "64" if gearbox.i2 < 1 else "67",
         "reference_center_distances_mm": center_reference,
-        "reference_common_center_evaluation": asdict(reference),
+        "reference_common_center_evaluation": reference.to_dict(),
         "reference_constraint_margins": margins_for(reference, gearbox, config),
         "trials": trials,
         "limitations": [
@@ -227,7 +228,7 @@ def write_results(output: Path, gearbox: Gearbox, config: dict,
             f"{method}は局所法。複数初期値で確認するが大域最適性の証明ではない。",
             "切下げ、歯強度・許容トルク、加工工具との干渉、実歯形の検証は対象外。",
             "論文の実測順駆動効率89.0%は、この計算モデルの予測値と別である。",
-            "逆駆動は印刷式(75)と式(74)のトルク釣合いによる再導出値を区別する。再導出値にはeta_aが掛かる。",
+            "逆効率は分子にeta_aを含む式(75)。式(74)のトルク釣合いによる独立計算とも一致する。",
         ],
     }
     if best_record:
@@ -235,7 +236,7 @@ def write_results(output: Path, gearbox: Gearbox, config: dict,
         rows = comparison_rows(best)
         efficiency_rows = efficiency_comparison_rows(best)
         successful_count = sum(trial["solver_success"] and trial["feasible"] for trial in trials)
-        report.update({"best": asdict(best), "constraint_margins": margins,
+        report.update({"best": best.to_dict(), "constraint_margins": margins,
                        "selected_trial": trial_index, "comparison": rows,
                        "efficiency_comparison": efficiency_rows})
         with (output / "efficiency_comparison.csv").open("w", encoding="utf-8-sig", newline="") as stream:
@@ -250,7 +251,7 @@ def write_results(output: Path, gearbox: Gearbox, config: dict,
                  f"{method}、初期値{len(trials)}点。摩擦係数 μ={config['friction_coefficient']}（仮定）。",
                  f"収束した可行解: {successful_count}/{len(trials)}試行。成功した試行だけから目的関数が最良の解を採用。",
                  f"減速倍率: {report['reduction_abs']:.8f}、共通中心距離: {best.center_mm:.8f} mm。",
-                 f"予測順駆動効率: {best.forward_efficiency:.6%}。逆駆動の印刷式による参考値: {best.backward_efficiency:.6%}。",
+                 f"予測順駆動効率: {best.forward_efficiency:.6%}。予測逆駆動効率（式75）: {best.backward_efficiency:.6%}。",
                  "", "| 量 | 論文Table III | 計算値 | 差（計算−論文） |",
                  "|---|---:|---:|---:|"]
         lines.extend(f"| {row['parameter']} | {row['paper']:.6f} | {row['optimized']:.6f} | {row['difference']:+.6f} |" for row in rows)
@@ -260,9 +261,9 @@ def write_results(output: Path, gearbox: Gearbox, config: dict,
                   "| 量 | Table IV実測 [%] | 計算 [%] | 差 [ポイント] |",
                   "|---|---:|---:|---:|"]
         lines.extend(f"| {row['quantity']} | {row['paper_measured_percent']:.3f} | {row['calculated_percent']:.6f} | {row['difference_pp']:+.6f} |" for row in efficiency_rows)
-        lines += ["", "印刷式(75)は式(74)のトルク釣合いから導く式とeta_aの因子が異なります。",
-                  "式(74)からの再導出は `(1+I1)*eta_a*(eta_b*eta_c-I2) / (eta_c*(eta_a*eta_b+I1)*(1-I2))` です。",
-                  "印刷式はそのまま残し、再導出値を別項目として表示します。実測値へのフィットはしていません。"]
+        lines += ["", "式(75)は `(1+I1)*eta_a*(eta_b*eta_c-I2) / (eta_c*(eta_a*eta_b+I1)*(1-I2))` です。",
+                  "分子のeta_aは論文に記載されています。式(74)のトルク釣合いとも一致します。",
+                  "以前の『印刷式ではeta_aが欠ける』という説明と逆効率93.216316%は誤りでした。実測値へのフィットはしていません。"]
         lines += ["", "## 論文値を同じモデルで評価した場合", "",
                   "Table IIIの外歯かみあいから復元した中心距離を使い、中心距離一致を保って従属変数を再計算しています。",
                   f"予測順駆動効率: {reference.forward_efficiency:.6%}。",
@@ -314,9 +315,8 @@ def main():
         print(f"収束した可行解なし。詳細: {output / 'result.json'}")
         raise SystemExit(1)
     print(f"予測順駆動効率: {best[0].forward_efficiency:.6%}")
-    print(f"逆効率（印刷式75）: {best[0].backward_efficiency:.6%}")
-    print(f"逆効率（式74のトルク釣合い）: {best[0].backward_efficiency_force_balance:.6%}")
-    for name, value in asdict(best[0].shifts).items():
+    print(f"逆効率（式75）: {best[0].backward_efficiency:.6%}")
+    for name, value in best[0].shifts.to_dict().items():
         print(f"{name}: {value:.8f} (Table III: {getattr(PAPER_SHIFTS, name):.3f})")
     print(f"結果: {output / 'comparison.md'}")
     if not args.no_plots:
