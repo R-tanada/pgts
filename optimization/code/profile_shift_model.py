@@ -20,8 +20,11 @@ class Gearbox:
     alpha、i1、i2なども__init__で一緒に計算するため。
     """
 
-    def __init__(self, zs=12, zp1=39, zr1=90, zp2=32, zr2=81,
-                 module_a=0.8, module_c=0.8467,
+    # def __init__(self, zs=12, zp1=39, zr1=90, zp2=32, zr2=81,
+    #              module_a=0.8, module_c=0.8467,
+    #              pressure_angle_deg=20.0, planet_count=3):
+    def __init__(self, zs=10, zp1=44, zr1=98, zp2=37, zr2=91,
+                 module_a=0.8, module_c=0.8,
                  pressure_angle_deg=20.0, planet_count=3):
         self.zs = zs
         self.zp1 = zp1
