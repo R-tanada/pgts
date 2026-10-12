@@ -1,0 +1,19 @@
+{
+  "input_csv": "../tooth_search/tooth_search_candidates.csv",
+  "output_directory": "output",
+  "pressure_angle_deg": 20.0,
+  "planet_count": 3,
+  "friction_coefficient": 0.1,
+  "shift_lower": -2.0,
+  "shift_upper": 2.0,
+  "contact_ratio_lower": 1.0,
+  "contact_ratio_upper": 2.0,
+  "planet_clearance_mm": 0.0,
+  "include_trimming_constraint": true,
+  "start_count": 12,
+  "workers": 10,
+  "random_seed": 42,
+  "max_iterations": 1000,
+  "ftol": 1e-11,
+  "feasibility_tolerance": 1e-07
+}

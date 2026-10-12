@@ -1,0 +1,26 @@
+{
+  "gearbox": {
+    "zs": 12, "zp1": 39, "zr1": 90, "zp2": 32, "zr2": 81,
+    "module_a": 0.8, "module_c": 0.8467,
+    "pressure_angle_deg": 20.0, "planet_count": 3
+  },
+  "optimization": {
+    "friction_coefficient": 0.1,
+    "shift_lower": -2.0, "shift_upper": 2.0,
+    "contact_ratio_lower": 1.0, "contact_ratio_upper": 2.0,
+    "planet_clearance_mm": 0.0, "include_trimming_constraint": true,
+    "start_count": 1, "random_seed": 42, "max_iterations": 1000,
+    "ftol": 1e-11, "feasibility_tolerance": 1e-7
+  },
+  "evaluation": {
+    "xs": 0.476, "xp1": 0.762, "xr1": 2.0, "xp2": 0.536, "xr2": 1.210,
+    "center_mm": null
+  },
+  "quasi_newton": {
+    "initial_penalty": 10.0, "penalty_growth": 10.0,
+    "outer_iterations": 12, "inner_iterations": 300,
+    "optimality_tolerance": 1e-6
+  },
+  "plots": {"enabled": true, "grid_count": 35},
+  "output_directory": "output"
+}

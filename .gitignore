@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 artifacts/
+optimization/.dependencies/
+optimization/output/
+tests/experiments/output/
